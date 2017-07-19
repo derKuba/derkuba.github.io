@@ -2,31 +2,31 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>My New Hugo Site</title>
-    <link>http://localhost:1313/</link>
+    <link>https://derkuba.github.io/derKuba/</link>
     <description>Recent content on My New Hugo Site</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>de-de</language>
     <lastBuildDate>Wed, 19 Jul 2017 16:07:25 +0200</lastBuildDate>
     
-	<atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://derkuba.github.io/derKuba/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>kompetenzteam</title>
-      <link>http://localhost:1313/tageslichtsysteme/kompetenzteam/</link>
+      <link>https://derkuba.github.io/derKuba/tageslichtsysteme/kompetenzteam/</link>
       <pubDate>Wed, 19 Jul 2017 16:07:25 +0200</pubDate>
       
-      <guid>http://localhost:1313/tageslichtsysteme/kompetenzteam/</guid>
+      <guid>https://derkuba.github.io/derKuba/tageslichtsysteme/kompetenzteam/</guid>
       <description>Das KOMPETENZTEAM Licht + Planung erstellt individuelle Beleuchtungskonzepte Ob gewerbliche, industrielle oder Bürobeleuchtung - unterschiedliche Anwendungen benötigen die jeweils optimal geeignete Beleuchtung. Ob mit Tageslicht oder Kunstlicht, die Kombination von beidem? Bis zu 80% des Energieverbrauchs gegenüber herkömmlicher Beleuchtung auf dem Stand der Technik lassen sich einsparen.
 Das KOMPETENZTEAM Licht + Planung hat die optimale Lösung von Tageslicht-Systemen für die moderne Architektur, unübertroffen in der Lichtleistung - mit einer voll umfassenden Produktpalette und garantiert maximaler Tageslichtleistung für nordeuropäische Bedingungen.</description>
     </item>
     
     <item>
       <title>installation</title>
-      <link>http://localhost:1313/tageslichtsysteme/installation/</link>
+      <link>https://derkuba.github.io/derKuba/tageslichtsysteme/installation/</link>
       <pubDate>Wed, 19 Jul 2017 16:07:01 +0200</pubDate>
       
-      <guid>http://localhost:1313/tageslichtsysteme/installation/</guid>
+      <guid>https://derkuba.github.io/derKuba/tageslichtsysteme/installation/</guid>
       <description>Installation von Tageslicht-Systemen Die Tageslicht-Systeme können praktisch in jedes neue oder bestehende Gebäude installiert werden. Die einzige Voraussetzung ist eine Verbindung vom Dach zu den zu beleuchtenden Räumen.
 Sowohl bei Neubauten, als auch bei größeren Sanierungsprojekten können Tageslicht-Systemein der Regel leicht durch die ohnehin involvierten Vor-Ort-Gewerke montiert werden.
 Für Projekte, bei denen der Einbau von Tageslicht-Systemen der größte Teil der Arbeit ist, sind wir bei der Auswahl von geeigneten Handwerksbetrieben behilflich oder können die Montage mit eigenen Fachleuten vornehmen.</description>
@@ -34,30 +34,30 @@ Für Projekte, bei denen der Einbau von Tageslicht-Systemen der größte Teil de
     
     <item>
       <title>buroes</title>
-      <link>http://localhost:1313/tageslichtsysteme/anwendungen/bueros/</link>
+      <link>https://derkuba.github.io/derKuba/tageslichtsysteme/anwendungen/bueros/</link>
       <pubDate>Wed, 19 Jul 2017 16:06:29 +0200</pubDate>
       
-      <guid>http://localhost:1313/tageslichtsysteme/anwendungen/bueros/</guid>
+      <guid>https://derkuba.github.io/derKuba/tageslichtsysteme/anwendungen/bueros/</guid>
       <description>ANWENDUNGEN in Büroräumen Eine der größten Herausforderungen der Industrie in den letzten Jahren ist die Reduzierung des Energieverbrauchs und die Steigerung der Energieeffizienz, also die Nutzung von Energie.
 Die Aussicht auf immer weiter steigende Energiekosten, der Anstieg von Kohlendioxidemissionen und bevorstehende Gesetzesänderungen sind für viele Unternehmen der Motor, sich kritisch über die Notwendigkeiten und Möglichkeiten ihres Handelns zu informieren. Dabei sind neben den eigenen Produktionsprozessen die Beleuchtung, die Heizung und die Lüftung die wichtigsten Bereiche, in denen die Industrie ernsthafte Verringerungen des Energiebedarfs umsetzen kann.</description>
     </item>
     
     <item>
       <title>einzelhandel</title>
-      <link>http://localhost:1313/tageslichtsysteme/anwendungen/einzelhandel/</link>
+      <link>https://derkuba.github.io/derKuba/tageslichtsysteme/anwendungen/einzelhandel/</link>
       <pubDate>Wed, 19 Jul 2017 16:06:20 +0200</pubDate>
       
-      <guid>http://localhost:1313/tageslichtsysteme/anwendungen/einzelhandel/</guid>
+      <guid>https://derkuba.github.io/derKuba/tageslichtsysteme/anwendungen/einzelhandel/</guid>
       <description>ANWENDUNGEN im Einzelhandel Eine Studie aus dem Jahr 1999 durch Heschong Mahone Group HMG (Skylighting and Retail Sales) untersuchte eine US-Handelskette mit 108 Filialen und berechnete, dass die Geschäfte die mit Tageslicht beleuchtet waren einen um 40% höheren Umsatz zu verzeichnen hatten, als jene, die ausschließlich mit künstlichem Licht beleuchtet wurden.
 In einer zweiten Studie bei einem neuen &amp;ldquo;green store&amp;rdquo; von McDonalds ergab die Verwendung von Tageslichtsystemen einen reduzierten Energiebedarf von rund 24% gegenüber einer Standard-Filiale.</description>
     </item>
     
     <item>
       <title>industrie</title>
-      <link>http://localhost:1313/tageslichtsysteme/anwendungen/industrie/</link>
+      <link>https://derkuba.github.io/derKuba/tageslichtsysteme/anwendungen/industrie/</link>
       <pubDate>Wed, 19 Jul 2017 16:06:12 +0200</pubDate>
       
-      <guid>http://localhost:1313/tageslichtsysteme/anwendungen/industrie/</guid>
+      <guid>https://derkuba.github.io/derKuba/tageslichtsysteme/anwendungen/industrie/</guid>
       <description>ANWENDUNGEN in der Industrie Intelligente Gebäudetechnik und Beleuchtung, kombiniert mit modernen Tageslichtsystemen reduzieren tagsüber drastisch den Stromverbrauch bei Gewerbeimmobilien für Wirtschaft und Industrie.
 Industriegebäude sind ideale Kandidaten für die natürliche Beleuchtung.
 Je nach Alter und Art von Gebäuden und der elektrischer Beleuchtung lassen sich die Kosten und Emissionen für die Beleuchtung durch Einsatz von Tageslichtsystemen um 60-80% verringern.
@@ -66,10 +66,10 @@ Viele Kunden beobachten bei ihren Mitarbeitern positive Reaktion nach dem Einbau
     
     <item>
       <title>beispiele</title>
-      <link>http://localhost:1313/tageslichtsysteme/anwendungen/beispiele/</link>
+      <link>https://derkuba.github.io/derKuba/tageslichtsysteme/anwendungen/beispiele/</link>
       <pubDate>Wed, 19 Jul 2017 16:06:04 +0200</pubDate>
       
-      <guid>http://localhost:1313/tageslichtsysteme/anwendungen/beispiele/</guid>
+      <guid>https://derkuba.github.io/derKuba/tageslichtsysteme/anwendungen/beispiele/</guid>
       <description>ANWENDUNGEN für Tageslichtsysteme Internationale Studien belegen den positiven Einfluss durch Tageslicht am Arbeitsplatz auf den menschlichen Organismus. Steigende Motivation, höhere Leistungsfähigkeit und niedrigere Krankenstände sind die positiven Folgen. Tageslicht steigert das Wohlbefinden und Gesundheit, Farben werden natürlicher wahrgenommen, als mit künstlichem Licht.
 Studenten, die während des Studiums Zugang zu natürlichem Licht haben, können durch ein erhöhtes Maß an Konzentration bessere Noten erzielen.
 Traditionelle Fensteröffnungen und Dachfenster können keine gute, gleichmäßige Tageslicht-Beleuchtung garantieren.</description>
@@ -77,10 +77,10 @@ Traditionelle Fensteröffnungen und Dachfenster können keine gute, gleichmäßi
     
     <item>
       <title>produkte</title>
-      <link>http://localhost:1313/tageslichtsysteme/produkte/</link>
+      <link>https://derkuba.github.io/derKuba/tageslichtsysteme/produkte/</link>
       <pubDate>Wed, 19 Jul 2017 16:05:45 +0200</pubDate>
       
-      <guid>http://localhost:1313/tageslichtsysteme/produkte/</guid>
+      <guid>https://derkuba.github.io/derKuba/tageslichtsysteme/produkte/</guid>
       <description>TAGESLICHT für die umweltfreundliche Architektur Für die individuelle Gebäudesituation hat STILA ENERGY® das effizienteste Tageslicht-Produkt im Portfolio.
 Das Tageslicht- System empfängt jeden Sonnenstrahl und auch diffuses Licht, aus jeder Himmelsrichtung und jeder Neigung, und lenkt diesen weiter in das Gebäude. Selbst bei bedecktem Himmel in Deutschland kann so die Betriebsdauer des elektrischen Lichtes enorm reduziert und somit durch Tageslicht-Systeme erhebliche Energiekosten und CO2-Emissionen eingespart werden.
 Traditionelle Fensteröffnungen und Dachfenster können keine gute, gleichmäßige Tageslicht-Beleuchtung garantieren.</description>
@@ -88,39 +88,39 @@ Traditionelle Fensteröffnungen und Dachfenster können keine gute, gleichmäßi
     
     <item>
       <title>im deutschen reichstag</title>
-      <link>http://localhost:1313/tageslichtsysteme/tageslicht-einfuehrung/</link>
+      <link>https://derkuba.github.io/derKuba/tageslichtsysteme/tageslicht-einfuehrung/</link>
       <pubDate>Wed, 19 Jul 2017 16:03:50 +0200</pubDate>
       
-      <guid>http://localhost:1313/tageslichtsysteme/tageslicht-einfuehrung/</guid>
+      <guid>https://derkuba.github.io/derKuba/tageslichtsysteme/tageslicht-einfuehrung/</guid>
       <description>TAGESLICHT - Einführung Menschen lieben Tageslicht, unwissentlich und unterbewusst werden von der Sonne beschienene, also Aufenthaltsorte mit natürlichem Licht aufgesucht. Abgesehen davon gibt es andere Gründe, natürliches Tageslicht ins Gebäude zu holen.
 Internationale Studien belegen den positiven Einfluss durch Tageslicht am Arbeitsplatz auf den menschlichen Organismus. Steigende Motivation, höhere Leistungsfähigkeit und niedrigere Krankenstände sind die positiven Folgen. Tageslicht steigert das Wohlbefinden und Gesundheit, Farben werden natürlicher wahrgenommen, als mit künstlichem Licht.</description>
     </item>
     
     <item>
       <title>im deutschen reichstag</title>
-      <link>http://localhost:1313/tageslichtsysteme/tageslicht-im-deutschen-reichstag/</link>
+      <link>https://derkuba.github.io/derKuba/tageslichtsysteme/tageslicht-im-deutschen-reichstag/</link>
       <pubDate>Wed, 19 Jul 2017 16:03:50 +0200</pubDate>
       
-      <guid>http://localhost:1313/tageslichtsysteme/tageslicht-im-deutschen-reichstag/</guid>
+      <guid>https://derkuba.github.io/derKuba/tageslichtsysteme/tageslicht-im-deutschen-reichstag/</guid>
       <description>TAGESLICHT – im deutschen Reichstag Der historische Bau des Reichstags von Paul Wallot aus dem Jahre 1894 wird seit 1999 als Sitz des gesamtdeutschen Parlaments nach dem Umbau durch den britischen Architekten Sir Norman Foster wieder genutzt.
 Es wurde ein moderner Parlamentsbau geschaffen, der die Geschichte des Reichstagsgebäudes respektiert und zugleich die Umsetzung eines zukunftweisenden Energiekonzeptes realisiert. Das ehemalige Reichstagsgebäude wurde zu einem modernen Arbeitsparlament umgestaltet, das allen Anforderungen an neueste Kommunikations-, Büro- und Arbeitsplatztechnik entspricht.</description>
     </item>
     
     <item>
       <title>im deutschen reichstag</title>
-      <link>http://localhost:1313/tageslichtsysteme/tageslicht/</link>
+      <link>https://derkuba.github.io/derKuba/tageslichtsysteme/tageslicht/</link>
       <pubDate>Wed, 19 Jul 2017 16:03:50 +0200</pubDate>
       
-      <guid>http://localhost:1313/tageslichtsysteme/tageslicht/</guid>
+      <guid>https://derkuba.github.io/derKuba/tageslichtsysteme/tageslicht/</guid>
       <description>TAGESLICHT – die umweltfreundlichste Beleuchtung Eine der wichtigsten Herausforderungen der Industrie in den letzten Jahren ist die Reduzierung des Energieverbrauchs und die Steigerung der Energieeffizienz, also die Nutzung von Energie. Die Aussicht auf immer weiter steigende Energiekosten, der Anstieg von Kohlendioxidemissionen und bevorstehende Gesetzesänderungen sind für viele Unternehmen der Motor, sich kritisch über die Notwendigkeiten und Möglichkeiten ihres Handelns zu informieren. Dabei sind neben den eigenen Produktionsprozessen die Beleuchtung, die Heizung und die Lüftung die wichtigsten Bereiche, in denen die Industrie ernsthafte Verringerungen des Energiebedarfs umsetzen kann.</description>
     </item>
     
     <item>
       <title>produkte</title>
-      <link>http://localhost:1313/produkte-und-technik/produkte/</link>
+      <link>https://derkuba.github.io/derKuba/produkte-und-technik/produkte/</link>
       <pubDate>Wed, 19 Jul 2017 14:57:35 +0200</pubDate>
       
-      <guid>http://localhost:1313/produkte-und-technik/produkte/</guid>
+      <guid>https://derkuba.github.io/derKuba/produkte-und-technik/produkte/</guid>
       <description>STEUERGERÄTE ZUR SPANNUNGSSTABILISIERUNG STILA ENERGY® Serie MACH2000 und MACHROAD2000 (Spezialentwicklung für Tunnelbeleuchtungen) sind elektrische Mikroprozessor gesteuerte, elektromechanische Steuergeräte zur Stabilisierung, Regulierung und Absenkung der Spannung ohne bewegliche Roll- oder Schleifkontakte.
 Seit den 1980er Jahren werden Geräte zur Spannungsabsenkung vor allem beim Betrieb von Straßenbeleuchtungsanlagen eingesetzt. Weiterentwicklungen von STILA ENERGY® erlauben den reibungslosen Einsatz seit Jahren auch bei Beleuchtungsanlagen in Einkaufszentren, Industrieanlagen und Einrichtungen des Dienstleistungssektors.
 Im Allgemeinen werden sie auch als Lichtstrom- oder Spannungsregler bezeichnet.</description>
@@ -128,19 +128,19 @@ Im Allgemeinen werden sie auch als Lichtstrom- oder Spannungsregler bezeichnet.<
     
     <item>
       <title>haftungsausschluss</title>
-      <link>http://localhost:1313/kontakt-und-impressum/haftungsausschluss/</link>
+      <link>https://derkuba.github.io/derKuba/kontakt-und-impressum/haftungsausschluss/</link>
       <pubDate>Wed, 19 Jul 2017 14:52:43 +0200</pubDate>
       
-      <guid>http://localhost:1313/kontakt-und-impressum/haftungsausschluss/</guid>
+      <guid>https://derkuba.github.io/derKuba/kontakt-und-impressum/haftungsausschluss/</guid>
       <description>Inhalt des Onlineangebotes Der Autor übernimmt keinerlei Gewähr für die Aktualität, Korrektheit, Vollständigkeit oder Qualität der bereitgestellten Informationen. Haftungsansprüche gegen den Autor, welche sich auf Schäden materieller oder ideeller Art beziehen, die durch die Nutzung oder Nichtnutzung der dargebotenen Informationen bzw. durch die Nutzung fehlerhafter und unvollständiger Informationen verursacht wurden, sind grundsätzlich ausgeschlossen, sofern seitens des Autors kein nachweislich vorsätzliches oder grob fahrlässiges Verschulden vorliegt. Alle Angebote sind freibleibend und unverbindlich.</description>
     </item>
     
     <item>
       <title>corporate governance</title>
-      <link>http://localhost:1313/kontakt-und-impressum/corporate-governance/</link>
+      <link>https://derkuba.github.io/derKuba/kontakt-und-impressum/corporate-governance/</link>
       <pubDate>Wed, 19 Jul 2017 14:52:36 +0200</pubDate>
       
-      <guid>http://localhost:1313/kontakt-und-impressum/corporate-governance/</guid>
+      <guid>https://derkuba.github.io/derKuba/kontakt-und-impressum/corporate-governance/</guid>
       <description>Corporate Governance Vielerorts ist die Rede von Werten, die es zu definieren und zu befolgen gilt. Wir haben vor Jahren bedeutende Werte und Grundsätze unserer Unternehmensphilosophie, auch Corporate Governance, bereits festgelegt:
 Leidenschaft Streben nach vorzüglicher Leistung Intelligenz Integrität Respekt Spontane Kreativität
 Leidenschaft Unser Unternehmen und unsere Mitarbeiter stehen leidenschaftlich hinter unserem Angebot und stecken viel Energie und Enthusiasmus in die Entwicklung leistungsfähiger Produktgruppen. In unser Sortiment werden nur Produkte aufgenommen oder in unserem Auftrag produziert, die unseren Standards exakt entsprechen.</description>
@@ -148,10 +148,10 @@ Leidenschaft Unser Unternehmen und unsere Mitarbeiter stehen leidenschaftlich hi
     
     <item>
       <title>impressum</title>
-      <link>http://localhost:1313/kontakt-und-impressum/impressum/</link>
+      <link>https://derkuba.github.io/derKuba/kontakt-und-impressum/impressum/</link>
       <pubDate>Wed, 19 Jul 2017 14:52:28 +0200</pubDate>
       
-      <guid>http://localhost:1313/kontakt-und-impressum/impressum/</guid>
+      <guid>https://derkuba.github.io/derKuba/kontakt-und-impressum/impressum/</guid>
       <description>Stila Energy Deutschland GmbH &amp;amp; Co. KG Venloer Strasse 82 50259 Pulheim
 Telefon: + 49 2234 9172540
 Telefax: + 49 2234 9172542
@@ -165,10 +165,10 @@ Geschäftsführer: Dipl.</description>
     
     <item>
       <title>presse und vortraege</title>
-      <link>http://localhost:1313/referenzen-und-presse/presse-und-vortraege/</link>
+      <link>https://derkuba.github.io/derKuba/referenzen-und-presse/presse-und-vortraege/</link>
       <pubDate>Wed, 19 Jul 2017 14:51:47 +0200</pubDate>
       
-      <guid>http://localhost:1313/referenzen-und-presse/presse-und-vortraege/</guid>
+      <guid>https://derkuba.github.io/derKuba/referenzen-und-presse/presse-und-vortraege/</guid>
       <description>PUBLIC RELATION, PRESSE UND VORTRÄGE VIK 20. Fachtagung Technik: Es werde Licht 
 Elektro-Profi: Karten neu gemischt 
 energy2.0: Energieeffiziente Beleuchtung wird Pflicht 
@@ -183,28 +183,28 @@ ElektroPraktiker: Viel Licht aus wenig Energie</description>
     
     <item>
       <title>einsparbeispiele</title>
-      <link>http://localhost:1313/referenzen-und-presse/einsparbeispiele/</link>
+      <link>https://derkuba.github.io/derKuba/referenzen-und-presse/einsparbeispiele/</link>
       <pubDate>Wed, 19 Jul 2017 14:51:37 +0200</pubDate>
       
-      <guid>http://localhost:1313/referenzen-und-presse/einsparbeispiele/</guid>
+      <guid>https://derkuba.github.io/derKuba/referenzen-und-presse/einsparbeispiele/</guid>
       <description> ANWENDUNGEN, REFERENZEN UND AMORTISATIONSBEISPIELE </description>
     </item>
     
     <item>
       <title>referenzen</title>
-      <link>http://localhost:1313/referenzen-und-presse/referenzen/</link>
+      <link>https://derkuba.github.io/derKuba/referenzen-und-presse/referenzen/</link>
       <pubDate>Wed, 19 Jul 2017 14:50:59 +0200</pubDate>
       
-      <guid>http://localhost:1313/referenzen-und-presse/referenzen/</guid>
+      <guid>https://derkuba.github.io/derKuba/referenzen-und-presse/referenzen/</guid>
       <description> AUSZUG DER REFERENZEN VON STILA ENERGY® </description>
     </item>
     
     <item>
       <title>strassen tunnel</title>
-      <link>http://localhost:1313/anwendungen/strassen-tunnel/</link>
+      <link>https://derkuba.github.io/derKuba/anwendungen/strassen-tunnel/</link>
       <pubDate>Wed, 19 Jul 2017 14:50:49 +0200</pubDate>
       
-      <guid>http://localhost:1313/anwendungen/strassen-tunnel/</guid>
+      <guid>https://derkuba.github.io/derKuba/anwendungen/strassen-tunnel/</guid>
       <description>STRASSEN UND TUNNEL STRASSENBELEUCHTUNG Die Straßenbeleuchtung ist der Bereich, wo Geräte zur Spannungsabsenkung zuerst eingesetzt wurden und die meiste Erfahrung über Jahrzehnte besteht.
 Geräte von STILA ENERGY® betreiben tausende Beleuchtungsanlagen in Deutschland, Italien, Europa und der ganzen Welt in Straßen, auf Plätzen, Bahnhöfen, Flughäfen, Parkhäusern in Städten und Gemeinden und Industrieanlagen.
 Kommunale Verwaltungen und Betreibergesellschaften sind heute gezwungen zu sparen, ohne den Service einschränken zu können. Energieeinsparung ist hierbei eine unverzichtbare Hilfe.</description>
@@ -212,10 +212,10 @@ Kommunale Verwaltungen und Betreibergesellschaften sind heute gezwungen zu spare
     
     <item>
       <title>industrie logistik</title>
-      <link>http://localhost:1313/anwendungen/industrie-logistik/</link>
+      <link>https://derkuba.github.io/derKuba/anwendungen/industrie-logistik/</link>
       <pubDate>Wed, 19 Jul 2017 14:50:40 +0200</pubDate>
       
-      <guid>http://localhost:1313/anwendungen/industrie-logistik/</guid>
+      <guid>https://derkuba.github.io/derKuba/anwendungen/industrie-logistik/</guid>
       <description>INDUSTRIE UND LOGISTIK Der Energieverbrauch für die Beleuchtungsanlagen ist nur ein Teil der für die Fertigung notwendigen Energie. Dennoch sind auch in dem Bereich der Industrieanlagen erhebliche Einsparungen bei der Beleuchtung möglich.
 Werks-, Produktionshallen und Logistikbetriebe sind ganzjährig bis zu vier Schichten in Betrieb. Häufig werden die Beleuchtungsanlagen betrieben, ohne dass Personal anwesend wäre oder das natürliche Licht alleine ausreichen würde.
 In industriellen Anlagen z.B. der Automobil-, Textil-, Eisen- und Stahl-Industrie u.</description>
@@ -223,10 +223,10 @@ In industriellen Anlagen z.B. der Automobil-, Textil-, Eisen- und Stahl-Industri
     
     <item>
       <title>parkhaeuser einkaufszentren</title>
-      <link>http://localhost:1313/anwendungen/parkhaeuser-einkaufszentren/</link>
+      <link>https://derkuba.github.io/derKuba/anwendungen/parkhaeuser-einkaufszentren/</link>
       <pubDate>Wed, 19 Jul 2017 14:50:17 +0200</pubDate>
       
-      <guid>http://localhost:1313/anwendungen/parkhaeuser-einkaufszentren/</guid>
+      <guid>https://derkuba.github.io/derKuba/anwendungen/parkhaeuser-einkaufszentren/</guid>
       <description>PARKHÄUSER UND EINKAUFSZENTREN Energieeinsparung ist ein Synonym für geringeren Verbrauch. Die Philosophie von STILA ENERGY® lautet seit jeher: „Bereits bestehende Beleuchtungssysteme so verändern, dass weniger Energie verbraucht wird“.
 Parkhäuser und Tiefgaragen Aufgrund der zunehmenden Öffnungszeiten der Parkhäuser werden mittlerweile Betriebszeiten für die Beleuchtung „rund um die Uhr“ gefordert.
 Dies setzt die Betreiber von Parkhäusern und Tiefgaragen stark unter Druck, da auf der anderen Seite Parkhausverordnungen und ADAC entsprechende Lichtwerte verlangen, die Belegung sich teilweise aber nur auf einen größeren Zeitkorridor verlagert.</description>
@@ -234,10 +234,10 @@ Dies setzt die Betreiber von Parkhäusern und Tiefgaragen stark unter Druck, da 
     
     <item>
       <title>begriffe</title>
-      <link>http://localhost:1313/produkte-und-technik/begriffe/</link>
+      <link>https://derkuba.github.io/derKuba/produkte-und-technik/begriffe/</link>
       <pubDate>Wed, 19 Jul 2017 14:50:05 +0200</pubDate>
       
-      <guid>http://localhost:1313/produkte-und-technik/begriffe/</guid>
+      <guid>https://derkuba.github.io/derKuba/produkte-und-technik/begriffe/</guid>
       <description>Lichttechnische Grundbegriffe Begriffe aus der Beleuchtungstechnik Lichtstrom, angegeben in Lumen [lm]: ist die gesamte messbare Lichtmenge der Lichtquelle in alle Richtungen abgegebene Strahlungsleistung, die vom menschlichen Auge wahrgenommen wird
 Lichtstärke angegeben in Candela [cd]: ist das Maß für Intensität des in eine bestimmte definierte Richtung abgestrahlten Lichts
 Leuchtdichte angegeben in Candela/m² [cd/m²]: ist das Maß für den Helligkeitseindruck einer leuchtenden oder einer beleuchteten Fläche, den eine Leuchtquelle dem Auge vermittelt</description>
@@ -245,28 +245,28 @@ Leuchtdichte angegeben in Candela/m² [cd/m²]: ist das Maß für den Helligkeit
     
     <item>
       <title>katalog</title>
-      <link>http://localhost:1313/produkte-und-technik/katalog/</link>
+      <link>https://derkuba.github.io/derKuba/produkte-und-technik/katalog/</link>
       <pubDate>Wed, 19 Jul 2017 14:49:57 +0200</pubDate>
       
-      <guid>http://localhost:1313/produkte-und-technik/katalog/</guid>
+      <guid>https://derkuba.github.io/derKuba/produkte-und-technik/katalog/</guid>
       <description></description>
     </item>
     
     <item>
       <title>datenblatt</title>
-      <link>http://localhost:1313/produkte-und-technik/datenblatt/</link>
+      <link>https://derkuba.github.io/derKuba/produkte-und-technik/datenblatt/</link>
       <pubDate>Wed, 19 Jul 2017 14:49:44 +0200</pubDate>
       
-      <guid>http://localhost:1313/produkte-und-technik/datenblatt/</guid>
+      <guid>https://derkuba.github.io/derKuba/produkte-und-technik/datenblatt/</guid>
       <description></description>
     </item>
     
     <item>
       <title>energieeffizienz</title>
-      <link>http://localhost:1313/produkte-und-technik/energieeffizienz/</link>
+      <link>https://derkuba.github.io/derKuba/produkte-und-technik/energieeffizienz/</link>
       <pubDate>Wed, 19 Jul 2017 14:49:32 +0200</pubDate>
       
-      <guid>http://localhost:1313/produkte-und-technik/energieeffizienz/</guid>
+      <guid>https://derkuba.github.io/derKuba/produkte-und-technik/energieeffizienz/</guid>
       <description>ENERGIE-EFFIZIENZ in der Beleuchtungstechnik Bei Investitionen, gerade im Neubaubereich macht der Anteil der Beleuchtung vielleicht nur 10-20% der Gesamtsumme aus, bei den Betriebskosten sind es häufig weit über 50%!
 Ein Lampensystem besteht aus Komponenten, wie Leuchtmittel, Vorschaltgerät und falls erforderlich einem Starter und einem Zündgerät. STILA-ENERGY® empfiehlt den Einsatz von elektronischen, anstatt Glimmstartern, mit einer 10-Jahresgarantie von der Firma M+R www.oekostart.de.
 Die Richtlinie 2000/55/EG gab bisher Grenzen für die Systemleistung (Energie- oder Leistungsaufnahme Lampe mit Vorschaltgerät) und eine Einteilung der Vorschaltgeräte in EnergieEffizientklassenIndex (EEI) vor, was unten am Beispiel einer Leuchtstofflampe mit 58W dargestellt wird.</description>
@@ -274,10 +274,10 @@ Die Richtlinie 2000/55/EG gab bisher Grenzen für die Systemleistung (Energie- o
     
     <item>
       <title>technik</title>
-      <link>http://localhost:1313/produkte-und-technik/technik/</link>
+      <link>https://derkuba.github.io/derKuba/produkte-und-technik/technik/</link>
       <pubDate>Wed, 19 Jul 2017 14:49:17 +0200</pubDate>
       
-      <guid>http://localhost:1313/produkte-und-technik/technik/</guid>
+      <guid>https://derkuba.github.io/derKuba/produkte-und-technik/technik/</guid>
       <description>STILA ENERGY®-MACH2000 high technology STILA ENERGY®-MACH2000 ist das schnellste auf dem Markt erhältliche elektronisch gesteuerte elektromechanische System zur Spannungsregelung und Spannungsstabilisierung; zudem ist es wartungsfrei.
 Innovative und eigens für STILA ENERGY® entwickelte elektronische Stromkreise sind in der Lage, das einwandfreie Umschalten der Relais in nur 0,001 Sekunden (1ms.) zu überprüfen und Spannungsanpassungen binnen 15-30ms. vorzunehmen; hierdurch werden neue Bezugsstandards bei der Geschwindigkeit von Spannungsregulierung und Spannungsstabilisierung aufgestellt.
 Viele Energiesparkonzepte rechnen mit Einsparpotentialen von 20% bis 50% nach erfolgter Umrüstung vorhandener Beleuchtungsanlagen.</description>
@@ -285,10 +285,10 @@ Viele Energiesparkonzepte rechnen mit Einsparpotentialen von 20% bis 50% nach er
     
     <item>
       <title>klimaschutz</title>
-      <link>http://localhost:1313/rund-ums-energiesparen/klimaschutz/</link>
+      <link>https://derkuba.github.io/derKuba/rund-ums-energiesparen/klimaschutz/</link>
       <pubDate>Tue, 18 Jul 2017 16:06:16 +0200</pubDate>
       
-      <guid>http://localhost:1313/rund-ums-energiesparen/klimaschutz/</guid>
+      <guid>https://derkuba.github.io/derKuba/rund-ums-energiesparen/klimaschutz/</guid>
       <description>REDUKTION DER CO2 UND SO2 EMISSIONEN DAS GEHT UNS ALLE AN! Seit dem 19. Jahrhundert werden der Atmosphäre mehr Treibhausgase, wie Kohlendioxid (CO2) und Methangas zugeführt, als die biologischen Prozesse wieder entnehmen können.
 Dadurch entsteht der künstliche „Treibhauseffekt“, eine Erwärmung der Erdatmosphäre durch die Sonneneinstrahlung, verbunden mit einer Erhöhung der globalen Durchschnittstemperatur.
 Die Folge sind die Verschiebung der Vegetationszonen, Abschmelzen der Gletscher, Verschiebung der Regenfälle, Auftauen des Permafrost, Ansteigen des Meeresspiegels und die Zunahme von Stürmen und deren Intensität.</description>
@@ -296,20 +296,20 @@ Die Folge sind die Verschiebung der Vegetationszonen, Abschmelzen der Gletscher,
     
     <item>
       <title>verbauch und wartung</title>
-      <link>http://localhost:1313/rund-ums-energiesparen/sparen-mit-beleuchtung/</link>
+      <link>https://derkuba.github.io/derKuba/rund-ums-energiesparen/sparen-mit-beleuchtung/</link>
       <pubDate>Tue, 18 Jul 2017 16:05:57 +0200</pubDate>
       
-      <guid>http://localhost:1313/rund-ums-energiesparen/sparen-mit-beleuchtung/</guid>
+      <guid>https://derkuba.github.io/derKuba/rund-ums-energiesparen/sparen-mit-beleuchtung/</guid>
       <description>SPAREN MIT BELEUCHTUNG WIR BRINGEN LICHT IN DAS THEMA EINSPARUNGEN STILA ENERGY®-MACH2000 Systeme können mit allen Entladungslampen eingesetzt werden. Für jeden Lampentyp werden entsprechend der Netzspannung und den unterschiedlichen Mindestspannungswerten der Lampe verschieden hohe Einsparungen erzielt.
 In der folgenden Tabelle sind die Mindestspannungswerte entsprechend der Lampentypen, die daraus resultierenden möglichen Einsparwerte und die Verlängerung der mittleren Lebensdauer der Leuchtmittel, im Vergleich zu den von den Leuchtmittel-Herstellern genannten Werten der mittleren Lebensdauer, aufgeführt.</description>
     </item>
     
     <item>
       <title>verbauch und wartung</title>
-      <link>http://localhost:1313/rund-ums-energiesparen/verbauch-und-wartung/</link>
+      <link>https://derkuba.github.io/derKuba/rund-ums-energiesparen/verbauch-und-wartung/</link>
       <pubDate>Tue, 18 Jul 2017 16:05:57 +0200</pubDate>
       
-      <guid>http://localhost:1313/rund-ums-energiesparen/verbauch-und-wartung/</guid>
+      <guid>https://derkuba.github.io/derKuba/rund-ums-energiesparen/verbauch-und-wartung/</guid>
       <description>EINSPARUNGEN BEIM ENERGIEVERBRAUCH UND BEI DER WARTUNG KOSTENGÜNSTIG ABER SEHR EFFIZIENT! STILA ENERGY®-Einergieeinsparsysteme der Serie MACH2000 sind Steuergeräte zur Stabilisierung, Regulierung und Reduktion der Betriebsspannung von Beleuchtungsanlagen mit Gasentladungslampen und Leuchtstofflampen aller Art.
 Durch die Stabilisierung und Regulierung der Versorgungsspannung der Beleuchtung wird die Leistungsaufnahme und damit der entsprechende Energieverbrauch reduziert und Energieeinsparungen von 25% bis über 50% erreicht.
 Neben erheblichen Verringerungen des Energieverbrauchs beeinflusst die Regulierung der Versorgungsspannung der Lampen auch deren Lebensdauer positiv, da die Spannungsversorgung gleichmäßiger erfolgt und Spannungsschwankungen ausgeglichen werden.</description>
@@ -317,10 +317,10 @@ Neben erheblichen Verringerungen des Energieverbrauchs beeinflusst die Regulieru
     
     <item>
       <title>links</title>
-      <link>http://localhost:1313/links/</link>
+      <link>https://derkuba.github.io/derKuba/links/</link>
       <pubDate>Tue, 18 Jul 2017 16:05:11 +0200</pubDate>
       
-      <guid>http://localhost:1313/links/</guid>
+      <guid>https://derkuba.github.io/derKuba/links/</guid>
       <description>HIER FINDEN SIE EINIGE EMPFEHLUNGEN www.leonardo-web.org  Beleuchtungstechnik ist ein Schwerpunkt des Bereichs Elektrotechnik beim
 Deutschen Kupferinstitut
 www.oekostart.de Die Marktführer bei den elektronischen Startern mit einer 10-Jahresgarantie
@@ -333,10 +333,10 @@ www.enocean.com Green, Smart, Wireless - batterielose Funkschalter und Sensoren<
     
     <item>
       <title>home</title>
-      <link>http://localhost:1313/home/</link>
+      <link>https://derkuba.github.io/derKuba/home/</link>
       <pubDate>Tue, 18 Jul 2017 16:04:05 +0200</pubDate>
       
-      <guid>http://localhost:1313/home/</guid>
+      <guid>https://derkuba.github.io/derKuba/home/</guid>
       <description>INFORMATIONEN RUND UMS ENERGIESPAREN Den Energieverbrauch reduzieren, dabei gleichzeitig die Haltbarkeit der Leuchtmittel erhöhen und die Betriebs- und Instandhaltungskosten minimieren. Informationen zum Thema.
   PRODUKTE UND TECHNIK Fortschrittliche, ausgereifte und zuverlässige Technik. MACH2000 und MACHROAD sind Steuergeräte zur Stabilisierung, Regulierung und Absenkung der Spannung. Details zu den Produkten.  
 ANWENDUNGEN Ob in der Straßenbeleuchtung, in Einkaufszentren, in Industrieanlagen oder sogar bei der Tunnelbeleuchtung: Über 1000 Anwendungen und unterschiedliche Anforderungen, aber nur ein Produkt.</description>

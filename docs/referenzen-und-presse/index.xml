@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Referenzen-und-presses on My New Hugo Site</title>
-    <link>http://localhost:1313/referenzen-und-presse/</link>
+    <link>https://derkuba.github.io/derKuba/referenzen-und-presse/</link>
     <description>Recent content in Referenzen-und-presses on My New Hugo Site</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>de-de</language>
     <lastBuildDate>Wed, 19 Jul 2017 14:51:47 +0200</lastBuildDate>
     
-	<atom:link href="http://localhost:1313/referenzen-und-presse/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://derkuba.github.io/derKuba/referenzen-und-presse/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>presse und vortraege</title>
-      <link>http://localhost:1313/referenzen-und-presse/presse-und-vortraege/</link>
+      <link>https://derkuba.github.io/derKuba/referenzen-und-presse/presse-und-vortraege/</link>
       <pubDate>Wed, 19 Jul 2017 14:51:47 +0200</pubDate>
       
-      <guid>http://localhost:1313/referenzen-und-presse/presse-und-vortraege/</guid>
+      <guid>https://derkuba.github.io/derKuba/referenzen-und-presse/presse-und-vortraege/</guid>
       <description>PUBLIC RELATION, PRESSE UND VORTRÄGE VIK 20. Fachtagung Technik: Es werde Licht 
 Elektro-Profi: Karten neu gemischt 
 energy2.0: Energieeffiziente Beleuchtung wird Pflicht 
@@ -31,19 +31,19 @@ ElektroPraktiker: Viel Licht aus wenig Energie</description>
     
     <item>
       <title>einsparbeispiele</title>
-      <link>http://localhost:1313/referenzen-und-presse/einsparbeispiele/</link>
+      <link>https://derkuba.github.io/derKuba/referenzen-und-presse/einsparbeispiele/</link>
       <pubDate>Wed, 19 Jul 2017 14:51:37 +0200</pubDate>
       
-      <guid>http://localhost:1313/referenzen-und-presse/einsparbeispiele/</guid>
+      <guid>https://derkuba.github.io/derKuba/referenzen-und-presse/einsparbeispiele/</guid>
       <description> ANWENDUNGEN, REFERENZEN UND AMORTISATIONSBEISPIELE </description>
     </item>
     
     <item>
       <title>referenzen</title>
-      <link>http://localhost:1313/referenzen-und-presse/referenzen/</link>
+      <link>https://derkuba.github.io/derKuba/referenzen-und-presse/referenzen/</link>
       <pubDate>Wed, 19 Jul 2017 14:50:59 +0200</pubDate>
       
-      <guid>http://localhost:1313/referenzen-und-presse/referenzen/</guid>
+      <guid>https://derkuba.github.io/derKuba/referenzen-und-presse/referenzen/</guid>
       <description> AUSZUG DER REFERENZEN VON STILA ENERGY® </description>
     </item>
     
