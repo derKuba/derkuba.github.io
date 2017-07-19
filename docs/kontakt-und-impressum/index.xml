@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Kontakt-und-impressums on My New Hugo Site</title>
+    <link>http://localhost:1313/kontakt-und-impressum/</link>
+    <description>Recent content in Kontakt-und-impressums on My New Hugo Site</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>de-de</language>
+    <lastBuildDate>Wed, 19 Jul 2017 14:52:43 +0200</lastBuildDate>
+    
+	<atom:link href="http://localhost:1313/kontakt-und-impressum/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>haftungsausschluss</title>
+      <link>http://localhost:1313/kontakt-und-impressum/haftungsausschluss/</link>
+      <pubDate>Wed, 19 Jul 2017 14:52:43 +0200</pubDate>
+      
+      <guid>http://localhost:1313/kontakt-und-impressum/haftungsausschluss/</guid>
+      <description>Inhalt des Onlineangebotes Der Autor übernimmt keinerlei Gewähr für die Aktualität, Korrektheit, Vollständigkeit oder Qualität der bereitgestellten Informationen. Haftungsansprüche gegen den Autor, welche sich auf Schäden materieller oder ideeller Art beziehen, die durch die Nutzung oder Nichtnutzung der dargebotenen Informationen bzw. durch die Nutzung fehlerhafter und unvollständiger Informationen verursacht wurden, sind grundsätzlich ausgeschlossen, sofern seitens des Autors kein nachweislich vorsätzliches oder grob fahrlässiges Verschulden vorliegt. Alle Angebote sind freibleibend und unverbindlich.</description>
+    </item>
+    
+    <item>
+      <title>corporate governance</title>
+      <link>http://localhost:1313/kontakt-und-impressum/corporate-governance/</link>
+      <pubDate>Wed, 19 Jul 2017 14:52:36 +0200</pubDate>
+      
+      <guid>http://localhost:1313/kontakt-und-impressum/corporate-governance/</guid>
+      <description>Corporate Governance Vielerorts ist die Rede von Werten, die es zu definieren und zu befolgen gilt. Wir haben vor Jahren bedeutende Werte und Grundsätze unserer Unternehmensphilosophie, auch Corporate Governance, bereits festgelegt:
+Leidenschaft Streben nach vorzüglicher Leistung Intelligenz Integrität Respekt Spontane Kreativität
+Leidenschaft Unser Unternehmen und unsere Mitarbeiter stehen leidenschaftlich hinter unserem Angebot und stecken viel Energie und Enthusiasmus in die Entwicklung leistungsfähiger Produktgruppen. In unser Sortiment werden nur Produkte aufgenommen oder in unserem Auftrag produziert, die unseren Standards exakt entsprechen.</description>
+    </item>
+    
+    <item>
+      <title>impressum</title>
+      <link>http://localhost:1313/kontakt-und-impressum/impressum/</link>
+      <pubDate>Wed, 19 Jul 2017 14:52:28 +0200</pubDate>
+      
+      <guid>http://localhost:1313/kontakt-und-impressum/impressum/</guid>
+      <description>Stila Energy Deutschland GmbH &amp;amp; Co. KG Venloer Strasse 82 50259 Pulheim
+Telefon: + 49 2234 9172540
+Telefax: + 49 2234 9172542
+Email: info@stilaenergy.de
+Übermittelte Nachrichten, Anlagen sind nur für adressierte Personen bestimmt und dürfen nicht kopiert oder an Dritte weitergeben werden
+Internet: http://www.stilaenergy.de Inhalte dürfen nicht kopiert oder an Dritte weitergeben werden
+Amtsgericht Wuppertal HRA19251; pers. haftender Gesellschafter: Stila Energy Verwaltungs GmbH,
+Sitz Haan, Amtsgericht Wuppertal HRB14443;
+Geschäftsführer: Dipl.</description>
+    </item>
+    
+  </channel>
+</rss>

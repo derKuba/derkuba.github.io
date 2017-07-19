@@ -4,11 +4,20 @@ body{
 }
 
 h1{
-  font-size: 1.8rem;
-  color: #0275d8;
-}
-h3{
   font-size: 1.5rem;
+  text-align: left;
+  color: #0275d8;
+  margin-bottom: 15px;
+}
+
+h2{
+  font-size: 1.3rem;
+  text-align: left;
+  margin-bottom: 25px;
+}
+
+h3{
+  font-size: 1.2rem;
 }
 
 h5{
@@ -32,6 +41,24 @@ h5{
   margin-bottom: 25px;
 }
 
+.w100{
+  width: 100%;
+}
+
+
+
+.floatRightImage{
+  float:right;
+  margin: 0 0 20px 20px;
+  max-width: 250px;
+}
+
+.leftImage {
+  float:left;
+  margin: 0 20px 20px 0;
+  max-width: 250px;
+}
+
 .sideMenu{
   margin-bottom: 20px;
 }
@@ -49,12 +76,16 @@ h5{
   font-size: .9rem;
 }
 
+.topMenuLink{
+  color: black;
+}
+
 .card-block.subMenuList{
   padding: 0 0 0 0;
 }
 
-.card-block.subMenuList ul{
-
+.card-block.subMenuList a{
+  text-align: left;
 }
 
 .card.menu{
@@ -98,7 +129,9 @@ h5{
   margin-right: 0;
 }
 
-
+.active {
+  font-weight: bold;
+}
 
 
 .navbar{
