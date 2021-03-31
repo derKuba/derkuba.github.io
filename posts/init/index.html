@@ -1,0 +1,136 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog aufsetzen</title>
+    <meta name="description" content="Wie ist dieser Blog entstanden">
+    <link rel="stylesheet" href="/css/bulma.min.css">
+    
+    <link rel="stylesheet" href="/css/custom.css">
+    <link rel="stylesheet" href="/css/prism-base16-monokai.dark.css">
+    <link rel="alternate" href="/feed/feed.xml" type="application/atom+xml" title="der_kuba">
+    <link rel="alternate" href="/feed/feed.json" type="application/json" title="der_kuba">
+  </head>
+  <body>
+   
+    
+ <header>
+<div class="container">
+    <nav class="navbar is-transparent">
+        <div class="navbar-brand">
+        <a class="navbar-item" href="/">
+            der_kuba
+        </a>
+        <a class="navbar-item" href="https://bulma.io">
+            twitter
+        </a>
+        <a class="navbar-item" href="https://bulma.io">
+            youtube
+        </a>
+        <a class="navbar-item" href="https://bulma.io">
+            Github
+        </a>
+        <div class="navbar-burger" data-target="navbarExampleTransparentExample">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+        </div>
+
+        <div id="navbarExampleTransparentExample" class="navbar-menu">
+        <div class="navbar-end">
+                <a class="navbar-item " href="/">
+                Home
+                </a>
+                <a class="navbar-item " href="/posts/">
+                Archive
+                </a>
+                <a class="navbar-item " href="/content/about/">
+                About Me
+                </a>
+        </div>
+
+        </div>
+    </nav>
+  </div>
+</header>
+
+
+    
+<section class="section">
+  <div class="container">
+    <div class="columns is-centered">
+      <div class="column is-8">
+
+        <h1 class="title is-2">Blog aufsetzen</h1>
+          <div class="post-detail__tags">
+           <h3 class="subtitle is-5"><time datetime="2021-03-30">30 Mar 2021</time></h3>
+            <div class="tags"><a href="/tags/11nty/" class="post-tag"> 
+                <span class="tag is-black">11nty</span>
+              </a><a href="/tags/tutorial/" class="post-tag"> 
+                <span class="tag is-light">Tutorial</span>
+              </a>
+            </div>
+        </div>
+
+        <div class="post_detail__content">
+          <p>Hier skizziere ich wie ich diesen Blog aufgesetzt habe: <!-- excerpt --></p>
+<p>Template erstellen:</p>
+<ul>
+<li>
+<p>bulma &amp; html skelett</p>
+</li>
+<li>
+<p>11nty Starter runterladen:<br>
+<a href="https://github.com/11ty/eleventy-base-blog">https://github.com/11ty/eleventy-base-blog</a></p>
+</li>
+<li>
+<p>template überführen:</p>
+<ul>
+<li>navigatione excludieren in eigene datei</li>
+</ul>
+</li>
+<li>
+<p>postlist anpassen:</p>
+<ul>
+<li>dabei aber den ersten Satz eines jeden Posts anzeigen (auslagern in eigenen post)
+<ol>
+<li>versuch mit <a href="https://www.11ty.dev/docs/data-frontmatter-customize/">https://www.11ty.dev/docs/data-frontmatter-customize/</a> aber klappt nicht.</li>
+<li>aus referenz unten chirpy exlcude rausgeholt und angepasst</li>
+</ol>
+</li>
+</ul>
+</li>
+<li>
+<p>sidebar aufsetzen</p>
+</li>
+<li>
+<p>blogpost item stylen</p>
+</li>
+</ul>
+<p>referenz:<br>
+-<a href="https://github.com/muenzpraeger/eleventy-chirpy-blog-template/blob/main/.eleventy.js">https://github.com/muenzpraeger/eleventy-chirpy-blog-template/blob/main/.eleventy.js</a> /<br>
+<a href="https://eleventy-chirpy-blog-template.netlify.app/">https://eleventy-chirpy-blog-template.netlify.app/</a></p>
+
+          <hr>
+          <ul><li>Previous: <a href="/posts/fourthpost/">This is my fourth post.</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+   
+    <footer class="footer">
+    <div class="content has-text-centered">
+      <p>
+        der_kuba <br />
+        2021
+      </p>
+    </div>
+  </footer>
+
+    <!-- Current page: /posts/init/ -->
+  </body>
+</html>

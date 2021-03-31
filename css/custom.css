@@ -1,0 +1,39 @@
+.footer {
+  background-color: transparent;
+}
+
+.navbar {
+  margin-bottom: 50px;
+}
+
+.post-list__item {
+  list-style: none;
+  margin-bottom: 40px;
+
+}
+
+.title a {
+  color:black;
+}
+
+.tag a {
+  color: white;
+}
+
+.tag.is-white a {
+  color: black;
+}
+
+.tag-cloud a{
+  display: inline-block;
+  margin: 0 5px 10px 5px;
+}
+
+.post-detail__tags {
+  display: flex;
+  justify-content: space-between;
+}
+
+.post_detail__content{
+  margin-top: 50px;
+}
