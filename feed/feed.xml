@@ -6,7 +6,7 @@
 	<link href="https://derkuba.de/feed/feed.xml" rel="self"/>
 	<link href="https://derkuba.de/"/>
 	<updated>2021-04-05T00:00:00Z</updated>
-	<id>https://example.com/</id>
+	<id>https://derkuba.de/</id>
 	<author>
 		<name>Jacob Pawlik</name>
 		<email>jacob.pawlik@web.de</email>
@@ -61,7 +61,7 @@ Die Codebeispiele findet ihr auf &lt;a href=&quot;https://github.com/derKuba/ele
 	</entry>
 	
 	<entry>
-		<title>11nty Blog mit eigenem Html-Template Teil 1</title>
+		<title>11nty Blog mit eigenem Html-Template</title>
 		<link href="https://derkuba.de/content/posts/0421/11nty-tutorial-part-one/"/>
 		<updated>2021-03-30T00:00:00Z</updated>
 		<id>https://derkuba.de/content/posts/0421/11nty-tutorial-part-one/</id>
