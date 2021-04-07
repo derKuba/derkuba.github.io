@@ -62,9 +62,9 @@ Die Codebeispiele findet ihr auf &lt;a href=&quot;https://github.com/derKuba/ele
 	
 	<entry>
 		<title>11nty Blog mit eigenem Html-Template</title>
-		<link href="https://derkuba.de/content/posts/0421/11nty-tutorial-part-one/"/>
+		<link href="https://derkuba.de/content/posts/0421/11nty-tutorial/"/>
 		<updated>2021-03-30T00:00:00Z</updated>
-		<id>https://derkuba.de/content/posts/0421/11nty-tutorial-part-one/</id>
+		<id>https://derkuba.de/content/posts/0421/11nty-tutorial/</id>
 		<content type="html">&lt;p&gt;Seit langer Zeit sitzt in meinem Kopf der Gedanke einen Blog aufzusetzen. Die Umsetzung möchte ich direkt als ersten Post nutzen. &lt;!-- endOfPreview --&gt; Als Anforderung habe ich folgende Punkte:&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;keine Datenbank&lt;/li&gt;
@@ -111,12 +111,12 @@ Da ich ein großes Herz für JS habe, las sich 11nty sehr gut. Es sollte schnell
 &lt;p&gt;das &lt;strong&gt;HTML-Template&lt;/strong&gt; in das Startertemplate überführen&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ol&gt;
-&lt;h3 id=&quot;los-gehts&quot;&gt;Los gehts &lt;a class=&quot;direct-link&quot; href=&quot;https://derkuba.de/content/posts/0421/11nty-tutorial-part-one/#los-gehts&quot;&gt;#&lt;/a&gt;&lt;/h3&gt;
-&lt;h4 id=&quot;vorbedingung&quot;&gt;Vorbedingung &lt;a class=&quot;direct-link&quot; href=&quot;https://derkuba.de/content/posts/0421/11nty-tutorial-part-one/#vorbedingung&quot;&gt;#&lt;/a&gt;&lt;/h4&gt;
+&lt;h3 id=&quot;los-gehts&quot;&gt;Los gehts &lt;a class=&quot;direct-link&quot; href=&quot;https://derkuba.de/content/posts/0421/11nty-tutorial/#los-gehts&quot;&gt;#&lt;/a&gt;&lt;/h3&gt;
+&lt;h4 id=&quot;vorbedingung&quot;&gt;Vorbedingung &lt;a class=&quot;direct-link&quot; href=&quot;https://derkuba.de/content/posts/0421/11nty-tutorial/#vorbedingung&quot;&gt;#&lt;/a&gt;&lt;/h4&gt;
 &lt;ul&gt;
 &lt;li&gt;Nodejs und NPM sind installiert&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h4 id=&quot;1.-template-anlegen&quot;&gt;1. Template anlegen &lt;a class=&quot;direct-link&quot; href=&quot;https://derkuba.de/content/posts/0421/11nty-tutorial-part-one/#1.-template-anlegen&quot;&gt;#&lt;/a&gt;&lt;/h4&gt;
+&lt;h4 id=&quot;1.-template-anlegen&quot;&gt;1. Template anlegen &lt;a class=&quot;direct-link&quot; href=&quot;https://derkuba.de/content/posts/0421/11nty-tutorial/#1.-template-anlegen&quot;&gt;#&lt;/a&gt;&lt;/h4&gt;
 &lt;p&gt;Ein einfaches und klassisches HTML Layout ist schnell aufgesetzt. Um Zeit zu Sparen habe ich als CSS-Framework &lt;a href=&quot;https://bulma.io/&quot;&gt;Bulma&lt;/a&gt; genommen und das Template in folgende Teile geteilt:&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;a href=&quot;https://bulma.io/documentation/components/navbar/&quot;&gt;Navigation&lt;/a&gt;&lt;/li&gt;
@@ -128,7 +128,7 @@ Da ich ein großes Herz für JS habe, las sich 11nty sehr gut. Es sollte schnell
 &lt;div class=&quot;has-text-right image-subline&quot;&gt;Bild 1: Aufteilung Layout&lt;/div&gt;
 &lt;p&gt;&lt;br /&gt;
 Es eignen sich auch andere Layouts und andere CSS-Frameworks. Ich hatte Lust auf eine Bootstrap-Alternative.&lt;/p&gt;
-&lt;h4 id=&quot;2.-11nty-starter-installieren&quot;&gt;2. 11nty Starter installieren &lt;a class=&quot;direct-link&quot; href=&quot;https://derkuba.de/content/posts/0421/11nty-tutorial-part-one/#2.-11nty-starter-installieren&quot;&gt;#&lt;/a&gt;&lt;/h4&gt;
+&lt;h4 id=&quot;2.-11nty-starter-installieren&quot;&gt;2. 11nty Starter installieren &lt;a class=&quot;direct-link&quot; href=&quot;https://derkuba.de/content/posts/0421/11nty-tutorial/#2.-11nty-starter-installieren&quot;&gt;#&lt;/a&gt;&lt;/h4&gt;
 &lt;p&gt;&lt;a href=&quot;https://github.com/11ty/eleventy-base-blog&quot;&gt;Unter der oben genannten Adresse&lt;/a&gt; findet man das Standard 11nty Starter Paket. Wenn man auf den &amp;quot;Clone&amp;quot;-Button klickt, erhält man die Git-Url.&lt;/p&gt;
 &lt;pre class=&quot;language-bash&quot;&gt;&lt;code class=&quot;language-bash&quot;&gt;&lt;span class=&quot;token comment&quot;&gt;# für ssh&lt;/span&gt;&lt;br /&gt;&lt;span class=&quot;token function&quot;&gt;git&lt;/span&gt; clone git@github.com:11ty/eleventy-base-blog.git mein-neuer-blog&lt;br /&gt;&lt;br /&gt;&lt;span class=&quot;token comment&quot;&gt;# oder https&lt;/span&gt;&lt;br /&gt;&lt;span class=&quot;token function&quot;&gt;git&lt;/span&gt; clone https://github.com/11ty/eleventy-base-blog.git mein-neuer-blog&lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;Nun muss man in den Ordner navigieren und die Abhängigkeiten installieren:&lt;/p&gt;
