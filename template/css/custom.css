@@ -1,0 +1,100 @@
+.footer {
+    background-color: transparent;
+}
+
+.navbar {
+    margin-bottom: 50px;
+}
+
+.post-list__item {
+    list-style: none;
+    margin-bottom: 40px;
+}
+
+.title a {
+    color: black;
+}
+
+.tag a {
+    color: white;
+}
+
+.tag.is-white a {
+    color: black;
+}
+
+.tag-cloud a {
+    display: inline-block;
+    margin: 0 5px 10px 5px;
+}
+
+.post-detail__tags {
+    display: flex;
+    justify-content: space-between;
+}
+
+.post_detail__content {
+    margin-top: 25px;
+}
+
+.post_detail__content img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.clear-image img {
+    margin: 0;
+}
+
+.token.tag,
+.token.content,
+.token.number {
+    display: inline;
+    padding: inherit;
+    font-size: inherit;
+    line-height: inherit;
+    text-align: inherit;
+    vertical-align: inherit;
+    border-radius: inherit;
+    font-weight: inherit;
+    white-space: inherit;
+    background: inherit;
+    margin: inherit;
+}
+
+.nav-item-active {
+    font-weight: bold;
+}
+
+.post_detail__content p {
+    text-align: justify;
+}
+
+.post-list__item {
+    text-align: justify;
+}
+
+a[href].direct-link,
+a[href].direct-link:visited {
+    color: transparent;
+}
+
+.navbar-brand__title {
+    font-size: 1.3rem;
+    font-weight: bold;
+}
+
+.image-subline {
+    color: black;
+    font-size: .8rem;
+    margin-top: -20px;
+}
+
+.tag-list {
+    margin-bottom: 25px;
+}
+
+.tag-list span{
+    margin-right: 5px;
+}

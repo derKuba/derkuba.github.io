@@ -1,0 +1,205 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+	<title>der_kuba</title>
+	<subtitle>I am writing about my experiences</subtitle>
+	
+	<link href="https://derkuba.de/feed/feed.xml" rel="self"/>
+	<link href="https://derkuba.de/"/>
+	<updated>2021-04-05T00:00:00Z</updated>
+	<id>https://example.com/</id>
+	<author>
+		<name>Jacob Pawlik</name>
+		<email>jacob.pawlik@web.de</email>
+	</author>
+	
+	<entry>
+		<title>Bulma und Prism.js erzeugen CSS-Fehler in der Darstellung</title>
+		<link href="https://derkuba.de/content/posts/0421/11nty-bullma-error/"/>
+		<updated>2021-04-05T00:00:00Z</updated>
+		<id>https://derkuba.de/content/posts/0421/11nty-bullma-error/</id>
+		<content type="html">&lt;p&gt;Wer 11nty mit &lt;a href=&quot;https://bulma.io/&quot;&gt;Bulma&lt;/a&gt; als CSS-Framework nutzt und zusätzlich den Code-Highlighter &lt;a href=&quot;https://prismjs.com/&quot;&gt;PrismJS &lt;/a&gt; hinzufügt, bekommt folgenden Darstellungsfehler:&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://derkuba.de/content/img/0421/bulma-css-error.png&quot; alt=&quot;bulma css error&quot; title=&quot;Bulma-Prism-Css-Error&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;Ich habe etwas recherchiert und bin auf folgdenen Artikel gestoßen:&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://www.darraghoriordan.com/2019/01/20/bulma-prismjs-in-gatsby-css-conflicts/&quot;&gt;https://www.darraghoriordan.com/2019/01/20/bulma-prismjs-in-gatsby-css-conflicts/&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Diesen Codeblog aus oben genanten Artikel in mein CSS kopiert und alles wird normalisieren. Alles funktioniert nun wie es soll:&lt;/p&gt;
+&lt;pre class=&quot;language-css&quot;&gt;&lt;code class=&quot;language-css&quot;&gt;&lt;span class=&quot;token selector&quot;&gt;.token.tag,&lt;br /&gt;.token.content,&lt;br /&gt;.token.number&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;&lt;br /&gt;  &lt;span class=&quot;token property&quot;&gt;display&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; inline&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;&lt;br /&gt;  &lt;span class=&quot;token property&quot;&gt;padding&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; inherit&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;&lt;br /&gt;  &lt;span class=&quot;token property&quot;&gt;font-size&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; inherit&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;&lt;br /&gt;  &lt;span class=&quot;token property&quot;&gt;line-height&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; inherit&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;&lt;br /&gt;  &lt;span class=&quot;token property&quot;&gt;text-align&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; inherit&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;&lt;br /&gt;  &lt;span class=&quot;token property&quot;&gt;vertical-align&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; inherit&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;&lt;br /&gt;  &lt;span class=&quot;token property&quot;&gt;border-radius&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; inherit&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;&lt;br /&gt;  &lt;span class=&quot;token property&quot;&gt;font-weight&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; inherit&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;&lt;br /&gt;  &lt;span class=&quot;token property&quot;&gt;white-space&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; inherit&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;&lt;br /&gt;  &lt;span class=&quot;token property&quot;&gt;background&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; inherit&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;&lt;br /&gt;  &lt;span class=&quot;token property&quot;&gt;margin&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; inherit&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;&lt;br /&gt;&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+</content>
+	</entry>
+	
+	<entry>
+		<title>11nty Inhalt anzeigen in der Liste</title>
+		<link href="https://derkuba.de/content/posts/0421/11nty-excerpt/"/>
+		<updated>2021-04-04T00:00:00Z</updated>
+		<id>https://derkuba.de/content/posts/0421/11nty-excerpt/</id>
+		<content type="html">&lt;p&gt;Wer in der Liste aller Posts zusätzlich den Inhalt anzeigen möchte, hat out-of-the-box nur die Möglichkeit den gesamten Inhalt anzuzeigen. Wenn man z.B. nur den ersten Satz eines Posts anzeigen möchte, muss dies dem Javascript von Eleventy noch beibringen. &lt;!-- endOfPreview --&gt;&lt;/p&gt;
+&lt;p&gt;Als Grundlage wird der &lt;a href=&quot;https://github.com/11ty/eleventy-base-blog&quot;&gt;11nty-Starter-Blog&lt;/a&gt; verwendet.&lt;/p&gt;
+&lt;p&gt;Wenn man diesen startet, erhält man folgendes Bild. Es zeigt die Post-Liste mit Titel, Datum und Tags, aber ohne Auszug des Inhalts.&lt;br /&gt;
+&lt;img src=&quot;https://derkuba.de/content/img/0421/excerpt-place.png&quot; alt=&quot;11nty starter&quot; title=&quot;11nty starter&quot; /&gt;&lt;/p&gt;
+&lt;div class=&quot;has-text-right image-subline&quot;&gt;Bild 1: Post-Liste im Starter Template&lt;/div&gt;
+&lt;p&gt;Die rote Schrift zeigt den Ort an, an dem der Inhalt eingefügt werden soll.&lt;br /&gt;
+Für die Umsetzung habe ich mich an folgenden Seiten orientiert:&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://github.com/muenzpraeger/eleventy-chirpy-blog-template&quot;&gt;https://github.com/muenzpraeger/eleventy-chirpy-blog-template&lt;/a&gt; und&lt;br /&gt;
+&lt;a href=&quot;https://keepinguptodate.com/pages/2019/06/creating-blog-with-eleventy/&quot;&gt;https://keepinguptodate.com/pages/2019/06/creating-blog-with-eleventy/&lt;/a&gt; .&lt;/p&gt;
+&lt;p&gt;Die Datei &lt;strong&gt;.eleventy.js&lt;/strong&gt; benötigt folgende Funktion:&lt;/p&gt;
+&lt;pre class=&quot;language-javascript&quot;&gt;&lt;code class=&quot;language-javascript&quot;&gt;&lt;span class=&quot;token keyword&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;token function-variable function&quot;&gt;extractExcerpt&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token parameter&quot;&gt;post&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;=&gt;&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;&lt;br /&gt;  &lt;span class=&quot;token keyword&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;!&lt;/span&gt;&lt;span class=&quot;token class-name&quot;&gt;Object&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;prototype&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;hasOwnProperty&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;call&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;post&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;templateContent&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;&lt;br /&gt;      &lt;span class=&quot;token keyword&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;null&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;&lt;br /&gt;  &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;br /&gt;  &lt;span class=&quot;token keyword&quot;&gt;const&lt;/span&gt; content &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; post&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;templateContent&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;&lt;br /&gt;  &lt;span class=&quot;token keyword&quot;&gt;const&lt;/span&gt; markerIndex &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; content&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;indexOf&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&quot;&amp;lt;!-- endOfPreview --&gt;&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;&lt;br /&gt;  &lt;br /&gt;  &lt;span class=&quot;token keyword&quot;&gt;return&lt;/span&gt; markerIndex &lt;span class=&quot;token operator&quot;&gt;&gt;&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;0&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;?&lt;/span&gt; content&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;slice&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token number&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; markerIndex&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;...&quot;&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;&lt;br /&gt;&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Zunächst wird geprüft ob das Post-Object das Feld &amp;quot;templateContent&amp;quot; besitzt. Dies sollte von Eleventy bereitgestellt werden. Anschließend wird es in der Content-Variable gecached. Der Inhalt wird zerschnitten vom Anfang bis zum Schnippsel &lt;strong&gt;&amp;quot;&lt;!-- endOfPreview --&gt;&amp;quot;&lt;/strong&gt;. Hier kann natürlich jedes beliebiges, aber möglichst vom Inhalt abhebendes Tag verwendet werden. Das ist ein Marker, der das Ende der Auszuges, bzw. der Vorschau, beschreibt. Wenn kein Marker gefunden wird, wird ein leerer String zurückgegeben.&lt;/p&gt;
+&lt;p&gt;Nun muss Eleventy beigebracht werden, diese Funktion zu werden. Es wäre z.B. als Filter möglich, aber ein &amp;quot;Shortcut&amp;quot; erscheint für mich praktischer. Ein Shortcut sieht aus wie folgt:&lt;/p&gt;
+&lt;pre class=&quot;language-javascript&quot;&gt;&lt;code class=&quot;language-javascript&quot;&gt;&lt;span class=&quot;token comment&quot;&gt;// remove whitespace between {} and %&lt;/span&gt;&lt;br /&gt;&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;%&lt;/span&gt; excerpt pageObject &lt;span class=&quot;token operator&quot;&gt;%&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;em&gt;Bitte die Leerzeichen entfernen zwischen den runden Klammern und dem Prozentzeichen. Leider rendert 11nty den Ausschnitt ohne Leerzeichen!&lt;/em&gt;&lt;/p&gt;
+&lt;pre class=&quot;language-javascript&quot;&gt;&lt;code class=&quot;language-javascript&quot;&gt;eleventyConfig&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;addShortcode&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&quot;excerpt&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token parameter&quot;&gt;post&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;=&gt;&lt;/span&gt;&lt;br /&gt;    &lt;span class=&quot;token function&quot;&gt;extractExcerpt&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;post&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;br /&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Das Eleventy-Config-Object nun ein neues Schlagwort &amp;quot;excerpt&amp;quot; (Auszug) und übergibt als Parameter wie im vorherigen Code-Snippet angezeigt das Postobjekt.&lt;/p&gt;
+&lt;p&gt;Wenn man diesen Shortcut nun in der Datei &lt;em&gt;/_include/postlist.njk&lt;/em&gt; innerhalb der Listen-Tags (&amp;lt; li &amp;gt; &amp;lt;/ li &amp;gt;) einfügt, erhält man seinen gewünschten Inhaltsauszug.&lt;/p&gt;
+&lt;pre class=&quot;language-javascript&quot;&gt;&lt;code class=&quot;language-javascript&quot;&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;%&lt;/span&gt; excerpt post &lt;span class=&quot;token operator&quot;&gt;%&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Dieser Marker kann jetzt in den Markdown-Dateien der Blogposts verwendet werden(&lt;strong&gt;/posts/*.md&lt;/strong&gt;). Einfach nach gewünschter Länge des Auszuges das &lt;strong&gt;&amp;lt; !-- endOfPreview -- &amp;gt;&lt;/strong&gt; einfügen.&lt;/p&gt;
+&lt;pre class=&quot;language-html&quot;&gt;&lt;code class=&quot;language-html&quot;&gt;Leverage agile frameworks to provide a robust &lt;span class=&quot;token comment&quot;&gt;&amp;lt;!-- endOfPreview --&gt;&lt;/span&gt;&lt;br /&gt;synopsis for high level overviews. Iterative &lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;img src=&quot;https://derkuba.de/content/img/0421/excerpt-final.png&quot; alt=&quot;11nty starter&quot; title=&quot;11nty starter&quot; /&gt;&lt;br /&gt;
+&lt;img src=&quot;https://derkuba.de/content/img/0421/excerpt-place.png&quot; alt=&quot;11nty starter&quot; title=&quot;11nty starter&quot; /&gt;&lt;/p&gt;
+&lt;div class=&quot;has-text-right image-subline&quot;&gt;Bild 2: Post-Liste mit Inhaltvorschau&lt;/div&gt;
+&lt;p&gt;&lt;br /&gt;
+Die Codebeispiele findet ihr auf &lt;a href=&quot;https://github.com/derKuba/eleventy-examples&quot;&gt;Github/derKuba&lt;/a&gt;.&lt;/p&gt;
+</content>
+	</entry>
+	
+	<entry>
+		<title>11nty Blog mit eigenem Html-Template Teil 1</title>
+		<link href="https://derkuba.de/content/posts/0421/11nty-tutorial-part-one/"/>
+		<updated>2021-03-30T00:00:00Z</updated>
+		<id>https://derkuba.de/content/posts/0421/11nty-tutorial-part-one/</id>
+		<content type="html">&lt;p&gt;Seit langer Zeit sitzt in meinem Kopf der Gedanke einen Blog aufzusetzen. Die Umsetzung möchte ich direkt als ersten Post nutzen. &lt;!-- endOfPreview --&gt; Als Anforderung habe ich folgende Punkte:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;keine Datenbank&lt;/li&gt;
+&lt;li&gt;keine aufwendigen, runtime-bedürftigen Programmiersprachen&lt;/li&gt;
+&lt;li&gt;Output soll eine statische Seite sein.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Die Google-Suche &amp;quot;static site generator 2021&amp;quot; hat folgende Seite hervorgebracht:&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://www.techradar.com/best/static-site-generators&quot;&gt;https://www.techradar.com/best/static-site-generators&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;An erster Stelle steht Hugo. Ein sehr schneller Generator, der auf GO setzt. Hugo hatte ich bereits ausprobiert. Es ist sehr schnell und einfach, solange man ein fertiges Template verwendet. Möchte man dagegen ein eigenes, war relativ viel Gefrickel notwenig ( Stand Hugo 0.40 ). Das muss doch einfacher gehen.&lt;br /&gt;
+Da ich ein großes Herz für JS habe, las sich 11nty sehr gut. Es sollte schnell, einfach und ohne Frameworks wie React oder Angular auskommen. Und siehe da es ging sehr gut.&lt;/p&gt;
+&lt;p&gt;Techstack:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://git-scm.com/&quot;&gt;git&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://nodejs.org/de/&quot;&gt;nodejs @v14.16.0&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://www.npmjs.com/&quot;&gt;npm @6.14.11&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://www.11ty.dev/&quot;&gt;11nty @0.12.1 &lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://bulma.io/&quot;&gt;Bulma @0.9.2&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://prismjs.com/&quot;&gt;prism @1.23.0 &lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Mit folgenden Schritten habe ich diesen Blog aufgesetzt:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;HTML-Template erstellen&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;HTML-Grundstruktur mit
+&lt;ul&gt;
+&lt;li&gt;Menu,&lt;/li&gt;
+&lt;li&gt;Navigation,&lt;/li&gt;
+&lt;li&gt;Blogdetail&lt;/li&gt;
+&lt;li&gt;Footer&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;11nty Starter&lt;/strong&gt; Blog download unter: &lt;a href=&quot;https://github.com/11ty/eleventy-base-blog&quot;&gt;https://github.com/11ty/eleventy-base-blog&lt;/a&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Starter-Template klonen und installieren&lt;/li&gt;
+&lt;li&gt;Aufbau und Struktur&lt;/li&gt;
+&lt;li&gt;Custom-Template überführen&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;das &lt;strong&gt;HTML-Template&lt;/strong&gt; in das Startertemplate überführen&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3 id=&quot;los-gehts&quot;&gt;Los gehts &lt;a class=&quot;direct-link&quot; href=&quot;https://derkuba.de/content/posts/0421/11nty-tutorial-part-one/#los-gehts&quot;&gt;#&lt;/a&gt;&lt;/h3&gt;
+&lt;h4 id=&quot;vorbedingung&quot;&gt;Vorbedingung &lt;a class=&quot;direct-link&quot; href=&quot;https://derkuba.de/content/posts/0421/11nty-tutorial-part-one/#vorbedingung&quot;&gt;#&lt;/a&gt;&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;Nodejs und NPM sind installiert&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&quot;1.-template-anlegen&quot;&gt;1. Template anlegen &lt;a class=&quot;direct-link&quot; href=&quot;https://derkuba.de/content/posts/0421/11nty-tutorial-part-one/#1.-template-anlegen&quot;&gt;#&lt;/a&gt;&lt;/h4&gt;
+&lt;p&gt;Ein einfaches und klassisches HTML Layout ist schnell aufgesetzt. Um Zeit zu Sparen habe ich als CSS-Framework &lt;a href=&quot;https://bulma.io/&quot;&gt;Bulma&lt;/a&gt; genommen und das Template in folgende Teile geteilt:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://bulma.io/documentation/components/navbar/&quot;&gt;Navigation&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Content&lt;/li&gt;
+&lt;li&gt;Sidebar&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://bulma.io/documentation/layout/footer/&quot;&gt;Footer&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;img src=&quot;https://derkuba.de/content/img/layout.png&quot; alt=&quot;html layout&quot; title=&quot;HTML Template&quot; /&gt;&lt;/p&gt;
+&lt;div class=&quot;has-text-right image-subline&quot;&gt;Bild 1: Aufteilung Layout&lt;/div&gt;
+&lt;p&gt;&lt;br /&gt;
+Es eignen sich auch andere Layouts und andere CSS-Frameworks. Ich hatte Lust auf eine Bootstrap-Alternative.&lt;/p&gt;
+&lt;h4 id=&quot;2.-11nty-starter-installieren&quot;&gt;2. 11nty Starter installieren &lt;a class=&quot;direct-link&quot; href=&quot;https://derkuba.de/content/posts/0421/11nty-tutorial-part-one/#2.-11nty-starter-installieren&quot;&gt;#&lt;/a&gt;&lt;/h4&gt;
+&lt;p&gt;&lt;a href=&quot;https://github.com/11ty/eleventy-base-blog&quot;&gt;Unter der oben genannten Adresse&lt;/a&gt; findet man das Standard 11nty Starter Paket. Wenn man auf den &amp;quot;Clone&amp;quot;-Button klickt, erhält man die Git-Url.&lt;/p&gt;
+&lt;pre class=&quot;language-bash&quot;&gt;&lt;code class=&quot;language-bash&quot;&gt;&lt;span class=&quot;token comment&quot;&gt;# für ssh&lt;/span&gt;&lt;br /&gt;&lt;span class=&quot;token function&quot;&gt;git&lt;/span&gt; clone git@github.com:11ty/eleventy-base-blog.git mein-neuer-blog&lt;br /&gt;&lt;br /&gt;&lt;span class=&quot;token comment&quot;&gt;# oder https&lt;/span&gt;&lt;br /&gt;&lt;span class=&quot;token function&quot;&gt;git&lt;/span&gt; clone https://github.com/11ty/eleventy-base-blog.git mein-neuer-blog&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Nun muss man in den Ordner navigieren und die Abhängigkeiten installieren:&lt;/p&gt;
+&lt;pre class=&quot;language-bash&quot;&gt;&lt;code class=&quot;language-bash&quot;&gt;&lt;span class=&quot;token builtin class-name&quot;&gt;cd&lt;/span&gt; mein-neuer-blog&lt;br /&gt;&lt;span class=&quot;token function&quot;&gt;npm&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;install&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;br /&gt;
+&lt;strong&gt;11nty Starter-Blog starten&lt;/strong&gt;&lt;/p&gt;
+&lt;pre class=&quot;language-bash&quot;&gt;&lt;code class=&quot;language-bash&quot;&gt;&lt;span class=&quot;token function&quot;&gt;npm&lt;/span&gt; run server&lt;br /&gt;&lt;span class=&quot;token comment&quot;&gt;# oder&lt;/span&gt;&lt;br /&gt;npx eleventy --serve&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;und man sollte folgendes sehen:&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://derkuba.de/content/img/0421/11nty-starter.png&quot; alt=&quot;11nty starter&quot; title=&quot;11nty starter&quot; /&gt;&lt;/p&gt;
+&lt;div class=&quot;has-text-right image-subline&quot;&gt;Bild 2: Ausschnitte Starter Template&lt;/div&gt; 
+&lt;p&gt;&lt;br /&gt;
+Man erkennt auf den ersten Blick, die dynamischen Elemente, die wir in unserem eigenen Template benötigen.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Navigation: Menüpunkte&lt;/li&gt;
+&lt;li&gt;Content: Posts&lt;/li&gt;
+&lt;li&gt;Sidebar: die Tags&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;img src=&quot;https://derkuba.de/content/img/0421/starter-elements.png&quot; alt=&quot;11nty starter elements&quot; title=&quot;11nty starter elements&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;br /&gt;
+&lt;strong&gt;Aufbau und Dateistruktur&lt;/strong&gt;&lt;br /&gt;
+Für etwas mehr Übersicht habe ich einige Dateien in Ordner aufgeteilt. CSS und JS habe ich in das Verzeichnis Template gezogen, Inhaltsspezifische Dateien in den Ordner &amp;quot;Content&amp;quot; und CI-spezifische Dateien habe ich gelöscht.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://derkuba.de/content/img/0421/file-structure.png&quot; alt=&quot;Verzeichnisstruktur&quot; title=&quot;verzeichnisstruktur&quot; /&gt;&lt;/p&gt;
+&lt;div class=&quot;has-text-right image-subline&quot;&gt;Bild 3: Verzeichnisstruktur&lt;/div&gt; 
+&lt;p&gt;&lt;br /&gt;
+Die Dateien untergliedern sich in&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;&amp;quot;.njk&amp;quot;&lt;/strong&gt; (Template),&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;&amp;quot;.md&amp;quot;&lt;/strong&gt; (Content / Posts)&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;&amp;quot;.json&amp;quot;&lt;/strong&gt; ( Meta und Config )&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;&amp;quot;.eleventy.js&amp;quot;&lt;/strong&gt; ( 11nty Konfiguration).&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;br /&gt;
+&lt;strong&gt;Selbstgebautes Template verwenden&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;Navigation:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;neue Datei anlegen unter &amp;quot;_includes/layouts/navigation.njk&amp;quot;.&lt;/li&gt;
+&lt;li&gt;inhalt der eigenen Navigation in diese Datei kopiert.&lt;/li&gt;
+&lt;li&gt;unter &amp;quot;_includes/layouts/base.njk&amp;quot; findet man das Seitenlayout mit HTML-Struktur.&lt;br /&gt;
+Zeilen 13-23 beinhalten was wir benötigen. Wir entnehmen den metadata.title als Titel für unseren Blog und packen die for-Schleife (Z. 18-24)&lt;br /&gt;
+in unsere nav-container.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;vorher:&lt;br /&gt;
+&lt;img src=&quot;https://derkuba.de/content/img/0421/starter-header.png&quot; alt=&quot;navigation&quot; title=&quot;Navigation&quot; /&gt;&lt;/p&gt;&lt;div class=&quot;has-text-right image-subline&quot;&gt;Bild 4: Code Starter-Header&lt;/div&gt; (leider rendert an dieser Stelle 11nty den nunjuk-code und ich muss ein Bild verwenden. Vielleicht kennt jemand einen workaround?)&lt;p&gt;&lt;/p&gt;
+&lt;p&gt;nachher:&lt;br /&gt;
+&lt;img src=&quot;https://derkuba.de/content/img/0421/bulma-header.png&quot; alt=&quot;header&quot; title=&quot;Header&quot; /&gt;&lt;/p&gt;
+&lt;div class=&quot;has-text-right image-subline&quot;&gt;Bild 5: Bulma Header&lt;/div&gt;
+Wir überführen die For-Schleife in den navigation-items container.
+Anschließend
+&lt;ul&gt;
+&lt;li&gt;in der &amp;quot;base.njk&amp;quot;-datei löschen wir nun den Inhalt wie er auf dem vorher-Bild zu sehen ist und ersetzen in durch &lt;div class=&quot;clear-image&quot;&gt;&lt;img src=&quot;https://derkuba.de/content/img/0421/include-header.png&quot; alt=&quot;Include Header&quot; title=&quot;Include Header&quot; /&gt;&lt;/div&gt; und die Datei sollte wie folgt aussehen:&lt;br /&gt;
+&lt;img src=&quot;https://derkuba.de/content/img/0421/base.png&quot; alt=&quot;Base Datei&quot; title=&quot;Base-Datei&quot; /&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class=&quot;has-text-right image-subline&quot;&gt;Bild 6: Starter-Template Base&lt;/div&gt;
+Neben den eigenen CSS-Dateien, dem Bulma-Burger-Menu-Javascript, sieht man die Navigation und den Footer.
+&lt;p&gt;&lt;br /&gt;
+&lt;strong&gt;Content:&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;Der Content-Bereich unterscheidet sich jetzt je nachdem auf welcher Seite man sich befindet. Ich möchte, dass auf der Hauptseite die Sidebar sichtbar ist und auf den Post-Detailseiten nicht. Daher werden jetzt die vorgefertigten Dateien &lt;strong&gt;/_includes/layouts/&lt;/strong&gt; &lt;em&gt;-home.njk&lt;/em&gt; und &lt;em&gt;-postlist.njk&lt;/em&gt; für die Hauptseite relevant und die&lt;em&gt;post.njk&lt;/em&gt; Datei für die Detailseite.&lt;/p&gt;
+&lt;p&gt;Für Content-Bereich wurde der Starter-Template Code mit dem eigenen Template verbunden:&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://derkuba.de/content/img/0421/content-area.png&quot; alt=&quot;content&quot; title=&quot;Content Bereicht&quot; /&gt;&lt;/p&gt;
+&lt;div class=&quot;has-text-right image-subline&quot;&gt;Bild 7:Content Bereich&lt;/div&gt;
+&lt;p&gt;Neben dem kopierten Standardcode entdeckt der findige Leser auch den Bereich in Zeile 19. Dort mappe ich anhand des Indexes die Bulma Tag Klassen an den Tag, um so ein wenig Farbe in den Seitenbereich zu bekommen. Dafür habe ich einen weiteren Short-Code angelegt in der &lt;em&gt;.eleventy.js-&lt;/em&gt;Datei angelegt:&lt;/p&gt;
+&lt;pre class=&quot;language-javascript&quot;&gt;&lt;code class=&quot;language-javascript&quot;&gt;    eleventyConfig&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;addPairedShortcode&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&quot;badge&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token parameter&quot;&gt;_&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; index&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;&lt;br /&gt;        &lt;span class=&quot;token keyword&quot;&gt;const&lt;/span&gt; badge &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;&lt;br /&gt;            &lt;span class=&quot;token string&quot;&gt;&quot;is-black&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;&lt;br /&gt;            &lt;span class=&quot;token string&quot;&gt;&quot;is-primary&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;&lt;br /&gt;            &lt;span class=&quot;token string&quot;&gt;&quot;is-link&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;&lt;br /&gt;            &lt;span class=&quot;token string&quot;&gt;&quot;is-success&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;&lt;br /&gt;            &lt;span class=&quot;token string&quot;&gt;&quot;is-dark&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;&lt;br /&gt;            &lt;span class=&quot;token string&quot;&gt;&quot;is-warning&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;&lt;br /&gt;            &lt;span class=&quot;token string&quot;&gt;&quot;is-danger&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;&lt;br /&gt;        &lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;&lt;br /&gt;        &lt;span class=&quot;token keyword&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;index &lt;span class=&quot;token operator&quot;&gt;&amp;lt;&lt;/span&gt; badge&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;length&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;&lt;br /&gt;            &lt;span class=&quot;token keyword&quot;&gt;return&lt;/span&gt; badge&lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;index&lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;&lt;br /&gt;        &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;br /&gt;&lt;br /&gt;        &lt;span class=&quot;token keyword&quot;&gt;const&lt;/span&gt; color &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; index &lt;span class=&quot;token operator&quot;&gt;%&lt;/span&gt; badge&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;length&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;&lt;br /&gt;&lt;br /&gt;        &lt;span class=&quot;token keyword&quot;&gt;return&lt;/span&gt; badge&lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;color&lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;&lt;br /&gt;    &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Für den Detail-Bereich wurde der Starter-Template Code mit dem eigenen Template verbunden:&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://derkuba.de/content/img/0421/post-detail.png&quot; alt=&quot;post detail&quot; title=&quot;Post Detail Seite&quot; /&gt;&lt;/p&gt;
+&lt;div class=&quot;has-text-right image-subline&quot;&gt;Bild 8: Detail Seite&lt;/div&gt;
+&lt;p&gt;Für die List der Posts wurde der Starter-Template Code mit dem eigenen Template verbunden:&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://derkuba.de/content/img/0421/postlist.png&quot; alt=&quot;Post-List&quot; title=&quot;Liste aller Posts&quot; /&gt;&lt;/p&gt;
+&lt;div class=&quot;has-text-right image-subline&quot;&gt;Bild 9: Detailseite Posts&lt;/div&gt;
+&lt;p&gt;Auch hier verwende ich noch einen weitern Custom-Filter &amp;quot;readingTime&amp;quot;, den ich aus dem weiteren Starter-Template&lt;br /&gt;
+&lt;a href=&quot;https://github.com/muenzpraeger/eleventy-chirpy-blog-template/blob/main/.eleventy.js&quot;&gt;https://github.com/muenzpraeger/eleventy-chirpy-blog-template/blob/main/.eleventy.js&lt;/a&gt; entnommen habe, um die Lesedauer anzuzeigen.&lt;/p&gt;
+&lt;p&gt;Damit niemand den Code abtippen muss, habe ich die relevanten Dateien auf &lt;a href=&quot;https://github.com/derKuba/eleventy-examples&quot;&gt;Github/derKuba&lt;/a&gt; abgelegt.&lt;/p&gt;
+</content>
+	</entry>
+</feed>
