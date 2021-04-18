@@ -98,3 +98,16 @@ a[href].direct-link:visited {
 .tag-list span{
     margin-right: 5px;
 }
+
+.categorie-item a .tag{
+    margin: 10px 5px 0px 5px;
+}
+
+.favorites-list a {
+    margin-top: 10px;
+    display: inline-block;
+}
+
+.padding-right-50 {
+    margin-right: 50px;
+}

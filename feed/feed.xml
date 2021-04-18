@@ -5,12 +5,102 @@
 	
 	<link href="https://derkuba.de/feed/feed.xml" rel="self"/>
 	<link href="https://derkuba.de/"/>
-	<updated>2021-04-05T00:00:00Z</updated>
+	<updated>2021-04-17T00:00:00Z</updated>
 	<id>https://derkuba.de/</id>
 	<author>
 		<name>Jacob Pawlik</name>
 		<email>jacob.pawlik@web.de</email>
 	</author>
+	
+	<entry>
+		<title>So klappt fast jedes Vorstellungsgespräch</title>
+		<link href="https://derkuba.de/content/posts/0421/so-klappt-jedes-vorstellungsgespraech/"/>
+		<updated>2021-04-17T00:00:00Z</updated>
+		<id>https://derkuba.de/content/posts/0421/so-klappt-jedes-vorstellungsgespraech/</id>
+		<content type="html">&lt;p&gt;In den letzten Jahren konnte ich in weit über hundert Vorstellungsgesprächen reichlich Erfahrung sammeln, sei es als Kandidat oder als technischer Fachkollege. Diese Erfahrung habe ich in folgende Punkte gepackt, die jedes Gespräch erfolgreicher machen. &lt;!-- endOfPreview --&gt;Als Software-Entwickler beziehe ich mich ausschließlich auf die IT-Branche. Die Tipps sind bestimmt auch in anderen Branchen zu gebrauchen, aber das kann ich nicht näher bewerten.&lt;/p&gt;
+&lt;h4 id=&quot;1.-%C3%BCbung-macht-den-meister&quot;&gt;1. Übung macht den Meister &lt;a class=&quot;direct-link&quot; href=&quot;https://derkuba.de/content/posts/0421/so-klappt-jedes-vorstellungsgespraech/#1.-%C3%BCbung-macht-den-meister&quot;&gt;#&lt;/a&gt;&lt;/h4&gt;
+&lt;p&gt;Je öfter man sich der Situation des Bewerbungsgespräches stellt, desto sicherer tritt man auf. Ich empfehle das Gespräch mit Freunden oder Familie zu üben. Sollte niemand verfügbar sein, empfehle ich das Bewerben auf Stellen, die man gar nicht unbedingt antreten möchte.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;&lt;em&gt;Regel:&lt;/em&gt; Geht zu jedem Bewerbungsgespräch zu dem ihr eingeladen werdet!&lt;/strong&gt;&lt;/p&gt;
+&lt;hr /&gt;
+&lt;h4 id=&quot;2.-dein-lebenslauf-ist-eine-geschichte&quot;&gt;2. Dein Lebenslauf ist eine Geschichte &lt;a class=&quot;direct-link&quot; href=&quot;https://derkuba.de/content/posts/0421/so-klappt-jedes-vorstellungsgespraech/#2.-dein-lebenslauf-ist-eine-geschichte&quot;&gt;#&lt;/a&gt;&lt;/h4&gt;
+&lt;p&gt;Viele Kandidaten können Ihren Lebenslauf nicht geordnet, chronologisch und frei erzählen. Man stellt als Interviewer immer wieder die gleichen Fragen, damit man eine Vergleichbarkeit der Kandidaten erreicht. Hier kann man sehr leicht punkten, wenn man seine Meilensteine flüssig vortragen kann.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Dabei fängt man am besten beim Schulabschluss an&lt;/li&gt;
+&lt;li&gt;Welche Motivation gab es für das Studium oder die Ausbildung?&lt;/li&gt;
+&lt;li&gt;Was waren die Schwerpunkte des Studiums/der Ausbildung?&lt;/li&gt;
+&lt;li&gt;Darauf folgt eine Beschreibung der bisherigen Jobs. Hierbei gilt es herauszustellen, was man &lt;strong&gt;selber&lt;/strong&gt; für Aufgaben erfüllt hat und nicht, was die Firma gemacht hat: Was waren die wesentlichen Aufgaben und die eingesetzten Technologien? Was hat man gelernt?&lt;/li&gt;
+&lt;li&gt;Der nächste Punkte ist die Motivation für die Neuausrichtung: Was hat mich beim letzten Arbeitgeber dazu bewegt mich jetzt hier in dieser Firma zu bewerben? &lt;strong&gt;Achtung:&lt;/strong&gt; Nicht die letzte Firma schlecht machen, sondern die Schwachpunkte als Lernziele im neuen Unternehmen nennen.&lt;/li&gt;
+&lt;li&gt;Zum Schluss sollte man den Bogen zur aktuellen Firma spannen: Was erhoffe ich mir von der neuen Firma?&lt;/li&gt;
+&lt;li&gt;&lt;em&gt;Gut:&lt;/em&gt; neue Technologie, agile Arbeitsweise, viele Teams, Mentoren, interessante Branche&lt;/li&gt;
+&lt;li&gt;&lt;em&gt;Schlecht:&lt;/em&gt; Gehalt, Aufstieg, weniger Arbeit&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr /&gt;
+&lt;h4 id=&quot;3.-wer-f%C3%BChrt-das-interview%3F&quot;&gt;3. Wer führt das Interview? &lt;a class=&quot;direct-link&quot; href=&quot;https://derkuba.de/content/posts/0421/so-klappt-jedes-vorstellungsgespraech/#3.-wer-f%C3%BChrt-das-interview%3F&quot;&gt;#&lt;/a&gt;&lt;/h4&gt;
+&lt;p&gt;In der Terminbestätigung zum Gespräch stehen oft die Teilnehmer des Gesprächs. Diese Gelegenheit sollte immer genutzt werden und ich empfehle die teilnehmenden Personen zu recherchieren:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Wenn eine Person aus der HR/Personalabteilung dabei ist, sollte man die klassischen Bewerbungsfragen (Stärke/Schwächen, größte Erfolge, wo sehe ich mich in fünf Jahre etc.) üben, bzw. vorbereiten.&lt;br /&gt;
+&lt;strong&gt;Sei im Stande die Standard-HR-Fragen zu beantworten&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;Interessant wird es wenn ein Leiter/Chef und ein Fachkollege dabei sind. In diesem Fall sollte man die eigene Technologie-Liste durchgehen und nachschauen, ob man zu jeder Technologie auch tiefere Fragen beantworten kann. &lt;strong&gt;Fachsimpeln hilft. Oft möchte der Fachkollege vor dem Chef beweisen, wie viel er weiß und kommt nicht dazu, Fragen zu stellen.&lt;/strong&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr /&gt;
+&lt;h4 id=&quot;4.-m%C3%B6chten-sie-was-trinken%3F-ja&quot;&gt;4. Möchten Sie was trinken? Ja &lt;a class=&quot;direct-link&quot; href=&quot;https://derkuba.de/content/posts/0421/so-klappt-jedes-vorstellungsgespraech/#4.-m%C3%B6chten-sie-was-trinken%3F-ja&quot;&gt;#&lt;/a&gt;&lt;/h4&gt;
+&lt;p&gt;Niemals das Getränk ablehnen. Man glaubt gar nicht wie oft die Stimme versagt. Wenn jetzt jemand los muss, um ein Getränk zu besorgen, macht es die Gesprächsdynamik kaputt. So ein Schluck Wasser bietet auch immer die Möglichkeit zum Nachdenken, und/oder um die Nervosität zu besiegen.&lt;br /&gt;
+&lt;strong&gt;&lt;em&gt;Regel:&lt;/em&gt; Immer das Getränk annehmen!&lt;/strong&gt;&lt;/p&gt;
+&lt;hr /&gt;
+&lt;h4 id=&quot;5.-du-kannst-die-frage-nicht-beantworten%3F&quot;&gt;5. Du kannst die Frage nicht beantworten? &lt;a class=&quot;direct-link&quot; href=&quot;https://derkuba.de/content/posts/0421/so-klappt-jedes-vorstellungsgespraech/#5.-du-kannst-die-frage-nicht-beantworten%3F&quot;&gt;#&lt;/a&gt;&lt;/h4&gt;
+&lt;p&gt;Das ist absolut kein Problem. Aber bitte fang nicht an zu faseln und denk dir nicht irgendwas aus. Jeder erfahrene Kollege wird sofort deine Unsicherheit merken und dir eventuell absagen. Antworte ehrlich, dass du es nicht weißt und gib die Frage zurück. Der Fachkollege erklärt die sicherlich vor dem Chef in aller Ausführlichkeit die Antwort und du konntest was dazulernen.&lt;/p&gt;
+&lt;hr /&gt;
+&lt;h4 id=&quot;6.-unbequeme-klamotten&quot;&gt;6. Unbequeme Klamotten &lt;a class=&quot;direct-link&quot; href=&quot;https://derkuba.de/content/posts/0421/so-klappt-jedes-vorstellungsgespraech/#6.-unbequeme-klamotten&quot;&gt;#&lt;/a&gt;&lt;/h4&gt;
+&lt;p&gt;Leider zu häufig sitzen vor mir potentielle Kollegen im Anzug. Sie schwitzen, fummeln sich am Kragen herum und der Anzug sitzt zu eng oder zu weit. Man merkte deutlich, dass sie sich nicht wohlfühlen. Es ist nicht schlimm vorher den täglichen Dresscode zu erfragen. Die Webseite des Unternehmens zeigt deutlich was dort kleidungstechnisch zu erwarten ist. Kleider machen zwar Leute, zeigen aber auch deutlich, ob du dich wohlfühlst. Wenn man keine Anzüge mag, ist eine Stoffhose mit Polohemd total in Ordnung. Hierbei gilt es zu beachten, ob man sich als Consultant bewirbt oder für eine Inhouse-Entwicklung.&lt;br /&gt;
+Ein gepflegtes Äußeres und saubere Kleidung sind absolut ausreichend. Es muss nicht immer der Anzug sein.&lt;/p&gt;
+&lt;hr /&gt;
+&lt;h4 id=&quot;7.-stift-und-block&quot;&gt;7. Stift und Block &lt;a class=&quot;direct-link&quot; href=&quot;https://derkuba.de/content/posts/0421/so-klappt-jedes-vorstellungsgespraech/#7.-stift-und-block&quot;&gt;#&lt;/a&gt;&lt;/h4&gt;
+&lt;p&gt;Nur einer von fünfzehn Kandidaten bringt etwas zu schreiben mit. Das halte ich für grob fahrlässig. Wie bereits erklärt, kann man sich Fragen, auf die man keine Antwort wusste, notieren. Notierenswert sind auch:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Unbekannte Technologien&lt;/li&gt;
+&lt;li&gt;Kunden&lt;/li&gt;
+&lt;li&gt;Goodies&lt;/li&gt;
+&lt;li&gt;Teamgröße / Arbeitsweisen&lt;/li&gt;
+&lt;li&gt;... etc&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Durch die Nervosität hat man nach dem Gespräch oft vieles wieder vergessen. Außerdem wirkt man interessiert und gut organisiert, wenn man sich ab und zu etwas notiert.&lt;/p&gt;
+&lt;hr /&gt;
+&lt;h4 id=&quot;8.-haben-sie-noch-fragen%3F&quot;&gt;8. Haben Sie noch Fragen? &lt;a class=&quot;direct-link&quot; href=&quot;https://derkuba.de/content/posts/0421/so-klappt-jedes-vorstellungsgespraech/#8.-haben-sie-noch-fragen%3F&quot;&gt;#&lt;/a&gt;&lt;/h4&gt;
+&lt;p&gt;Die Kandidaten ohne Stift und Block haben in der Regel eine oder zwei Fragen. Die anderen Fragen fallen ihnen nicht mehr ein. Das ist fatal. Wenn man keine Fragen hat, hat man sich nicht mit dem Unternehmen auseinandergesetzt. Es zeigt z.B.,&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;dass man unvorbereitet kommt,&lt;/li&gt;
+&lt;li&gt;dass man kein Interesse an der Arbeitsweise&lt;/li&gt;
+&lt;li&gt;oder an der Unternehmensstruktur hat&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Mein schönstes Bewerbungsgespräch als Kandidat hatte ich als das potentielle neue Team mich in die Zange nehmen wollte. Ich saß alleine im Kreis, umringt vom Team. Da ich aber meinen Block mit unendlich vielen Fragen hatte, konnte ich den Spieß umdrehen.&lt;br /&gt;
+Folgende Aspekte eignen sich gut für Fragen:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Teamgröße und Arbeitsweise?&lt;/li&gt;
+&lt;li&gt;Wie sieht ein Arbeitsalltag aus (von morgens bis abends)?&lt;/li&gt;
+&lt;li&gt;Wie wird Agilität gelebt?&lt;/li&gt;
+&lt;li&gt;Wie wird Qualität sichergestellt?&lt;/li&gt;
+&lt;li&gt;Wie ist der Ablauf eines Features vom Konzept bis zum Live-Deployment?&lt;/li&gt;
+&lt;li&gt;Wie, wann und womit wird deployed?&lt;/li&gt;
+&lt;li&gt;Wie arbeiten die Teams miteinander und wie läuft die Kommunikation?&lt;/li&gt;
+&lt;li&gt;Stellt euch euren optimalen Arbeitsalltag vor und stellt dazu Fragen auf.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr /&gt;
+&lt;h4 id=&quot;9.-gespr%C3%A4chs(n)ettikette&quot;&gt;9. Gesprächs(n)ettikette &lt;a class=&quot;direct-link&quot; href=&quot;https://derkuba.de/content/posts/0421/so-klappt-jedes-vorstellungsgespraech/#9.-gespr%C3%A4chs(n)ettikette&quot;&gt;#&lt;/a&gt;&lt;/h4&gt;
+&lt;p&gt;Es hört sich zwar selbstverständlich an, ist es aber leider viel zu oft nicht:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Pünktlichkeit&lt;/li&gt;
+&lt;li&gt;aufrecht sitzen,&lt;/li&gt;
+&lt;li&gt;kein Hibbeln&lt;/li&gt;
+&lt;li&gt;Augenkontakt&lt;/li&gt;
+&lt;li&gt;vollständige Sätze&lt;/li&gt;
+&lt;li&gt;aussprechen lassen&lt;br /&gt;
+Viele Vergehen kann man sicherlich mit der Nervosität begründen und sie sind auch nachvollziehbar. Sie hinterlassen jedoch schnell einen negativen Eindruck beim Interviewer. Doch daran kann man arbeiten. Ich empfehle zur Übung ein kurzes Rollenspiel, das aufgenommen, oder durch Dritte beobachtet wird, die einem Feedback geben&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr /&gt;
+&lt;h4 id=&quot;10.-was-motiviert-dich%3F&quot;&gt;10. Was motiviert dich? &lt;a class=&quot;direct-link&quot; href=&quot;https://derkuba.de/content/posts/0421/so-klappt-jedes-vorstellungsgespraech/#10.-was-motiviert-dich%3F&quot;&gt;#&lt;/a&gt;&lt;/h4&gt;
+&lt;p&gt;Ich habe selten erlebt, dass unbedingt ein bestimmtes Skill-Set gesucht wird. Es geht immer um den Menschen dahinter. Man möchte eine bestimmte Einstellung/Attitüde finden. Alles andere kann man dem neuen Kollegen beibringen. Niemand wird (auf Dauer) einen genialen Entwickler, der nicht im Team arbeiten kann, keine anderen Meinungen akzeptiert und allen anderen das Leben zur Hölle macht, behalten oder überhaupt erst einstellen. Langer Rede, kurzer Sinn. Was treibt dich an? Was brauchst du zum Arbeiten? Was möchtest du lernen? In welche Richtung möchtest du dich weiterentwickeln? Beantworte diese Fragen für dich und bringe sie ungefragt in das Gespräch ein.&lt;/p&gt;
+</content>
+	</entry>
 	
 	<entry>
 		<title>Bulma und Prism.js erzeugen CSS-Fehler in der Darstellung</title>
@@ -62,9 +152,9 @@ Die Codebeispiele findet ihr auf &lt;a href=&quot;https://github.com/derKuba/ele
 	
 	<entry>
 		<title>11nty Blog mit eigenem Html-Template</title>
-		<link href="https://derkuba.de/content/posts/0421/11nty-tutorial/"/>
+		<link href="https://derkuba.de/content/posts/0421/11nty-tutorial-part-one/"/>
 		<updated>2021-03-30T00:00:00Z</updated>
-		<id>https://derkuba.de/content/posts/0421/11nty-tutorial/</id>
+		<id>https://derkuba.de/content/posts/0421/11nty-tutorial-part-one/</id>
 		<content type="html">&lt;p&gt;Seit langer Zeit sitzt in meinem Kopf der Gedanke einen Blog aufzusetzen. Die Umsetzung möchte ich direkt als ersten Post nutzen. &lt;!-- endOfPreview --&gt; Als Anforderung habe ich folgende Punkte:&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;keine Datenbank&lt;/li&gt;
@@ -111,12 +201,12 @@ Da ich ein großes Herz für JS habe, las sich 11nty sehr gut. Es sollte schnell
 &lt;p&gt;das &lt;strong&gt;HTML-Template&lt;/strong&gt; in das Startertemplate überführen&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ol&gt;
-&lt;h3 id=&quot;los-gehts&quot;&gt;Los gehts &lt;a class=&quot;direct-link&quot; href=&quot;https://derkuba.de/content/posts/0421/11nty-tutorial/#los-gehts&quot;&gt;#&lt;/a&gt;&lt;/h3&gt;
-&lt;h4 id=&quot;vorbedingung&quot;&gt;Vorbedingung &lt;a class=&quot;direct-link&quot; href=&quot;https://derkuba.de/content/posts/0421/11nty-tutorial/#vorbedingung&quot;&gt;#&lt;/a&gt;&lt;/h4&gt;
+&lt;h3 id=&quot;los-gehts&quot;&gt;Los gehts &lt;a class=&quot;direct-link&quot; href=&quot;https://derkuba.de/content/posts/0421/11nty-tutorial-part-one/#los-gehts&quot;&gt;#&lt;/a&gt;&lt;/h3&gt;
+&lt;h4 id=&quot;vorbedingung&quot;&gt;Vorbedingung &lt;a class=&quot;direct-link&quot; href=&quot;https://derkuba.de/content/posts/0421/11nty-tutorial-part-one/#vorbedingung&quot;&gt;#&lt;/a&gt;&lt;/h4&gt;
 &lt;ul&gt;
 &lt;li&gt;Nodejs und NPM sind installiert&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h4 id=&quot;1.-template-anlegen&quot;&gt;1. Template anlegen &lt;a class=&quot;direct-link&quot; href=&quot;https://derkuba.de/content/posts/0421/11nty-tutorial/#1.-template-anlegen&quot;&gt;#&lt;/a&gt;&lt;/h4&gt;
+&lt;h4 id=&quot;1.-template-anlegen&quot;&gt;1. Template anlegen &lt;a class=&quot;direct-link&quot; href=&quot;https://derkuba.de/content/posts/0421/11nty-tutorial-part-one/#1.-template-anlegen&quot;&gt;#&lt;/a&gt;&lt;/h4&gt;
 &lt;p&gt;Ein einfaches und klassisches HTML Layout ist schnell aufgesetzt. Um Zeit zu Sparen habe ich als CSS-Framework &lt;a href=&quot;https://bulma.io/&quot;&gt;Bulma&lt;/a&gt; genommen und das Template in folgende Teile geteilt:&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;a href=&quot;https://bulma.io/documentation/components/navbar/&quot;&gt;Navigation&lt;/a&gt;&lt;/li&gt;
@@ -128,7 +218,7 @@ Da ich ein großes Herz für JS habe, las sich 11nty sehr gut. Es sollte schnell
 &lt;div class=&quot;has-text-right image-subline&quot;&gt;Bild 1: Aufteilung Layout&lt;/div&gt;
 &lt;p&gt;&lt;br /&gt;
 Es eignen sich auch andere Layouts und andere CSS-Frameworks. Ich hatte Lust auf eine Bootstrap-Alternative.&lt;/p&gt;
-&lt;h4 id=&quot;2.-11nty-starter-installieren&quot;&gt;2. 11nty Starter installieren &lt;a class=&quot;direct-link&quot; href=&quot;https://derkuba.de/content/posts/0421/11nty-tutorial/#2.-11nty-starter-installieren&quot;&gt;#&lt;/a&gt;&lt;/h4&gt;
+&lt;h4 id=&quot;2.-11nty-starter-installieren&quot;&gt;2. 11nty Starter installieren &lt;a class=&quot;direct-link&quot; href=&quot;https://derkuba.de/content/posts/0421/11nty-tutorial-part-one/#2.-11nty-starter-installieren&quot;&gt;#&lt;/a&gt;&lt;/h4&gt;
 &lt;p&gt;&lt;a href=&quot;https://github.com/11ty/eleventy-base-blog&quot;&gt;Unter der oben genannten Adresse&lt;/a&gt; findet man das Standard 11nty Starter Paket. Wenn man auf den &amp;quot;Clone&amp;quot;-Button klickt, erhält man die Git-Url.&lt;/p&gt;
 &lt;pre class=&quot;language-bash&quot;&gt;&lt;code class=&quot;language-bash&quot;&gt;&lt;span class=&quot;token comment&quot;&gt;# für ssh&lt;/span&gt;&lt;br /&gt;&lt;span class=&quot;token function&quot;&gt;git&lt;/span&gt; clone git@github.com:11ty/eleventy-base-blog.git mein-neuer-blog&lt;br /&gt;&lt;br /&gt;&lt;span class=&quot;token comment&quot;&gt;# oder https&lt;/span&gt;&lt;br /&gt;&lt;span class=&quot;token function&quot;&gt;git&lt;/span&gt; clone https://github.com/11ty/eleventy-base-blog.git mein-neuer-blog&lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;Nun muss man in den Ordner navigieren und die Abhängigkeiten installieren:&lt;/p&gt;
