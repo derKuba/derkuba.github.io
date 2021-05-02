@@ -108,6 +108,30 @@ a[href].direct-link:visited {
     display: inline-block;
 }
 
-.padding-right-50 {
+.xl-padding-right-50 {
     margin-right: 50px;
 }
+
+
+@media screen and (max-width: 768px) {
+    .xl-padding-right-50 {
+        margin-right: 0;
+    }
+}
+
+pre {
+    counter-reset: lineNumber;
+  }
+  code .highlight-line:before {
+    -webkit-user-select: none;
+    border-right: 1px solid #404040;
+    color: #858585;
+    content: counter(lineNumber);
+    counter-increment: lineNumber;
+    display: inline-block;
+    font-variant-numeric: tabular-nums;
+    margin-right: 1.2em;
+    padding-right: 1.2em;
+    text-align: right;
+    width: 1.9em;
+  }
