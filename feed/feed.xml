@@ -5,7 +5,7 @@
 	
 	<link href="https://derkuba.de/feed/feed.xml" rel="self"/>
 	<link href="https://derkuba.de/"/>
-	<updated>2021-05-02T00:00:00Z</updated>
+	<updated>2021-05-07T00:00:00Z</updated>
 	<id>https://derkuba.de/</id>
 	<author>
 		<name>Jacob Pawlik</name>
@@ -13,10 +13,88 @@
 	</author>
 	
 	<entry>
-		<title>How to export SQlite Database File in Flutter (Android)</title>
-		<link href="https://derkuba.de/content/posts/0521/flutter-export-sqlite-db/"/>
+		<title>Vorstellungsgespräche leiten, ein gutes Gespräch für beide Seiten.</title>
+		<link href="https://derkuba.de/content/posts/0521/bewerbungsgespraech-leiten/"/>
+		<updated>2021-05-07T00:00:00Z</updated>
+		<id>https://derkuba.de/content/posts/0521/bewerbungsgespraech-leiten/</id>
+		<content type="html">&lt;p&gt;Jeder arbeitende Mensch hat schon an einem Vorstellungsgespräch teilgenommen. Wer schon mal die Gelegenheit hatte am anderen Ende des Tisches zu sitzen, wird sich über folgende Tipps freuen. Viele von uns werden, meistens vom Chef, ins kalte Wasser geworfen. Er kommt um die Ecke und möchte, dass man sich zusammen einen Kandidaten anschaut. Vielleicht sogar ganz alleine ohne HR und ohne Chef. Natürlich reicht die Arbeitserfahrung aus, um ein fachliches Gespräch zu führen. Das denkt man zumindest. Dann nimmt das Chaos seinen Lauf.&lt;br /&gt;
+Ich habe aus meiner Erfahrung, um dieses Chaos einzufangen, einige Tipps zusammengestellt. Damit geht der Kandidat und du als Interviewer mit einem guten Gefühl aus dem Gespräch.Ich konzentriere mich auf das Fachgespräch und nicht auf das HR Gespräch. Im Idealfall ist man unter sich (unter Software-Entwicklern).&lt;/p&gt;
+&lt;h4 id=&quot;1.-der-rote-faden%3A-halte-ihn-fest-und-kommuniziere-ihn.&quot;&gt;1. Der rote Faden: Halte ihn fest und kommuniziere ihn. &lt;a class=&quot;direct-link&quot; href=&quot;https://derkuba.de/content/posts/0521/bewerbungsgespraech-leiten/#1.-der-rote-faden%3A-halte-ihn-fest-und-kommuniziere-ihn.&quot;&gt;#&lt;/a&gt;&lt;/h4&gt;
+&lt;p&gt;Denke dir eine Agenda für das Gespräch aus, kommuniziere sie an den Kandidaten (am Besten am Anfang des Gesprächs) und halte dich auch daran. Ich war schon in einigen Gesprächen, in denen ich nach der Begrüßung mit Fragen bombardiert wurde. Viele dieser Fragen hätte man vermeiden können, indem man mir eine Gelegenheit geboten hätte, mich vorzustellen. Ein roter Faden könnte wie folgt aussehen:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Begrüßung, Klärung der Getränke, Smalltalk&lt;/li&gt;
+&lt;li&gt;Kommunikation des &amp;quot;roten Fadens&amp;quot;, bzw. der Gesprächsagenda&lt;/li&gt;
+&lt;li&gt;Vorstellung des Unternehmens&lt;/li&gt;
+&lt;li&gt;Vorstellung aller Interviewer&lt;/li&gt;
+&lt;li&gt;Klärung möglicher Fragen bis zu diesem Zeitpunkt&lt;/li&gt;
+&lt;li&gt;Vorstellung Kandidat&lt;/li&gt;
+&lt;li&gt;Gegenseitiges Kennenlernen durch Fachfragen&lt;/li&gt;
+&lt;li&gt;Fragen des Kandidaten klären&lt;/li&gt;
+&lt;li&gt;Kurzes Feedback&lt;/li&gt;
+&lt;li&gt;Erklärung wie es weitergeht im Bewerbungsprozess&lt;/li&gt;
+&lt;li&gt;Verabschiedung&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Der Kandidat weiß was auf ihn zukommt und das nimmt auch etwas seine Nervosität. Der Interviewer kann sich auf das Beobachten und Fragen konzentrieren und muss keine Agenda improvisieren.&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;Bereite dich auf das Gespräch und den Ablauf vor! 
+Gebe dem Gesprächsführer (deinem Kollegen oder sogar deinem Chef) Feedback, sollte er diesen Tipp nicht kennen.
+&lt;/code&gt;&lt;/pre&gt;
+&lt;hr /&gt;
+&lt;h4 id=&quot;2.-vor-dir-sitzt-ein-potentieller-kollege&quot;&gt;2. Vor dir sitzt ein potentieller Kollege &lt;a class=&quot;direct-link&quot; href=&quot;https://derkuba.de/content/posts/0521/bewerbungsgespraech-leiten/#2.-vor-dir-sitzt-ein-potentieller-kollege&quot;&gt;#&lt;/a&gt;&lt;/h4&gt;
+&lt;p&gt;Auf der anderen Seite des Tisches vor dem Kandidaten zu sitzen, bedeutet, dass man eine kleine Machtposition für diesen Moment inne hat. Man stellt die Fragen und leitet das Gespräch. In dieser Situation habe ich des öfteren erlebt, wie der sonst nette und freundliche Kollege sich veränderte. Von der freundlichen Art blieb nicht viel übrig und es wurde eine fiese Frage nach der anderen gestellt, als würde man versuchen den Kandidaten fertig zu machen. Es gilt bei dem Gespräch nicht die Schwächen des Kandidaten aufzuzeigen, sondern seine Stärken.Man klärt die Frage ob und wie der Kandidat im Team dem Unternehmen helfen kann. Wer möchte es sich denn schon am Anfang mit einem neuen und potentiellen Kollegen verscherzen? Heutzutage in der Situation des Entwicklermangels bewirbt man sich auch beim Kandidaten, weil die Nachfrage so groß ist. Das sollte man während des Gesprächs im Hinterkopf behalten.&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;Gewinne einen neuen Kollegen und vernichte ihn nicht!
+&lt;/code&gt;&lt;/pre&gt;
+&lt;hr /&gt;
+&lt;h4 id=&quot;3.-stelle-keine-fragen%2C-auf-die-du-selber-keine-antwort-wei%C3%9Ft&quot;&gt;3. Stelle keine Fragen, auf die du selber keine Antwort weißt &lt;a class=&quot;direct-link&quot; href=&quot;https://derkuba.de/content/posts/0521/bewerbungsgespraech-leiten/#3.-stelle-keine-fragen%2C-auf-die-du-selber-keine-antwort-wei%C3%9Ft&quot;&gt;#&lt;/a&gt;&lt;/h4&gt;
+&lt;p&gt;Ich habe in meinem vorherigen Artikel den Hinweis gegeben einen Block und einen Stift dabeizuhaben und Fragen, die man nicht beantworten kann, sich erklären zu lassen. Leider habe ich als Kandidat, als ich die Frage zurückgegeben habe, um etwas neues zu lernen, in verzweifelte Gesichter geschaut. Es wurde nervös geblättert und schnell die nächste Frage gestellt. Es ist leicht eine Fragen, die man sich aus dem Internet holt, zu stellen. Aber man sollte auch Herr der Antwort auf diese Frage sein. Es macht auch keinen guten Eindruck vor dem Kandidaten (und deinem Chef) in so eine Situation zu geraten.&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;Überlege dir die Fragen vorher und beantworte sie für dich!
+&lt;/code&gt;&lt;/pre&gt;
+&lt;hr /&gt;
+&lt;h4 id=&quot;4.-erz%C3%A4hle-die-wahrheit-und-besch%C3%B6nige-nicht-unn%C3%B6tig&quot;&gt;4. Erzähle die Wahrheit und beschönige nicht unnötig &lt;a class=&quot;direct-link&quot; href=&quot;https://derkuba.de/content/posts/0521/bewerbungsgespraech-leiten/#4.-erz%C3%A4hle-die-wahrheit-und-besch%C3%B6nige-nicht-unn%C3%B6tig&quot;&gt;#&lt;/a&gt;&lt;/h4&gt;
+&lt;p&gt;Man möchte den Kandidaten für das Unternehmen gewinnen und das führt manchmal dazu, dass man anfängt Märchen zu erzählen. Das Unternehmen wird plötzlich vollständig Agil, es gibt freie Technologiewahl, überall sind grüne Wiesen für neue Projekte und Legacy-System kennt man nur aus dem Refactoring-Buch. Ein gut vorbereiteter Kandidat durchschaut diese Lügen mit ein paar Gegenfragen. Dies erzeugt wieder eine sehr unangenehme Situation. Man sollte bei der Wahrheit bleiben und vielleicht sogar von ein paar Problemen erzählen, die man mit Hilfe des Kandidaten angehen möchte. Aber auch hier ist vorsicht geboten. Zu viele negative Geschichten können abschreckend wirken.&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;Bleibe bei der Wahrheit und erzähle keine Märchen!
+&lt;/code&gt;&lt;/pre&gt;
+&lt;hr /&gt;
+&lt;h4 id=&quot;5.-zeige-aufrichtiges-interesse-und-h%C3%B6r-aktiv-zu&quot;&gt;5. Zeige aufrichtiges Interesse und hör aktiv zu &lt;a class=&quot;direct-link&quot; href=&quot;https://derkuba.de/content/posts/0521/bewerbungsgespraech-leiten/#5.-zeige-aufrichtiges-interesse-und-h%C3%B6r-aktiv-zu&quot;&gt;#&lt;/a&gt;&lt;/h4&gt;
+&lt;p&gt;Für diesen Tipp ist etwas selbstreflexion notwendig. Jeder Mensch möchte am Liebsten immer von sich und seinen Erfahrungen erzählen. Das ist absolut in Ordnung. Allerdings ist ein Bewerbungsgespräch der falsche Rahmen, um von sich zu sprechen. Im Mittelpunkt steht einzig und allein der Kandidat. Man hat nur eine begrenzte Zeit, den potentiellen Kollegen einzuschätzen und zu bewerten. Das eine oder andere Mal musste ich mich, bzw. meine beisitzenden Kollegen in ihren Ausführungen über Technologien und ihre Erfahrungen bremsen. Der Kandidat sollte das Wort haben. Stelle ihm fragen über seine Arbeitsweisen, Technologien, Erfahrungen etc. und höre ihm auch zu. Mache dir dazu Notizen, die du später für das Feedback gegenüber der HR brauchst. Schenke dem Kandidaten deine ungeteilte Aufmerksamkeit. Als Kandidat war ich in einigen Gesprächen, in denen die Gesprächsführer auf ihrem Laptop oder auf Handy rumgetippt haben. Ich hatte das Gefühl ich rede mit mir selbst. Ein anderes Mal hing der Chef über seinen Stuhl und schaute gelangweilt drein. Das macht keinen guten Eindruck.&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;Du bist nicht der Mittelpunkt bei dem Gespräch. Informiere dich über aktives Zuhören.
+&lt;/code&gt;&lt;/pre&gt;
+&lt;hr /&gt;
+&lt;h4 id=&quot;6.-achte-auf-das-mindset-des-kandidaten&quot;&gt;6. Achte auf das Mindset des Kandidaten &lt;a class=&quot;direct-link&quot; href=&quot;https://derkuba.de/content/posts/0521/bewerbungsgespraech-leiten/#6.-achte-auf-das-mindset-des-kandidaten&quot;&gt;#&lt;/a&gt;&lt;/h4&gt;
+&lt;p&gt;In den Nachbesprechungen mit den Kollegen der HR wurden viele Kandidaten oft aussortiert, weil sie nicht über die notwendige Erfahrungen in dem benötigten Tech-Stack verfügten. Das halte ich für falsch. Wenn ein Kandidat das richtige Mindset, sprich die richtige Einstellung hat, habe ich immer für ihn gestimmt. Technologien, Arbeitsweisen, agile Methoden etc. kann man leichter dem Kandidaten beibringen. Wenn aber schon die Kinderstube fehlt, keine Motivation zu spüren ist oder die Teamfähigkeit zweifelhaft ist, dann ist das viel schlimmer. Wenn ein Kandidat spürbar für eine Sache brennt und unbedingt ein Thema lernen möchte, ist das die beste Vorraussetzung für eine gute Zusammenarbeit. Meine Leitfrage bei jedem Gespräch ist immer: &amp;quot;Möchte ich diese Person in meinem Team haben?&amp;quot;.&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;Technologien und Methoden biegen sich leider gerade als fehlende Softskills.
+&lt;/code&gt;&lt;/pre&gt;
+&lt;hr /&gt;
+&lt;h4 id=&quot;7.-gib-konstruktives-feedback&quot;&gt;7. Gib konstruktives Feedback &lt;a class=&quot;direct-link&quot; href=&quot;https://derkuba.de/content/posts/0521/bewerbungsgespraech-leiten/#7.-gib-konstruktives-feedback&quot;&gt;#&lt;/a&gt;&lt;/h4&gt;
+&lt;p&gt;Am Ende des Gesprächs gebe ich immer ein Feedback wie sich der Kandidat geschlagen hat. Damit meine ich nicht, ob eine Anstellungen folgen wird, sondern wie das Gespräch verlaufen ist. Dabei gebe ich Tipps zum Vortragen des Lebenslaufs, lobe Stärken und mache auf Schwächen aufmerksam. Man sollte tunlichst vermeiden dem Kandidaten Hoffnung auf die Anstellung zu machen oder diese sogar in Aussicht zu stellen. Als Fachkollege hat man keine Kompetenz dazu und macht das Unternehmen angreifbar. Ich meine konstruktives Feedback zur Weiterentwicklung der Fähigkeiten und des Charakters. Als Einleitung eignet sich beispielhaft die Frage wie der Kandidat denkt, dass das Gespräch verlaufen ist. Daran kann man anknüpfen und ein gutes Feedback geben, warum oder warum nicht das Gespräch gut gelaufen ist.&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;Helfe dem Kandidaten sich weiterzuentwickeln.
+&lt;/code&gt;&lt;/pre&gt;
+</content>
+	</entry>
+	
+	<entry>
+		<title>How to import SQlite Database File in Flutter (Android)</title>
+		<link href="https://derkuba.de/content/posts/0521/flutter-import-sqlite-db/"/>
 		<updated>2021-05-02T00:00:00Z</updated>
-		<id>https://derkuba.de/content/posts/0521/flutter-export-sqlite-db/</id>
+		<id>https://derkuba.de/content/posts/0521/flutter-import-sqlite-db/</id>
+		<content type="html">&lt;p&gt;In meinem letzten Blogpost habe ich erklärt wie man aus seiner App die  &lt;a href=&quot;https://www.sqlite.org/index.html&quot;&gt;SQlite-Datenbank&lt;/a&gt; exportiert. In diesem Artikel erkläre ich wie man diese wieder importiert. Voraussetzung ist ein bestehendes Flutter-Projekt und ein Sqlite-Datenbank im Download-Verzeichnis des Telefons.&lt;/p&gt;
+&lt;p&gt;Benötigte Bibliotheken sind folgende:&lt;/p&gt;
+&lt;pre class=&quot;language-yaml&quot;&gt;&lt;code class=&quot;language-yaml&quot;&gt;&lt;span class=&quot;highlight-line&quot;&gt;&lt;span class=&quot;token key atrule&quot;&gt;dependencies&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;&lt;/span&gt;&lt;br /&gt;&lt;span class=&quot;highlight-line&quot;&gt;  &lt;span class=&quot;token key atrule&quot;&gt;flutter&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;&lt;/span&gt;&lt;br /&gt;&lt;span class=&quot;highlight-line&quot;&gt;    &lt;span class=&quot;token key atrule&quot;&gt;sdk&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; flutter&lt;/span&gt;&lt;br /&gt;&lt;span class=&quot;highlight-line&quot;&gt;  &lt;span class=&quot;token key atrule&quot;&gt;sqflite&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;&lt;/span&gt;&lt;br /&gt;&lt;span class=&quot;highlight-line&quot;&gt;  &lt;span class=&quot;token key atrule&quot;&gt;path&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;&lt;/span&gt;&lt;br /&gt;&lt;span class=&quot;highlight-line&quot;&gt;  &lt;span class=&quot;token key atrule&quot;&gt;permission_handler&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; ^7.0.0&lt;/span&gt;&lt;br /&gt;&lt;span class=&quot;highlight-line&quot;&gt;  &lt;span class=&quot;token key atrule&quot;&gt;downloads_path_provider&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; ^0.1.0&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Die Vorgehensweise diesmal habe ich strukturiert in&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Lege eine neue Seite für den Import an und gebe den Dateipfad hinein&lt;/li&gt;
+&lt;li&gt;Lese Dateien aus dem Download-Verzeichnis und filtere nach &lt;em&gt;&amp;quot;.db&amp;quot;&lt;/em&gt;&lt;/li&gt;
+&lt;li&gt;Zeige die Dateien an.&lt;/li&gt;
+&lt;li&gt;Kopiere diese in das Datenbankverzeichnis&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;Ich gehe davon aus, dass mehrere Dateien für den Import zur Verfügung stehen und man den Nutzer vor die Wahl stellen kann, welche er importieren möchte.&lt;/p&gt;
+</content>
+	</entry>
+	
+	<entry>
+		<title>How to export SQlite Database File in Flutter (Android)</title>
+		<link href="https://derkuba.de/content/posts/0521/flutter-export-sqlite-db%20copy/"/>
+		<updated>2021-05-02T00:00:00Z</updated>
+		<id>https://derkuba.de/content/posts/0521/flutter-export-sqlite-db%20copy/</id>
 		<content type="html">&lt;p&gt;Eine der vielen Möglichkeiten für das Speichern von Daten innerhalb einer &lt;a href=&quot;https://flutter.dev/&quot;&gt;Flutter-App&lt;/a&gt; ist &lt;a href=&quot;https://www.sqlite.org/index.html&quot;&gt;SQlite&lt;/a&gt;. SQlite bietet eine Relationale-Datenbank innerhalb der App ohne externe Ahhänigkeit und ohne Datenverkehr über das Internet. &lt;!-- endOfPreview --&gt;Es ist sehr praktisch und für kleinere, einfachere Statements performant. Wer eine Übersicht über die Möglichkeiten zum Speichern von Daten innerhalb von Flutter sucht, dem empfehle ich folgenden &lt;a href=&quot;https://objectbox.io/flutter-databases-sqflite-hive-objectbox-and-moor/&quot;&gt;Artikel  (flutter-databases-sqflite-hive-objectbox-and-moor)&lt;/a&gt;. &lt;a href=&quot;https://flutter.dev/docs/cookbook/persistence/sqlite&quot;&gt;Die Flutter-Doku&lt;/a&gt; erklärt sehr gut wie man SQlite in seiner App integriert.&lt;/p&gt;
 &lt;p&gt;Ich habe eine App gebaut, die Daten in der SQlite abspeichert. Nun stand ich vor dem Problem wie ich die Daten migrieren kann, falls ich z.B. das Handy wechsle. Da SQlite die Daten in eine *.db Datei schreibt, muss es eine Möglichkeit geben an diese Datei auf dem Telefon zu gelangen und diese aus der App zu exportieren. Wie man das erreichen kann, möchte ich mit euch teilen.&lt;/p&gt;
 &lt;p&gt;Voraussetzung ist eine Flutter App und folgende Bibliotheken:&lt;/p&gt;
@@ -34,7 +112,7 @@
 &lt;li&gt;Öffne diese Datei und schreibe eine Kopie in das Download-Verzeichnis des Telefons.&lt;/li&gt;
 &lt;/ol&gt;
 &lt;br /&gt; 
-&lt;h4 id=&quot;1.-schreibrechte&quot;&gt;1. Schreibrechte &lt;a class=&quot;direct-link&quot; href=&quot;https://derkuba.de/content/posts/0521/flutter-export-sqlite-db/#1.-schreibrechte&quot;&gt;#&lt;/a&gt;&lt;/h4&gt;
+&lt;h4 id=&quot;1.-schreibrechte&quot;&gt;1. Schreibrechte &lt;a class=&quot;direct-link&quot; href=&quot;https://derkuba.de/content/posts/0521/flutter-export-sqlite-db%20copy/#1.-schreibrechte&quot;&gt;#&lt;/a&gt;&lt;/h4&gt;
 &lt;p&gt;Damit man Dateien auf dem Telefon schreiben und lesen kann, benötigt man Schreibrechte. &lt;strong&gt;Achtung!&lt;/strong&gt; Ich beziehe mich hier nur auf das Android-System.&lt;br /&gt;
 Um an Schreibrechte zu gelangen muss man folgende Zeilen in die Datei &lt;em&gt;&lt;strong&gt;/android/app/src/main/AndroidManifest.xml&lt;/strong&gt;&lt;/em&gt; hinzufügen.&lt;/p&gt;
 &lt;pre class=&quot;language-xml&quot;&gt;&lt;code class=&quot;language-xml&quot;&gt;&lt;span class=&quot;highlight-line&quot;&gt;&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;&amp;lt;&lt;/span&gt;uses-permission&lt;/span&gt; &lt;span class=&quot;token attr-name&quot;&gt;&lt;span class=&quot;token namespace&quot;&gt;android:&lt;/span&gt;name&lt;/span&gt;&lt;span class=&quot;token attr-value&quot;&gt;&lt;span class=&quot;token punctuation attr-equals&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;&quot;&lt;/span&gt;android.permission.READ_EXTERNAL_STORAGE&lt;span class=&quot;token punctuation&quot;&gt;&quot;&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;/&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;br /&gt;&lt;span class=&quot;highlight-line&quot;&gt;&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;&amp;lt;&lt;/span&gt;uses-permission&lt;/span&gt; &lt;span class=&quot;token attr-name&quot;&gt;&lt;span class=&quot;token namespace&quot;&gt;android:&lt;/span&gt;name&lt;/span&gt;&lt;span class=&quot;token attr-value&quot;&gt;&lt;span class=&quot;token punctuation attr-equals&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;&quot;&lt;/span&gt;android.permission.WRITE_EXTERNAL_STORAGE&lt;span class=&quot;token punctuation&quot;&gt;&quot;&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;/&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
@@ -43,7 +121,7 @@ Um an Schreibrechte zu gelangen muss man folgende Zeilen in die Datei &lt;em&gt;
 &lt;p&gt;Die erste Zeile fragt das System an, ob überhaupt Rechte in der oben beschriebenen xml eingetragen wurden und dann das Telefon, ob der Telefonnutzer die Rechte freigegeben hat. Die dritte Zeile lässt einen Dialog erscheinen, der dem Nutzer diese Auwahl anbietet.&lt;/p&gt;
 &lt;p&gt;&lt;img src=&quot;https://derkuba.de/content/img/0521/right-granted.png&quot; alt=&quot;schreibrechte&quot; title=&quot;schreibrechte&quot; /&gt;&lt;/p&gt;
 &lt;p&gt;Wurden diese Rechte erlaubt, können wir die Dateien schreiben.&lt;/p&gt;
-&lt;h4 id=&quot;2.-dateipfade&quot;&gt;2. Dateipfade &lt;a class=&quot;direct-link&quot; href=&quot;https://derkuba.de/content/posts/0521/flutter-export-sqlite-db/#2.-dateipfade&quot;&gt;#&lt;/a&gt;&lt;/h4&gt;
+&lt;h4 id=&quot;2.-dateipfade&quot;&gt;2. Dateipfade &lt;a class=&quot;direct-link&quot; href=&quot;https://derkuba.de/content/posts/0521/flutter-export-sqlite-db%20copy/#2.-dateipfade&quot;&gt;#&lt;/a&gt;&lt;/h4&gt;
 &lt;p&gt;Die Dateipfade sind etwas versteckt und wir benötigen die oben genannten Module als Hilfe.&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;Pfad zur bestehenden Datenbank.db&lt;/strong&gt;&lt;/p&gt;
 &lt;pre class=&quot;language-dart&quot;&gt;&lt;code class=&quot;language-dart&quot;&gt;&lt;span class=&quot;highlight-line&quot;&gt;String dbName &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;doggie_database.db&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;token comment&quot;&gt;// name of the db&lt;/span&gt;&lt;/span&gt;&lt;br /&gt;&lt;span class=&quot;highlight-line&quot;&gt;&lt;span class=&quot;token keyword&quot;&gt;var&lt;/span&gt; databasesPath &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;await&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;getDatabasesPath&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;token comment&quot;&gt;// default database path&lt;/span&gt;&lt;/span&gt;&lt;br /&gt;&lt;span class=&quot;highlight-line&quot;&gt;&lt;span class=&quot;token keyword&quot;&gt;var&lt;/span&gt; innerPath &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;join&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;databasesPath&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; dbName&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;&lt;/span&gt;&lt;br /&gt;&lt;span class=&quot;highlight-line&quot;&gt;&lt;span class=&quot;token function&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;innerPath&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;&lt;/span&gt;&lt;br /&gt;&lt;span class=&quot;highlight-line&quot;&gt;&lt;span class=&quot;token comment&quot;&gt;// /data/user/0/com.example.flutter_sqlite_database_export/databases/doggie_database.db&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
@@ -53,7 +131,7 @@ Um an Schreibrechte zu gelangen muss man folgende Zeilen in die Datei &lt;em&gt;
 Wer in seine bestehende und laufende Applikation reinschauen möchte, dem empfehle ich im Android-Studio den &lt;em&gt;&lt;strong&gt;Device-File-Explorer&lt;/strong&gt;&lt;/em&gt;.&lt;/p&gt;
 &lt;p&gt;&lt;img src=&quot;https://derkuba.de/content/img/0521/file-explorer.png&quot; alt=&quot;device file explorer&quot; title=&quot;device file explorer&quot; /&gt;&lt;/p&gt;
 &lt;p&gt;Unter &lt;em&gt;&lt;strong&gt;/data/data/[name eurer applikation]/databases/nameEurerDB.db&lt;/strong&gt;&lt;/em&gt; findet ihr eure SQlite Datenbank und könnte diese exportieren.&lt;/p&gt;
-&lt;h4 id=&quot;3.-datenbank.db-exportieren&quot;&gt;3. Datenbank.db exportieren &lt;a class=&quot;direct-link&quot; href=&quot;https://derkuba.de/content/posts/0521/flutter-export-sqlite-db/#3.-datenbank.db-exportieren&quot;&gt;#&lt;/a&gt;&lt;/h4&gt;
+&lt;h4 id=&quot;3.-datenbank.db-exportieren&quot;&gt;3. Datenbank.db exportieren &lt;a class=&quot;direct-link&quot; href=&quot;https://derkuba.de/content/posts/0521/flutter-export-sqlite-db%20copy/#3.-datenbank.db-exportieren&quot;&gt;#&lt;/a&gt;&lt;/h4&gt;
 &lt;pre class=&quot;language-dart&quot;&gt;&lt;code class=&quot;language-dart&quot;&gt;&lt;span class=&quot;highlight-line&quot;&gt;&lt;span class=&quot;token keyword&quot;&gt;var&lt;/span&gt; dbFile &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;File&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;innerPath&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;&lt;/span&gt;&lt;br /&gt;&lt;span class=&quot;highlight-line&quot;&gt;&lt;span class=&quot;token keyword&quot;&gt;var&lt;/span&gt; filePath &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; tempPath &lt;span class=&quot;token operator&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&#39;/$dbName&#39;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;&lt;/span&gt;&lt;br /&gt;&lt;span class=&quot;highlight-line&quot;&gt;&lt;span class=&quot;token keyword&quot;&gt;var&lt;/span&gt; dbFileBytes &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; dbFile&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;readAsBytesSync&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;&lt;/span&gt;&lt;br /&gt;&lt;span class=&quot;highlight-line&quot;&gt;&lt;span class=&quot;token keyword&quot;&gt;var&lt;/span&gt; bytes &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; ByteData&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;view&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;dbFileBytes&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;buffer&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;&lt;/span&gt;&lt;br /&gt;&lt;span class=&quot;highlight-line&quot;&gt;&lt;span class=&quot;token keyword&quot;&gt;final&lt;/span&gt; buffer &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; bytes&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;buffer&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;&lt;/span&gt;&lt;br /&gt;&lt;span class=&quot;highlight-line&quot;&gt;&lt;/span&gt;&lt;br /&gt;&lt;span class=&quot;highlight-line&quot;&gt;&lt;span class=&quot;token function&quot;&gt;File&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;filePath&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;writeAsBytes&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;/span&gt;&lt;br /&gt;&lt;span class=&quot;highlight-line&quot;&gt;  buffer&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;asUint8List&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt; &lt;/span&gt;&lt;br /&gt;&lt;span class=&quot;highlight-line&quot;&gt;    dbFileBytes&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;offsetInBytes&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; dbFileBytes&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;lengthInBytes&lt;/span&gt;&lt;br /&gt;&lt;span class=&quot;highlight-line&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;Die Datenbank-Datei wird als Bytes gelesen, und im Standard Dart I/O Verfahren von einem Ort zum anderen geschrieben. So erhält man eine Datenbank-Export für die in der App verwendete Datenbank.&lt;/p&gt;
 &lt;p&gt;Hier nochmal die ganze Methode samt Aufruf:&lt;/p&gt;
@@ -62,6 +140,23 @@ Wer in seine bestehende und laufende Applikation reinschauen möchte, dem empfeh
 &lt;p&gt;Great Success! :-)&lt;/p&gt;
 &lt;p&gt;Diese Code-Blöcke eingebacken in die Flutter-Starter-Applikation habe ich unter &lt;a href=&quot;https://github.com/derKuba/flutter-sqlite-database-export&quot;&gt;Github&lt;/a&gt; für euch zur Verfügung gestellt.&lt;/p&gt;
 &lt;p&gt;Ihr habt Fragen oder Anregungen? Schreibt mir bei &lt;a href=&quot;https://twitter.com/der_kuba&quot;&gt;Twitter&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;&lt;strong&gt;Nachtrag vom 07.05.2021&lt;/strong&gt;&lt;/em&gt;&lt;br /&gt;
+Auf Android Q reicht der oben erwähnte Zusatz in der XML nicht aus. Man muss noch folgendes ergänzen:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;  android:requestLegacyExternalStorage=&amp;quot;true&amp;quot;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;sodass die &lt;em&gt;&lt;strong&gt;/android/app/src/main/AndroidManifest.xml&lt;/strong&gt;&lt;/em&gt; wie folgt aussieht:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;&amp;lt;manifest xmlns:android=&amp;quot;http://schemas.android.com/apk/res/android&amp;quot; 
+  package=&amp;quot;com.example.flutter_sqlite_database_export&amp;quot;&amp;gt;
+  &amp;lt;application
+    android:label=&amp;quot;flutter_sqlite_database_export&amp;quot;
+    android:requestLegacyExternalStorage=&amp;quot;true&amp;quot;
+    android:icon=&amp;quot;@mipmap/ic_launcher&amp;quot;&amp;gt;
+    ....
+    &amp;lt;/application&amp;gt;
+    &amp;lt;uses-permission android:name=&amp;quot;android.permission.READ_EXTERNAL_STORAGE&amp;quot;/&amp;gt;
+    &amp;lt;uses-permission android:name=&amp;quot;android.permission.WRITE_EXTERNAL_STORAGE&amp;quot;/&amp;gt;
+&amp;lt;/manifest&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
 </content>
 	</entry>
 	
