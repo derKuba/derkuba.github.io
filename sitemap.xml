@@ -42,22 +42,22 @@
   </url>
   
   <url>
-    <loc>https://derkuba.de/tags/blog/</loc>
-    <lastmod>2021-04-02</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://derkuba.de/tags/tutorial/</loc>
-    <lastmod>2021-04-02</lastmod>
-  </url>
-  
-  <url>
     <loc>https://derkuba.de/tags/recruting/</loc>
     <lastmod>2021-04-02</lastmod>
   </url>
   
   <url>
     <loc>https://derkuba.de/tags/job-interview/</loc>
+    <lastmod>2021-04-02</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://derkuba.de/tags/blog/</loc>
+    <lastmod>2021-04-02</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://derkuba.de/tags/tutorial/</loc>
     <lastmod>2021-04-02</lastmod>
   </url>
   
@@ -117,12 +117,7 @@
   </url>
   
   <url>
-    <loc>https://derkuba.de/content/posts/0521/flutter-export-sqlite-db%20copy/</loc>
-    <lastmod>2021-05-02</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://derkuba.de/content/posts/0521/flutter-import-sqlite-db/</loc>
+    <loc>https://derkuba.de/content/posts/0521/flutter-export-sqlite-db/</loc>
     <lastmod>2021-05-02</lastmod>
   </url>
   
