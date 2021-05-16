@@ -27,6 +27,11 @@
   </url>
   
   <url>
+    <loc>https://derkuba.de/tags/excerpt/</loc>
+    <lastmod>2021-04-02</lastmod>
+  </url>
+  
+  <url>
     <loc>https://derkuba.de/tags/bulma/</loc>
     <lastmod>2021-04-02</lastmod>
   </url>
@@ -37,17 +42,7 @@
   </url>
   
   <url>
-    <loc>https://derkuba.de/tags/excerpt/</loc>
-    <lastmod>2021-04-02</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://derkuba.de/tags/blog/</loc>
-    <lastmod>2021-04-02</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://derkuba.de/tags/tutorial/</loc>
+    <loc>https://derkuba.de/tags/typescript/</loc>
     <lastmod>2021-04-02</lastmod>
   </url>
   
@@ -62,7 +57,12 @@
   </url>
   
   <url>
-    <loc>https://derkuba.de/tags/typescript/</loc>
+    <loc>https://derkuba.de/tags/blog/</loc>
+    <lastmod>2021-04-02</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://derkuba.de/tags/tutorial/</loc>
     <lastmod>2021-04-02</lastmod>
   </url>
   
@@ -123,21 +123,6 @@
   
   <url>
     <loc>https://derkuba.de/content/posts/0521/bewerbungsgespraech-leiten/</loc>
-    <lastmod>2021-05-07</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://derkuba.de/gbdk-tile-and-map-editor/README/</loc>
-    <lastmod>2021-05-07</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://derkuba.de/gbdk-tile-and-map-editor/readme/</loc>
-    <lastmod>2021-05-07</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://derkuba.de/gbdk-tile-and-map-editor/src/</loc>
     <lastmod>2021-05-07</lastmod>
   </url>
   
