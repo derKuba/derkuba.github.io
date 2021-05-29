@@ -87,7 +87,7 @@ a[href].direct-link:visited {
 
 .image-subline {
     color: black;
-    font-size: .8rem;
+    font-size: 0.8rem;
     margin-top: -20px;
 }
 
@@ -95,11 +95,11 @@ a[href].direct-link:visited {
     margin-bottom: 25px;
 }
 
-.tag-list span{
+.tag-list span {
     margin-right: 5px;
 }
 
-.categorie-item a .tag{
+.categorie-item a .tag {
     margin: 10px 5px 0px 5px;
 }
 
@@ -112,7 +112,6 @@ a[href].direct-link:visited {
     margin-right: 50px;
 }
 
-
 @media screen and (max-width: 768px) {
     .xl-padding-right-50 {
         margin-right: 0;
@@ -121,8 +120,8 @@ a[href].direct-link:visited {
 
 pre {
     counter-reset: lineNumber;
-  }
-  code .highlight-line:before {
+}
+code .highlight-line:before {
     -webkit-user-select: none;
     border-right: 1px solid #404040;
     color: #858585;
@@ -134,4 +133,8 @@ pre {
     padding-right: 1.2em;
     text-align: right;
     width: 1.9em;
-  }
+}
+
+.post-navigation li {
+    list-style: none;
+}

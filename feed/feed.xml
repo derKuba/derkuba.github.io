@@ -5,12 +5,146 @@
 	
 	<link href="https://derkuba.de/feed/feed.xml" rel="self"/>
 	<link href="https://derkuba.de/"/>
-	<updated>2021-05-21T00:00:00Z</updated>
+	<updated>2021-05-29T00:00:00Z</updated>
 	<id>https://derkuba.de/</id>
 	<author>
 		<name>Jacob Pawlik</name>
 		<email>jacob.pawlik@web.de</email>
 	</author>
+	
+	<entry>
+		<title>StencilJS-Tutorial: 1. Projekt aufsetzen</title>
+		<link href="https://derkuba.de/content/posts/stenciljs/projekt-aufsetzen/"/>
+		<updated>2021-05-29T00:00:00Z</updated>
+		<id>https://derkuba.de/content/posts/stenciljs/projekt-aufsetzen/</id>
+		<content type="html">&lt;p&gt;In der Dokumentation von &lt;a href=&quot;https://stenciljs.com/docs/getting-started&quot;&gt;StencilJS&lt;/a&gt; wird erklärt wie man ein Projekt neu aufsetzt. &lt;!-- endOfPreview --&gt;Der Befehl&lt;/p&gt;
+&lt;pre class=&quot;language-bash&quot;&gt;&lt;code class=&quot;language-bash&quot;&gt;&lt;span class=&quot;highlight-line&quot;&gt;&lt;span class=&quot;token function&quot;&gt;npm&lt;/span&gt; init stencil&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;startet eine Abfrage, in der man sich für eine Auswahl entscheiden muss ob man eine Progressive Web APP, eine Webseite oder eine einfache Komponente bauen möchte. Wir entscheiden uns für die zweite Auswahl.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://derkuba.de/content/img/stenciljs-tutorial/stencil-starter.png&quot; alt=&quot;Stencil Start&quot; title=&quot;Stencil Start&quot; /&gt;&lt;/p&gt;&lt;div class=&quot;has-text-right image-subline&quot;&gt;Bild 1: Auswahl&lt;/div&gt;&lt;p&gt;&lt;/p&gt;
+&lt;p&gt;Nachdem man sich für die zweite Auswahl entschieden hat, muss man noch einen Namen für das Projekt eingeben: address-book und bestätigt mit Y.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://derkuba.de/content/img/stenciljs-tutorial/stencil-starter-finish.png&quot; alt=&quot;Stencil Start Ende&quot; title=&quot;Stencil Start Ende&quot; /&gt;&lt;/p&gt;&lt;div class=&quot;has-text-right image-subline&quot;&gt;Bild 2: fertige Auswahl&lt;/div&gt;&lt;br /&gt;
+Das Stencil-Starter-Projekt wurde erfolgreich heruntergeladen. Es fehlen aber noch die Dependencies.&lt;p&gt;&lt;/p&gt;
+&lt;pre class=&quot;language-bash&quot;&gt;&lt;code class=&quot;language-bash&quot;&gt;&lt;span class=&quot;highlight-line&quot;&gt;&lt;span class=&quot;token builtin class-name&quot;&gt;cd&lt;/span&gt; address-book&lt;/span&gt;&lt;br /&gt;&lt;span class=&quot;highlight-line&quot;&gt;&lt;span class=&quot;token function&quot;&gt;npm&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;install&lt;/span&gt;&lt;/span&gt;&lt;br /&gt;&lt;span class=&quot;highlight-line&quot;&gt;&lt;span class=&quot;token function&quot;&gt;npm&lt;/span&gt; start&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;und es startet ein Browser unter der Adresse &lt;a href=&quot;http://localhost:3333/&quot;&gt;http://localhost:3333&lt;/a&gt; mit folgendem Inhalt:&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://derkuba.de/content/img/stenciljs-tutorial/stencil-starter-app.png&quot; alt=&quot;Stencil Start Ende&quot; title=&quot;Stencil Start Ende&quot; /&gt;&lt;/p&gt;&lt;div class=&quot;has-text-right image-subline&quot;&gt;Bild 2: fertige Auswahl&lt;/div&gt;&lt;p&gt;&lt;/p&gt;
+&lt;p&gt;Nun hat man eine lauffähige Webseite, die nach und nach umgebaut wird. Aber schauen wir mal woraus das Starter-Paket besteht:&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://derkuba.de/content/img/stenciljs-tutorial/stencil-starter-files.png&quot; alt=&quot;Stencil Starter Dateien&quot; title=&quot;Stencil Starter Dateien&quot; /&gt;&lt;/p&gt;&lt;div class=&quot;has-text-right image-subline&quot;&gt;Bild 2: Starter Dateien&lt;/div&gt;&lt;p&gt;&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;Datei&lt;/th&gt;
+&lt;th style=&quot;text-align:right&quot;&gt;Inhalt&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;src/assets/*&lt;/td&gt;
+&lt;td style=&quot;text-align:right&quot;&gt;bilder, icons, fonts&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;src/components/*.ts&lt;/td&gt;
+&lt;td style=&quot;text-align:right&quot;&gt;Komponentenklassen&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;src/components/*.css&lt;/td&gt;
+&lt;td style=&quot;text-align:right&quot;&gt;Gekapseltes CSS der jeweiligen Komponente&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;src/global/*.css / *.tss&lt;/td&gt;
+&lt;td style=&quot;text-align:right&quot;&gt;Globales CSS und ein globales Skript (sollte möglichst leer bleiben)&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;src/components.d.ts&lt;/td&gt;
+&lt;td style=&quot;text-align:right&quot;&gt;Automatisch generierte Typen-Datei der Komponenten&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;src/index.html&lt;/td&gt;
+&lt;td style=&quot;text-align:right&quot;&gt;Zentrale HTML-Datei, in der die Root-Komponente eingehangen ist&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;src/index.ts&lt;/td&gt;
+&lt;td style=&quot;text-align:right&quot;&gt;&amp;quot;Main&amp;quot;-Datei des Programmcodes&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;src/manifest.json&lt;/td&gt;
+&lt;td style=&quot;text-align:right&quot;&gt;Metadaten-Datei für die Browser&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;src/.editorconfig&lt;/td&gt;
+&lt;td style=&quot;text-align:right&quot;&gt;Formatierungsdatei für den Editor (charset, tab spaces...)&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;src/.gitignore&lt;/td&gt;
+&lt;td style=&quot;text-align:right&quot;&gt;Welche Dateien sollen nicht eingecheckt werden&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;src/.prettierrc.json&lt;/td&gt;
+&lt;td style=&quot;text-align:right&quot;&gt;Konfigurationsdatei für Prettier (Formatierungsvereinheitlichung)&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;src/package-lock.json&lt;/td&gt;
+&lt;td style=&quot;text-align:right&quot;&gt;Automatisch von npm generiert - beschreibt den Abhängigkeitenbaum&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;src/package.json&lt;/td&gt;
+&lt;td style=&quot;text-align:right&quot;&gt;Beschreibt das Projekt (Abhängigkeiten zu Modulen, Lizenz, Skripte)&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;src/stencil.config.ts&lt;/td&gt;
+&lt;td style=&quot;text-align:right&quot;&gt;Zentrale Konfigurationsdatei für Stencil&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;src/tsconfig.json&lt;/td&gt;
+&lt;td style=&quot;text-align:right&quot;&gt;Zentrale Konfigurationsdatei für Typescript&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;Im nächsten Artikel geht es dann endlich los mit der eigentlichen Programmierarbeit.&lt;/p&gt;
+&lt;p&gt;Der Code hierzu liegt auf &lt;a href=&quot;https://github.com/derKuba/stenciljs-tutorial&quot;&gt;Github&lt;/a&gt;. Um es auf diesen Stand zu bringen, müsst ihr das Projekt klonen und einmal auf den Tag 0.9.0 auschecken:&lt;/p&gt;
+&lt;pre class=&quot;language-bash&quot;&gt;&lt;code class=&quot;language-bash&quot;&gt;&lt;span class=&quot;highlight-line&quot;&gt;&lt;span class=&quot;token function&quot;&gt;git&lt;/span&gt; clone git@github.com:derKuba/stenciljs-tutorial.git&lt;/span&gt;&lt;br /&gt;&lt;span class=&quot;highlight-line&quot;&gt;&lt;span class=&quot;token function&quot;&gt;git&lt;/span&gt; checkout -b stencil-starter &lt;span class=&quot;token number&quot;&gt;0.9&lt;/span&gt;.0&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Ihr habt Fragen oder Anregungen? Schreibt mir bei &lt;a href=&quot;https://twitter.com/der_kuba&quot;&gt;Twitter&lt;/a&gt;.&lt;br /&gt;
+&lt;br /&gt;
+&lt;br /&gt;
+Tausend Dank fürs Lesen!&lt;/p&gt;
+&lt;p&gt;Kuba&lt;/p&gt;
+</content>
+	</entry>
+	
+	<entry>
+		<title>StencilJS-Tutorial: Einführung</title>
+		<link href="https://derkuba.de/content/posts/stenciljs/introduction/"/>
+		<updated>2021-05-29T00:00:00Z</updated>
+		<id>https://derkuba.de/content/posts/stenciljs/introduction/</id>
+		<content type="html">&lt;p&gt;&lt;a href=&quot;https://stenciljs.com/&quot;&gt;StencilJS&lt;/a&gt; ist ein sehr gutes Framework mit dem man schnell robuste Webanwendungen bauen kann. Der Einstieg ist recht einfach, bzw. der Umstieg von zb. React macht es noch leichter. Der Grundgedanke ist leicht erklärt. Anstatt schwerfällige Runtimes/Kernbibliotheken mitauszuliefern, kompiliert StencilJS einfach den Webstandard Webcomponents, der in allen modernen Browsern out-of-the-box funktioniert. Weil diese Webcomponents, meiner Meinung nach, nicht schön zu programmieren sind, dient StencilJS als Luxuswerkzeug. &lt;!-- endOfPreview --&gt;&lt;/p&gt;
+&lt;p&gt;Da ein einziger Blogpost nicht ausreichen wird, strukturiere ich das Tutorial in mehrere Teile und werde versuchen jede Woche einen neuen Teil fertig zu stellen. Der aktuelle Code befindet sich &lt;a href=&quot;https://github.com/derKuba/stenciljs-tutorial&quot;&gt;in meinem Github-Repo&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Das Tutorial gliedere ich in folgende Punkte:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;strong&gt;StencilJS&lt;/strong&gt; aufsetzen.&lt;/li&gt;
+&lt;li&gt;CSS-Bibliothek und Entwicklerwerkzeuge hinzufügen.&lt;/li&gt;
+&lt;li&gt;Die &lt;strong&gt;UI Grundstruktur&lt;/strong&gt;: Erste Webkomponenten.&lt;/li&gt;
+&lt;li&gt;Der StencilJS &lt;strong&gt;Store&lt;/strong&gt; und die Interaktion.&lt;/li&gt;
+&lt;li&gt;Exkursion: Kleines &lt;strong&gt;Backend&lt;/strong&gt; mit NodeJS und KOA.&lt;/li&gt;
+&lt;li&gt;Anbindung an das Backend.&lt;/li&gt;
+&lt;li&gt;E2E Blackbox Testing mit &lt;strong&gt;Playwright&lt;/strong&gt;.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;Der Techstack sieht aus wie folgt:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;em&gt;StencilJS&lt;/em&gt; =&amp;gt; Webcomponents&lt;/li&gt;
+&lt;li&gt;&lt;em&gt;Bulma CSS&lt;/em&gt; (ich möchte so wenig wie möglich CSS selber schreiben) =&amp;gt; Grid und netteres Design&lt;/li&gt;
+&lt;li&gt;&lt;em&gt;Eslint/Prettier/Jest&lt;/em&gt; =&amp;gt; Code-Qualität&lt;/li&gt;
+&lt;li&gt;&lt;em&gt;KOA&lt;/em&gt; =&amp;gt; Backend&lt;/li&gt;
+&lt;li&gt;&lt;em&gt;Playwright&lt;/em&gt; =&amp;gt; E2E Tests&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Als fachlichen Unterbau eignet sich hervorragend eine CRUD-Anwendung und ich habe mich für ein Adressbuch entschieden. Weil ich ein begnadeter UX/UI-ler :-) bin, habe ich auch folgendes Design entworfen.&lt;/p&gt;
+&lt;br /&gt;
+&lt;h4 id=&quot;scribbles-der-anwendung&quot;&gt;Scribbles der Anwendung &lt;a class=&quot;direct-link&quot; href=&quot;https://derkuba.de/content/posts/stenciljs/introduction/#scribbles-der-anwendung&quot;&gt;#&lt;/a&gt;&lt;/h4&gt;
+&lt;p&gt;Man erkennt eine einfach Liste, die alle Einträge des Adressbuchs enthält. Wenn man auf den Editieren-Link klickt, wird man auf die Detailseite geleitet. Bei einem Klick auf Löschen wird dieser Eintrag entfernt.&lt;br /&gt;
+&lt;img src=&quot;https://derkuba.de/content/img/stenciljs-tutorial/list-design.png&quot; alt=&quot;Liste&quot; title=&quot;Liste&quot; /&gt;&lt;/p&gt;&lt;div class=&quot;has-text-right image-subline&quot;&gt;Bild 1: Kontaktliste&lt;/div&gt;&lt;p&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://derkuba.de/content/img/stenciljs-tutorial/detail-page-design.png&quot; alt=&quot;Detailseite&quot; title=&quot;Detailseite&quot; /&gt;&lt;/p&gt;&lt;div class=&quot;has-text-right image-subline&quot;&gt;Bild 2: Detailseite&lt;/div&gt;&lt;p&gt;&lt;/p&gt;
+&lt;p&gt;Auf der Detailseite gibt es für jedes Feld eine Eingabebox. Der Speichern-Button persistiert die Eingaben, man wird auf die Liste zurückgeleitet und man sieht, dass ein Eintrag zusätzlich vorhanden ist.&lt;/p&gt;
+&lt;p&gt;Auf der nächsten Seite geht es los mit dem aufsetzen des Projekts.&lt;/p&gt;
+</content>
+	</entry>
 	
 	<entry>
 		<title>Fuckup der Woche: &#39;no-break space&#39; - das geschützte Leerzeichen</title>
