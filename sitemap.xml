@@ -37,22 +37,22 @@
   </url>
   
   <url>
-    <loc>https://derkuba.de/tags/blog/</loc>
-    <lastmod>2021-04-02</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://derkuba.de/tags/tutorial/</loc>
-    <lastmod>2021-04-02</lastmod>
-  </url>
-  
-  <url>
     <loc>https://derkuba.de/tags/prism/</loc>
     <lastmod>2021-04-02</lastmod>
   </url>
   
   <url>
     <loc>https://derkuba.de/tags/excerpt/</loc>
+    <lastmod>2021-04-02</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://derkuba.de/tags/blog/</loc>
+    <lastmod>2021-04-02</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://derkuba.de/tags/tutorial/</loc>
     <lastmod>2021-04-02</lastmod>
   </url>
   
@@ -159,5 +159,10 @@
   <url>
     <loc>https://derkuba.de/content/posts/stenciljs/entwicklerwerkzeuge/</loc>
     <lastmod>2021-06-04</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://derkuba.de/content/posts/stenciljs/erste-stencil-komponente/</loc>
+    <lastmod>2021-06-11</lastmod>
   </url>
 </urlset>
