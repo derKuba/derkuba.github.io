@@ -138,3 +138,7 @@ code .highlight-line:before {
 .post-navigation li {
     list-style: none;
 }
+
+td, th {
+    text-align: justify !important;
+}
