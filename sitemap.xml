@@ -37,17 +37,17 @@
   </url>
   
   <url>
+    <loc>https://derkuba.de/tags/excerpt/</loc>
+    <lastmod>2021-04-02</lastmod>
+  </url>
+  
+  <url>
     <loc>https://derkuba.de/tags/blog/</loc>
     <lastmod>2021-04-02</lastmod>
   </url>
   
   <url>
     <loc>https://derkuba.de/tags/tutorial/</loc>
-    <lastmod>2021-04-02</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://derkuba.de/tags/excerpt/</loc>
     <lastmod>2021-04-02</lastmod>
   </url>
   
@@ -184,5 +184,10 @@
   <url>
     <loc>https://derkuba.de/posts/</loc>
     <lastmod>2021-07-24</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://derkuba.de/content/posts/stenciljs/address-app/</loc>
+    <lastmod>2021-08-05</lastmod>
   </url>
 </urlset>
