@@ -17,7 +17,7 @@
 		<link href="https://derkuba.de/content/posts/stenciljs/jest-intro/"/>
 		<updated>2021-08-14T00:00:00Z</updated>
 		<id>https://derkuba.de/content/posts/stenciljs/jest-intro/</id>
-		<content type="html">&lt;p&gt;&lt;a href=&quot;https://jestjs.io/&quot;&gt;Jest ist DAS Javascript Testing-Framework&lt;/a&gt;. Wenn man mit Javascript/Typescript arbeitet, kommt man an diesem Schweizer-Taschenmesser des Testens nicht vorbei. Ich bin ein riesen Fan seitdem wir uns 2016 das erste mal begegnet sind. Ich habe davor mit diversen Test-Framework gearbeitet. Dazu zählen:&lt;/p&gt;
+		<content type="html">&lt;p&gt;&lt;a href=&quot;https://jestjs.io/&quot;&gt;Jest ist DAS Javascript Testing-Framework&lt;/a&gt;. Wenn man mit Javascript/Typescript arbeitet, kommt man an diesem Schweizer-Taschenmesser des Testens nicht vorbei. Ich bin ein riesen Fan seitdem wir uns 2016 das erste mal begegnet sind. Ich habe davor mit diversen Test-Framework gearbeitet.&lt;!-- endOfPreview --&gt; Dazu zählen:&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;a href=&quot;https://mochajs.org/&quot;&gt;Mocha&lt;/a&gt;,&lt;/li&gt;
 &lt;li&gt;&lt;a href=&quot;https://jasmine.github.io/&quot;&gt;Jasmine&lt;/a&gt;,&lt;/li&gt;
