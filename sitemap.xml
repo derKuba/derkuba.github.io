@@ -37,22 +37,22 @@
   </url>
   
   <url>
-    <loc>https://derkuba.de/tags/blog/</loc>
-    <lastmod>2021-04-03</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://derkuba.de/tags/tutorial/</loc>
-    <lastmod>2021-04-03</lastmod>
-  </url>
-  
-  <url>
     <loc>https://derkuba.de/tags/prism/</loc>
     <lastmod>2021-04-03</lastmod>
   </url>
   
   <url>
     <loc>https://derkuba.de/tags/excerpt/</loc>
+    <lastmod>2021-04-03</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://derkuba.de/tags/blog/</loc>
+    <lastmod>2021-04-03</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://derkuba.de/tags/tutorial/</loc>
     <lastmod>2021-04-03</lastmod>
   </url>
   
@@ -88,6 +88,11 @@
   
   <url>
     <loc>https://derkuba.de/tags/testing/</loc>
+    <lastmod>2021-04-03</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://derkuba.de/tags/jest/</loc>
     <lastmod>2021-04-03</lastmod>
   </url>
   
@@ -204,5 +209,15 @@
   <url>
     <loc>https://derkuba.de/content/posts/stenciljs/adress-app-tests/</loc>
     <lastmod>2021-08-21</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://derkuba.de/content/posts/stenciljs/adress-app-tests-part-ii/</loc>
+    <lastmod>2021-08-27</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://derkuba.de/content/posts/stenciljs/adress-app-tests-part-iii/</loc>
+    <lastmod>2021-09-03</lastmod>
   </url>
 </urlset>
