@@ -37,6 +37,11 @@
   </url>
   
   <url>
+    <loc>https://derkuba.de/tags/prism/</loc>
+    <lastmod>2021-04-02</lastmod>
+  </url>
+  
+  <url>
     <loc>https://derkuba.de/tags/blog/</loc>
     <lastmod>2021-04-02</lastmod>
   </url>
@@ -47,17 +52,17 @@
   </url>
   
   <url>
-    <loc>https://derkuba.de/tags/typescript/</loc>
-    <lastmod>2021-04-02</lastmod>
-  </url>
-  
-  <url>
     <loc>https://derkuba.de/tags/recruting/</loc>
     <lastmod>2021-04-02</lastmod>
   </url>
   
   <url>
     <loc>https://derkuba.de/tags/job-interview/</loc>
+    <lastmod>2021-04-02</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://derkuba.de/tags/typescript/</loc>
     <lastmod>2021-04-02</lastmod>
   </url>
   
@@ -82,7 +87,7 @@
   </url>
   
   <url>
-    <loc>https://derkuba.de/tags/prism/</loc>
+    <loc>https://derkuba.de/tags/jest/</loc>
     <lastmod>2021-04-02</lastmod>
   </url>
   
@@ -199,5 +204,35 @@
   <url>
     <loc>https://derkuba.de/content/posts/stenciljs/jest-intro/</loc>
     <lastmod>2021-08-14</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://derkuba.de/content/posts/stenciljs/adress-app-tests/</loc>
+    <lastmod>2021-08-21</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://derkuba.de/content/posts/stenciljs/adress-app-tests-part-ii/</loc>
+    <lastmod>2021-08-27</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://derkuba.de/content/posts/stenciljs/adress-app-tests-part-iii/</loc>
+    <lastmod>2021-09-03</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://derkuba.de/content/posts/stenciljs/address-app-e2e/</loc>
+    <lastmod>2021-09-09</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://derkuba.de/content/posts/stenciljs/address-app-e2e-part-ii/</loc>
+    <lastmod>2021-09-17</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://derkuba.de/content/posts/stenciljs/stencil-tutorial/</loc>
+    <lastmod>2021-09-18</lastmod>
   </url>
 </urlset>
