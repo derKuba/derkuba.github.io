@@ -37,17 +37,17 @@
   </url>
   
   <url>
+    <loc>https://derkuba.de/tags/excerpt/</loc>
+    <lastmod>2021-04-02</lastmod>
+  </url>
+  
+  <url>
     <loc>https://derkuba.de/tags/blog/</loc>
     <lastmod>2021-04-02</lastmod>
   </url>
   
   <url>
     <loc>https://derkuba.de/tags/tutorial/</loc>
-    <lastmod>2021-04-02</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://derkuba.de/tags/excerpt/</loc>
     <lastmod>2021-04-02</lastmod>
   </url>
   
@@ -78,6 +78,16 @@
   
   <url>
     <loc>https://derkuba.de/tags/testing/</loc>
+    <lastmod>2021-04-02</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://derkuba.de/tags/stencil/</loc>
+    <lastmod>2021-04-02</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://derkuba.de/tags/storybook/</loc>
     <lastmod>2021-04-02</lastmod>
   </url>
   
@@ -239,5 +249,10 @@
   <url>
     <loc>https://derkuba.de/content/posts/1021/flutter-e2e/</loc>
     <lastmod>2021-10-01</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://derkuba.de/content/posts/1021/stencil-component-lib/</loc>
+    <lastmod>2021-10-08</lastmod>
   </url>
 </urlset>
