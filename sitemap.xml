@@ -77,17 +77,17 @@
   </url>
   
   <url>
-    <loc>https://derkuba.de/tags/testing/</loc>
-    <lastmod>2021-04-02</lastmod>
-  </url>
-  
-  <url>
     <loc>https://derkuba.de/tags/stencil/</loc>
     <lastmod>2021-04-02</lastmod>
   </url>
   
   <url>
     <loc>https://derkuba.de/tags/storybook/</loc>
+    <lastmod>2021-04-02</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://derkuba.de/tags/testing/</loc>
     <lastmod>2021-04-02</lastmod>
   </url>
   
@@ -254,5 +254,15 @@
   <url>
     <loc>https://derkuba.de/content/posts/1021/stencil-component-lib/</loc>
     <lastmod>2021-10-08</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://derkuba.de/content/posts/1021/storybook-addon/</loc>
+    <lastmod>2021-10-08</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://derkuba.de/content/posts/1021/component-lib-storybook/</loc>
+    <lastmod>2021-10-15</lastmod>
   </url>
 </urlset>
