@@ -17,18 +17,16 @@
 		<link href="https://derkuba.de/content/posts/1021/stencil-builds-for-using-component-lib/"/>
 		<updated>2021-10-31T00:00:00Z</updated>
 		<id>https://derkuba.de/content/posts/1021/stencil-builds-for-using-component-lib/</id>
-		<content type="html">&lt;p&gt;Worum gehts heute?&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;Intro&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;https://derkuba.de/content/posts/1021/stencil-builds-for-using-component-lib/#stencil-builds&quot;&gt;Erklärung StencilJS-Builds&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;https://derkuba.de/content/posts/1021/stencil-builds-for-using-component-lib/#anwendung&quot;&gt;Anwendung der Builds&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;https://derkuba.de/content/posts/1021/stencil-builds-for-using-component-lib/#fazit&quot;&gt;Fazit&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h4 id=&quot;einleitung&quot; tabindex=&quot;-1&quot;&gt;Einleitung &lt;a class=&quot;direct-link&quot; href=&quot;https://derkuba.de/content/posts/1021/stencil-builds-for-using-component-lib/#einleitung&quot;&gt;#&lt;/a&gt;&lt;/h4&gt;
-&lt;p&gt;In den letzten beiden Artikeln habe ich gezeigt wie man eine Komponentenbibliothek aufsetzt und wie man Storybook benutzt. Damit ist die Grundlage geschaffen. Was ist der nächste logische Schritt, wenn man einige (oder alle) Komponenten fertig hat? Richtig! Man möchte diese verwenden.&lt;br /&gt;
+		<content type="html">&lt;p&gt;In den letzten beiden Artikeln habe ich gezeigt wie man eine Komponentenbibliothek aufsetzt und wie man Storybook benutzt. Damit ist die Grundlage geschaffen. Was ist der nächste logische Schritt, wenn man einige (oder alle) Komponenten fertig hat? Richtig! Man möchte diese verwenden.&lt;br /&gt;
 Die Grundidee ist die Arbeitsteilung. Ein Team/Spezialist kümmert sich um die Komponentenbibliothek und stellt diese anderen Teams zur Verfügung.&lt;!-- endOfPreview --&gt;&lt;br /&gt;
 Die anderen Teams haben dadurch mehr Zeit sich um die Implementierung der Fachlichkeit und Businesslogik zu kümmern.&lt;/p&gt;
-&lt;h4 id=&quot;stenciljs-builds&quot; tabindex=&quot;-1&quot;&gt;StencilJS-Builds &lt;a class=&quot;direct-link&quot; href=&quot;https://derkuba.de/content/posts/1021/stencil-builds-for-using-component-lib/#stenciljs-builds&quot;&gt;#&lt;/a&gt;&lt;/h4&gt;
+&lt;p&gt;Ich habe den Artikel in drei Teile gegliedert:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;a href=&quot;https://derkuba.de/content/posts/1021/stencil-builds-for-using-component-lib/#stencil-builds&quot;&gt;Was sind die StencilJS-Builds a.k.a. Output-Targets?&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://derkuba.de/content/posts/1021/stencil-builds-for-using-component-lib/#wie-wende-ich-diese-an%3F&quot;&gt;Wie wende ich diese an?&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://derkuba.de/content/posts/1021/stencil-builds-for-using-component-lib/#fazit&quot;&gt;Fazit&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h4 id=&quot;was-sind-die-stenciljs-builds%2C-bzw%2C-output-targets%3F&quot; tabindex=&quot;-1&quot;&gt;Was sind die StencilJS-Builds, bzw, Output-Targets? &lt;a class=&quot;direct-link&quot; href=&quot;https://derkuba.de/content/posts/1021/stencil-builds-for-using-component-lib/#was-sind-die-stenciljs-builds%2C-bzw%2C-output-targets%3F&quot;&gt;#&lt;/a&gt;&lt;/h4&gt;
 &lt;p&gt;Langer Rede kurzer Sinn. Die Ausgangslage sieht so aus, dass wir einige Komponenten in &lt;a href=&quot;https://github.com/derKuba/stenciljs-tutorial/tree/main/component-lib&quot;&gt;unserem component-lib Projekt&lt;/a&gt; (Kuba-Button, My-Component, Kuba-Input) liegen haben. Diese stellen wir nun zur Verfügung. Dazu müssen wir uns anschauen, wie &lt;a href=&quot;https://stenciljs.com/docs/output-targets&quot;&gt;StencilJS&lt;/a&gt; dies ermöglicht.&lt;/p&gt;
 &lt;table&gt;
 &lt;thead&gt;
@@ -87,7 +85,7 @@ Jede Variante hat seine Vor- und Nachteile.&lt;/p&gt;
 &lt;strong&gt;+&lt;/strong&gt; Lazy Loading optimiert&lt;br /&gt;
 &lt;b&gt;-&lt;/b&gt; Keine einzelnen Komponenten extrahierbar&lt;br /&gt;
 &lt;b&gt;-&lt;/b&gt; Erzeugt sehr viele Dateien, die einzeln nachgeladen werden (automagisch)&lt;/p&gt;
-&lt;h4 id=&quot;anwendung&quot; tabindex=&quot;-1&quot;&gt;Anwendung &lt;a class=&quot;direct-link&quot; href=&quot;https://derkuba.de/content/posts/1021/stencil-builds-for-using-component-lib/#anwendung&quot;&gt;#&lt;/a&gt;&lt;/h4&gt;
+&lt;h4 id=&quot;wie-wende-ich-diese-an%3F&quot; tabindex=&quot;-1&quot;&gt;Wie wende ich diese an? &lt;a class=&quot;direct-link&quot; href=&quot;https://derkuba.de/content/posts/1021/stencil-builds-for-using-component-lib/#wie-wende-ich-diese-an%3F&quot;&gt;#&lt;/a&gt;&lt;/h4&gt;
 &lt;p&gt;Für die Präsentation der Anwendung habe ich im Beispielprojekt einen Unterordner &lt;a href=&quot;https://github.com/derKuba/stenciljs-tutorial/tree/main/component-lib-usage&quot;&gt;&amp;quot;component-lib-usage&amp;quot; angelegt&lt;/a&gt;. In diesem befinden sich die Beispiel HTML-Seiten, die das jeweilige Build-Ziel einbinden. Dazu gibt es noch den Bundling-Code.&lt;/p&gt;
 &lt;p&gt;Die Anwendung umfasst immer drei Teile:&lt;/p&gt;
 &lt;ol&gt;
