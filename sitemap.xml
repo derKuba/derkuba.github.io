@@ -12,98 +12,93 @@
   </url>
   
   <url>
-    <loc>https://derkuba.de/posts/</loc>
-    <lastmod>2021-04-03</lastmod>
-  </url>
-  
-  <url>
     <loc>https://derkuba.de/page-list/</loc>
-    <lastmod>2021-04-03</lastmod>
+    <lastmod>2021-04-02</lastmod>
   </url>
   
   <url>
     <loc>https://derkuba.de/tags/</loc>
-    <lastmod>2021-04-03</lastmod>
+    <lastmod>2021-04-02</lastmod>
   </url>
   
   <url>
     <loc>https://derkuba.de/tags/11nty/</loc>
-    <lastmod>2021-04-03</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://derkuba.de/tags/excerpt/</loc>
-    <lastmod>2021-04-03</lastmod>
+    <lastmod>2021-04-02</lastmod>
   </url>
   
   <url>
     <loc>https://derkuba.de/tags/bulma/</loc>
-    <lastmod>2021-04-03</lastmod>
+    <lastmod>2021-04-02</lastmod>
   </url>
   
   <url>
     <loc>https://derkuba.de/tags/prism/</loc>
-    <lastmod>2021-04-03</lastmod>
+    <lastmod>2021-04-02</lastmod>
   </url>
   
   <url>
     <loc>https://derkuba.de/tags/blog/</loc>
-    <lastmod>2021-04-03</lastmod>
+    <lastmod>2021-04-02</lastmod>
   </url>
   
   <url>
     <loc>https://derkuba.de/tags/tutorial/</loc>
-    <lastmod>2021-04-03</lastmod>
+    <lastmod>2021-04-02</lastmod>
   </url>
   
   <url>
     <loc>https://derkuba.de/tags/recruting/</loc>
-    <lastmod>2021-04-03</lastmod>
+    <lastmod>2021-04-02</lastmod>
   </url>
   
   <url>
     <loc>https://derkuba.de/tags/job-interview/</loc>
-    <lastmod>2021-04-03</lastmod>
+    <lastmod>2021-04-02</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://derkuba.de/tags/excerpt/</loc>
+    <lastmod>2021-04-02</lastmod>
   </url>
   
   <url>
     <loc>https://derkuba.de/tags/typescript/</loc>
-    <lastmod>2021-04-03</lastmod>
+    <lastmod>2021-04-02</lastmod>
   </url>
   
   <url>
     <loc>https://derkuba.de/tags/flutter/</loc>
-    <lastmod>2021-04-03</lastmod>
+    <lastmod>2021-04-02</lastmod>
   </url>
   
   <url>
     <loc>https://derkuba.de/tags/sqllite/</loc>
-    <lastmod>2021-04-03</lastmod>
+    <lastmod>2021-04-02</lastmod>
   </url>
   
   <url>
     <loc>https://derkuba.de/tags/stencil/</loc>
-    <lastmod>2021-04-03</lastmod>
+    <lastmod>2021-04-02</lastmod>
   </url>
   
   <url>
     <loc>https://derkuba.de/tags/storybook/</loc>
-    <lastmod>2021-04-03</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://derkuba.de/tags/testing/</loc>
-    <lastmod>2021-04-03</lastmod>
+    <lastmod>2021-04-02</lastmod>
   </url>
   
   <url>
     <loc>https://derkuba.de/tags/stenciljs/</loc>
-    <lastmod>2021-04-03</lastmod>
+    <lastmod>2021-04-02</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://derkuba.de/tags/testing/</loc>
+    <lastmod>2021-04-02</lastmod>
   </url>
   
   <url>
     <loc>https://derkuba.de/tags/jest/</loc>
-    <lastmod>2021-04-03</lastmod>
+    <lastmod>2021-04-02</lastmod>
   </url>
   
   <url>
@@ -117,13 +112,13 @@
   </url>
   
   <url>
-    <loc>https://derkuba.de/content/about/</loc>
+    <loc>https://derkuba.de/</loc>
     <lastmod>2021-04-05</lastmod>
   </url>
   
   <url>
     <loc>https://derkuba.de/content/datenschutz.html</loc>
-    <lastmod>2021-04-06</lastmod>
+    <lastmod>2021-04-08</lastmod>
   </url>
   
   <url>
@@ -143,11 +138,6 @@
   
   <url>
     <loc>https://derkuba.de/content/posts/0521/bewerbungsgespraech-leiten/</loc>
-    <lastmod>2021-05-07</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://derkuba.de/</loc>
     <lastmod>2021-05-07</lastmod>
   </url>
   
@@ -177,11 +167,6 @@
   </url>
   
   <url>
-    <loc>https://derkuba.de/content/impressum.html</loc>
-    <lastmod>2021-06-05</lastmod>
-  </url>
-  
-  <url>
     <loc>https://derkuba.de/content/posts/stenciljs/erste-stencil-komponente/</loc>
     <lastmod>2021-06-11</lastmod>
   </url>
@@ -203,6 +188,11 @@
   
   <url>
     <loc>https://derkuba.de/content/posts/stenciljs/functional-component/</loc>
+    <lastmod>2021-07-24</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://derkuba.de/posts/</loc>
     <lastmod>2021-07-24</lastmod>
   </url>
   
@@ -269,5 +259,15 @@
   <url>
     <loc>https://derkuba.de/content/posts/1121/storybook-addon/</loc>
     <lastmod>2021-11-09</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://derkuba.de/content/impressum.html</loc>
+    <lastmod>2021-11-09</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://derkuba.de/content/about/</loc>
+    <lastmod>2021-11-13</lastmod>
   </url>
 </urlset>
