@@ -5,7 +5,7 @@
 	
 	<link href="https://derkuba.de/feed/feed.xml" rel="self"/>
 	<link href="https://derkuba.de/"/>
-	<updated>2021-11-19T00:00:00Z</updated>
+	<updated>2021-11-27T00:00:00Z</updated>
 	<id>https://derkuba.de/</id>
 	<author>
 		<name>Jacob Pawlik</name>
@@ -13,19 +13,230 @@
 	</author>
 	
 	<entry>
+		<title>Nodejs Zertifizierung(JSNAD) Tipps</title>
+		<link href="https://derkuba.de/content/posts/1121/nodejs-application-zertifikat-tipps/"/>
+		<updated>2021-11-27T00:00:00Z</updated>
+		<id>https://derkuba.de/content/posts/1121/nodejs-application-zertifikat-tipps/</id>
+		<content type="html">&lt;p&gt;Du möchtest die JSNAD Zertifizierung und brauchst ein paar Tipps? Dann bist du hier genau richtig. Ich habe diese Zertifizierung abgelegt und möchte hier meine Strategie erklären.&lt;!-- endOfPreview --&gt;&lt;br /&gt;
+Am Anfang würde ich die Leute unterteilen, die die Kosten selber tragen müssen und die die es bezahlt bekommen. Letzteren empfehle ich das gesamte Paket mit Kurs zu buchen und ersteren eben nicht. Wenn man sich die &lt;a href=&quot;https://training.linuxfoundation.org/certification/jsnad/&quot;&gt;Webeite&lt;/a&gt; anschaut, bekommt man auch den genauen Überblick über die Themen und die Gewichtung. Aufmerksame Leser erkennen direkt, dass es sich zum größten Teil um die Überschriften aus der &lt;a href=&quot;https://nodejs.org/dist/latest-v16.x/docs/api/&quot;&gt;offiziellen Nodejs-Dokumentation&lt;/a&gt; (hab die 16er Doku als Beispiel verlinkt) handelt.&lt;/p&gt;
+&lt;hr /&gt;
+&lt;h4 id=&quot;buffer%2C-streams&quot; tabindex=&quot;-1&quot;&gt;&lt;strong&gt;&lt;a href=&quot;https://nodejs.org/dist/latest-v16.x/docs/api/buffer.html&quot;&gt;Buffer&lt;/a&gt;&lt;/strong&gt;, &lt;strong&gt;&lt;a href=&quot;https://nodejs.org/dist/latest-v16.x/docs/api/stream.html&quot;&gt;Streams&lt;/a&gt;&lt;/strong&gt; &lt;a class=&quot;direct-link&quot; href=&quot;https://derkuba.de/content/posts/1121/nodejs-application-zertifikat-tipps/#buffer%2C-streams&quot;&gt;#&lt;/a&gt;&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;Was sind Buffer und wie funktionieren sie;&lt;/li&gt;
+&lt;li&gt;Wie erzeugt man sie;&lt;/li&gt;
+&lt;li&gt;Wohin kann man sie transformieren&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;em&gt;Aufgaben&lt;/em&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Instanziiere Buffer&lt;/li&gt;
+&lt;li&gt;Lese und Schreibe die verschiedenen Datentype&lt;/li&gt;
+&lt;li&gt;Spiele mit den verschiedenen Methoden der Dokumentation&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr /&gt;
+&lt;h4 id=&quot;kontrollfluss&quot; tabindex=&quot;-1&quot;&gt;&lt;strong&gt;Kontrollfluss&lt;/strong&gt; &lt;a class=&quot;direct-link&quot; href=&quot;https://derkuba.de/content/posts/1121/nodejs-application-zertifikat-tipps/#kontrollfluss&quot;&gt;#&lt;/a&gt;&lt;/h4&gt;
+&lt;p&gt;&lt;em&gt;Inhalt&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;Empfehle diese Docs zu lesen:&lt;br /&gt;
+&lt;a href=&quot;https://nodejs.org/dist/latest-v16.x/docs/api/globals.html&quot;&gt;https://nodejs.org/dist/latest-v16.x/docs/api/globals.html&lt;/a&gt;&lt;br /&gt;
+&lt;a href=&quot;https://developer.mozilla.org/de/docs/Web/JavaScript/Reference/Global_Objects/Promise&quot;&gt;https://developer.mozilla.org/de/docs/Web/JavaScript/Reference/Global_Objects/Promise&lt;/a&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Wie funktionieren Callbacks, Promises?&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;em&gt;Aufgaben&lt;/em&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Erzeuge eine Kette von Callbacks.&lt;/li&gt;
+&lt;li&gt;Erzeuge einen Promise und fange die Fehler ab&lt;/li&gt;
+&lt;li&gt;Stoppe einen laufenden Promise&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr /&gt;
+&lt;h4 id=&quot;child-processes&quot; tabindex=&quot;-1&quot;&gt;&lt;strong&gt;&lt;a href=&quot;https://nodejs.org/dist/latest-v16.x/docs/api/child_process.html&quot;&gt;Child Processes&lt;/a&gt;&lt;/strong&gt; &lt;a class=&quot;direct-link&quot; href=&quot;https://derkuba.de/content/posts/1121/nodejs-application-zertifikat-tipps/#child-processes&quot;&gt;#&lt;/a&gt;&lt;/h4&gt;
+&lt;p&gt;&lt;em&gt;Inhalt&lt;/em&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Wie erzeuge ich aus node heraus einen child process ( wie führe ich mit nodejs weitere Anwendungen aus)&lt;/li&gt;
+&lt;li&gt;Welche verschiedenen Typen gibt es und was macht den Unterschied aus.&lt;/li&gt;
+&lt;li&gt;Welche Optionen gibt es.&lt;/li&gt;
+&lt;li&gt;Wie komme ich an die logs / den output heran?&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;em&gt;Aufgaben&lt;/em&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Erzeuge einen solchen process und gebe die Ergebnisse auf der Konsole aus&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr /&gt;
+&lt;h4 id=&quot;debugging&quot; tabindex=&quot;-1&quot;&gt;&lt;strong&gt;&lt;a href=&quot;https://nodejs.org/dist/latest-v16.x/docs/api/debugger.html&quot;&gt;Debugging&lt;/a&gt;&lt;/strong&gt; &lt;a class=&quot;direct-link&quot; href=&quot;https://derkuba.de/content/posts/1121/nodejs-application-zertifikat-tipps/#debugging&quot;&gt;#&lt;/a&gt;&lt;/h4&gt;
+&lt;p&gt;&lt;em&gt;Inhalt&lt;/em&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Wie bringe ich nodejs in den debug modus?&lt;/li&gt;
+&lt;li&gt;Wie verknüpfe ich Chrome mit nodejs?&lt;/li&gt;
+&lt;li&gt;Wie halte ich an Breakpoints an?&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;em&gt;Aufgaben&lt;/em&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Löse die oberen Fragen :-)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr /&gt;
+&lt;h4 id=&quot;error-handling&quot; tabindex=&quot;-1&quot;&gt;&lt;strong&gt;&lt;a href=&quot;https://nodejs.org/dist/latest-v16.x/docs/api/errors.html&quot;&gt;Error Handling&lt;/a&gt;&lt;/strong&gt; &lt;a class=&quot;direct-link&quot; href=&quot;https://derkuba.de/content/posts/1121/nodejs-application-zertifikat-tipps/#error-handling&quot;&gt;#&lt;/a&gt;&lt;/h4&gt;
+&lt;p&gt;&lt;em&gt;Inhalt&lt;/em&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Welche Fehler gibt es?&lt;/li&gt;
+&lt;li&gt;Wie und wann werden sie geworfen?&lt;/li&gt;
+&lt;li&gt;Wie wirft man sie programmatisch?&lt;/li&gt;
+&lt;li&gt;Wie fängt man sie ab?&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;em&gt;Aufgaben&lt;/em&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Fange Fehler aus Promises ab&lt;/li&gt;
+&lt;li&gt;Schreib einen eigenen Fehler&lt;/li&gt;
+&lt;li&gt;Versuche in Abhängigkeit des Fehlertyps eine andere Fehlermeldung zu werfen.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr /&gt;
+&lt;h4 id=&quot;node.js-cli&quot; tabindex=&quot;-1&quot;&gt;&lt;strong&gt;&lt;a href=&quot;https://nodejs.org/dist/latest-v16.x/docs/api/cli.html&quot;&gt;Node.js CLI&lt;/a&gt;&lt;/strong&gt; &lt;a class=&quot;direct-link&quot; href=&quot;https://derkuba.de/content/posts/1121/nodejs-application-zertifikat-tipps/#node.js-cli&quot;&gt;#&lt;/a&gt;&lt;/h4&gt;
+&lt;p&gt;&lt;em&gt;Inhalt&lt;/em&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Welche Kommandozeilenparameter gibt es?&lt;/li&gt;
+&lt;li&gt;Wie lade ich Abhängigkeiten vor dem Ausführen?&lt;/li&gt;
+&lt;li&gt;Wie überprüfe ich die Syntax ohne das Programm auszuführen?&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;em&gt;Aufgaben&lt;/em&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Löse die oberen Fragen :-)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr /&gt;
+&lt;h4 id=&quot;events&quot; tabindex=&quot;-1&quot;&gt;&lt;strong&gt;&lt;a href=&quot;https://nodejs.org/dist/latest-v16.x/docs/api/events.html&quot;&gt;Events&lt;/a&gt;&lt;/strong&gt; &lt;a class=&quot;direct-link&quot; href=&quot;https://derkuba.de/content/posts/1121/nodejs-application-zertifikat-tipps/#events&quot;&gt;#&lt;/a&gt;&lt;/h4&gt;
+&lt;p&gt;&lt;em&gt;Inhalt&lt;/em&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Was sind Events?&lt;/li&gt;
+&lt;li&gt;Welche feste Typen gibt es?&lt;/li&gt;
+&lt;li&gt;Wie werfe ich sie?&lt;/li&gt;
+&lt;li&gt;Wie reagiere ich auf sie?&lt;/li&gt;
+&lt;li&gt;Wie sorge ich dafür, dass der Listener ganz oben steht oder nur einmal ausgeführt wird?&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;em&gt;Aufgaben&lt;/em&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Erzeuge einen Event, reagiere auf die verschiedenen Typen.&lt;/li&gt;
+&lt;li&gt;Spiele mit den weiteren Methoden&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr /&gt;
+&lt;h4 id=&quot;file-system&quot; tabindex=&quot;-1&quot;&gt;&lt;strong&gt;&lt;a href=&quot;https://nodejs.org/dist/latest-v16.x/docs/api/fs.html&quot;&gt;File System&lt;/a&gt;&lt;/strong&gt; &lt;a class=&quot;direct-link&quot; href=&quot;https://derkuba.de/content/posts/1121/nodejs-application-zertifikat-tipps/#file-system&quot;&gt;#&lt;/a&gt;&lt;/h4&gt;
+&lt;p&gt;&lt;em&gt;Inhalt&lt;/em&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Wie schreibe ich Dateien?&lt;/li&gt;
+&lt;li&gt;Wie lese ich Dateien?&lt;/li&gt;
+&lt;li&gt;Was ist der Unterschied zwischen Synchron, Asynchron?&lt;/li&gt;
+&lt;li&gt;Wie lese und unterscheide ich Verzeichnisse?&lt;/li&gt;
+&lt;li&gt;Wie erkenne ich welche Datei neu oder geändert wurde?&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;em&gt;Aufgaben&lt;/em&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Löse die oberen Fragen :-)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr /&gt;
+&lt;h4 id=&quot;javascript-prerequisites&quot; tabindex=&quot;-1&quot;&gt;&lt;strong&gt;JavaScript Prerequisites&lt;/strong&gt; &lt;a class=&quot;direct-link&quot; href=&quot;https://derkuba.de/content/posts/1121/nodejs-application-zertifikat-tipps/#javascript-prerequisites&quot;&gt;#&lt;/a&gt;&lt;/h4&gt;
+&lt;p&gt;&lt;a href=&quot;https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Objects&quot;&gt;https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Objects&lt;/a&gt;&lt;br /&gt;
+&lt;a href=&quot;https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Objects/Object_prototypes&quot;&gt;https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Objects/Object_prototypes&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;Inhalt&lt;/em&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Wie sind Objekte aufgebaut?&lt;/li&gt;
+&lt;li&gt;Wie funktioniert Vererbung?&lt;/li&gt;
+&lt;li&gt;Wie hat sich die Vererbung syntaktisch verändert?&lt;/li&gt;
+&lt;li&gt;Wie funktionieren Callbacks und Closures?&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;em&gt;Aufgaben&lt;/em&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Erzeuge eine Kette von Objekten, die ihre Eigenschaften/Methoden vererben.&lt;/li&gt;
+&lt;li&gt;Erzeuge eine Funktion, die eine Funktion zurückgibt.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr /&gt;
+&lt;h4 id=&quot;module-system&quot; tabindex=&quot;-1&quot;&gt;&lt;strong&gt;Module system&lt;/strong&gt; &lt;a class=&quot;direct-link&quot; href=&quot;https://derkuba.de/content/posts/1121/nodejs-application-zertifikat-tipps/#module-system&quot;&gt;#&lt;/a&gt;&lt;/h4&gt;
+&lt;p&gt;&lt;a href=&quot;https://nodejs.org/dist/latest-v16.x/docs/api/modules.html&quot;&gt;https://nodejs.org/dist/latest-v16.x/docs/api/modules.html&lt;/a&gt;&lt;br /&gt;
+&lt;a href=&quot;https://nodejs.org/dist/latest-v16.x/docs/api/esm.html&quot;&gt;https://nodejs.org/dist/latest-v16.x/docs/api/esm.html&lt;/a&gt;&lt;br /&gt;
+&lt;a href=&quot;https://nodejs.org/dist/latest-v16.x/docs/api/module.html&quot;&gt;https://nodejs.org/dist/latest-v16.x/docs/api/module.html&lt;/a&gt;&lt;br /&gt;
+&lt;a href=&quot;https://nodejs.org/dist/latest-v16.x/docs/api/packages.html&quot;&gt;https://nodejs.org/dist/latest-v16.x/docs/api/packages.html&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;Inhalt&lt;/em&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Was sind Module?&lt;/li&gt;
+&lt;li&gt;Welche Typen gibt es?&lt;/li&gt;
+&lt;li&gt;Wie exportiere ich meine Objekte, Funktionen?&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;em&gt;Aufgaben&lt;/em&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Schreibe eine Funktion, exportiere sie und importiere sie in einer weiteren Datei.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr /&gt;
+&lt;h4 id=&quot;process%2Foperating-system&quot; tabindex=&quot;-1&quot;&gt;&lt;strong&gt;Process/Operating System&lt;/strong&gt; &lt;a class=&quot;direct-link&quot; href=&quot;https://derkuba.de/content/posts/1121/nodejs-application-zertifikat-tipps/#process%2Foperating-system&quot;&gt;#&lt;/a&gt;&lt;/h4&gt;
+&lt;p&gt;&lt;a href=&quot;https://nodejs.org/dist/latest-v16.x/docs/api/os.html&quot;&gt;https://nodejs.org/dist/latest-v16.x/docs/api/os.html&lt;/a&gt;&lt;br /&gt;
+&lt;a href=&quot;https://nodejs.org/dist/latest-v16.x/docs/api/process.html&quot;&gt;https://nodejs.org/dist/latest-v16.x/docs/api/process.html&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;Inhalt&lt;/em&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Wie zeige ich das Betriebssystem an?&lt;/li&gt;
+&lt;li&gt;Wie beende ich den Process?&lt;/li&gt;
+&lt;li&gt;Wie zeige ich Statistiken an?&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;em&gt;Aufgaben&lt;/em&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Löse die oberen Fragen :-)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr /&gt;
+&lt;h4 id=&quot;package.json&quot; tabindex=&quot;-1&quot;&gt;&lt;strong&gt;Package.json&lt;/strong&gt; &lt;a class=&quot;direct-link&quot; href=&quot;https://derkuba.de/content/posts/1121/nodejs-application-zertifikat-tipps/#package.json&quot;&gt;#&lt;/a&gt;&lt;/h4&gt;
+&lt;p&gt;&lt;a href=&quot;https://docs.npmjs.com/cli/v8/configuring-npm/package-json&quot;&gt;https://docs.npmjs.com/cli/v8/configuring-npm/package-json&lt;/a&gt;&lt;br /&gt;
+&lt;a href=&quot;https://semver.npmjs.com/&quot;&gt;https://semver.npmjs.com/&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;Inhalt&lt;/em&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Was ist Semver und wie funktioniert es?&lt;/li&gt;
+&lt;li&gt;Wie installiere ich welche Version?&lt;/li&gt;
+&lt;li&gt;Was ist der Unterschied zwischen den Zeichen ~,^. &amp;gt;,&amp;lt;, etc.&lt;/li&gt;
+&lt;li&gt;Wie installiere ich nur Major, Minor und/oder Patches?&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;em&gt;Aufgaben&lt;/em&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Spiele mit dem semver-calculator.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr /&gt;
+&lt;h4 id=&quot;unit-testing&quot; tabindex=&quot;-1&quot;&gt;&lt;strong&gt;Unit Testing&lt;/strong&gt; &lt;a class=&quot;direct-link&quot; href=&quot;https://derkuba.de/content/posts/1121/nodejs-application-zertifikat-tipps/#unit-testing&quot;&gt;#&lt;/a&gt;&lt;/h4&gt;
+&lt;p&gt;&lt;a href=&quot;https://jestjs.io/&quot;&gt;https://jestjs.io/&lt;/a&gt;&lt;br /&gt;
+&lt;a href=&quot;https://derkuba.de/content/posts/stenciljs/jest-intro/&quot;&gt;https://derkuba.de/content/posts/stenciljs/jest-intro/&lt;/a&gt;&lt;br /&gt;
+&lt;a href=&quot;https://nodejs.org/dist/latest-v16.x/docs/api/assert.html&quot;&gt;https://nodejs.org/dist/latest-v16.x/docs/api/assert.html&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;Inhalt&lt;/em&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Wie schreibt man Unit-Tests?&lt;/li&gt;
+&lt;li&gt;Wie testet man auf geworfene Fehler?&lt;/li&gt;
+&lt;li&gt;Wie geht man mit Callbacks um ?&lt;/li&gt;
+&lt;li&gt;Wie geht man mit Promises um?&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;em&gt;Aufgaben&lt;/em&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Löse die oberen Fragen :-)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr /&gt;
+&lt;h4 id=&quot;vorgehen&quot; tabindex=&quot;-1&quot;&gt;Vorgehen &lt;a class=&quot;direct-link&quot; href=&quot;https://derkuba.de/content/posts/1121/nodejs-application-zertifikat-tipps/#vorgehen&quot;&gt;#&lt;/a&gt;&lt;/h4&gt;
+&lt;p&gt;Ich war im ersten Anlauf schlecht vorbereitet, weil ich nicht wusste was mich erwartet. Aber man hat zwei Versuche für die Prüfung. Um nicht unnötig etwas auswendig zu lernen und Zeit zu verschwenden, bin ich einfach in die erste Prüfung gegangen. Mit den Erfahrungen aus der ersten Prüfung stand einem erfolgreichen Abschluss im zweiten Anlauf nichts im Weg. Dies würde ich auch jedem so raten.&lt;/p&gt;
+&lt;p&gt;Wenn man bestanden hat bekommt man eine PDF mit folgendem Inhalt:&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://derkuba.de/content/img/1121/zert.png&quot; alt=&quot;Dateiauswahl&quot; title=&quot;Dateiauswahl&quot; /&gt;&lt;/p&gt;&lt;div class=&quot;has-text-right image-subline&quot;&gt;Bild 1: Mein Zertifikat&lt;/div&gt;&lt;p&gt;&lt;/p&gt;
+&lt;p&gt;Dort ist eine Nummer aufgeführt, die man in einen &lt;a href=&quot;https://training.linuxfoundation.org/certification/verify/&quot;&gt;Service der Linux-Foundation&lt;/a&gt; eingeben kann und bestätigt bekommt, dass es noch gültig ist:&lt;/p&gt;
+&lt;pre class=&quot;language-ts&quot;&gt;&lt;code class=&quot;language-ts&quot;&gt;&lt;span class=&quot;highlight-line&quot;&gt;Owner&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; Jacob Pawlik&lt;/span&gt;&lt;br /&gt;&lt;span class=&quot;highlight-line&quot;&gt;Certification&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; OpenJS Node&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;js Application Developer&lt;/span&gt;&lt;br /&gt;&lt;span class=&quot;highlight-line&quot;&gt;Date &lt;span class=&quot;token keyword&quot;&gt;of&lt;/span&gt; Certification Achievement&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;2021&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;token number&quot;&gt;11&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;token number&quot;&gt;26&lt;/span&gt;&lt;/span&gt;&lt;br /&gt;&lt;span class=&quot;highlight-line&quot;&gt;Status&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; Active&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;hr /&gt;
+&lt;h4 id=&quot;fazit&quot; tabindex=&quot;-1&quot;&gt;Fazit &lt;a class=&quot;direct-link&quot; href=&quot;https://derkuba.de/content/posts/1121/nodejs-application-zertifikat-tipps/#fazit&quot;&gt;#&lt;/a&gt;&lt;/h4&gt;
+&lt;p&gt;Wenn man mit allen Inhalten und Aufgaben was anfangen kann, dann ist man bereit für die Prüfung.&lt;/p&gt;
+&lt;p&gt;Mit diesem Wissen sollte jedem diese Prüfung gelingen.&lt;/p&gt;
+&lt;p&gt;Ihr habt Fragen oder Anregungen? Schreibt mir bei &lt;a href=&quot;https://twitter.com/der_kuba&quot;&gt;Twitter&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;&lt;br /&gt;
+Tausend Dank fürs Lesen!&lt;/p&gt;
+&lt;p&gt;Kuba&lt;/p&gt;
+</content>
+	</entry>
+	
+	<entry>
 		<title>Meine Erfahrung mit der Nodejs Zertifizierung</title>
 		<link href="https://derkuba.de/content/posts/1121/nodejs-application-zertifikat/"/>
 		<updated>2021-11-19T00:00:00Z</updated>
 		<id>https://derkuba.de/content/posts/1121/nodejs-application-zertifikat/</id>
-		<content type="html">&lt;p&gt;Vor zwei Jahren habe ich für mein Team eine Möglichkeit zur Weiterbildung gesucht. Die Idee war es das Team auf einen Wissensstand zu bringen. Wie erreicht man, dass ein Team etwas in der Dokumentation kramt? Mit einer Zertifizierung.&lt;!-- endOfPreview --&gt; Wenn man etwas recherchiert stößt man auf die OpenJS Foundation, die von der linuxfoundation getragen wird. Sie bietet einen Zertifizierung an. Es gibt zwei Wahlmöglichkeiten Application (OpenJS Node.js Application Developer (JSNAD)) und (Service OpenJS Node.js Services Developer (JSNSD)). Das eine prüft die Basics von nodejs ab und das zweite die Verwendung im Webservice-Bereich. Zur Zeit meiner Buchung gab es ein Komplettpaket für 500$, bestehend aus der Prüfung und einem Vorbereitungskurs. Sobald man bezahlt hat und den Kurs aktiviert hat, erhält man ein Jahr Zugriff auf den Kurs und kann innerhalb des Jahres auch die Prüfung ablegen.&lt;/p&gt;
+		<content type="html">&lt;p&gt;Vor zwei Jahren habe ich für mein Team eine Möglichkeit zur Weiterbildung gesucht. Die Idee war es das Team auf einen Wissensstand zu bringen. Wie erreicht man, dass ein Team die Dokumentation studiert und dabei etwas lernt? Mit einer Zertifizierung.&lt;!-- endOfPreview --&gt; Wenn man etwas recherchiert stößt man auf die OpenJS Foundation, die von der linux foundation getragen wird. Sie bietet eine Zertifizierung an. Es gibt zwei Wahlmöglichkeiten, Application (OpenJS Node.js Application Developer (JSNAD)) und (Service OpenJS Node.js Services Developer (JSNSD)). Das eine prüft die Basics von nodejs ab und das zweite die Verwendung im Webservice-Bereich. Zur Zeit meiner Buchung gab es ein Komplettpaket für 500$, bestehend aus der Prüfung und einem Vorbereitungskurs. Sobald man bezahlt hat und den Kurs aktiviert hat, erhält man ein Jahr Zugriff auf den Kurs und kann innerhalb des Jahres auch die Prüfung ablegen.&lt;/p&gt;
 &lt;h4 id=&quot;was-bringt-das-zertifikat&quot; tabindex=&quot;-1&quot;&gt;Was bringt das Zertifikat &lt;a class=&quot;direct-link&quot; href=&quot;https://derkuba.de/content/posts/1121/nodejs-application-zertifikat/#was-bringt-das-zertifikat&quot;&gt;#&lt;/a&gt;&lt;/h4&gt;
 &lt;p&gt;Wenn man besteht erhält man eine PDF und ein digitalen Badge. Es soll zeigen (auf der Webseite steht, dass man seinem Arbeitsgeber zeigen kann), dass man ohne zu googlen schnell Anforderungen aus dem nodejs core umsetzen kann. Das ganze natürlich unter Zeitdruck. Ich habe etwas herumgefragt, ob jemand jemals danach gefragt wurde oder überhaupt dieses Zertifikat kennt, doch leider vergebens.&lt;/p&gt;
 &lt;h4 id=&quot;vorbereitungskurs&quot; tabindex=&quot;-1&quot;&gt;Vorbereitungskurs &lt;a class=&quot;direct-link&quot; href=&quot;https://derkuba.de/content/posts/1121/nodejs-application-zertifikat/#vorbereitungskurs&quot;&gt;#&lt;/a&gt;&lt;/h4&gt;
-&lt;p&gt;Der Online-Selbstlernkurs ist Unterteilt in 17 Kapitel, das die wesentlichen nodejs-Sektionen erklärt (Modules, Promises, Streams, Buffer etc.) Jedes Kapitel besteht aus einer Einführung, einem Wissens- und Erklärungsteil, einer kleinen Übungsaufgabe und einem Quiz (meistens aus 3 einfachen Fragen). Die große Frage im Raum ist, ob die Inhalte wirklich gut auf die Prüfung vorbereiten und die kann ich mit einem klaren Nein beantworten. Die Übungsaufgaben gleichen leider nicht dem Stil, der Aufgaben aus der Prüfung. Die 200$ Extragebühr sind hier leider nicht wirklich gut angelegt. Da die Kapitel &lt;a href=&quot;https://training.linuxfoundation.org/certification/jsnad/&quot;&gt;öffentlich sind&lt;/a&gt; rate ich Sparfüchsen sich die Dokumentation anzuschauen und sich darauf kleine Übungen abzuleiten. Die Literaturempfehlung aus dem Vorbereitungskurs kann man sich auch schenken. Es wird ein Cookbuch, das fertige nodejs-Rezepte anbietet empfohlen. Ein Grundlagenbuch wäre da hilfreicher.&lt;/p&gt;
+&lt;p&gt;Der Online-Selbstlernkurs ist Unterteilt in 17 Kapitel, das die wesentlichen nodejs-Sektionen erklärt (Modules, Promises, Streams, Buffer etc.) Jedes Kapitel besteht aus einer Einführung, einem Wissens- und Erklärungsteil, einer kleinen Übungsaufgabe und einem Quiz (meistens aus 3 einfachen Fragen). Die große Frage im Raum ist, ob die Inhalte wirklich gut auf die Prüfung vorbereiten und die kann ich mit einem klaren Nein beantworten. Die Übungsaufgaben gleichen dem Stil, der Aufgaben aus der Prüfung. Die 200$ Extragebühr sind hier leider nicht wirklich gut angelegt. Da die Kapitel &lt;a href=&quot;https://training.linuxfoundation.org/certification/jsnad/&quot;&gt;öffentlich sind&lt;/a&gt; rate ich Sparfüchsen sich die Dokumentation anzuschauen und sich darauf kleine Übungen abzuleiten. Die Literaturempfehlung aus dem Vorbereitungskurs kann man sich auch schenken. Es wird ein Cookbuch, das fertige nodejs-Rezepte anbietet empfohlen. Ein Grundlagenbuch wäre da hilfreicher.&lt;/p&gt;
 &lt;h4 id=&quot;setup-der-pr%C3%BCfung&quot; tabindex=&quot;-1&quot;&gt;Setup der Prüfung &lt;a class=&quot;direct-link&quot; href=&quot;https://derkuba.de/content/posts/1121/nodejs-application-zertifikat/#setup-der-pr%C3%BCfung&quot;&gt;#&lt;/a&gt;&lt;/h4&gt;
-&lt;p&gt;Es handelt sich um eine Online-Prüfung. Dafür wird ein spezieller Browser benötigt, der euer System überprüft. Er prüft auf eine funktionierende Kamera, ein Mikrofon, genügend Internet und ob nur ein Monitor angeschlossen ist. Vor dem Start muss man seinen Personalausweis fotogriefen, sich selber und den Ort, an dem man die Prüfung vornehmen möchte (auch unter dem Schreibtisch :-) ). Dies schaut sich der &amp;quot;Aufseher&amp;quot; vor der Prüfung an. Wer im Caffe oder Großraumbüro die Prüfung abglegen möchte, wird enttäuscht.&lt;/p&gt;
+&lt;p&gt;Es handelt sich um eine Online-Prüfung. Dafür wird ein spezieller Browser benötigt, der euer System überprüft. Er prüft auf eine funktionierende Kamera, ein Mikrofon, genügend Internet und ob nur ein Monitor angeschlossen ist. Vor dem Start muss man seinen Personalausweis fotografieren, sich selber und den Ort, an dem man die Prüfung vornehmen möchte (auch unter dem Schreibtisch :-) ). Dies schaut sich der &amp;quot;Aufseher&amp;quot; vor der Prüfung an. Wer im Cafe oder Großraumbüro die Prüfung ablegen möchte, wird enttäuscht.&lt;/p&gt;
 &lt;h4 id=&quot;die-pr%C3%BCfung&quot; tabindex=&quot;-1&quot;&gt;Die Prüfung &lt;a class=&quot;direct-link&quot; href=&quot;https://derkuba.de/content/posts/1121/nodejs-application-zertifikat/#die-pr%C3%BCfung&quot;&gt;#&lt;/a&gt;&lt;/h4&gt;
-&lt;p&gt;Wenn man Zugelassen wird, öffnet sich im Browser ein Linuxdesktop mit geöffnetem Browser und die Uhr beginnt zu ticken. Keine Zeit sich einzugewöhnen oder mal kurz ankommen. Die Uhr tickt. Die Fragen sich auf einer Webseite, unterteilt in die angegeben Kategorien und bestehen aus einer bis drei Aufgaben. Ich war ehrlich gesagt überrascht über die Aufgabenstellungen. Ich hatte eine Art Mischung aus Fragen und Aufgaben gerechnet, weil ich dies ja aus dem Vorbereitungskurs gewöhnt war. Die Fragen sehen aus wie die Artikel aus meinem Blog. Es gibt Text und Codeblöcke, die die Aufgabenstellung erklären. Ich wusste aber nicht wohin mit der Antwort. Eine graue Box erklärte mir schließlich, dass ich unter einem bestimmten verschachtelten Ordner die Aufgaben finde. Jede Aufgabe war ein kleines JS-Programm und evtl. noch eine Package.json oder zusätzliche JS-Dateien. Es gab eine Konsole, einen Browser (der allerdings nur die Prüfung und die nodejs- und mozilla-js-Doku öffnen) und zu meiner Beruhigung VSC. Der Ablauf ist immer derselbe. Prüfung verstehen (alles nur auf english), Ordner finden, Lösung runtertippen, (evtl. kurz ausführen) und weiter. Nach exakt zwei Stunden fliegt man aus dem Desktop raus. Die Ergebnisse erhält man innerhalbt von 24 Stunden. Sollte man nicht bestanden haben, hat man einen weiteren kostenlosen Versucht übrig.&lt;/p&gt;
+&lt;p&gt;Wenn man Zugelassen wird, öffnet sich im Browser ein Linuxdesktop (Centos 7) mit geöffnetem Browser und die Uhr beginnt zu ticken. Keine Zeit sich einzugewöhnen oder mal kurz ankommen. Die Uhr tickt. Die Fragen sich auf einer Webseite, unterteilt in die angegeben Kategorien und bestehen aus einer bis drei Aufgaben. Ich war ehrlich gesagt überrascht über die Aufgabenstellungen. Ich hatte eine Art Mischung aus Fragen und Aufgaben gerechnet, weil ich dies ja aus dem Vorbereitungskurs gewöhnt war. Die Fragen sehen aus wie die Artikel aus meinem Blog. Es gibt Text und Codeblöcke, die die Aufgabenstellung erklären. Ich wusste aber nicht wohin mit der Antwort. Eine graue Box erklärte mir schließlich, dass ich unter einem bestimmten verschachtelten Ordner die Aufgaben finde. Jede Aufgabe war ein kleines JS-Programm und evtl. noch eine Package.json oder zusätzliche JS-Dateien. Es gab eine Konsole, einen Browser (der allerdings nur die Prüfung und die nodejs- und mozilla-js-Doku öffnen) und zu meiner Beruhigung VSC. Der Ablauf ist immer derselbe. Prüfung verstehen (alles nur auf Englisch), Ordner finden, Lösung eingeben, (evtl. kurz ausführen) und weiter. Nach exakt zwei Stunden fliegt man aus dem Desktop raus. Die Ergebnisse erhält man innerhalb von 24 Stunden. Sollte man nicht bestanden haben, hat man einen weiteren kostenlosen Versucht übrig.&lt;/p&gt;
 &lt;h4 id=&quot;besonderheiten...&quot; tabindex=&quot;-1&quot;&gt;Besonderheiten... &lt;a class=&quot;direct-link&quot; href=&quot;https://derkuba.de/content/posts/1121/nodejs-application-zertifikat/#besonderheiten...&quot;&gt;#&lt;/a&gt;&lt;/h4&gt;
 &lt;p&gt;... die bei mir zur extremen Verwirrung führten.&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;Du stehst unter Beobachtung&lt;/strong&gt;&lt;/p&gt;
@@ -46,9 +257,8 @@
 &lt;/ul&gt;
 &lt;h4 id=&quot;fazit&quot; tabindex=&quot;-1&quot;&gt;Fazit &lt;a class=&quot;direct-link&quot; href=&quot;https://derkuba.de/content/posts/1121/nodejs-application-zertifikat/#fazit&quot;&gt;#&lt;/a&gt;&lt;/h4&gt;
 &lt;p&gt;Ich war nach den zwei Stunden ehrlich gesagt gefrustet und etwas enttäuscht. Ich dachte der Kurs hätte mich auf die Prüfung vorbereitet. Aber das war ein Trugschluss. Die merkwürdige Umgebung, in der man sich nicht einfinden konnte, die Masse an Aufgaben in der kurzen Zeit hinterließen einen faden Nachgeschmack.&lt;br /&gt;
-Meiner Meinung nach sollte es eine Eingewöhnungs-VM geben, die man in Ruhe ausprobieren kann, damit man da keine Zeit verschwendet. Die fehlende Möglichkeit einen weiteren Monitor anzuschließen, inklusive Ermahnung nicht zu nah an den Bildschirm zu dürfen, führten zur Nackenstarre, da alles sehr klein darsgestellt wurde. Hat man in die Prüfung hereingezoomt, verschwanden die Aufgaben mit der Aufforderung wieder heraus zu zoomen.&lt;/p&gt;
-&lt;p&gt;Die Aufgaben waren knackig, würden mehr Spass machen, wenn ein paar weniger gestellt hätte. Für die Prüfung waren sie sinnvoll, aber im echten Leben lerne ich den Core nicht auswendig (da ich nicht in jedem Projekt oder jedem Feature alle Sektionen gleichzeitig brauche) und schaue sie nach. Leider hat die nodejs-Doku nicht zu jedem Punkt ein Beispiel und an einigen Stellen musste man die Benutzung schlichtweg raten. Leider gibt es auch keine Suche auf der Seite.&lt;/p&gt;
-&lt;p&gt;Ingesamt halte ich das Zertifikat für Zweifelhaft, da ich den Kosten-Nutzen nicht sehe. Man muss wirklich viel Zeit und Geld investieren, um dann für nur drei Jahre sagen zu können, dass man dieses Zertifkat hat. Ich würde jedem Kandidaten raten stattdessen lieber ein kleines Beispielprojekt zu programmieren und sich damit vorstellen. Damit beweißt man, dass man nodejs verstanden hat und hat eine gute Grundlage für ein Vorstellungsgespräch. Das beeindruckt mich mehr als dieser Schein. Aber das ist natürlich geschmacksache. Ich werde keine weiteren Zertifizierungen dieser Art mehr machen.&lt;/p&gt;
+Meiner Meinung nach sollte es eine Eingewöhnung-VM geben, die man in Ruhe ausprobieren kann, damit man da keine Zeit verschwendet. Die fehlende Möglichkeit einen weiteren Monitor anzuschließen, inklusive Ermahnung nicht zu nah an den Bildschirm zu dürfen, führten zur Nackenstarre, da alles sehr klein dargestellt wurde. Hat man in die Prüfung hineingezoomt, verschwanden die Aufgaben mit der Aufforderung wieder heraus zu zoomen.&lt;/p&gt;
+&lt;p&gt;Insgesamt halte ich das Zertifikat für Zweifelhaft. Man kann damit nachweisen, dass man sich in der Nodejs-Doku auskennt und die Basiselemente kennt. Das macht leider noch keinen Programmierer aus. Merkwürdig finde ich, dass man das Zertifikat nur drei Jahre tragen kann. Man könnte das Zertifikat doch an die NodeJs-Version klammern, in der man bestanden hat. Zur Verbesserung seiner Bewerbung würde ich jedem Kandidaten raten stattdessen lieber ein kleines Beispielprojekt zu programmieren und sich damit vorstellen. Damit beweist man, dass man nodejs verstanden hat und hat eine gute Grundlage für ein Vorstellungsgespräch. Das beeindruckt mich mehr als dieser Schein. Aber das ist natürlich Geschmacksache. Da ich das Zertifikat über meinen Arbeitgeber machen konnte, war es zu verschmerzen. Aus eigener Tasche hätte ich es nicht gemacht. Mangels alternativen werde ich über die betriebliche Weiterbildung weitere Zertifikate machen. Aber nicht um diese irgendwo zu zeigen, sondern einfach um sich ein bisschen weiter aufzuschlauen.&lt;/p&gt;
 &lt;p&gt;Ihr habt Fragen oder Anregungen? Schreibt mir bei &lt;a href=&quot;https://twitter.com/der_kuba&quot;&gt;Twitter&lt;/a&gt; oder per &lt;a href=&quot;mailto:jacob@derkuba.de&quot;&gt; E-Mail&lt;/a&gt; .&lt;/p&gt;
 &lt;p&gt;&lt;br /&gt;
 Tausend Dank fürs Lesen!&lt;/p&gt;
