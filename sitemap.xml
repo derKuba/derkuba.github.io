@@ -102,6 +102,16 @@
   </url>
   
   <url>
+    <loc>https://derkuba.de/tags/web/</loc>
+    <lastmod>2021-04-02</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://derkuba.de/tags/safari/</loc>
+    <lastmod>2021-04-02</lastmod>
+  </url>
+  
+  <url>
     <loc>https://derkuba.de/tags/jest/</loc>
     <lastmod>2021-04-02</lastmod>
   </url>
@@ -284,5 +294,10 @@
   <url>
     <loc>https://derkuba.de/content/posts/1121/nodejs-application-zertifikat-tipps/</loc>
     <lastmod>2021-11-27</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://derkuba.de/content/posts/1221/ios-safari-pdf-im-neuen-tab/</loc>
+    <lastmod>2021-12-10</lastmod>
   </url>
 </urlset>
