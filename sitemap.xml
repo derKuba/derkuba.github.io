@@ -27,17 +27,12 @@
   </url>
   
   <url>
-    <loc>https://derkuba.de/tags/bulma/</loc>
-    <lastmod>2021-04-02</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://derkuba.de/tags/prism/</loc>
-    <lastmod>2021-04-02</lastmod>
-  </url>
-  
-  <url>
     <loc>https://derkuba.de/tags/excerpt/</loc>
+    <lastmod>2021-04-02</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://derkuba.de/tags/bulma/</loc>
     <lastmod>2021-04-02</lastmod>
   </url>
   
@@ -48,6 +43,11 @@
   
   <url>
     <loc>https://derkuba.de/tags/tutorial/</loc>
+    <lastmod>2021-04-02</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://derkuba.de/tags/prism/</loc>
     <lastmod>2021-04-02</lastmod>
   </url>
   
@@ -77,17 +77,17 @@
   </url>
   
   <url>
+    <loc>https://derkuba.de/tags/testing/</loc>
+    <lastmod>2021-04-02</lastmod>
+  </url>
+  
+  <url>
     <loc>https://derkuba.de/tags/stencil/</loc>
     <lastmod>2021-04-02</lastmod>
   </url>
   
   <url>
     <loc>https://derkuba.de/tags/storybook/</loc>
-    <lastmod>2021-04-02</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://derkuba.de/tags/testing/</loc>
     <lastmod>2021-04-02</lastmod>
   </url>
   
@@ -302,12 +302,12 @@
   </url>
   
   <url>
-    <loc>https://derkuba.de/content/posts/1221/stenciljs-an-backend-anbinden/</loc>
+    <loc>https://derkuba.de/content/posts/1221/backend-api-mit-koa/</loc>
     <lastmod>2021-12-17</lastmod>
   </url>
   
   <url>
-    <loc>https://derkuba.de/content/posts/1221/stenciljs-an-backend-anbinden%20copy/</loc>
+    <loc>https://derkuba.de/content/posts/1221/frohe-weihnachten/</loc>
     <lastmod>2021-12-23</lastmod>
   </url>
 </urlset>
