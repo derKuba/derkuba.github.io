@@ -22,17 +22,27 @@
   </url>
   
   <url>
+    <loc>https://derkuba.de/tags/stenciljs/</loc>
+    <lastmod>2021-04-02</lastmod>
+  </url>
+  
+  <url>
     <loc>https://derkuba.de/tags/11nty/</loc>
     <lastmod>2021-04-02</lastmod>
   </url>
   
   <url>
-    <loc>https://derkuba.de/tags/excerpt/</loc>
+    <loc>https://derkuba.de/tags/bulma/</loc>
     <lastmod>2021-04-02</lastmod>
   </url>
   
   <url>
-    <loc>https://derkuba.de/tags/bulma/</loc>
+    <loc>https://derkuba.de/tags/prism/</loc>
+    <lastmod>2021-04-02</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://derkuba.de/tags/excerpt/</loc>
     <lastmod>2021-04-02</lastmod>
   </url>
   
@@ -43,11 +53,6 @@
   
   <url>
     <loc>https://derkuba.de/tags/tutorial/</loc>
-    <lastmod>2021-04-02</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://derkuba.de/tags/prism/</loc>
     <lastmod>2021-04-02</lastmod>
   </url>
   
@@ -77,17 +82,12 @@
   </url>
   
   <url>
-    <loc>https://derkuba.de/tags/testing/</loc>
-    <lastmod>2021-04-02</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://derkuba.de/tags/stencil/</loc>
-    <lastmod>2021-04-02</lastmod>
-  </url>
-  
-  <url>
     <loc>https://derkuba.de/tags/storybook/</loc>
+    <lastmod>2021-04-02</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://derkuba.de/tags/testing/</loc>
     <lastmod>2021-04-02</lastmod>
   </url>
   
@@ -103,11 +103,6 @@
   
   <url>
     <loc>https://derkuba.de/tags/safari/</loc>
-    <lastmod>2021-04-02</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://derkuba.de/tags/stenciljs/</loc>
     <lastmod>2021-04-02</lastmod>
   </url>
   
@@ -309,5 +304,10 @@
   <url>
     <loc>https://derkuba.de/content/posts/1221/frohe-weihnachten/</loc>
     <lastmod>2021-12-23</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://derkuba.de/content/posts/0122/adressbuch-anbindung-ans-backend/</loc>
+    <lastmod>2022-01-06</lastmod>
   </url>
 </urlset>
