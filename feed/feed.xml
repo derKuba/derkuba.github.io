@@ -17,7 +17,7 @@
 		<link href="https://derkuba.de/content/posts/1222/agile/planning2/"/>
 		<updated>2022-12-28T00:00:00Z</updated>
 		<id>https://derkuba.de/content/posts/1222/agile/planning2/</id>
-		<content type="html">&lt;p&gt;Jedes mal wenn ich auf eine Person treffe, die sagt sie würde in einem agilen Team nach Scrum arbeiten, stelle ich die Frage nach Planning 2. Meine persönliche Statistik (meine Umfragen sind natürlich nicht repräsentativ) zeigt, dass in 9 von 10 Fällen darauf verzichtet wird. Ich frage dann weiter nach dem warum und auch hier ist in den meisten Fällen die Antwort, dass man gar nicht von der Existenz dieser Zeremonie weiß. Fairerweise muss man aber sagen, dass der &lt;a href=&quot;https://scrumguides.org/scrum-guide.html#sprint-planning&quot;&gt;offizielle Scrumguide&lt;/a&gt;  in dieser Hinsicht etwas unspezifisch ist und nicht zwischen Planning 1 und Planning 2 unterscheidet. Es gibt eine gemeinsame und geteilte Timebox.&lt;/p&gt;
+		<content type="html">&lt;p&gt;Jedes mal wenn ich auf eine Person treffe, die sagt sie würde in einem agilen Team nach Scrum arbeiten, stelle ich die Frage nach Planning 2.  &lt;!-- endOfPreview --&gt; Meine persönliche Statistik (meine Umfragen sind natürlich nicht repräsentativ) zeigt, dass in 9 von 10 Fällen darauf verzichtet wird. Ich frage dann weiter nach dem warum und auch hier ist in den meisten Fällen die Antwort, dass man gar nicht von der Existenz dieser Zeremonie weiß. Fairerweise muss man aber sagen, dass der &lt;a href=&quot;https://scrumguides.org/scrum-guide.html#sprint-planning&quot;&gt;offizielle Scrumguide&lt;/a&gt;  in dieser Hinsicht etwas unspezifisch ist und nicht zwischen Planning 1 und Planning 2 unterscheidet. Es gibt eine gemeinsame und geteilte Timebox.&lt;/p&gt;
 &lt;p&gt;Ich möchte auch keine Diskussion auslösen, sondern nur ein hilfreiches Werkzeug beschreiben. Es dient als Impuls für euer nächstes Planning 2!&lt;/p&gt;
 &lt;h2 id=&quot;was-ist-denn-der-unterschied%3F&quot; tabindex=&quot;-1&quot;&gt;Was ist denn der Unterschied? &lt;a class=&quot;direct-link&quot; href=&quot;https://derkuba.de/content/posts/1222/agile/planning2/#was-ist-denn-der-unterschied%3F&quot;&gt;#&lt;/a&gt;&lt;/h2&gt;
 &lt;p&gt;Mein Team und ich haben es vom anfänglichen &amp;quot;Da schreiben wir nur die Tasks auf&amp;quot;, zu einer ordentlichen Zeremonie gebracht. Aber wie unterscheidet man nun das erste vom zweitem Planning:&lt;/p&gt;
@@ -235,7 +235,7 @@ Tausend Dank fürs Lesen!&lt;/p&gt;
 		<link href="https://derkuba.de/content/posts/0122/adressbuch-anbindung-ans-backend/"/>
 		<updated>2022-01-06T00:00:00Z</updated>
 		<id>https://derkuba.de/content/posts/0122/adressbuch-anbindung-ans-backend/</id>
-		<content type="html">&lt;p&gt;Der letzte Artikel des Jahres 2021 zeigte wie man ein einfache und kleine REST-API mit Koa baute. Diese Backend werde ich heute verwenden, um die Adressbuch-Applikation dran anzubinden.&lt;br /&gt;
+		<content type="html">&lt;p&gt;Der letzte Artikel des Jahres 2021 zeigte wie man ein einfache und kleine REST-API mit Koa baute. Diese Backend werde ich heute verwenden, um die Adressbuch-Applikation dran anzubinden.  &lt;!-- endOfPreview --&gt;&lt;br /&gt;
 Zur Erinnerung, die Adressbuch-Applikation nutzt eine globalen Store, um seine Daten zu speichern. An diesem Punkt werde ich ansetzen. Die Anbindung sieht diese Punkte vor:&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;Beim Öffnen der Seite wird per Request bestehende Kontakte abgefragt&lt;/li&gt;
