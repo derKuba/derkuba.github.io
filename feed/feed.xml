@@ -5,12 +5,51 @@
 	
 	<link href="https://derkuba.de/feed/feed.xml" rel="self"/>
 	<link href="https://derkuba.de/"/>
-	<updated>2022-11-21T00:00:00Z</updated>
+	<updated>2022-12-28T00:00:00Z</updated>
 	<id>https://derkuba.de/</id>
 	<author>
 		<name>Jacob Pawlik</name>
 		<email>jacob.pawlik@web.de</email>
 	</author>
+	
+	<entry>
+		<title>Planning 2: Ablauf für Devs</title>
+		<link href="https://derkuba.de/content/posts/1222/agile/planning2/"/>
+		<updated>2022-12-28T00:00:00Z</updated>
+		<id>https://derkuba.de/content/posts/1222/agile/planning2/</id>
+		<content type="html">&lt;p&gt;Jedes mal wenn ich auf eine Person treffe, die sagt sie würde in einem agilen Team nach Scrum arbeiten, stelle ich die Frage nach Planning 2. Meine persönliche Statistik (meine Umfragen sind natürlich nicht repräsentativ) zeigt, dass in 9 von 10 Fällen darauf verzichtet wird. Ich frage dann weiter nach dem warum und auch hier ist in den meisten Fällen die Antwort, dass man gar nicht von der Existenz dieser Zeremonie weiß. Fairerweise muss man aber sagen, dass der &lt;a href=&quot;https://scrumguides.org/scrum-guide.html#sprint-planning&quot;&gt;offizielle Scrumguide&lt;/a&gt;  in dieser Hinsicht etwas unspezifisch ist und nicht zwischen Planning 1 und Planning 2 unterscheidet. Es gibt eine gemeinsame und geteilte Timebox.&lt;/p&gt;
+&lt;p&gt;Ich möchte auch keine Diskussion auslösen, sondern nur ein hilfreiches Werkzeug beschreiben. Es dient als Impuls für euer nächstes Planning 2!&lt;/p&gt;
+&lt;h2 id=&quot;was-ist-denn-der-unterschied%3F&quot; tabindex=&quot;-1&quot;&gt;Was ist denn der Unterschied? &lt;a class=&quot;direct-link&quot; href=&quot;https://derkuba.de/content/posts/1222/agile/planning2/#was-ist-denn-der-unterschied%3F&quot;&gt;#&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;Mein Team und ich haben es vom anfänglichen &amp;quot;Da schreiben wir nur die Tasks auf&amp;quot;, zu einer ordentlichen Zeremonie gebracht. Aber wie unterscheidet man nun das erste vom zweitem Planning:&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://derkuba.de/content/img/1222/what.png&quot; alt=&quot;was ist das planning 2&quot; title=&quot;Was ist das Planning 2&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;Im ersten Teil versammeln sich alle: Product Owner, Business Analyst, Entwickler, QA, Ui/UX, Fachexperten etc. Es wird das &amp;quot;Was&amp;quot; geklärt. Es geht hierbei um den Umfang. Welche Stories/Tickets werden in den nächsten Sprint genommen. Einvernehmlich. Es kommt zum Commitment.&lt;/p&gt;
+&lt;p&gt;Für das Planning 2 dienen diese Stories nun als Grundlage. Denn jetzt wird sich angeschaut wie man konkret und technisch zur Lösung kommt. Alle Fragen sollten  bereits im Refinement geklärt sein. Meine persönliche Erfahrung zeigt, dass dort aber meist immer dieselben Menschen sprechen und mitdenken :-) Ich gehöre nicht dazu.&lt;/p&gt;
+&lt;p&gt;Jetzt ist der richtige Zeitpunkt nochmal alles zu überdenken, Fragen zustellen und dann gemeinsam einen Lösungsweg zu definieren. Aber wie geht man dafür am besten vor? Ich empfehle dafür einen Ablauf, den man immer wiederholen kann:&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://derkuba.de/content/img/1222/ceremony.png&quot; alt=&quot;was ist das planning 2&quot; title=&quot;Wie läuft es ab&quot; /&gt;&lt;/p&gt;
+&lt;h2 id=&quot;wie-l%C3%A4uft-es-ab%3F&quot; tabindex=&quot;-1&quot;&gt;Wie läuft es ab? &lt;a class=&quot;direct-link&quot; href=&quot;https://derkuba.de/content/posts/1222/agile/planning2/#wie-l%C3%A4uft-es-ab%3F&quot;&gt;#&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;Vor jeder Runde sollte jemand bestimmt werden, der vorstellt. Diese Person stellt seine Ergebnisse vor, schreibt mit, groupiert etc. Ein Scrum-Master kann gerne aushelfen. Zu besseren Abwicklung empfehle ich irgendein Board (virtuell oder analog), Stift und Zettel.&lt;/p&gt;
+&lt;h3 id=&quot;1.-verstehen&quot; tabindex=&quot;-1&quot;&gt;1. Verstehen &lt;a class=&quot;direct-link&quot; href=&quot;https://derkuba.de/content/posts/1222/agile/planning2/#1.-verstehen&quot;&gt;#&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;Das Board wird geteilt und das erste Ticket geöffnet. Zunächst beginnt man mit dem Verstehen. Jeder Teilnehmer liest für sich die Anforderungen und versucht zu verstehen worum es geht. Offene Fragen werden beantwortet, die Anforderungen ggf. geschärft und/oder Akzeptanzkriterien nachgetragen. Am Ende haben alle &amp;quot;nahezu&amp;quot; dasselbe Verständnis worum es geht.&lt;/p&gt;
+&lt;h3 id=&quot;2.-planen&quot; tabindex=&quot;-1&quot;&gt;2. Planen &lt;a class=&quot;direct-link&quot; href=&quot;https://derkuba.de/content/posts/1222/agile/planning2/#2.-planen&quot;&gt;#&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;Im nächsten Schritt wird eine Timebox vereinbart. 3-5 Minuten vielleicht, je nach Größe und Umfang des Tickets. Jeder überlegt für sich wie man die Story in sinnvolle kleine Aufgaben zerteilen kann und schreib diese für sich auf.&lt;/p&gt;
+&lt;h5 id=&quot;beispiel&quot; tabindex=&quot;-1&quot;&gt;Beispiel &lt;a class=&quot;direct-link&quot; href=&quot;https://derkuba.de/content/posts/1222/agile/planning2/#beispiel&quot;&gt;#&lt;/a&gt;&lt;/h5&gt;
+&lt;p&gt;Als Beispielstory nehmen wir ein Formular. Es soll ein neues Eingabefeld für das Alter hinzugefügt werden.&lt;/p&gt;
+&lt;p&gt;An der Stelle kommt häufig von unerfahrenen Kollegen die Aussage, dass man nur eine Aufgabe zu bewältigen hat: das Machen. Aber wenn man wirklich kurz darüber nachdenkt fallen noch einige weitere Aufgaben auf. Ich empfehle immer die Aufgaben so zu schneiden, dass man sie theoretisch parallel mit mehreren Menschen umsetzen kann:&lt;/p&gt;
+&lt;p&gt;Man muss man eine neues Feld in der UI anlegen, das Datenmodell erweitern, die Anbindung an das Backend schreiben, ggf. die Datenbank erweitern, Tests schreiben usw.&lt;/p&gt;
+&lt;p&gt;Damit haben wir eine gute Grundlage für den nächsten Schritt.&lt;/p&gt;
+&lt;h3 id=&quot;3.-diskutieren&quot; tabindex=&quot;-1&quot;&gt;3. Diskutieren &lt;a class=&quot;direct-link&quot; href=&quot;https://derkuba.de/content/posts/1222/agile/planning2/#3.-diskutieren&quot;&gt;#&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;Die gesammelten Punkte werden nun vom gewählten Präsentator vorgestellt. Dieser wechselt nach jeder Story, damit jeder mal an die Reihe kommt. Er stellt vor und erklärt seine gesammelten Punkte. Im Anschluss können weitere Punkte der übrigen Teilnehmer gesammelt, diskutiert werden, Abhängigkeiten geklärt und eine Reihenfolge definiert werden. Häufig freut man sich, wenn man auf dieselben Punkte gekommen ist. Umso mehr freut man sich, wenn noch weitere Punkte auffallen, an die man gar nicht gedacht hat.&lt;/p&gt;
+&lt;h3 id=&quot;4.-einigung&quot; tabindex=&quot;-1&quot;&gt;4. Einigung &lt;a class=&quot;direct-link&quot; href=&quot;https://derkuba.de/content/posts/1222/agile/planning2/#4.-einigung&quot;&gt;#&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;Im letzten Punkt sollten sich alle einig sein, dass man einen Weg durch die Story gefunden hat. Wenn nicht, geht man einen Schritt zurück und diskutiert nochmal. Ziel ist es, dass alle denselben Weg der Entwicklung einschlagen werden. Natürlich ist das nicht immer der Fall. Man kann aber den Plan in jedem Daily anpassen. Aber niemanden startet mehr kopflos, um nach einigen Tagen zu merken, dass man sich verrannt hat. Jetzt könnte man noch die gesammelten Aufgaben in Sub-Tasks niederschreiben und mit der nächsten Story starten. Alternativ schreiben wir manchmal alle Subtasks am Schluss.&lt;/p&gt;
+&lt;h2 id=&quot;fazit&quot; tabindex=&quot;-1&quot;&gt;Fazit &lt;a class=&quot;direct-link&quot; href=&quot;https://derkuba.de/content/posts/1222/agile/planning2/#fazit&quot;&gt;#&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;Mit dieser Methode zwingt man sich dem aktuellen Sprint, auf den man sich commited hat, nochmal en détail anzuschauen und zu überdenken. Jeder ist gefragt. So kommen auch die ruhigeren Mitglieder des Teams dazu was zu sagen. Am Ende haben alle einen und denselben Plan vom Sprint und es sollte nichts mehr ausmachen, wer sich welche Story nimmt. Es herrscht Einigung und es gibt einen Plan. Besonders unerfahrene und chaotische Kollegen :-) werden abgeholt und eingefangen. Das kann die Retrospektive extrem verkürzen ;-)&lt;/p&gt;
+&lt;p&gt;Mit der Zeit wird diese Zeremonie auch kürzer. Meinem Team und mir hat diese Methode viel Zeit, Diskussion und Nerven gespart.&lt;/p&gt;
+&lt;p&gt;Ihr habt Fragen oder Anregungen? Schreibt mir bei &lt;a href=&quot;https://twitter.com/der_kuba&quot;&gt;Twitter&lt;/a&gt; oder bei &lt;a href=&quot;https://www.linkedin.com/in/jacob-pawlik-08a40015b/&quot;&gt;LinkedIn&lt;/a&gt;.&lt;br /&gt;
+&lt;br /&gt;
+Tausend Dank fürs Lesen!&lt;/p&gt;
+&lt;p&gt;Kuba&lt;/p&gt;
+</content>
+	</entry>
 	
 	<entry>
 		<title>Jest Testing mit Typescript: Das kleine Einmaleins</title>
