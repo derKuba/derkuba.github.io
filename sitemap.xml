@@ -232,11 +232,6 @@
   </url>
   
   <url>
-    <loc>https://derkuba.de/tags/stenciljs/</loc>
-    <lastmod>2022-11-21</lastmod>
-  </url>
-  
-  <url>
     <loc>https://derkuba.de/tags/11nty/</loc>
     <lastmod>2022-11-21</lastmod>
   </url>
@@ -262,11 +257,6 @@
   </url>
   
   <url>
-    <loc>https://derkuba.de/tags/excerpt/</loc>
-    <lastmod>2022-11-21</lastmod>
-  </url>
-  
-  <url>
     <loc>https://derkuba.de/tags/blog/</loc>
     <lastmod>2022-11-21</lastmod>
   </url>
@@ -277,7 +267,7 @@
   </url>
   
   <url>
-    <loc>https://derkuba.de/tags/typescript/</loc>
+    <loc>https://derkuba.de/tags/excerpt/</loc>
     <lastmod>2022-11-21</lastmod>
   </url>
   
@@ -292,12 +282,22 @@
   </url>
   
   <url>
+    <loc>https://derkuba.de/tags/typescript/</loc>
+    <lastmod>2022-11-21</lastmod>
+  </url>
+  
+  <url>
     <loc>https://derkuba.de/tags/flutter/</loc>
     <lastmod>2022-11-21</lastmod>
   </url>
   
   <url>
     <loc>https://derkuba.de/tags/sqllite/</loc>
+    <lastmod>2022-11-21</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://derkuba.de/tags/stenciljs/</loc>
     <lastmod>2022-11-21</lastmod>
   </url>
   
@@ -312,17 +312,17 @@
   </url>
   
   <url>
-    <loc>https://derkuba.de/tags/nodejs/</loc>
-    <lastmod>2022-11-21</lastmod>
-  </url>
-  
-  <url>
     <loc>https://derkuba.de/tags/web/</loc>
     <lastmod>2022-11-21</lastmod>
   </url>
   
   <url>
     <loc>https://derkuba.de/tags/safari/</loc>
+    <lastmod>2022-11-21</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://derkuba.de/tags/nodejs/</loc>
     <lastmod>2022-11-21</lastmod>
   </url>
   
