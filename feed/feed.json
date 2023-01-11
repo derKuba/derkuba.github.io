@@ -10,6 +10,12 @@
     "url": "https://derkuba/about-me/"
   },
   "items": [{
+      "id": "https://derkuba.de/content/posts/0123/certified/",
+      "url": "https://derkuba.de/content/posts/0123/certified/",
+      "title": "OpenJS Node.js Services Developer zertifiziert",
+      "content_html": "<p>Diese Woche habe ich mein zweites Zertifikat der <a href=\"https://openjsf.org/certification/\">Linux Foundation</a> erhalten<!-- endOfPreview -->:</p>\n<p><img src=\"/content/img/0123/JSNSD.png\" alt=\"JSNSD\" title=\"JSNSD\"></p>\n<p><img src=\"/content/img/0123/JSNAD.png\" alt=\"JSNAD\" title=\"JSNAD\"></p>\n<p>Die Prüfung war ähnlich wie beim JSNAD. Sehr strenge Zulassungsregeln. Ich durfte sehr lange mein Zimmer filmen, sowie zeigen was sich unter dem Schreibtisch, Mousepad, Tastatur etc. befindet.<br>\nDer benötigte PSI-Browser ließ sich nicht auf meinem Laptop installieren und ich musste auf meinen stationären PC ausweichen. Glücklicherweise hatte ich eine neue Kamera erst vor kurzem bestellt. Der Start der Prüfung war sehr stressig.</p>\n<p>Diesmal gabs eine neue Linux-Distribution. Ich kann nicht sagen welche. Leider funktionierten die geschweiften Klammern {} nicht über die Tastatur und ich musste sie Copy&amp;Pasten.<br>\nEine weitere Herausforderung war, dass auf den Docs-Seiten von Fastify die Suche nicht funktionierte und viele Plugins dort nicht zu finden  sind. Aber da ich die Plugins zum Programmieren verwenden durfte, konnte ich die Readme in den <em>node_modules</em> nachlesen.</p>\n<p>Die Prüfung hat Spaß gemacht und die Aufgaben waren fair.</p>\n<p>Wer eine Weiterbildung sucht und 600$ übrig hat, kann dieses Zertifikat bedenkenlos machen. Man lernt die Grundlagen der Service-Entwicklung. Hat man dies allerdings schon 1-2 Jahre gemacht, wird man kaum neues Lernen.</p>\n<p>Ihr habt Fragen oder Anregungen? Schreibt mir bei <a href=\"https://twitter.com/der_kuba\">Twitter</a> oder bei <a href=\"https://www.linkedin.com/in/jacob-pawlik-08a40015b/\">LinkedIn</a>.<br>\n<br>\nTausend Dank fürs Lesen!</p>\n<p>Kuba</p>\n",
+      "date_published": "2023-01-05T00:00:00Z"
+    },{
       "id": "https://derkuba.de/content/posts/0123/contract-test/",
       "url": "https://derkuba.de/content/posts/0123/contract-test/",
       "title": "Contract-Testing mit hurl",

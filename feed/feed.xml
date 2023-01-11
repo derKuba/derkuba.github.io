@@ -5,12 +5,33 @@
 	
 	<link href="https://derkuba.de/feed/feed.xml" rel="self"/>
 	<link href="https://derkuba.de/"/>
-	<updated>2023-01-01T00:00:00Z</updated>
+	<updated>2023-01-05T00:00:00Z</updated>
 	<id>https://derkuba.de/</id>
 	<author>
 		<name>Jacob Pawlik</name>
 		<email>jacob.pawlik@web.de</email>
 	</author>
+	
+	<entry>
+		<title>OpenJS Node.js Services Developer zertifiziert</title>
+		<link href="https://derkuba.de/content/posts/0123/certified/"/>
+		<updated>2023-01-05T00:00:00Z</updated>
+		<id>https://derkuba.de/content/posts/0123/certified/</id>
+		<content type="html">&lt;p&gt;Diese Woche habe ich mein zweites Zertifikat der &lt;a href=&quot;https://openjsf.org/certification/&quot;&gt;Linux Foundation&lt;/a&gt; erhalten&lt;!-- endOfPreview --&gt;:&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://derkuba.de/content/img/0123/JSNSD.png&quot; alt=&quot;JSNSD&quot; title=&quot;JSNSD&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://derkuba.de/content/img/0123/JSNAD.png&quot; alt=&quot;JSNAD&quot; title=&quot;JSNAD&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;Die Prüfung war ähnlich wie beim JSNAD. Sehr strenge Zulassungsregeln. Ich durfte sehr lange mein Zimmer filmen, sowie zeigen was sich unter dem Schreibtisch, Mousepad, Tastatur etc. befindet.&lt;br /&gt;
+Der benötigte PSI-Browser ließ sich nicht auf meinem Laptop installieren und ich musste auf meinen stationären PC ausweichen. Glücklicherweise hatte ich eine neue Kamera erst vor kurzem bestellt. Der Start der Prüfung war sehr stressig.&lt;/p&gt;
+&lt;p&gt;Diesmal gabs eine neue Linux-Distribution. Ich kann nicht sagen welche. Leider funktionierten die geschweiften Klammern {} nicht über die Tastatur und ich musste sie Copy&amp;amp;Pasten.&lt;br /&gt;
+Eine weitere Herausforderung war, dass auf den Docs-Seiten von Fastify die Suche nicht funktionierte und viele Plugins dort nicht zu finden  sind. Aber da ich die Plugins zum Programmieren verwenden durfte, konnte ich die Readme in den &lt;em&gt;node_modules&lt;/em&gt; nachlesen.&lt;/p&gt;
+&lt;p&gt;Die Prüfung hat Spaß gemacht und die Aufgaben waren fair.&lt;/p&gt;
+&lt;p&gt;Wer eine Weiterbildung sucht und 600$ übrig hat, kann dieses Zertifikat bedenkenlos machen. Man lernt die Grundlagen der Service-Entwicklung. Hat man dies allerdings schon 1-2 Jahre gemacht, wird man kaum neues Lernen.&lt;/p&gt;
+&lt;p&gt;Ihr habt Fragen oder Anregungen? Schreibt mir bei &lt;a href=&quot;https://twitter.com/der_kuba&quot;&gt;Twitter&lt;/a&gt; oder bei &lt;a href=&quot;https://www.linkedin.com/in/jacob-pawlik-08a40015b/&quot;&gt;LinkedIn&lt;/a&gt;.&lt;br /&gt;
+&lt;br /&gt;
+Tausend Dank fürs Lesen!&lt;/p&gt;
+&lt;p&gt;Kuba&lt;/p&gt;
+</content>
+	</entry>
 	
 	<entry>
 		<title>Contract-Testing mit hurl</title>
