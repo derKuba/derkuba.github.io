@@ -10,6 +10,12 @@
     "url": "https://derkuba/about-me/"
   },
   "items": [{
+      "id": "https://derkuba.de/content/posts/0123/podcast/",
+      "url": "https://derkuba.de/content/posts/0123/podcast/",
+      "title": "Hallo Web - der Developer Podcast",
+      "content_html": "<p>Anfang diesen Jahres haben meine Kollegen Daniel Ebner und Bartholomäus Kaminski einen neuen Podcast gestartet. Dort unterhalten wir uns über Themen, die uns als Webentwickler beschäftigen. Dazu zählen unter anderem agile Prozesse und Methoden, Technologien aus dem Webumfeld und Arbeitsmethodik. Der Podcast erscheint jede Woche und ist über die üblichen Kanäle zu erreichen.</p>\n<p>Ihr erreicht unser über unsere Landingpage:</p>\n<p><a href=\"https://halloweb.tech\">halloweb.tech</a></p>\n<!-- endOfPreview -->\n<p>Freuen uns über Feedback!</p>\n<p>Ihr habt Fragen oder Anregungen? Schreibt mir bei <a href=\"https://twitter.com/der_kuba\">Twitter</a> oder bei <a href=\"https://www.linkedin.com/in/jacob-pawlik-08a40015b/\">LinkedIn</a>.<br>\n<br>\nTausend Dank fürs Lesen!</p>\n<p>Kuba</p>\n",
+      "date_published": "2023-01-23T00:00:00Z"
+    },{
       "id": "https://derkuba.de/content/posts/0123/certified/",
       "url": "https://derkuba.de/content/posts/0123/certified/",
       "title": "OpenJS Node.js Services Developer zertifiziert",

@@ -5,12 +5,29 @@
 	
 	<link href="https://derkuba.de/feed/feed.xml" rel="self"/>
 	<link href="https://derkuba.de/"/>
-	<updated>2023-01-05T00:00:00Z</updated>
+	<updated>2023-01-23T00:00:00Z</updated>
 	<id>https://derkuba.de/</id>
 	<author>
 		<name>Jacob Pawlik</name>
 		<email>jacob.pawlik@web.de</email>
 	</author>
+	
+	<entry>
+		<title>Hallo Web - der Developer Podcast</title>
+		<link href="https://derkuba.de/content/posts/0123/podcast/"/>
+		<updated>2023-01-23T00:00:00Z</updated>
+		<id>https://derkuba.de/content/posts/0123/podcast/</id>
+		<content type="html">&lt;p&gt;Anfang diesen Jahres haben meine Kollegen Daniel Ebner und Bartholomäus Kaminski einen neuen Podcast gestartet. Dort unterhalten wir uns über Themen, die uns als Webentwickler beschäftigen. Dazu zählen unter anderem agile Prozesse und Methoden, Technologien aus dem Webumfeld und Arbeitsmethodik. Der Podcast erscheint jede Woche und ist über die üblichen Kanäle zu erreichen.&lt;/p&gt;
+&lt;p&gt;Ihr erreicht unser über unsere Landingpage:&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://halloweb.tech/&quot;&gt;halloweb.tech&lt;/a&gt;&lt;/p&gt;
+&lt;!-- endOfPreview --&gt;
+&lt;p&gt;Freuen uns über Feedback!&lt;/p&gt;
+&lt;p&gt;Ihr habt Fragen oder Anregungen? Schreibt mir bei &lt;a href=&quot;https://twitter.com/der_kuba&quot;&gt;Twitter&lt;/a&gt; oder bei &lt;a href=&quot;https://www.linkedin.com/in/jacob-pawlik-08a40015b/&quot;&gt;LinkedIn&lt;/a&gt;.&lt;br /&gt;
+&lt;br /&gt;
+Tausend Dank fürs Lesen!&lt;/p&gt;
+&lt;p&gt;Kuba&lt;/p&gt;
+</content>
+	</entry>
 	
 	<entry>
 		<title>OpenJS Node.js Services Developer zertifiziert</title>
