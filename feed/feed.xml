@@ -5,12 +5,33 @@
 	
 	<link href="https://derkuba.de/feed/feed.xml" rel="self"/>
 	<link href="https://derkuba.de/"/>
-	<updated>2023-01-23T00:00:00Z</updated>
+	<updated>2023-06-13T00:00:00Z</updated>
 	<id>https://derkuba.de/</id>
 	<author>
 		<name>Jacob Pawlik</name>
 		<email>jacob.pawlik@web.de</email>
 	</author>
+	
+	<entry>
+		<title>Enterjs: Tomorrowjs -&gt; Links</title>
+		<link href="https://derkuba.de/content/posts/0623/enterjs-links/"/>
+		<updated>2023-06-13T00:00:00Z</updated>
+		<id>https://derkuba.de/content/posts/0623/enterjs-links/</id>
+		<content type="html">&lt;p&gt;Folien:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;3: &lt;a href=&quot;https://github.com/derKuba&quot;&gt;Github&lt;/a&gt;, &lt;a href=&quot;https://www.linkedin.com/in/jacob-pawlik/&quot;&gt;LinkedIn&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;4: &lt;a href=&quot;https://halloweb.tech/&quot;&gt;Hallo Web - Der Developer Podcast&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;7: &lt;a href=&quot;https://www.menti.com/&quot;&gt;Menti&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;8: &lt;a href=&quot;https://2022.stateofjs.com/en-US/libraries/front-end-frameworks/&quot;&gt;State of JS&lt;/a&gt;, &lt;a href=&quot;https://npmtrends.com/angular-vs-react-vs-vue&quot;&gt;npm trends&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;11: &lt;a href=&quot;https://www.solidjs.com/&quot;&gt;Solid&lt;/a&gt;, &lt;a href=&quot;https://qwik.builder.io/&quot;&gt;Qwik&lt;/a&gt;, &lt;a href=&quot;https://stenciljs.com/&quot;&gt;Stencil&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;13: &lt;a href=&quot;https://dev.to/ryansolid/solidjs-official-release-the-long-road-to-1-0-4ldd&quot;&gt;Solid 1.0&lt;/a&gt; &lt;a href=&quot;https://github.com/solidjs/solid&quot;&gt;Solid Github&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;22 &lt;a href=&quot;https://github.com/BuilderIO/qwik&quot;&gt;Qwik Github&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;32: &lt;a href=&quot;https://github.com/ionic-team/stencil&quot;&gt;Stencil Github&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;35: &lt;a href=&quot;https://developer.mozilla.org/en-US/docs/Web/API/Web_components&quot;&gt;Web Components&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;47: &lt;a href=&quot;https://slidesgo.com/theme/pedagogical-education&quot;&gt;Prensentation Template&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</content>
+	</entry>
 	
 	<entry>
 		<title>Hallo Web - der Developer Podcast</title>
