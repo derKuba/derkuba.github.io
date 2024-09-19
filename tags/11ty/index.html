@@ -1,0 +1,581 @@
+<!doctype html>
+<html lang="de">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1"/>
+        <title>Tagged “11ty”</title>
+        <meta name="description" content="IT Blog mit Tipps und Tricks aus dem Arbeitsalltag eines Software-Enwicklers">
+        <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+        <link rel="alternate" href="/feed/feed.xml" type="application/atom+xml" title="der_kuba">
+        <link rel="alternate" href="/feed/feed.json" type="application/json" title="der_kuba">
+        <link rel="stylesheet" href="/assets/css/prism.css">
+        <link rel="stylesheet" href="/assets/css/bulma.css">
+        <link rel="stylesheet" href="/assets/css/custom.css">
+        <script>
+            document.addEventListener("DOMContentLoaded", () => {
+                const e = Array
+                    .prototype
+                    .slice
+                    .call(document.querySelectorAll(".navbar-burger"), 0);
+                e.length > 0 && e.forEach(e => {
+                    e.addEventListener("click", () => {
+                        const t = e.dataset.target,
+                            a = document.getElementById(t);
+                        e.classList.toggle("is-active"),
+                        a.classList.toggle("is-active")
+                    })
+                })
+                const disableDarkMode = () => {
+                    const bodyNode = document.querySelector("body");
+                    bodyNode
+                        .classList
+                        .remove("dark-mode")
+                        localStorage
+                        .setItem('darkMode', 'disabled');
+                }
+                const enableDarkMode = () => {
+                    const bodyNode = document.querySelector("body");
+                    bodyNode
+                        .classList
+                        .add("dark-mode")
+                        localStorage
+                        .setItem('darkMode', 'enabled');
+                }
+                const button = document.getElementById("darkmode");
+                button.addEventListener("click", () => {
+                    const bodyNode = document.querySelector("body");
+                    if (bodyNode.classList.contains("dark-mode")) {
+                        disableDarkMode();
+                    } else {
+                        enableDarkMode();
+                    }
+                })
+                if (localStorage.getItem('darkMode') === 'enabled') {
+                    enableDarkMode();
+                }
+            });
+        </script>
+    </head>
+    <body><header>
+    <div class="container">
+        <nav class="navbar">
+            <div class="navbar-brand">
+                <a class="navbar-item navbar-brand__title " href="/">
+                    der_kuba
+                </a>
+                <a class="navbar-item" href="https://github.com/derKuba">
+                    @Github
+                </a>
+                <a class="navbar-item" href="https://twitter.com/der_kuba">
+                    @Twitter
+                </a>
+                <a class="navbar-item" href="https://www.linkedin.com/in/jacob-pawlik-08a40015b/">
+                    @LinkedIn
+                </a>
+                <div class="navbar-burger" data-target="navigation-items">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+            <div id="navigation-items" class="navbar-menu">
+                <div class="navbar-end">
+                    
+                        <a class="navbar-item " href="/">
+                            Home
+                        </a>
+                        <a class="navbar-item " href="/tags/11nty/">
+                            Home
+                        </a>
+                        <a class="navbar-item " href="/tags/bulma/">
+                            Home
+                        </a>
+                        <a class="navbar-item " href="/tags/prism/">
+                            Home
+                        </a>
+                        <a class="navbar-item  nav-item-active" href="/tags/11ty/">
+                            Home
+                        </a>
+                        <a class="navbar-item " href="/tags/excerpt/">
+                            Home
+                        </a>
+                        <a class="navbar-item " href="/tags/blog/">
+                            Home
+                        </a>
+                        <a class="navbar-item " href="/tags/tutorial/">
+                            Home
+                        </a>
+                        <a class="navbar-item " href="/tags/recruting/">
+                            Home
+                        </a>
+                        <a class="navbar-item " href="/tags/job-interview/">
+                            Home
+                        </a>
+                        <a class="navbar-item " href="/tags/typescript/">
+                            Home
+                        </a>
+                        <a class="navbar-item " href="/tags/flutter/">
+                            Home
+                        </a>
+                        <a class="navbar-item " href="/tags/sqllite/">
+                            Home
+                        </a>
+                        <a class="navbar-item " href="/tags/stenciljs/">
+                            Home
+                        </a>
+                        <a class="navbar-item " href="/tags/nodejs/">
+                            Home
+                        </a>
+                        <a class="navbar-item " href="/tags/zertifizierung/">
+                            Home
+                        </a>
+                        <a class="navbar-item " href="/tags/testing/">
+                            Home
+                        </a>
+                        <a class="navbar-item " href="/tags/hurl/">
+                            Home
+                        </a>
+                        <a class="navbar-item " href="/tags/podcast/">
+                            Home
+                        </a>
+                        <a class="navbar-item " href="/tags/halloweb/">
+                            Home
+                        </a>
+                        <a class="navbar-item " href="/tags/enterjs/">
+                            Home
+                        </a>
+                        <a class="navbar-item " href="/tags/storybook/">
+                            Home
+                        </a>
+                        <a class="navbar-item " href="/tags/web/">
+                            Home
+                        </a>
+                        <a class="navbar-item " href="/tags/safari/">
+                            Home
+                        </a>
+                        <a class="navbar-item " href="/tags/jest/">
+                            Home
+                        </a>
+                        <a class="navbar-item " href="/tags/agile/">
+                            Home
+                        </a>
+                        <a class="navbar-item " href="/tags/scrum/">
+                            Home
+                        </a>
+                        <a class="navbar-item " href="/tags/test/">
+                            Home
+                        </a>
+                        <a class="navbar-item " href="/tags/certification/">
+                            Home
+                        </a>
+                        <a class="navbar-item " href="/tags/allpostsexceptenglish/">
+                            Home
+                        </a>
+                        <a class="navbar-item " href="/tags/englishposts/">
+                            Home
+                        </a>
+                        <a class="navbar-item " href="/posts/">
+                            Archiv
+                        </a>
+                        <a class="navbar-item " href="/about/">
+                            About Me
+                        </a>
+                        <a class="navbar-item " href="/en/">
+                            English
+                        </a>
+                        <a class="navbar-item " href="/content/impressum.html">
+                            Impressum
+                        </a>
+                        <a class="navbar-item " href="/content/datenschutz.html">
+                            Datenschutzerklärung
+                        </a>
+                    <button id="darkmode" alt="dark mode">
+                        <svg width="30" height="30">
+                            <circle cx="15" cy="15" r="6" fill="currentColor"/>
+                            <line id="ray" stroke="currentColor" stroke-width="2" stroke-linecap="round" x1="15" y1="1" x2="15" y2="4"></line>
+                            <use href="#ray" transform="rotate(45 15 15)"/>
+                            <use href="#ray" transform="rotate(90 15 15)"/>
+                            <use href="#ray" transform="rotate(135 15 15)"/>
+                            <use href="#ray" transform="rotate(180 15 15)"/>
+                            <use href="#ray" transform="rotate(225 15 15)"/>
+                            <use href="#ray" transform="rotate(270 15 15)"/>
+                            <use href="#ray" transform="rotate(315 15 15)"/>
+                        </svg>
+                    </button>
+                    <!-- special thanks to https://www.freecodecamp.org/news/how-to-handle-dark-mode-with-css-and-javascript/ -->
+                </div>
+            </div>
+        </nav>
+    </div>
+</header>
+        
+<section class="section" >
+  <div class="container">
+    <div class="columns is-half-desktop">
+      <div class="column is-9">
+        
+<h1>Tagged “11ty”</h1>
+
+
+<ul reversed class="postlist">
+
+
+  <li class="post-list__item">
+    <h2 class="title is-4">
+      <a href="/posts/en/0421/11nty-bullma-error/">
+        Bulma and Prism.js Cause CSS Rendering Issues
+      </a>
+    </h2>
+    <h3 class="subtitle is-7">
+      <time datetime="2021-04-05">05 Apr 2021</time>
+    </h3>
+
+    <div class="control ">
+      <div class="tags has-addons is-justify-content-flex-end">
+        <span class="tag is-dark"> 1 Minute</span>
+        <span class="tag is-success">115 Wörter</span>
+      </div>
+    </div>
+
+    <div class="tag-list">
+    
+      
+      <span class="tag is-black">
+        <a href="/tags/11ty/" class="post-tag">11ty</a>
+      </span>
+    
+      
+      <span class="tag is-primary">
+        <a href="/tags/bulma/" class="post-tag">bulma</a>
+      </span>
+    
+      
+      <span class="tag is-link">
+        <a href="/tags/prism/" class="post-tag">prism</a>
+      </span>
+    
+    </div>
+
+    
+
+    <hr/>
+  </li>
+
+
+  <li class="post-list__item">
+    <h2 class="title is-4">
+      <a href="/posts/en/0421/11nty-excerpt/">
+        Displaying Post Excerpts in 11ty
+      </a>
+    </h2>
+    <h3 class="subtitle is-7">
+      <time datetime="2021-04-04">04 Apr 2021</time>
+    </h3>
+
+    <div class="control ">
+      <div class="tags has-addons is-justify-content-flex-end">
+        <span class="tag is-dark"> 2 Minuten</span>
+        <span class="tag is-success">436 Wörter</span>
+      </div>
+    </div>
+
+    <div class="tag-list">
+    
+      
+      <span class="tag is-black">
+        <a href="/tags/11ty/" class="post-tag">11ty</a>
+      </span>
+    
+      
+      <span class="tag is-primary">
+        <a href="/tags/excerpt/" class="post-tag">excerpt</a>
+      </span>
+    
+    </div>
+
+    <p>If you want to display content in the list of all posts, 11ty only allows you to show the entire post content by default. However, if you want to display just the first sentence of a post, you’ll need to teach Eleventy’s JavaScript how to do that.  [...]
+
+    <hr/>
+  </li>
+
+
+  <li class="post-list__item">
+    <h2 class="title is-4">
+      <a href="/posts/0421/11nty-excerpt/">
+        11ty: Inhalt in der Post-Liste anzeigen
+      </a>
+    </h2>
+    <h3 class="subtitle is-7">
+      <time datetime="2021-04-04">04 Apr 2021</time>
+    </h3>
+
+    <div class="control ">
+      <div class="tags has-addons is-justify-content-flex-end">
+        <span class="tag is-dark"> 2 Minuten</span>
+        <span class="tag is-success">420 Wörter</span>
+      </div>
+    </div>
+
+    <div class="tag-list">
+    
+      
+      <span class="tag is-black">
+        <a href="/tags/11ty/" class="post-tag">11ty</a>
+      </span>
+    
+      
+      <span class="tag is-primary">
+        <a href="/tags/excerpt/" class="post-tag">excerpt</a>
+      </span>
+    
+    </div>
+
+    <p>Wer in der Liste aller Posts zusätzlich den Inhalt anzeigen möchte, hat standardmäßig nur die Möglichkeit, den gesamten Inhalt anzuzeigen. Wenn man jedoch beispielsweise nur den ersten Satz eines Posts anzeigen möchte, muss dies noch über Eleventys JavaScript gelöst werden.  [...]
+
+    <hr/>
+  </li>
+
+</ul>
+
+ 
+<p>See
+  <a href="/tags/">all tags</a>.</p>
+        <a href="/posts">weitere Posts befinden sich unter Archive</a>
+      </div>
+      <div class="column is-3">
+        <div class="panel">
+          <p class="panel-heading">
+            Kategorien
+          </p>
+          <div class="panel-block ">
+            <div class="content categorie-item">
+              
+                
+                <a href="/tags/11nty/">
+                  <span class="tag is-black">11nty</span>
+                </a>
+              
+                
+                <a href="/tags/11ty/">
+                  <span class="tag is-primary">11ty</span>
+                </a>
+              
+                
+                <a href="/tags/agile/">
+                  <span class="tag is-link">Agile</span>
+                </a>
+              
+                
+                <a href="/tags/blog/">
+                  <span class="tag is-success">Blog</span>
+                </a>
+              
+                
+                <a href="/tags/bulma/">
+                  <span class="tag is-dark">Bulma</span>
+                </a>
+              
+                
+                <a href="/tags/certification/">
+                  <span class="tag is-warning">Certification</span>
+                </a>
+              
+                
+                <a href="/tags/enterjs/">
+                  <span class="tag is-danger">Enterjs</span>
+                </a>
+              
+                
+                <a href="/tags/excerpt/">
+                  <span class="tag is-black">Excerpt</span>
+                </a>
+              
+                
+                <a href="/tags/flutter/">
+                  <span class="tag is-primary">Flutter</span>
+                </a>
+              
+                
+                <a href="/tags/halloweb/">
+                  <span class="tag is-link">Halloweb</span>
+                </a>
+              
+                
+                <a href="/tags/hurl/">
+                  <span class="tag is-success">Hurl</span>
+                </a>
+              
+                
+                <a href="/tags/jest/">
+                  <span class="tag is-dark">Jest</span>
+                </a>
+              
+                
+                <a href="/tags/job-interview/">
+                  <span class="tag is-warning">Job-interview</span>
+                </a>
+              
+                
+                <a href="/tags/nodejs/">
+                  <span class="tag is-danger">Nodejs</span>
+                </a>
+              
+                
+                <a href="/tags/podcast/">
+                  <span class="tag is-black">Podcast</span>
+                </a>
+              
+                
+                <a href="/tags/prism/">
+                  <span class="tag is-primary">Prism</span>
+                </a>
+              
+                
+                <a href="/tags/recruting/">
+                  <span class="tag is-link">Recruting</span>
+                </a>
+              
+                
+                <a href="/tags/safari/">
+                  <span class="tag is-success">Safari</span>
+                </a>
+              
+                
+                <a href="/tags/scrum/">
+                  <span class="tag is-dark">Scrum</span>
+                </a>
+              
+                
+                <a href="/tags/sqllite/">
+                  <span class="tag is-warning">Sqllite</span>
+                </a>
+              
+                
+                <a href="/tags/stenciljs/">
+                  <span class="tag is-danger">Stenciljs</span>
+                </a>
+              
+                
+                <a href="/tags/storybook/">
+                  <span class="tag is-black">Storybook</span>
+                </a>
+              
+                
+                <a href="/tags/test/">
+                  <span class="tag is-primary">Test</span>
+                </a>
+              
+                
+                <a href="/tags/testing/">
+                  <span class="tag is-link">Testing</span>
+                </a>
+              
+                
+                <a href="/tags/tutorial/">
+                  <span class="tag is-success">Tutorial</span>
+                </a>
+              
+                
+                <a href="/tags/typescript/">
+                  <span class="tag is-dark">Typescript</span>
+                </a>
+              
+                
+                <a href="/tags/web/">
+                  <span class="tag is-warning">Web</span>
+                </a>
+              
+                
+                <a href="/tags/zertifizierung/">
+                  <span class="tag is-danger">Zertifizierung</span>
+                </a>
+              
+            </div>
+          </div>
+        </div>
+        <!-- panel -->
+        <div class="panel is-info">
+          <p class="panel-heading">
+            Favoriten
+          </p>
+          <div class="panel-block ">
+            <div class="content categorie-item">
+              <span class="tag is-success">Frontend</span>
+              <span class="tag is-info">Backend</span>
+              <span class="tag is-danger">Fullstack</span>
+            </div>
+          </div>
+          <div class="panel-block ">
+            <div class="content favorites-list">
+              <a href="https://www.typescriptlang.org/">
+                <span class="tag is-danger">Typescript</span>
+              </a>
+              <a href="https://developer.mozilla.org/de/docs/Web/JavaScript">
+                <span class="tag is-success">Javascript</span>
+              </a>
+              <a href="https://nodejs.org/">
+                <span class="tag is-info">Node.js</span>
+              </a>
+              <a href="https://nodesource.com/blog/Express-Koa-Hapi">
+                <span class="tag is-info">Express || KOA</span>
+              </a>
+              <a href="https://jestjs.io/">
+                <span class="tag is-success">JEST</span>
+              </a>
+              <a href="https://kubernetes.io/de/">
+                <span class="tag is-danger">Kubernetes</span>
+              </a>
+              <a href="https://stenciljs.com/">
+                <span class="tag is-success">Stencil.js</span>
+              </a>
+              <a href="https://www.postgresql.org/">
+                <span class="tag is-danger">PostgreSQL</span>
+              </a>
+              <a href="https://github.com/visionmedia/supertest#readme">
+                <span class="tag is-info">Supertest</span>
+              </a>
+              <a href="https://flutter.dev/">
+                <span class="tag is-danger">Flutter</span>
+              </a>
+              <a href="https://sass-lang.com/">
+                <span class="tag is-success">SCSS</span>
+              </a>
+              <a href="https://dart.dev/">
+                <span class="tag is-danger">Dart</span>
+              </a>
+              <a href="https://www.sqlite.org/index.html">
+                <span class="tag is-success">SQLite</span>
+              </a>
+              <a href="https://www.webcomponents.org/">
+                <span class="tag is-success">Webcomponents</span>
+              </a>
+              <a href="https://www.docker.com/">
+                <span class="tag is-danger">Docker</span>
+              </a>
+              <a href="https://github.com/microsoft/playwright">
+                <span class="tag is-danger">Playwright</span>
+              </a>
+            </div>
+          </div>
+        </div>
+        <!-- panel -->
+      </div>
+    </div>
+  </div>
+</section>
+        <!-- Current page: /tags/11ty/ -->
+        <footer class="footer">
+    <hr/>
+    <div class="content has-text-centered">
+        <p>
+            der_kuba - 2021-2024 -
+            <a href="/content/impressum.html">Impressum</a>
+            -
+            <a href="/content/datenschutz.html">Datenschutzerklärung</a>
+        </p>
+    </div>
+</footer>
+    </body>
+</html>
