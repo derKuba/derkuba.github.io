@@ -1,0 +1,218 @@
+<!doctype html>
+<html lang="de">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1"/>
+        <title>Displaying Post Excerpts in 11ty</title>
+        <meta name="description" content="How to display the first sentence of a post in the post list">
+        <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+        <link rel="alternate" href="/feed/feed.xml" type="application/atom+xml" title="der_kuba">
+        <link rel="alternate" href="/feed/feed.json" type="application/json" title="der_kuba">
+        <link rel="stylesheet" href="/assets/css/prism.css">
+        <link rel="stylesheet" href="/assets/css/bulma.css">
+        <link rel="stylesheet" href="/assets/css/custom.css">
+        <script>
+            document.addEventListener("DOMContentLoaded", () => {
+                const e = Array
+                    .prototype
+                    .slice
+                    .call(document.querySelectorAll(".navbar-burger"), 0);
+                e.length > 0 && e.forEach(e => {
+                    e.addEventListener("click", () => {
+                        const t = e.dataset.target,
+                            a = document.getElementById(t);
+                        e.classList.toggle("is-active"),
+                        a.classList.toggle("is-active")
+                    })
+                })
+                const disableDarkMode = () => {
+                    const bodyNode = document.querySelector("body");
+                    bodyNode
+                        .classList
+                        .remove("dark-mode")
+                        localStorage
+                        .setItem('darkMode', 'disabled');
+                }
+                const enableDarkMode = () => {
+                    const bodyNode = document.querySelector("body");
+                    bodyNode
+                        .classList
+                        .add("dark-mode")
+                        localStorage
+                        .setItem('darkMode', 'enabled');
+                }
+                const button = document.getElementById("darkmode");
+                button.addEventListener("click", () => {
+                    const bodyNode = document.querySelector("body");
+                    if (bodyNode.classList.contains("dark-mode")) {
+                        disableDarkMode();
+                    } else {
+                        enableDarkMode();
+                    }
+                })
+                if (localStorage.getItem('darkMode') === 'enabled') {
+                    enableDarkMode();
+                }
+            });
+        </script>
+    </head>
+    <body><header>
+    <div class="container">
+        <nav class="navbar">
+            <div class="navbar-brand">
+                <a class="navbar-item navbar-brand__title " href="/">
+                    der_kuba
+                </a>
+                <a class="navbar-item" href="https://github.com/derKuba">
+                    @Github
+                </a>
+                <a class="navbar-item" href="https://twitter.com/der_kuba">
+                    @Twitter
+                </a>
+                <a class="navbar-item" href="https://www.linkedin.com/in/jacob-pawlik-08a40015b/">
+                    @LinkedIn
+                </a>
+                <div class="navbar-burger" data-target="navigation-items">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+            <div id="navigation-items" class="navbar-menu">
+                <div class="navbar-end">
+                    
+                        <a class="navbar-item " href="/">
+                            Home
+                        </a>
+                        <a class="navbar-item " href="/posts/">
+                            Archiv
+                        </a>
+                        <a class="navbar-item " href="/about/">
+                            About Me
+                        </a>
+                        <a class="navbar-item " href="/en/">
+                            English
+                        </a>
+                        <a class="navbar-item " href="/content/impressum.html">
+                            Impressum
+                        </a>
+                        <a class="navbar-item " href="/content/datenschutz.html">
+                            Datenschutzerklärung
+                        </a>
+                    <button id="darkmode" alt="dark mode">
+                        <svg width="30" height="30">
+                            <circle cx="15" cy="15" r="6" fill="currentColor"/>
+                            <line id="ray" stroke="currentColor" stroke-width="2" stroke-linecap="round" x1="15" y1="1" x2="15" y2="4"></line>
+                            <use href="#ray" transform="rotate(45 15 15)"/>
+                            <use href="#ray" transform="rotate(90 15 15)"/>
+                            <use href="#ray" transform="rotate(135 15 15)"/>
+                            <use href="#ray" transform="rotate(180 15 15)"/>
+                            <use href="#ray" transform="rotate(225 15 15)"/>
+                            <use href="#ray" transform="rotate(270 15 15)"/>
+                            <use href="#ray" transform="rotate(315 15 15)"/>
+                        </svg>
+                    </button>
+                    <!-- special thanks to https://www.freecodecamp.org/news/how-to-handle-dark-mode-with-css-and-javascript/ -->
+                </div>
+            </div>
+        </nav>
+    </div>
+</header>
+        
+<section class="section">
+  <div class="container">
+    <div class="columns is-centered">
+      <div class="column is-8">
+        <h1 class="title is-3">Displaying Post Excerpts in 11ty</h1>
+        <div class="post-detail__tags">
+          <h3 class="subtitle is-6">
+            <time datetime="2021-04-04">
+              04 Apr 2021
+            </time>
+          </h3>
+          <div class="tags"><a href="/tags/11ty/" class="post-tag">
+                <span class="tag is-black">
+                  11ty
+                </span>
+              </a><a href="/tags/excerpt/" class="post-tag">
+                <span class="tag is-primary">
+                  Excerpt
+                </span>
+              </a>
+          </div>
+        </div>
+        <div class="content post_detail__content">
+          <div class="language-hint">
+            
+              <a href="/posts/0421/11nty-excerpt">Auf Deutsch lesen</a>
+            
+          </div>
+          <p>If you want to display content in the list of all posts, 11ty only allows you to show the entire post content by default. However, if you want to display just the first sentence of a post, you’ll need to teach Eleventy’s JavaScript how to do that. <!-- endOfPreview --></p>
+<p>The <a href="https://github.com/11ty/eleventy-base-blog">11ty Starter Blog</a> will be used as the foundation.</p>
+<p>When you start this, you get the following view. It shows the post list with the title, date, and tags but without a content excerpt.
+<img src="/img/0421/excerpt-place.png" alt="11ty starter" title="11ty starter"></p>
+<div class="has-text-right image-subline">Image 1: Post list in the Starter Template</div>
+<p>The red text indicates where the content should be inserted.
+To implement this, I referred to the following sources:</p>
+<p><a href="https://github.com/muenzpraeger/eleventy-chirpy-blog-template">Muenzpraeger's Eleventy Chirpy Blog Template</a> and <a href="https://keepinguptodate.com/pages/2019/06/creating-blog-with-eleventy/">Creating a Blog with Eleventy</a>.</p>
+<p>The <strong>.eleventy.js</strong> file needs the following function:</p>
+<pre class="language-javascript"><code class="language-javascript"><span class="highlight-line"><span class="token keyword">const</span> <span class="token function-variable function">extractExcerpt</span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token parameter">post</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">{</span></span>
+<span class="highlight-line">    <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token operator">!</span><span class="token class-name">Object</span><span class="token punctuation">.</span>prototype<span class="token punctuation">.</span><span class="token function">hasOwnProperty</span><span class="token punctuation">.</span><span class="token function">call</span><span class="token punctuation">(</span>post<span class="token punctuation">,</span> <span class="token string">"templateContent"</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span></span>
+<span class="highlight-line">        <span class="token keyword">return</span> <span class="token keyword">null</span><span class="token punctuation">;</span></span>
+<span class="highlight-line">    <span class="token punctuation">}</span></span>
+<span class="highlight-line">    <span class="token keyword">const</span> content <span class="token operator">=</span> post<span class="token punctuation">.</span>templateContent<span class="token punctuation">;</span></span>
+<span class="highlight-line">    <span class="token keyword">const</span> markerIndex <span class="token operator">=</span> content<span class="token punctuation">.</span><span class="token function">indexOf</span><span class="token punctuation">(</span><span class="token string">"&lt;!-- endOfPreview -->"</span><span class="token punctuation">)</span><span class="token punctuation">;</span></span>
+<span class="highlight-line"></span>
+<span class="highlight-line">    <span class="token keyword">return</span> markerIndex <span class="token operator">></span> <span class="token number">0</span> <span class="token operator">?</span> content<span class="token punctuation">.</span><span class="token function">slice</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">,</span> markerIndex<span class="token punctuation">)</span> <span class="token operator">+</span> <span class="token string">"..."</span> <span class="token operator">:</span> <span class="token string">""</span><span class="token punctuation">;</span></span>
+<span class="highlight-line"><span class="token punctuation">}</span><span class="token punctuation">;</span></span></code></pre>
+<p>First, it checks if the post object has the &quot;templateContent&quot; field, which Eleventy should provide. Then, the content is cached in the <code>content</code> variable. The content is sliced from the beginning up to the snippet <strong>&quot;<!-- endOfPreview -->&quot;</strong>. Of course, you can use any tag, but make sure it’s something unique that stands out from the content. This marker indicates where the excerpt, or preview, should end. If no marker is found, an empty string is returned.</p>
+<p>Next, you need to teach Eleventy how to use this function. You could do this via a filter, but I find a &quot;shortcut&quot; more practical. A shortcut looks like this:</p>
+<pre class="language-javascript"><code class="language-javascript"><span class="highlight-line"><span class="token comment">// remove whitespace between {} and %</span></span>
+<span class="highlight-line"><span class="token punctuation">{</span> <span class="token operator">%</span> excerpt pageObject <span class="token operator">%</span> <span class="token punctuation">}</span></span></code></pre>
+<p><em>Please remove the spaces between the parentheses and the percentage signs. Unfortunately, 11ty renders the snippet with spaces!</em></p>
+<pre class="language-javascript"><code class="language-javascript"><span class="highlight-line">eleventyConfig<span class="token punctuation">.</span><span class="token function">addShortcode</span><span class="token punctuation">(</span><span class="token string">"excerpt"</span><span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token parameter">post</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token function">extractExcerpt</span><span class="token punctuation">(</span>post<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span></span></code></pre>
+<p>The Eleventy config object now has a new keyword &quot;excerpt&quot; (for the post excerpt), and as shown in the previous code snippet, it passes the post object as a parameter.</p>
+<p>Now, if you include this shortcut in the <em>/_includes/postlist.njk</em> file within the list tags (&lt; li &gt; &lt;/ li &gt;), you will see the desired post excerpt:</p>
+<pre class="language-javascript"><code class="language-javascript"><span class="highlight-line"><span class="token punctuation">{</span> <span class="token operator">%</span> excerpt post <span class="token operator">%</span> <span class="token punctuation">}</span></span></code></pre>
+<p>This marker can now be used in the Markdown files of the blog posts (<strong>/posts/*.md</strong>). Simply insert <strong><!-- endOfPreview --></strong> at the desired length of the excerpt.</p>
+<pre class="language-html"><code class="language-html"><span class="highlight-line">Leverage agile frameworks to provide a robust</span>
+<span class="highlight-line"><span class="token comment">&lt;!-- endOfPreview --></span></span>
+<span class="highlight-line">synopsis for high-level overviews. Iterative</span></code></pre>
+<p><img src="/img/0421/excerpt-final.png" alt="11ty starter" title="11ty starter">
+<img src="/img/0421/excerpt-place.png" alt="11ty starter" title="11ty starter"></p>
+<div class="has-text-right image-subline">Image 2: Post list with content preview</div>
+<p>You can find the code examples on <a href="https://github.com/derKuba/eleventy-examples">Github/derKuba</a>.</p>
+<p>Do you have any questions or suggestions? Feel free to reach out to me on <a href="https://twitter.com/der_kuba">Twitter</a>.</p>
+
+            <hr>
+              <ul class="post-navigation">
+                  <li>Nächster Artikel:
+                    <a href="/posts/0421/11nty-bullma-error/">Bulma und Prism.js erzeugen CSS-Fehler in der Darstellung</a>
+                  </li>
+                
+                  <li>Vorheriger Artikel:
+                    <a href="/posts/0421/11nty-excerpt/">11ty: Inhalt in der Post-Liste anzeigen</a>
+                  </li>
+                
+              </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+        <!-- Current page: /posts/en/0421/11nty-excerpt/ -->
+        <footer class="footer">
+    <hr/>
+    <div class="content has-text-centered">
+        <p>
+            der_kuba - 2021-2024 -
+            <a href="/content/impressum.html">Impressum</a>
+            -
+            <a href="/content/datenschutz.html">Datenschutzerklärung</a>
+        </p>
+    </div>
+</footer>
+    </body>
+</html>

@@ -1,0 +1,294 @@
+<!doctype html>
+<html lang="de">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1"/>
+        <title>End to End Tests in Flutter</title>
+        <meta name="description" content="Wie teste ich die Applikation unter Android">
+        <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+        <link rel="alternate" href="/feed/feed.xml" type="application/atom+xml" title="der_kuba">
+        <link rel="alternate" href="/feed/feed.json" type="application/json" title="der_kuba">
+        <link rel="stylesheet" href="/assets/css/prism.css">
+        <link rel="stylesheet" href="/assets/css/bulma.css">
+        <link rel="stylesheet" href="/assets/css/custom.css">
+        <script>
+            document.addEventListener("DOMContentLoaded", () => {
+                const e = Array
+                    .prototype
+                    .slice
+                    .call(document.querySelectorAll(".navbar-burger"), 0);
+                e.length > 0 && e.forEach(e => {
+                    e.addEventListener("click", () => {
+                        const t = e.dataset.target,
+                            a = document.getElementById(t);
+                        e.classList.toggle("is-active"),
+                        a.classList.toggle("is-active")
+                    })
+                })
+                const disableDarkMode = () => {
+                    const bodyNode = document.querySelector("body");
+                    bodyNode
+                        .classList
+                        .remove("dark-mode")
+                        localStorage
+                        .setItem('darkMode', 'disabled');
+                }
+                const enableDarkMode = () => {
+                    const bodyNode = document.querySelector("body");
+                    bodyNode
+                        .classList
+                        .add("dark-mode")
+                        localStorage
+                        .setItem('darkMode', 'enabled');
+                }
+                const button = document.getElementById("darkmode");
+                button.addEventListener("click", () => {
+                    const bodyNode = document.querySelector("body");
+                    if (bodyNode.classList.contains("dark-mode")) {
+                        disableDarkMode();
+                    } else {
+                        enableDarkMode();
+                    }
+                })
+                if (localStorage.getItem('darkMode') === 'enabled') {
+                    enableDarkMode();
+                }
+            });
+        </script>
+    </head>
+    <body><header>
+    <div class="container">
+        <nav class="navbar">
+            <div class="navbar-brand">
+                <a class="navbar-item navbar-brand__title " href="/">
+                    der_kuba
+                </a>
+                <a class="navbar-item" href="https://github.com/derKuba">
+                    @Github
+                </a>
+                <a class="navbar-item" href="https://twitter.com/der_kuba">
+                    @Twitter
+                </a>
+                <a class="navbar-item" href="https://www.linkedin.com/in/jacob-pawlik-08a40015b/">
+                    @LinkedIn
+                </a>
+                <div class="navbar-burger" data-target="navigation-items">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+            <div id="navigation-items" class="navbar-menu">
+                <div class="navbar-end">
+                    
+                        <a class="navbar-item " href="/">
+                            Home
+                        </a>
+                        <a class="navbar-item " href="/posts/">
+                            Archiv
+                        </a>
+                        <a class="navbar-item " href="/about/">
+                            About Me
+                        </a>
+                        <a class="navbar-item " href="/en/">
+                            English
+                        </a>
+                        <a class="navbar-item " href="/content/impressum.html">
+                            Impressum
+                        </a>
+                        <a class="navbar-item " href="/content/datenschutz.html">
+                            Datenschutzerklärung
+                        </a>
+                    <button id="darkmode" alt="dark mode">
+                        <svg width="30" height="30">
+                            <circle cx="15" cy="15" r="6" fill="currentColor"/>
+                            <line id="ray" stroke="currentColor" stroke-width="2" stroke-linecap="round" x1="15" y1="1" x2="15" y2="4"></line>
+                            <use href="#ray" transform="rotate(45 15 15)"/>
+                            <use href="#ray" transform="rotate(90 15 15)"/>
+                            <use href="#ray" transform="rotate(135 15 15)"/>
+                            <use href="#ray" transform="rotate(180 15 15)"/>
+                            <use href="#ray" transform="rotate(225 15 15)"/>
+                            <use href="#ray" transform="rotate(270 15 15)"/>
+                            <use href="#ray" transform="rotate(315 15 15)"/>
+                        </svg>
+                    </button>
+                    <!-- special thanks to https://www.freecodecamp.org/news/how-to-handle-dark-mode-with-css-and-javascript/ -->
+                </div>
+            </div>
+        </nav>
+    </div>
+</header>
+        
+<section class="section">
+  <div class="container">
+    <div class="columns is-centered">
+      <div class="column is-8">
+        <h1 class="title is-3">End to End Tests in Flutter</h1>
+        <div class="post-detail__tags">
+          <h3 class="subtitle is-6">
+            <time datetime="2021-10-01">
+              01 Oct 2021
+            </time>
+          </h3>
+          <div class="tags"><a href="/tags/flutter/" class="post-tag">
+                <span class="tag is-black">
+                  Flutter
+                </span>
+              </a><a href="/tags/testing/" class="post-tag">
+                <span class="tag is-primary">
+                  Testing
+                </span>
+              </a>
+          </div>
+        </div>
+        <div class="content post_detail__content">
+          <div class="language-hint">
+            
+          </div>
+          <p>Aktuell arbeite ich an einer APP mit Flutter. Letzte Woche habe ich einen ersten Prototypen auf mein Handy überspielt. Stolz habe ich es jemanden gegeben, um zuzuschauen wie mit der APP interagiert wird. Nach drei Klicks wurde der Bildschirm rot. Crash. <!-- endOfPreview --> Ende der Präsentation. Ich habe vorher zigfach durch die Applikation geklickt. Aber den einen Pfad habe ich ausgelassen. Jetzt kann man natürlich von dem bekannten Vorführeffekt sprechen. Schön und gut. Aber wie kann man so eine Situation vermeiden?
+Richtig! Testen Testen Testen. :-)</p>
+<p>Mir hätte ein Unit-Testing an der Stelle nicht geholfen. Die Komponenten funktionierten geschlossen in sich perfekt. Allerdings das Zusammenspiel krachte. Ich brauche End2End Tests. Als alter Webentwickler habe ich natürlich an Selenium gedacht. Jedoch habe ich ein Google-Framework vor mir. Es wäre gelacht, wenn die nicht etwas in diese Richtung gebaut hätten. <a href="https://flutter.dev/docs/cookbook/testing/integration/introduction">Siehe da, das haben sie getan.</a>. Es gibt dazu eine <a href="https://flutter.dev/docs/testing/integration-tests">zweite Doku</a>, die sich etwas unterscheidet. Da es aber verschiedene Versionen gibt und die Dokumentation für mich etwas verwirrend war, beschreibe ich in diesem Artikel wie ich ans Ziel gekommen bin.</p>
+<h4>Ausgangslage</h4>
+<p>Mein aktuelles Setup sieht so aus:</p>
+<pre class="language-ts"><code class="language-ts"><span class="highlight-line"><span class="token operator">~</span> flutter <span class="token operator">--</span>version</span>
+<span class="highlight-line">Flutter <span class="token number">2.6</span><span class="token number">.0</span><span class="token operator">-</span><span class="token number">12.0</span><span class="token punctuation">.</span>pre<span class="token punctuation">.</span><span class="token number">59</span> • channel master •</span>
+<span class="highlight-line">https<span class="token operator">:</span><span class="token operator">/</span><span class="token operator">/</span>github<span class="token punctuation">.</span>com<span class="token operator">/</span>flutter<span class="token operator">/</span>flutter<span class="token punctuation">.</span>git</span>
+<span class="highlight-line">Framework • revision <span class="token number">64161</span><span class="token function">b6caa</span> <span class="token punctuation">(</span>vor <span class="token number">9</span> Tagen<span class="token punctuation">)</span> • <span class="token number">2021</span><span class="token operator">-</span><span class="token number">09</span><span class="token operator">-</span><span class="token number">22</span> <span class="token number">18</span><span class="token operator">:</span><span class="token number">38</span><span class="token operator">:</span><span class="token number">04</span> <span class="token operator">-</span><span class="token number">0400</span></span>
+<span class="highlight-line">Engine • revision dd28b6f1c8</span>
+<span class="highlight-line">Tools • Dart <span class="token number">2.15</span><span class="token number">.0</span> <span class="token punctuation">(</span>build <span class="token number">2.15</span><span class="token number">.0</span><span class="token operator">-</span><span class="token number">137.0</span><span class="token punctuation">.</span>dev<span class="token punctuation">)</span></span></code></pre>
+<h4>Installation</h4>
+<p>Vorab die Info, dass man zwar noch auf den <em>flutter_driver</em> setzt. Dieser aber nicht mehr aus dem Paket heraus referenziert wird. Dazu schreibe ich gleich noch etwas.</p>
+<p>Man benötigt folgende Dependencies/Paketabhängigkeiten, die man in die <em>pubspec.yaml</em> schreibt als <em>dev-dependencies</em>:</p>
+<pre class="language-yaml"><code class="language-yaml"><span class="highlight-line"><span class="token key atrule">dev_dependencies</span><span class="token punctuation">:</span></span>
+<span class="highlight-line">    <span class="token key atrule">integration_test</span><span class="token punctuation">:</span></span>
+<span class="highlight-line">        <span class="token key atrule">sdk</span><span class="token punctuation">:</span> flutter</span>
+<span class="highlight-line">    <span class="token key atrule">flutter_test</span><span class="token punctuation">:</span></span>
+<span class="highlight-line">        <span class="token key atrule">sdk</span><span class="token punctuation">:</span> flutter</span>
+<span class="highlight-line">    <span class="token key atrule">flutter_driver</span><span class="token punctuation">:</span></span>
+<span class="highlight-line">        <span class="token key atrule">sdk</span><span class="token punctuation">:</span> flutter</span></code></pre>
+<p>Je nach IDE werden diese automatisch nachgeladen. Händisch geht dies im Projektverzeichnis so:</p>
+<pre class="language-bash"><code class="language-bash"><span class="highlight-line">flutter pub get</span></code></pre>
+<h4>Ordner- und Dateistruktur</h4>
+<p>Es werden folgende Ordner benötigt:</p>
+<ul>
+<li>/integration_test</li>
+<li>/test</li>
+<li>/test_driver</li>
+</ul>
+<p>Der erste Ordner beinhaltet die Integration-/E2E-Tests. Im zweiten Ordner befinden sich die Unit-Tests ( spielt in diesem Artikel keine Rolle -&gt; aber ich hoffe sie sind da :-) ). Der dritte Ordner beinhaltet ein bisschen Konfiguration, bzw. Setup für die Integrationstests.</p>
+<p>Der Ordner <em>test_driver</em> beinhaltet die Datei <strong>test-driver.dart</strong> und hat diesen Inhalt:</p>
+<pre class="language-dart"><code class="language-dart"><span class="highlight-line"><span class="token keyword">import</span> <span class="token string-literal"><span class="token string">'package:integration_test/integration_test_driver.dart'</span></span><span class="token punctuation">;</span></span>
+<span class="highlight-line"></span>
+<span class="highlight-line"><span class="token class-name">Future</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token keyword">void</span><span class="token punctuation">></span></span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=</span><span class="token operator">></span> <span class="token function">integrationDriver</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span></span></code></pre>
+<h4>Testfall</h4>
+<p>Im Ordner /integration<em>test liegen die Testfälle. Als Konvention hat man sich auf das Suffix (die Endung) test.dart geeinigt. Hier würde ich empfehlen noch ein &quot;unit</em>&quot; oder &quot;integration_&quot; davor hängen. Als Dateinamen ergibt sich <strong>happy-path_integration_test.dart</strong>. Die Syntax orientiert sich an bekannten BDD-Frameworks, wie z.B. <a href="https://jestjs.io/">Jest</a>.</p>
+<pre class="language-dart"><code class="language-dart"><span class="highlight-line"><span class="token keyword">import</span> <span class="token string-literal"><span class="token string">'package:flutter/material.dart'</span></span><span class="token punctuation">;</span></span>
+<span class="highlight-line"><span class="token keyword">import</span> <span class="token string-literal"><span class="token string">'package:flutter_test/flutter_test.dart'</span></span><span class="token punctuation">;</span></span>
+<span class="highlight-line"><span class="token keyword">import</span> <span class="token string-literal"><span class="token string">'package:integration_test/integration_test.dart'</span></span><span class="token punctuation">;</span></span>
+<span class="highlight-line"></span>
+<span class="highlight-line"><span class="token keyword">import</span> <span class="token string-literal"><span class="token string">"package:myApp/main.dart"</span></span> <span class="token operator">as</span> app<span class="token punctuation">;</span></span>
+<span class="highlight-line"></span>
+<span class="highlight-line"><span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span></span>
+<span class="highlight-line">  <span class="token class-name">IntegrationTestWidgetsFlutterBinding</span><span class="token punctuation">.</span><span class="token function">ensureInitialized</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span></span>
+<span class="highlight-line"></span>
+<span class="highlight-line">  <span class="token function">group</span><span class="token punctuation">(</span><span class="token string-literal"><span class="token string">'Example'</span></span><span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span></span>
+<span class="highlight-line">    <span class="token function">testWidgets</span><span class="token punctuation">(</span><span class="token string-literal"><span class="token string">'should add new contact'</span></span><span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token class-name">WidgetTester</span> tester<span class="token punctuation">)</span> <span class="token keyword">async</span> <span class="token punctuation">{</span></span>
+<span class="highlight-line">      app<span class="token punctuation">.</span><span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span></span>
+<span class="highlight-line">      <span class="token keyword">await</span> tester<span class="token punctuation">.</span><span class="token function">pumpAndSettle</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span></span>
+<span class="highlight-line"></span>
+<span class="highlight-line">      <span class="token keyword">final</span> <span class="token class-name">Finder</span> addButton <span class="token operator">=</span> find<span class="token punctuation">.</span><span class="token function">byKey</span><span class="token punctuation">(</span><span class="token class-name">Key</span><span class="token punctuation">(</span><span class="token string-literal"><span class="token string">"add_new"</span></span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span></span>
+<span class="highlight-line">      <span class="token keyword">await</span> tester<span class="token punctuation">.</span><span class="token function">tap</span><span class="token punctuation">(</span>addButton<span class="token punctuation">)</span><span class="token punctuation">;</span></span>
+<span class="highlight-line"></span>
+<span class="highlight-line">      <span class="token keyword">await</span> tester<span class="token punctuation">.</span><span class="token function">pumpAndSettle</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span></span>
+<span class="highlight-line"></span>
+<span class="highlight-line">      <span class="token keyword">final</span> <span class="token class-name">Finder</span> inputField <span class="token operator">=</span> find<span class="token punctuation">.</span><span class="token function">byKey</span><span class="token punctuation">(</span><span class="token class-name">Key</span><span class="token punctuation">(</span><span class="token string-literal"><span class="token string">"input"</span></span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span></span>
+<span class="highlight-line">      <span class="token keyword">await</span> tester<span class="token punctuation">.</span><span class="token function">enterText</span><span class="token punctuation">(</span>inputField<span class="token punctuation">,</span> <span class="token string-literal"><span class="token string">"ExampleName"</span></span><span class="token punctuation">)</span><span class="token punctuation">;</span></span>
+<span class="highlight-line"></span>
+<span class="highlight-line">      <span class="token keyword">await</span> tester<span class="token punctuation">.</span><span class="token function">pumpAndSettle</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span></span>
+<span class="highlight-line"></span>
+<span class="highlight-line">      <span class="token keyword">final</span> <span class="token class-name">Finder</span> saveButton <span class="token operator">=</span> find<span class="token punctuation">.</span><span class="token function">byKey</span><span class="token punctuation">(</span><span class="token class-name">Key</span><span class="token punctuation">(</span><span class="token string-literal"><span class="token string">"save_button"</span></span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span></span>
+<span class="highlight-line">      <span class="token keyword">await</span> tester<span class="token punctuation">.</span><span class="token function">tap</span><span class="token punctuation">(</span>saveButton<span class="token punctuation">)</span><span class="token punctuation">;</span></span>
+<span class="highlight-line"></span>
+<span class="highlight-line">      <span class="token keyword">await</span> tester<span class="token punctuation">.</span><span class="token function">pumpAndSettle</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span></span>
+<span class="highlight-line"></span>
+<span class="highlight-line">      <span class="token function">expect</span><span class="token punctuation">(</span>find<span class="token punctuation">.</span><span class="token function">text</span><span class="token punctuation">(</span><span class="token string-literal"><span class="token string">'ExampleName'</span></span><span class="token punctuation">)</span><span class="token punctuation">,</span> findsOneWidget<span class="token punctuation">)</span><span class="token punctuation">;</span></span>
+<span class="highlight-line">    <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span></span>
+<span class="highlight-line">  <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span></span>
+<span class="highlight-line"><span class="token punctuation">}</span></span></code></pre>
+<p>Die erste Zeile importiert das Hauptpaket, weil ich auf Widgets zugreifen möchte. Die nächsten zwei Zeilen importieren die Testbibliotheken.
+Die erste individuelle Zeile ist die fünfte Zeile. Hier wird die <em>main.dart</em>-Datei der zu testenden Applikation importiert.</p>
+<p>Man findet sich sehr schnell zurecht. Die Testfälle sind in der Main-Funktion gekapselt.</p>
+<p>Das <em>IntegrationTestWidgetsFlutterBinding</em> kümmert sich laut der Doku darum, dass die Testergebnisse eingesammelt werden. Die Methode <em>ensureInitialized</em> initialisiert dies.</p>
+<p>Analog zum Modell <em>describe</em> und <em>test/it</em> kommt hier <em>group</em> und <em>testWidgets</em> daher. Group gibt den Tests einen Rahmen, in dem die Testfälle unter gebündelt werden. Man findet sich auch hier schnell zurecht.</p>
+<p>Wer andere Frameworks kennt, kennt das Vorgehen.</p>
+<ul>
+<li>Initialisiere den Test</li>
+<li>Finde eine/n Knoten/Komponente.</li>
+<li>Führe darauf eine (Steuerungs-)Aktion aus.</li>
+<li>Erwarte eine Änderung der Oberfläche</li>
+</ul>
+<p>Nach genau diesem Schema läuft der Test auch ab.</p>
+<p>In Zeile 13 startet man die App. Man hat das Objekt <a href="https://api.flutter.dev/flutter/flutter_test/WidgetTester-class.html"><em>WidgetTester tester</em></a> zur Verfügung. In anderen Frameworks ist dies häufig der <em>driver</em> oder die <em>page</em>. Dabei handelt es sich um das Interface für die Oberfläche. Mit anderen Worten die Schnittstelle oder Steuerung des Browsers oder in diesem Fall des Smartphones.</p>
+<p>Zum Finden der Komponente gibt es das globale Objekt vom Typ <a href="https://api.flutter.dev/flutter/flutter_test/CommonFinders-class.html">CommonFinders</a>. Über das globale <em>find</em> kann man z.B. die Methoden <em>byKey</em>, <em>byTooltip</em> oder <em>byWidget</em> aufrufen. Diese suchen dann in der App nach einem bestimmten Key, Tooltip oder nach einem spezifischen Widget und geben eine Instanz der Klasse <em>Finder</em> zurück.
+Ich hab meinen Widgets eindeutige <a href="https://api.flutter.dev/flutter/foundation/Key-class.html">Keys</a> gegeben, und kann so einfach danach suchen. Wenn ein Widget gefunden wird, übergibt man dieses als Parameter an eine Interaktionsmethode des <em>testers</em>.
+Dieser verfügt über Operationen wie z.B. <em>.enterText(finder, text)</em>, <em>.tap(finder)</em>, <em>showKeyboard(finder)</em>. Ich empfehle den Blick in die <a href="https://api.flutter.dev/flutter/flutter_test/WidgetTester-class.html">Doku</a>.</p>
+<p>Der aufmerksamer Leser wird sich über das vermehrte Aufrufen der Funktion <em>pumpAndSettle</em> wundern. In früheren Versionen stand dort noch ein <em>driver.wait</em>. Diese Funktion wartet eigenständig bis alle Operationen, bzw. sich veränderten Frames auf der Oberfläche zum Stillstand gekommen sind. Das brauchen, um die jeweils nächste Operation zu starten (damit sich keine Operation in die Quere kommt) und um das Endresultat abzufragen.</p>
+<p>Das letzte Vorgehe im Test ist auch etwas kniffelig. Was erwartet man nun und wie prüft man es. In meinem kleinen Codebeispiel teste ich ein Inputfeld. Ein Knopf öffnet die Editierseite (Zeile 15), füllt das Formular aus (Zeile 21), speichert (Zeile 26) und kehrt damit zur Listenansicht zurück. Ich suche dann global nach dem neuen Text, den ich ersetzt habe (Zeile 30). Hier wäre es natürlich möglich über die oben genannten Keys oder Tooltips zu suchen.</p>
+<p>Damit wäre der erste einfach Test geschrieben. Wie ruft man diesen nun auf?</p>
+<pre class="language-bash"><code class="language-bash"><span class="highlight-line">flutter drive</span>
+<span class="highlight-line">  <span class="token parameter variable">--driver</span><span class="token operator">=</span>test_driver/integration_test.dart</span>
+<span class="highlight-line">  <span class="token parameter variable">--target</span><span class="token operator">=</span>integration_test/happy-path_integration_test.dart</span>
+<span class="highlight-line">  <span class="token parameter variable">-d</span> emulator-5554</span></code></pre>
+<p>Der Befehl zum Auführen lautet <strong>flutter drive</strong> und bekommt noch einige Parameter mitgegeben. Der erste Parameter gibt den Pfad zum Driver an. Dieser befindet sich im oben genannten Ordner. Der Inhalt wurde bereits behandelt. Der zweite Parameter gibt das Target an. Ich finde es etwas unglücklich ausgedrückt. Es handelt sich hierbei um den Testfall, den man starten möchte. Ich habe nach Möglichkeiten gesucht alle Testfälle zu starten. Aber da muss man sich selber helfen und ein eigenes Bash-Skript schreiben. Der letzte Parameter gibt den Ausführungsort an. Hierbei handelt es sich um ein Device, das man unter Flutter einsehen kann.</p>
+<p>Führt man diesen Befehl aus, bekommt man eine Übersicht über die mit Flutter verbundenen &quot;Testgeräte&quot;.</p>
+<pre class="language-bash"><code class="language-bash"><span class="highlight-line">flutter devices</span>
+<span class="highlight-line"><span class="token number">2</span> connected devices:</span>
+<span class="highlight-line"></span>
+<span class="highlight-line">Android SDK built <span class="token keyword">for</span> x86 <span class="token punctuation">(</span>mobile<span class="token punctuation">)</span> • emulator-5554 • android-x86    • Android <span class="token number">10</span></span>
+<span class="highlight-line"><span class="token punctuation">(</span>API <span class="token number">29</span><span class="token punctuation">)</span> <span class="token punctuation">(</span>emulator<span class="token punctuation">)</span></span>
+<span class="highlight-line"></span>
+<span class="highlight-line">Chrome <span class="token punctuation">(</span>web<span class="token punctuation">)</span>                       • chrome        • web-javascript • Google</span>
+<span class="highlight-line">Chrome <span class="token number">94.0</span>.4606.71</span></code></pre>
+<p>Das erste Wort nach dem weißen Punkt ist der Devicename. Diesen gibt man als letzten Parameter im Befehl ein: <em>-d emulator-5554</em>. Hierbei handelt es sich um den Android-Emulator aus dem Android-Studio. Im Codebeispiel sieht man noch den Browser Chrome. Auch dieser könnte theoretisch genutzt werden, wenn man eine Flutter-Webanwendung gebaut hätte. Wäre eine physisches Telefon per USB verbunden, würde dieses hier auch auftauchen.</p>
+<p>Führt man diesen Befehl aus, dauert es eine gute Weile. Alles wird kompiliert, die App auf dem Emulator installiert. Man sieht die Klickfolge. Der nachfolgende Text sollte den Test krönen.</p>
+<pre class="language-bash"><code class="language-bash"><span class="highlight-line">I/flutter <span class="token punctuation">(</span> <span class="token number">8223</span><span class="token punctuation">)</span>: 00:03 +2: All tests passed<span class="token operator">!</span></span>
+<span class="highlight-line">All tests passed.</span></code></pre>
+<h4>Fazit</h4>
+<p>Dieser Artikel ist nur der Einstieg in das Testing. Er zeigt die Installation, beschreibt die Ordnerstrukturen und führt einen ersten Test aus. Damit hat man das Handwerkszeug ( und die richtigen Links zur Dokumentation), um weitere Tests zu schreiben und eine hohe Testabdeckung zu erreichen. Ich wünsche viel Spass beim Testen.</p>
+<p>Ihr habt Fragen oder Anregungen? Schreibt mir bei <a href="https://twitter.com/der_kuba">Twitter</a>.</p>
+<p><br>
+Tausend Dank fürs Lesen!</p>
+<p>Kuba</p>
+
+            <hr>
+              <ul class="post-navigation">
+                  <li>Nächster Artikel:
+                    <a href="/posts/1021/stencil-component-lib/">Component Library mit Storybook und StencilJS</a>
+                  </li>
+                
+                  <li>Vorheriger Artikel:
+                    <a href="/posts/stenciljs/stencil-tutorial/">StencilJS-Tutorial</a>
+                  </li>
+                
+              </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+        <!-- Current page: /posts/1021/flutter-e2e/ -->
+        <footer class="footer">
+    <hr/>
+    <div class="content has-text-centered">
+        <p>
+            der_kuba - 2021-2024 -
+            <a href="/content/impressum.html">Impressum</a>
+            -
+            <a href="/content/datenschutz.html">Datenschutzerklärung</a>
+        </p>
+    </div>
+</footer>
+    </body>
+</html>

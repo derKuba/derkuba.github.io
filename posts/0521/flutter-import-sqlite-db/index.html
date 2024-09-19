@@ -1,0 +1,243 @@
+<!doctype html>
+<html lang="de">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1"/>
+        <title>How to import SQlite Database File in Flutter (Android)</title>
+        <meta name="description" content="SQlite Database aus der Applikation importieren unter Android">
+        <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+        <link rel="alternate" href="/feed/feed.xml" type="application/atom+xml" title="der_kuba">
+        <link rel="alternate" href="/feed/feed.json" type="application/json" title="der_kuba">
+        <link rel="stylesheet" href="/assets/css/prism.css">
+        <link rel="stylesheet" href="/assets/css/bulma.css">
+        <link rel="stylesheet" href="/assets/css/custom.css">
+        <script>
+            document.addEventListener("DOMContentLoaded", () => {
+                const e = Array
+                    .prototype
+                    .slice
+                    .call(document.querySelectorAll(".navbar-burger"), 0);
+                e.length > 0 && e.forEach(e => {
+                    e.addEventListener("click", () => {
+                        const t = e.dataset.target,
+                            a = document.getElementById(t);
+                        e.classList.toggle("is-active"),
+                        a.classList.toggle("is-active")
+                    })
+                })
+                const disableDarkMode = () => {
+                    const bodyNode = document.querySelector("body");
+                    bodyNode
+                        .classList
+                        .remove("dark-mode")
+                        localStorage
+                        .setItem('darkMode', 'disabled');
+                }
+                const enableDarkMode = () => {
+                    const bodyNode = document.querySelector("body");
+                    bodyNode
+                        .classList
+                        .add("dark-mode")
+                        localStorage
+                        .setItem('darkMode', 'enabled');
+                }
+                const button = document.getElementById("darkmode");
+                button.addEventListener("click", () => {
+                    const bodyNode = document.querySelector("body");
+                    if (bodyNode.classList.contains("dark-mode")) {
+                        disableDarkMode();
+                    } else {
+                        enableDarkMode();
+                    }
+                })
+                if (localStorage.getItem('darkMode') === 'enabled') {
+                    enableDarkMode();
+                }
+            });
+        </script>
+    </head>
+    <body><header>
+    <div class="container">
+        <nav class="navbar">
+            <div class="navbar-brand">
+                <a class="navbar-item navbar-brand__title " href="/">
+                    der_kuba
+                </a>
+                <a class="navbar-item" href="https://github.com/derKuba">
+                    @Github
+                </a>
+                <a class="navbar-item" href="https://twitter.com/der_kuba">
+                    @Twitter
+                </a>
+                <a class="navbar-item" href="https://www.linkedin.com/in/jacob-pawlik-08a40015b/">
+                    @LinkedIn
+                </a>
+                <div class="navbar-burger" data-target="navigation-items">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+            <div id="navigation-items" class="navbar-menu">
+                <div class="navbar-end">
+                    
+                        <a class="navbar-item " href="/">
+                            Home
+                        </a>
+                        <a class="navbar-item " href="/posts/">
+                            Archiv
+                        </a>
+                        <a class="navbar-item " href="/about/">
+                            About Me
+                        </a>
+                        <a class="navbar-item " href="/en/">
+                            English
+                        </a>
+                        <a class="navbar-item " href="/content/impressum.html">
+                            Impressum
+                        </a>
+                        <a class="navbar-item " href="/content/datenschutz.html">
+                            Datenschutzerklärung
+                        </a>
+                    <button id="darkmode" alt="dark mode">
+                        <svg width="30" height="30">
+                            <circle cx="15" cy="15" r="6" fill="currentColor"/>
+                            <line id="ray" stroke="currentColor" stroke-width="2" stroke-linecap="round" x1="15" y1="1" x2="15" y2="4"></line>
+                            <use href="#ray" transform="rotate(45 15 15)"/>
+                            <use href="#ray" transform="rotate(90 15 15)"/>
+                            <use href="#ray" transform="rotate(135 15 15)"/>
+                            <use href="#ray" transform="rotate(180 15 15)"/>
+                            <use href="#ray" transform="rotate(225 15 15)"/>
+                            <use href="#ray" transform="rotate(270 15 15)"/>
+                            <use href="#ray" transform="rotate(315 15 15)"/>
+                        </svg>
+                    </button>
+                    <!-- special thanks to https://www.freecodecamp.org/news/how-to-handle-dark-mode-with-css-and-javascript/ -->
+                </div>
+            </div>
+        </nav>
+    </div>
+</header>
+        
+<section class="section">
+  <div class="container">
+    <div class="columns is-centered">
+      <div class="column is-8">
+        <h1 class="title is-3">How to import SQlite Database File in Flutter (Android)</h1>
+        <div class="post-detail__tags">
+          <h3 class="subtitle is-6">
+            <time datetime="2021-05-13">
+              13 May 2021
+            </time>
+          </h3>
+          <div class="tags"><a href="/tags/flutter/" class="post-tag">
+                <span class="tag is-black">
+                  Flutter
+                </span>
+              </a><a href="/tags/sqllite/" class="post-tag">
+                <span class="tag is-primary">
+                  Sqllite
+                </span>
+              </a>
+          </div>
+        </div>
+        <div class="content post_detail__content">
+          <div class="language-hint">
+            
+          </div>
+          <p>Vor kurzem habe ich erklärt wie man aus seiner App die <a href="https://www.sqlite.org/index.html">SQlite-Datenbank</a> exportiert. In diesem Artikel erkläre ich wie man diese importiert. Voraussetzung ist ein bestehendes Flutter-Projekt und ein SQlite-Datenbank im Download-Verzeichnis des Telefons. <!-- endOfPreview --></p>
+<p>Benötigte Bibliotheken sind folgende:</p>
+<pre class="language-yaml"><code class="language-yaml"><span class="highlight-line"><span class="token key atrule">dependencies</span><span class="token punctuation">:</span></span>
+<span class="highlight-line">    <span class="token key atrule">flutter</span><span class="token punctuation">:</span></span>
+<span class="highlight-line">        <span class="token key atrule">sdk</span><span class="token punctuation">:</span> flutter</span>
+<span class="highlight-line">    <span class="token key atrule">sqflite</span><span class="token punctuation">:</span></span>
+<span class="highlight-line">    <span class="token key atrule">path</span><span class="token punctuation">:</span></span>
+<span class="highlight-line">    <span class="token key atrule">permission_handler</span><span class="token punctuation">:</span> ^7.0.0</span>
+<span class="highlight-line">    <span class="token key atrule">downloads_path_provider</span><span class="token punctuation">:</span> ^0.1.0</span></code></pre>
+<p>Die Vorgehensweise strukturiert sich folgendermaßen:</p>
+<ol>
+<li>Lege eine neue Seite für den Import an und gebe den Dateipfad hinein</li>
+<li>Lese Dateien aus dem Download-Verzeichnis und filtere nach <em>&quot;.db&quot;</em></li>
+<li>Zeige die Dateien an.</li>
+<li>Kopiere diese in das Datenbankverzeichnis</li>
+</ol>
+<p>Ich gehe davon aus, dass mehrere Dateien für den Import zur Verfügung stehen und man den Nutzer vor die Wahl stellen kann, welche er importieren möchte. Für die Auswahl aus einer Liste bieten sich Radiobuttons an. In Flutter gibt es dazu die <strong><em>RadioListTile</em></strong>:</p>
+<pre class="language-dart"><code class="language-dart"><span class="highlight-line"><span class="token class-name">String</span> selectedFile <span class="token operator">=</span> <span class="token string-literal"><span class="token string">""</span></span><span class="token punctuation">;</span></span>
+<span class="highlight-line"><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span></span>
+<span class="highlight-line"><span class="token class-name">RadioListTile</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token class-name">String</span><span class="token punctuation">></span></span><span class="token punctuation">(</span></span>
+<span class="highlight-line">    title<span class="token punctuation">:</span> <span class="token class-name">Text</span><span class="token punctuation">(</span>fileName<span class="token punctuation">.</span>path <span class="token operator">?</span><span class="token operator">?</span> <span class="token string-literal"><span class="token string">""</span></span><span class="token punctuation">)</span><span class="token punctuation">,</span>  <span class="token comment">// Der Titel ist der Pfad der Datei</span></span>
+<span class="highlight-line">    value<span class="token punctuation">:</span> fileName<span class="token punctuation">.</span>path<span class="token punctuation">,</span>             <span class="token comment">//  und der Wert ebenfalls.</span></span>
+<span class="highlight-line">    groupValue<span class="token punctuation">:</span> selectedFile<span class="token punctuation">,</span>        <span class="token comment">//   Zum Anzeigen der Auswahl benötigt man eine Merkvariable, die den ausgewählten Wert repräsentiert.</span></span>
+<span class="highlight-line">    onChanged<span class="token punctuation">:</span> <span class="token punctuation">(</span><span class="token class-name">String</span> value<span class="token punctuation">)</span> <span class="token punctuation">{</span>     <span class="token comment">//    In der Change-Funktion wird diese Merkervariabel ge- und überschrieben.</span></span>
+<span class="highlight-line">      <span class="token function">print</span><span class="token punctuation">(</span>value<span class="token punctuation">)</span><span class="token punctuation">;</span></span>
+<span class="highlight-line">      <span class="token function">setState</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span></span>
+<span class="highlight-line">        selectedFile <span class="token operator">=</span> value<span class="token punctuation">;</span></span>
+<span class="highlight-line">      <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span></span>
+<span class="highlight-line">    <span class="token punctuation">}</span><span class="token punctuation">,</span></span>
+<span class="highlight-line">  <span class="token punctuation">)</span><span class="token punctuation">;</span></span></code></pre>
+<p>Das Ganze sieht dann aus wie folgt:</p>
+<p><img src="/img/0521/import_ui.png" alt="Dateiauswahl" title="Dateiauswahl"><div class="has-text-right image-subline">Bild 1: RadioListTile in Aktion</div></p>
+<p>Der grüne Knopf im unteren Bereich heißt <strong><em>FloatingActionButton</em></strong> und hat auf seiner onPressed-Methode folgende Funktion:</p>
+<pre class="language-dart"><code class="language-dart"><span class="highlight-line">  <span class="token function">_importDB</span><span class="token punctuation">(</span><span class="token class-name">BuildContext</span> context<span class="token punctuation">)</span> <span class="token keyword">async</span> <span class="token punctuation">{</span></span>
+<span class="highlight-line">    <span class="token function">print</span><span class="token punctuation">(</span>selectedFile<span class="token punctuation">)</span><span class="token punctuation">;</span></span>
+<span class="highlight-line">    <span class="token keyword">if</span> <span class="token punctuation">(</span>selectedFile <span class="token operator">==</span> <span class="token string-literal"><span class="token string">""</span></span><span class="token punctuation">)</span> <span class="token keyword">return</span><span class="token punctuation">;</span></span>
+<span class="highlight-line">    <span class="token keyword">try</span> <span class="token punctuation">{</span></span>
+<span class="highlight-line">      <span class="token keyword">var</span> status <span class="token operator">=</span> <span class="token keyword">await</span> <span class="token class-name">Permission</span><span class="token punctuation">.</span>storage<span class="token punctuation">.</span>status<span class="token punctuation">;</span></span>
+<span class="highlight-line">      <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token operator">!</span>status<span class="token punctuation">.</span>isGranted<span class="token punctuation">)</span> <span class="token punctuation">{</span></span>
+<span class="highlight-line">        <span class="token keyword">await</span> <span class="token class-name">Permission</span><span class="token punctuation">.</span>storage<span class="token punctuation">.</span><span class="token function">request</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span></span>
+<span class="highlight-line">      <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span></span>
+<span class="highlight-line">        <span class="token keyword">var</span> srcFile <span class="token operator">=</span> <span class="token class-name">File</span><span class="token punctuation">(</span>selectedFile<span class="token punctuation">)</span><span class="token punctuation">;</span></span>
+<span class="highlight-line">        <span class="token keyword">var</span> dbFileBytes <span class="token operator">=</span> srcFile<span class="token punctuation">.</span><span class="token function">readAsBytesSync</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span></span>
+<span class="highlight-line">        <span class="token keyword">var</span> bytes <span class="token operator">=</span> <span class="token class-name">ByteData</span><span class="token punctuation">.</span><span class="token function">view</span><span class="token punctuation">(</span>dbFileBytes<span class="token punctuation">.</span>buffer<span class="token punctuation">)</span><span class="token punctuation">;</span></span>
+<span class="highlight-line">        <span class="token keyword">final</span> buffer <span class="token operator">=</span> bytes<span class="token punctuation">.</span>buffer<span class="token punctuation">;</span></span>
+<span class="highlight-line"></span>
+<span class="highlight-line">        <span class="token keyword">var</span> databasesPath <span class="token operator">=</span> <span class="token keyword">await</span> <span class="token function">getDatabasesPath</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span></span>
+<span class="highlight-line">        <span class="token keyword">var</span> distPath <span class="token operator">=</span> <span class="token function">join</span><span class="token punctuation">(</span>databasesPath<span class="token punctuation">,</span> <span class="token string-literal"><span class="token string">'doggy__</span><span class="token interpolation"><span class="token punctuation">${</span><span class="token expression"><span class="token class-name">DateTime</span><span class="token punctuation">.</span><span class="token function">now</span><span class="token punctuation">(</span><span class="token punctuation">)</span></span><span class="token punctuation">}</span></span><span class="token string">.db'</span></span><span class="token punctuation">)</span><span class="token punctuation">;</span></span>
+<span class="highlight-line"></span>
+<span class="highlight-line">        <span class="token keyword">await</span> <span class="token class-name">File</span><span class="token punctuation">(</span>distPath<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">writeAsBytes</span><span class="token punctuation">(</span>buffer<span class="token punctuation">.</span><span class="token function">asUint8List</span><span class="token punctuation">(</span></span>
+<span class="highlight-line">            dbFileBytes<span class="token punctuation">.</span>offsetInBytes<span class="token punctuation">,</span> dbFileBytes<span class="token punctuation">.</span>lengthInBytes<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span></span>
+<span class="highlight-line">      <span class="token punctuation">}</span></span>
+<span class="highlight-line">    <span class="token punctuation">}</span> <span class="token keyword">catch</span> <span class="token punctuation">(</span>error<span class="token punctuation">)</span> <span class="token punctuation">{</span></span>
+<span class="highlight-line">      <span class="token function">print</span><span class="token punctuation">(</span>error<span class="token punctuation">)</span><span class="token punctuation">;</span></span>
+<span class="highlight-line">    <span class="token punctuation">}</span></span>
+<span class="highlight-line">  <span class="token punctuation">}</span></span></code></pre>
+<p>Im ersten Teil prüfen wir, ob eine Datei ausgewählt wurde und im Anschluss ob wir überhaupt Lese- und Schreibezugriff auf dem Smartphone haben. Wir holen, bzw. lesen dann die Datei aus dem Downloadverzeichnis aus (Zeile 9-12). Dann lesen wir den Pfad des Downloadverzeichnis aus und bauen aus dem Pfad und dem Dateinamen einen neuen Pfad (Zeile 14-15). In Zeile 17+18 schreiben wir die Datei in das Datenbankverzeichnis des Telefons.</p>
+<p>Natürlich kann man hier jetzt viele verschiedene Variationen einbauen. So kann man z.B. die alte Datenbankdatei erstmal umbenennen und als Backup vorhalten. Alternativ kann man die alte Datei auch löschen. Wichtig ist, dass man in der laufenden Anwendung die aktuelle Datenbank schließt und neu ausliest, denn sonst hat die alten Daten im Speicher und muss die App erstmal neustarten.</p>
+<p>PS: Ab Android 11 (targetSdkVersion 30) wurde einiges am Rechtemanagement umgestellt. Das hat z.B. den Effekt, dass man die DB-Dateien aus APP A in APP B im Download-Verzeichnis nicht sehen kann. Um dies zu umgehen bin ich in meinen Apps auf targetSdkVersion 29 geblieben bis alle benötigten Flutter-Plugins targetSdkVersion 30 auch ausreichend unterstützen.</p>
+<p>Ihr habt Fragen oder Anregungen? Schreibt mir bei <a href="https://twitter.com/der_kuba">Twitter</a>.</p>
+<p><br>
+Tausend Dank fürs Lesen!</p>
+<p>Kuba</p>
+
+            <hr>
+              <ul class="post-navigation">
+                  <li>Nächster Artikel:
+                    <a href="/posts/0521/fun-with-no-break-character/">Fuckup der Woche: &#39;no-break space&#39; - das geschützte Leerzeichen</a>
+                  </li>
+                
+                  <li>Vorheriger Artikel:
+                    <a href="/posts/0521/bewerbungsgespraech-leiten/">Vorstellungsgespräche leiten, ein gutes Gespräch für beide Seiten.</a>
+                  </li>
+                
+              </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+        <!-- Current page: /posts/0521/flutter-import-sqlite-db/ -->
+        <footer class="footer">
+    <hr/>
+    <div class="content has-text-centered">
+        <p>
+            der_kuba - 2021-2024 -
+            <a href="/content/impressum.html">Impressum</a>
+            -
+            <a href="/content/datenschutz.html">Datenschutzerklärung</a>
+        </p>
+    </div>
+</footer>
+    </body>
+</html>

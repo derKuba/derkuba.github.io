@@ -1,0 +1,213 @@
+<!doctype html>
+<html lang="de">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1"/>
+        <title>Planning 2: Ablauf für Devs</title>
+        <meta name="description" content="Ein erfolgreiches und befriedigendes Planning 2">
+        <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+        <link rel="alternate" href="/feed/feed.xml" type="application/atom+xml" title="der_kuba">
+        <link rel="alternate" href="/feed/feed.json" type="application/json" title="der_kuba">
+        <link rel="stylesheet" href="/assets/css/prism.css">
+        <link rel="stylesheet" href="/assets/css/bulma.css">
+        <link rel="stylesheet" href="/assets/css/custom.css">
+        <script>
+            document.addEventListener("DOMContentLoaded", () => {
+                const e = Array
+                    .prototype
+                    .slice
+                    .call(document.querySelectorAll(".navbar-burger"), 0);
+                e.length > 0 && e.forEach(e => {
+                    e.addEventListener("click", () => {
+                        const t = e.dataset.target,
+                            a = document.getElementById(t);
+                        e.classList.toggle("is-active"),
+                        a.classList.toggle("is-active")
+                    })
+                })
+                const disableDarkMode = () => {
+                    const bodyNode = document.querySelector("body");
+                    bodyNode
+                        .classList
+                        .remove("dark-mode")
+                        localStorage
+                        .setItem('darkMode', 'disabled');
+                }
+                const enableDarkMode = () => {
+                    const bodyNode = document.querySelector("body");
+                    bodyNode
+                        .classList
+                        .add("dark-mode")
+                        localStorage
+                        .setItem('darkMode', 'enabled');
+                }
+                const button = document.getElementById("darkmode");
+                button.addEventListener("click", () => {
+                    const bodyNode = document.querySelector("body");
+                    if (bodyNode.classList.contains("dark-mode")) {
+                        disableDarkMode();
+                    } else {
+                        enableDarkMode();
+                    }
+                })
+                if (localStorage.getItem('darkMode') === 'enabled') {
+                    enableDarkMode();
+                }
+            });
+        </script>
+    </head>
+    <body><header>
+    <div class="container">
+        <nav class="navbar">
+            <div class="navbar-brand">
+                <a class="navbar-item navbar-brand__title " href="/">
+                    der_kuba
+                </a>
+                <a class="navbar-item" href="https://github.com/derKuba">
+                    @Github
+                </a>
+                <a class="navbar-item" href="https://twitter.com/der_kuba">
+                    @Twitter
+                </a>
+                <a class="navbar-item" href="https://www.linkedin.com/in/jacob-pawlik-08a40015b/">
+                    @LinkedIn
+                </a>
+                <div class="navbar-burger" data-target="navigation-items">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+            <div id="navigation-items" class="navbar-menu">
+                <div class="navbar-end">
+                    
+                        <a class="navbar-item " href="/">
+                            Home
+                        </a>
+                        <a class="navbar-item " href="/posts/">
+                            Archiv
+                        </a>
+                        <a class="navbar-item " href="/about/">
+                            About Me
+                        </a>
+                        <a class="navbar-item " href="/en/">
+                            English
+                        </a>
+                        <a class="navbar-item " href="/content/impressum.html">
+                            Impressum
+                        </a>
+                        <a class="navbar-item " href="/content/datenschutz.html">
+                            Datenschutzerklärung
+                        </a>
+                    <button id="darkmode" alt="dark mode">
+                        <svg width="30" height="30">
+                            <circle cx="15" cy="15" r="6" fill="currentColor"/>
+                            <line id="ray" stroke="currentColor" stroke-width="2" stroke-linecap="round" x1="15" y1="1" x2="15" y2="4"></line>
+                            <use href="#ray" transform="rotate(45 15 15)"/>
+                            <use href="#ray" transform="rotate(90 15 15)"/>
+                            <use href="#ray" transform="rotate(135 15 15)"/>
+                            <use href="#ray" transform="rotate(180 15 15)"/>
+                            <use href="#ray" transform="rotate(225 15 15)"/>
+                            <use href="#ray" transform="rotate(270 15 15)"/>
+                            <use href="#ray" transform="rotate(315 15 15)"/>
+                        </svg>
+                    </button>
+                    <!-- special thanks to https://www.freecodecamp.org/news/how-to-handle-dark-mode-with-css-and-javascript/ -->
+                </div>
+            </div>
+        </nav>
+    </div>
+</header>
+        
+<section class="section">
+  <div class="container">
+    <div class="columns is-centered">
+      <div class="column is-8">
+        <h1 class="title is-3">Planning 2: Ablauf für Devs</h1>
+        <div class="post-detail__tags">
+          <h3 class="subtitle is-6">
+            <time datetime="2022-12-28">
+              28 Dec 2022
+            </time>
+          </h3>
+          <div class="tags"><a href="/tags/agile/" class="post-tag">
+                <span class="tag is-black">
+                  Agile
+                </span>
+              </a><a href="/tags/scrum/" class="post-tag">
+                <span class="tag is-primary">
+                  Scrum
+                </span>
+              </a>
+          </div>
+        </div>
+        <div class="content post_detail__content">
+          <div class="language-hint">
+            
+              <a href="/posts/en/1222/agile/planning2">Read in English</a>
+            
+          </div>
+          <p>Jedes Mal, wenn ich auf eine Person treffe, die sagt, sie würde in einem agilen Team nach Scrum arbeiten, stelle ich die Frage nach Planning 2. <!-- endOfPreview --> Meine persönliche Statistik (meine Umfragen sind natürlich nicht repräsentativ) zeigt, dass in 9 von 10 Fällen darauf verzichtet wird. Ich frage dann weiter nach dem &quot;Warum&quot; und auch hier ist in den meisten Fällen die Antwort, dass man gar nicht von der Existenz dieser Zeremonie weiß. Fairerweise muss man aber sagen, dass der <a href="https://scrumguides.org/scrum-guide.html#sprint-planning">offizielle Scrumguide</a> in dieser Hinsicht etwas unspezifisch ist und nicht zwischen Planning 1 und Planning 2 unterscheidet. Es gibt eine gemeinsame und geteilte Timebox.</p>
+<p>Ich möchte hier keine Diskussion auslösen, sondern nur ein hilfreiches Werkzeug beschreiben. Es dient als Impuls für euer nächstes Planning 2!</p>
+<h2>Was ist der Unterschied?</h2>
+<p>Mein Team und ich haben es vom anfänglichen &quot;Da schreiben wir nur die Tasks auf&quot; zu einer ordentlichen Zeremonie gebracht. Aber wie unterscheidet man nun das erste vom zweiten Planning:</p>
+<p><img src="/img/1222/what.png" alt="was ist das planning 2" title="Was ist das Planning 2"></p>
+<p>Im ersten Teil versammeln sich alle: Product Owner, Business Analyst, Entwickler, QA, UI/UX, Fachexperten etc. Es wird das &quot;Was&quot; geklärt. Es geht hierbei um den Umfang: Welche Stories/Tickets werden in den nächsten Sprint genommen? Einvernehmlich. Es kommt zum Commitment.</p>
+<p>Für das Planning 2 dienen diese Stories nun als Grundlage. Denn jetzt wird geschaut, wie man konkret und technisch zur Lösung kommt. Alle Fragen sollten bereits im Refinement geklärt sein. Meine persönliche Erfahrung zeigt jedoch, dass dort meist immer dieselben Menschen sprechen und mitdenken. :-) Ich gehöre nicht dazu.</p>
+<p>Jetzt ist der richtige Zeitpunkt, nochmal alles zu überdenken, Fragen zu stellen und dann gemeinsam einen Lösungsweg zu definieren. Aber wie geht man dabei am besten vor? Ich empfehle einen Ablauf, den man immer wiederholen kann:</p>
+<p><img src="/img/1222/ceremony.png" alt="wie läuft das planning 2 ab" title="Wie läuft es ab"></p>
+<h2>Wie läuft es ab?</h2>
+<p>Vor jeder Runde sollte jemand bestimmt werden, der vorstellt. Diese Person stellt ihre Ergebnisse vor, schreibt mit, gruppiert etc. Ein Scrum-Master kann gerne aushelfen. Zur besseren Abwicklung empfehle ich irgendein Board (virtuell oder analog), Stift und Zettel.</p>
+<h3>1. Verstehen</h3>
+<p>Das Board wird geteilt und das erste Ticket geöffnet. Zunächst beginnt man mit dem Verstehen: Jeder Teilnehmer liest für sich die Anforderungen und versucht zu verstehen, worum es geht. Offene Fragen werden beantwortet, die Anforderungen ggf. geschärft und/oder Akzeptanzkriterien nachgetragen. Am Ende haben alle &quot;nahezu&quot; dasselbe Verständnis, worum es geht.</p>
+<h3>2. Planen</h3>
+<p>Im nächsten Schritt wird eine Timebox vereinbart, vielleicht 3-5 Minuten, je nach Größe und Umfang des Tickets. Jeder überlegt für sich, wie man die Story in sinnvolle, kleine Aufgaben zerteilen kann, und schreibt diese für sich auf.</p>
+<h5>Beispiel</h5>
+<p>Als Beispielstory nehmen wir ein Formular. Es soll ein neues Eingabefeld für das Alter hinzugefügt werden.</p>
+<p>An dieser Stelle kommt häufig von unerfahrenen Kollegen die Aussage, dass man nur eine Aufgabe zu bewältigen hat: das Machen. Aber wenn man kurz darüber nachdenkt, fallen noch einige weitere Aufgaben auf. Ich empfehle immer, die Aufgaben so zu schneiden, dass man sie theoretisch parallel mit mehreren Personen umsetzen kann:</p>
+<p>Man muss ein neues Feld in der UI anlegen, das Datenmodell erweitern, die Anbindung an das Backend schreiben, ggf. die Datenbank erweitern, Tests schreiben usw.</p>
+<p>Damit haben wir eine gute Grundlage für den nächsten Schritt.</p>
+<h3>3. Diskutieren</h3>
+<p>Die gesammelten Punkte werden nun vom gewählten Präsentator vorgestellt. Dieser wechselt nach jeder Story, damit jeder mal an die Reihe kommt. Er stellt vor und erklärt seine gesammelten Punkte. Im Anschluss können weitere Punkte der übrigen Teilnehmer gesammelt und diskutiert, Abhängigkeiten geklärt und eine Reihenfolge definiert werden. Häufig freut man sich, wenn man auf dieselben Punkte gekommen ist. Umso mehr freut man sich, wenn noch weitere Punkte auffallen, an die man gar nicht gedacht hat.</p>
+<h3>4. Einigung</h3>
+<p>Im letzten Punkt sollten sich alle einig sein, dass man einen Weg durch die Story gefunden hat. Wenn nicht, geht man einen Schritt zurück und diskutiert erneut. Ziel ist es, dass alle denselben Weg der Entwicklung einschlagen werden. Natürlich ist das nicht immer der Fall. Man kann den Plan aber in jedem Daily anpassen. Niemand startet jedoch mehr kopflos, um nach einigen Tagen zu merken, dass man sich verrannt hat. Jetzt könnte man noch die gesammelten Aufgaben in Sub-Tasks niederschreiben und mit der nächsten Story starten. Alternativ schreiben wir manchmal alle Sub-Tasks am Schluss auf.</p>
+<h2>Fazit</h2>
+<p>Mit dieser Methode zwingt man sich, den aktuellen Sprint, auf den man sich committet hat, nochmal en détail anzuschauen und zu überdenken. Jeder ist gefragt. So kommen auch die ruhigeren Mitglieder des Teams dazu, etwas zu sagen. Am Ende haben alle einen und denselben Plan vom Sprint, und es sollte keine Rolle mehr spielen, wer sich welche Story nimmt. Es herrscht Einigung, und es gibt einen Plan. Besonders unerfahrene und chaotische Kollegen ;-) werden abgeholt und eingefangen. Das kann die Retrospektive extrem verkürzen.</p>
+<p>Mit der Zeit wird diese Zeremonie auch kürzer. Meinem Team und mir hat diese Methode viel Zeit, Diskussionen und Nerven gespart.</p>
+<p>Habt ihr Fragen oder Anregungen? Schreibt mir bei <a href="https://twitter.com/der_kuba">Twitter</a> oder bei <a href="https://www.linkedin.com/in/jacob-pawlik-08a40015b/">LinkedIn</a>.
+<br>
+Tausend Dank fürs Lesen!</p>
+<p>Kuba</p>
+
+            <hr>
+              <ul class="post-navigation">
+                  <li>Nächster Artikel:
+                    <a href="/posts/en/1222/agile/planning2/">Planning 2: Process for Devs</a>
+                  </li>
+                
+                  <li>Vorheriger Artikel:
+                    <a href="/posts/1122/testing/typescript-jest-testing/">Jest Testing mit Typescript: Das kleine Einmaleins</a>
+                  </li>
+                
+              </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+        <!-- Current page: /posts/1222/agile/planning2/ -->
+        <footer class="footer">
+    <hr/>
+    <div class="content has-text-centered">
+        <p>
+            der_kuba - 2021-2024 -
+            <a href="/content/impressum.html">Impressum</a>
+            -
+            <a href="/content/datenschutz.html">Datenschutzerklärung</a>
+        </p>
+    </div>
+</footer>
+    </body>
+</html>

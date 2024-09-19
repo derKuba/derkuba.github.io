@@ -1,403 +1,288 @@
 <?xml version="1.0" encoding="utf-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  
-  <url>
-    <loc>https://derkuba.de/content/posts/0421/11nty-tutorial-part-one/</loc>
-    <lastmod>2021-03-30</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://derkuba.de/content/posts/0421/11nty-tutorial/</loc>
-    <lastmod>2021-03-30</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://derkuba.de/content/posts/0421/11nty-excerpt/</loc>
-    <lastmod>2021-04-04</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://derkuba.de/content/posts/0421/11nty-bullma-error/</loc>
-    <lastmod>2021-04-05</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://derkuba.de/content/posts/0421/so-klappt-jedes-vorstellungsgespraech/</loc>
-    <lastmod>2021-04-17</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://derkuba.de/content/posts/0421/typescript-spread-operator-aha/</loc>
-    <lastmod>2021-04-24</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://derkuba.de/content/posts/0521/flutter-export-sqlite-db/</loc>
-    <lastmod>2021-05-02</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://derkuba.de/content/posts/0521/bewerbungsgespraech-leiten/</loc>
-    <lastmod>2021-05-07</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://derkuba.de/content/posts/0521/flutter-import-sqlite-db/</loc>
-    <lastmod>2021-05-13</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://derkuba.de/content/posts/0521/fun-with-no-break-character/</loc>
-    <lastmod>2021-05-21</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://derkuba.de/content/posts/stenciljs/introduction/</loc>
-    <lastmod>2021-05-29</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://derkuba.de/content/posts/stenciljs/projekt-aufsetzen/</loc>
-    <lastmod>2021-05-29</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://derkuba.de/content/posts/stenciljs/entwicklerwerkzeuge/</loc>
-    <lastmod>2021-06-04</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://derkuba.de/content/posts/stenciljs/erste-stencil-komponente/</loc>
-    <lastmod>2021-06-11</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://derkuba.de/content/posts/stenciljs/tabellen-komponente/</loc>
-    <lastmod>2021-07-02</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://derkuba.de/content/posts/stenciljs/routing/</loc>
-    <lastmod>2021-07-10</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://derkuba.de/content/posts/stenciljs/stores/</loc>
-    <lastmod>2021-07-17</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://derkuba.de/content/posts/stenciljs/functional-component/</loc>
-    <lastmod>2021-07-24</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://derkuba.de/content/posts/stenciljs/address-app/</loc>
-    <lastmod>2021-08-05</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://derkuba.de/content/posts/stenciljs/jest-intro/</loc>
-    <lastmod>2021-08-14</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://derkuba.de/content/posts/stenciljs/adress-app-tests/</loc>
-    <lastmod>2021-08-21</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://derkuba.de/content/posts/stenciljs/adress-app-tests-part-ii/</loc>
-    <lastmod>2021-08-27</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://derkuba.de/content/posts/stenciljs/adress-app-tests-part-iii/</loc>
-    <lastmod>2021-09-03</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://derkuba.de/content/posts/stenciljs/address-app-e2e/</loc>
-    <lastmod>2021-09-09</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://derkuba.de/content/posts/stenciljs/address-app-e2e-part-ii/</loc>
-    <lastmod>2021-09-17</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://derkuba.de/content/posts/stenciljs/stencil-tutorial/</loc>
-    <lastmod>2021-09-18</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://derkuba.de/content/posts/1021/flutter-e2e/</loc>
-    <lastmod>2021-10-01</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://derkuba.de/content/posts/1021/stencil-component-lib/</loc>
-    <lastmod>2021-10-08</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://derkuba.de/content/posts/1021/component-lib-storybook/</loc>
-    <lastmod>2021-10-15</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://derkuba.de/content/posts/1021/stencil-builds-for-using-component-lib/</loc>
-    <lastmod>2021-10-31</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://derkuba.de/content/posts/1121/storybook-addon/</loc>
-    <lastmod>2021-11-09</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://derkuba.de/content/posts/1121/nodejs-application-zertifikat/</loc>
-    <lastmod>2021-11-19</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://derkuba.de/content/posts/1121/nodejs-application-zertifikat-tipps/</loc>
-    <lastmod>2021-11-27</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://derkuba.de/content/posts/1221/ios-safari-pdf-im-neuen-tab/</loc>
-    <lastmod>2021-12-10</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://derkuba.de/content/posts/1221/backend-api-mit-koa/</loc>
-    <lastmod>2021-12-17</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://derkuba.de/content/posts/1221/frohe-weihnachten/</loc>
-    <lastmod>2021-12-23</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://derkuba.de/content/posts/0122/adressbuch-anbindung-ans-backend/</loc>
-    <lastmod>2022-01-06</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://derkuba.de/content/posts/1122/testing/typescript-jest-setup/</loc>
-    <lastmod>2022-11-14</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://derkuba.de/content/posts/1122/testing/typescript-jest-testing/</loc>
-    <lastmod>2022-11-21</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://derkuba.de/posts/</loc>
-    <lastmod>2022-11-21</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://derkuba.de/content/about/</loc>
-    <lastmod>2022-11-21</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://derkuba.de/content/datenschutz.html</loc>
-    <lastmod>2022-11-21</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://derkuba.de/content/impressum.html</loc>
-    <lastmod>2022-11-21</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://derkuba.de/</loc>
-    <lastmod>2022-11-21</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://derkuba.de/page-list/</loc>
-    <lastmod>2022-11-21</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://derkuba.de/tags/</loc>
-    <lastmod>2022-11-21</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://derkuba.de/tags/games/</loc>
-    <lastmod>2022-11-21</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://derkuba.de/tags/switch/</loc>
-    <lastmod>2022-11-21</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://derkuba.de/tags/11nty/</loc>
-    <lastmod>2022-11-21</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://derkuba.de/tags/excerpt/</loc>
-    <lastmod>2022-11-21</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://derkuba.de/tags/bulma/</loc>
-    <lastmod>2022-11-21</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://derkuba.de/tags/blog/</loc>
-    <lastmod>2022-11-21</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://derkuba.de/tags/tutorial/</loc>
-    <lastmod>2022-11-21</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://derkuba.de/tags/prism/</loc>
-    <lastmod>2022-11-21</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://derkuba.de/tags/recruting/</loc>
-    <lastmod>2022-11-21</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://derkuba.de/tags/job-interview/</loc>
-    <lastmod>2022-11-21</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://derkuba.de/tags/stenciljs/</loc>
-    <lastmod>2022-11-21</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://derkuba.de/tags/nodejs/</loc>
-    <lastmod>2022-11-21</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://derkuba.de/tags/zertifizierung/</loc>
-    <lastmod>2022-11-21</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://derkuba.de/tags/typescript/</loc>
-    <lastmod>2022-11-21</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://derkuba.de/tags/podcast/</loc>
-    <lastmod>2022-11-21</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://derkuba.de/tags/halloweb/</loc>
-    <lastmod>2022-11-21</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://derkuba.de/tags/flutter/</loc>
-    <lastmod>2022-11-21</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://derkuba.de/tags/sqllite/</loc>
-    <lastmod>2022-11-21</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://derkuba.de/tags/testing/</loc>
-    <lastmod>2022-11-21</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://derkuba.de/tags/hurl/</loc>
-    <lastmod>2022-11-21</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://derkuba.de/tags/enterjs/</loc>
-    <lastmod>2022-11-21</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://derkuba.de/tags/storybook/</loc>
-    <lastmod>2022-11-21</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://derkuba.de/tags/web/</loc>
-    <lastmod>2022-11-21</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://derkuba.de/tags/safari/</loc>
-    <lastmod>2022-11-21</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://derkuba.de/tags/jest/</loc>
-    <lastmod>2022-11-21</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://derkuba.de/tags/test/</loc>
-    <lastmod>2022-11-21</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://derkuba.de/tags/agile/</loc>
-    <lastmod>2022-11-21</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://derkuba.de/tags/scrum/</loc>
-    <lastmod>2022-11-21</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://derkuba.de/content/games/1222/ageless/</loc>
-    <lastmod>2022-12-28</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://derkuba.de/content/posts/1222/agile/planning2/</loc>
-    <lastmod>2022-12-28</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://derkuba.de/content/posts/0123/contract-test/</loc>
-    <lastmod>2023-01-01</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://derkuba.de/content/posts/0123/certified/</loc>
-    <lastmod>2023-01-05</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://derkuba.de/content/posts/0123/podcast/</loc>
-    <lastmod>2023-01-23</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://derkuba.de/content/posts/0623/enterjs-links/</loc>
-    <lastmod>2023-06-13</lastmod>
-  </url>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
+		
+		<url>
+			<loc>https://derkuba.de/posts/0421/11nty-tutorial/</loc>
+			<lastmod>2021-03-30</lastmod>
+		</url>
+		
+		<url>
+			<loc>https://derkuba.de/posts/0421/11nty-excerpt/</loc>
+			<lastmod>2021-04-04</lastmod>
+		</url>
+		
+		<url>
+			<loc>https://derkuba.de/posts/en/0421/11nty-excerpt/</loc>
+			<lastmod>2021-04-04</lastmod>
+		</url>
+		
+		<url>
+			<loc>https://derkuba.de/posts/0421/11nty-bullma-error/</loc>
+			<lastmod>2021-04-05</lastmod>
+		</url>
+		
+		<url>
+			<loc>https://derkuba.de/posts/en/0421/11nty-bullma-error/</loc>
+			<lastmod>2021-04-05</lastmod>
+		</url>
+		
+		<url>
+			<loc>https://derkuba.de/posts/0421/so-klappt-jedes-vorstellungsgespraech/</loc>
+			<lastmod>2021-04-17</lastmod>
+		</url>
+		
+		<url>
+			<loc>https://derkuba.de/posts/0421/typescript-spread-operator-aha/</loc>
+			<lastmod>2021-04-24</lastmod>
+		</url>
+		
+		<url>
+			<loc>https://derkuba.de/posts/0521/flutter-export-sqlite-db/</loc>
+			<lastmod>2021-05-02</lastmod>
+		</url>
+		
+		<url>
+			<loc>https://derkuba.de/posts/0521/bewerbungsgespraech-leiten/</loc>
+			<lastmod>2021-05-07</lastmod>
+		</url>
+		
+		<url>
+			<loc>https://derkuba.de/posts/0521/flutter-import-sqlite-db/</loc>
+			<lastmod>2021-05-13</lastmod>
+		</url>
+		
+		<url>
+			<loc>https://derkuba.de/posts/0521/fun-with-no-break-character/</loc>
+			<lastmod>2021-05-21</lastmod>
+		</url>
+		
+		<url>
+			<loc>https://derkuba.de/posts/stenciljs/introduction/</loc>
+			<lastmod>2021-05-29</lastmod>
+		</url>
+		
+		<url>
+			<loc>https://derkuba.de/posts/stenciljs/projekt-aufsetzen/</loc>
+			<lastmod>2021-05-29</lastmod>
+		</url>
+		
+		<url>
+			<loc>https://derkuba.de/posts/stenciljs/entwicklerwerkzeuge/</loc>
+			<lastmod>2021-06-04</lastmod>
+		</url>
+		
+		<url>
+			<loc>https://derkuba.de/posts/stenciljs/erste-stencil-komponente/</loc>
+			<lastmod>2021-06-11</lastmod>
+		</url>
+		
+		<url>
+			<loc>https://derkuba.de/posts/stenciljs/tabellen-komponente/</loc>
+			<lastmod>2021-07-02</lastmod>
+		</url>
+		
+		<url>
+			<loc>https://derkuba.de/posts/stenciljs/routing/</loc>
+			<lastmod>2021-07-10</lastmod>
+		</url>
+		
+		<url>
+			<loc>https://derkuba.de/posts/stenciljs/stores/</loc>
+			<lastmod>2021-07-17</lastmod>
+		</url>
+		
+		<url>
+			<loc>https://derkuba.de/posts/stenciljs/functional-component/</loc>
+			<lastmod>2021-07-24</lastmod>
+		</url>
+		
+		<url>
+			<loc>https://derkuba.de/posts/stenciljs/address-app/</loc>
+			<lastmod>2021-08-05</lastmod>
+		</url>
+		
+		<url>
+			<loc>https://derkuba.de/posts/stenciljs/jest-intro/</loc>
+			<lastmod>2021-08-14</lastmod>
+		</url>
+		
+		<url>
+			<loc>https://derkuba.de/posts/stenciljs/adress-app-tests/</loc>
+			<lastmod>2021-08-21</lastmod>
+		</url>
+		
+		<url>
+			<loc>https://derkuba.de/posts/stenciljs/adress-app-tests-part-ii/</loc>
+			<lastmod>2021-08-27</lastmod>
+		</url>
+		
+		<url>
+			<loc>https://derkuba.de/posts/stenciljs/adress-app-tests-part-iii/</loc>
+			<lastmod>2021-09-03</lastmod>
+		</url>
+		
+		<url>
+			<loc>https://derkuba.de/posts/stenciljs/address-app-e2e/</loc>
+			<lastmod>2021-09-09</lastmod>
+		</url>
+		
+		<url>
+			<loc>https://derkuba.de/posts/stenciljs/address-app-e2e-part-ii/</loc>
+			<lastmod>2021-09-17</lastmod>
+		</url>
+		
+		<url>
+			<loc>https://derkuba.de/posts/stenciljs/stencil-tutorial/</loc>
+			<lastmod>2021-09-18</lastmod>
+		</url>
+		
+		<url>
+			<loc>https://derkuba.de/posts/1021/flutter-e2e/</loc>
+			<lastmod>2021-10-01</lastmod>
+		</url>
+		
+		<url>
+			<loc>https://derkuba.de/posts/1021/stencil-component-lib/</loc>
+			<lastmod>2021-10-08</lastmod>
+		</url>
+		
+		<url>
+			<loc>https://derkuba.de/posts/1021/component-lib-storybook/</loc>
+			<lastmod>2021-10-15</lastmod>
+		</url>
+		
+		<url>
+			<loc>https://derkuba.de/posts/1021/stencil-builds-for-using-component-lib/</loc>
+			<lastmod>2021-10-31</lastmod>
+		</url>
+		
+		<url>
+			<loc>https://derkuba.de/posts/1121/storybook-addon/</loc>
+			<lastmod>2021-11-09</lastmod>
+		</url>
+		
+		<url>
+			<loc>https://derkuba.de/posts/1121/nodejs-application-zertifikat/</loc>
+			<lastmod>2021-11-19</lastmod>
+		</url>
+		
+		<url>
+			<loc>https://derkuba.de/posts/1121/nodejs-application-zertifikat-tipps/</loc>
+			<lastmod>2021-11-27</lastmod>
+		</url>
+		
+		<url>
+			<loc>https://derkuba.de/posts/1221/ios-safari-pdf-im-neuen-tab/</loc>
+			<lastmod>2021-12-10</lastmod>
+		</url>
+		
+		<url>
+			<loc>https://derkuba.de/posts/1221/backend-api-mit-koa/</loc>
+			<lastmod>2021-12-17</lastmod>
+		</url>
+		
+		<url>
+			<loc>https://derkuba.de/posts/1221/frohe-weihnachten/</loc>
+			<lastmod>2021-12-23</lastmod>
+		</url>
+		
+		<url>
+			<loc>https://derkuba.de/posts/0122/adressbuch-anbindung-ans-backend/</loc>
+			<lastmod>2022-01-06</lastmod>
+		</url>
+		
+		<url>
+			<loc>https://derkuba.de/posts/en/0122/connecting-address-book-to-backend/</loc>
+			<lastmod>2022-01-06</lastmod>
+		</url>
+		
+		<url>
+			<loc>https://derkuba.de/posts/1122/testing/typescript-jest-setup/</loc>
+			<lastmod>2022-11-14</lastmod>
+		</url>
+		
+		<url>
+			<loc>https://derkuba.de/posts/1122/testing/typescript-jest-testing/</loc>
+			<lastmod>2022-11-21</lastmod>
+		</url>
+		
+		<url>
+			<loc>https://derkuba.de/posts/1222/agile/planning2/</loc>
+			<lastmod>2022-12-28</lastmod>
+		</url>
+		
+		<url>
+			<loc>https://derkuba.de/posts/en/1222/agile/planning2/</loc>
+			<lastmod>2022-12-28</lastmod>
+		</url>
+		
+		<url>
+			<loc>https://derkuba.de/posts/0123/contract-test/</loc>
+			<lastmod>2023-01-01</lastmod>
+		</url>
+		
+		<url>
+			<loc>https://derkuba.de/posts/en/0123/contract-test/</loc>
+			<lastmod>2023-01-01</lastmod>
+		</url>
+		
+		<url>
+			<loc>https://derkuba.de/posts/0123/certified/</loc>
+			<lastmod>2023-01-05</lastmod>
+		</url>
+		
+		<url>
+			<loc>https://derkuba.de/posts/en/0123/certified/</loc>
+			<lastmod>2023-01-05</lastmod>
+		</url>
+		
+		<url>
+			<loc>https://derkuba.de/posts/0123/podcast/</loc>
+			<lastmod>2023-01-23</lastmod>
+		</url>
+		
+		<url>
+			<loc>https://derkuba.de/posts/0623/enterjs-links/</loc>
+			<lastmod>2023-06-13</lastmod>
+		</url>
+		
+		<url>
+			<loc>https://derkuba.de/</loc>
+			<lastmod>2024-08-28</lastmod>
+		</url>
+		
+		<url>
+			<loc>https://derkuba.de/about/</loc>
+			<lastmod>2024-08-28</lastmod>
+		</url>
+		
+		<url>
+			<loc>https://derkuba.de/content/datenschutz.html</loc>
+			<lastmod>2024-08-28</lastmod>
+		</url>
+		
+		<url>
+			<loc>https://derkuba.de/content/impressum.html</loc>
+			<lastmod>2024-08-28</lastmod>
+		</url>
+		
+		<url>
+			<loc>https://derkuba.de/posts/</loc>
+			<lastmod>2024-09-03</lastmod>
+		</url>
+		
+		<url>
+			<loc>https://derkuba.de/en/</loc>
+			<lastmod>2024-09-09</lastmod>
+		</url>
+		
+		<url>
+			<loc>https://derkuba.de/posts/0924/modernized/</loc>
+			<lastmod>2024-09-18</lastmod>
+		</url>
+		
+		<url>
+			<loc>https://derkuba.de/posts/0924/web-dependency-management/</loc>
+			<lastmod>2024-09-18</lastmod>
+		</url>
 </urlset>

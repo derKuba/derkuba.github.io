@@ -1,0 +1,211 @@
+<!doctype html>
+<html lang="de">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1"/>
+        <title>Warum du Bibliotheken nicht manuell speichern solltest: npm als bessere Lösung</title>
+        <meta name="description" content="Frühjahresputz im Herbst">
+        <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+        <link rel="alternate" href="/feed/feed.xml" type="application/atom+xml" title="der_kuba">
+        <link rel="alternate" href="/feed/feed.json" type="application/json" title="der_kuba">
+        <link rel="stylesheet" href="/assets/css/prism.css">
+        <link rel="stylesheet" href="/assets/css/bulma.css">
+        <link rel="stylesheet" href="/assets/css/custom.css">
+        <script>
+            document.addEventListener("DOMContentLoaded", () => {
+                const e = Array
+                    .prototype
+                    .slice
+                    .call(document.querySelectorAll(".navbar-burger"), 0);
+                e.length > 0 && e.forEach(e => {
+                    e.addEventListener("click", () => {
+                        const t = e.dataset.target,
+                            a = document.getElementById(t);
+                        e.classList.toggle("is-active"),
+                        a.classList.toggle("is-active")
+                    })
+                })
+                const disableDarkMode = () => {
+                    const bodyNode = document.querySelector("body");
+                    bodyNode
+                        .classList
+                        .remove("dark-mode")
+                        localStorage
+                        .setItem('darkMode', 'disabled');
+                }
+                const enableDarkMode = () => {
+                    const bodyNode = document.querySelector("body");
+                    bodyNode
+                        .classList
+                        .add("dark-mode")
+                        localStorage
+                        .setItem('darkMode', 'enabled');
+                }
+                const button = document.getElementById("darkmode");
+                button.addEventListener("click", () => {
+                    const bodyNode = document.querySelector("body");
+                    if (bodyNode.classList.contains("dark-mode")) {
+                        disableDarkMode();
+                    } else {
+                        enableDarkMode();
+                    }
+                })
+                if (localStorage.getItem('darkMode') === 'enabled') {
+                    enableDarkMode();
+                }
+            });
+        </script>
+    </head>
+    <body><header>
+    <div class="container">
+        <nav class="navbar">
+            <div class="navbar-brand">
+                <a class="navbar-item navbar-brand__title " href="/">
+                    der_kuba
+                </a>
+                <a class="navbar-item" href="https://github.com/derKuba">
+                    @Github
+                </a>
+                <a class="navbar-item" href="https://twitter.com/der_kuba">
+                    @Twitter
+                </a>
+                <a class="navbar-item" href="https://www.linkedin.com/in/jacob-pawlik-08a40015b/">
+                    @LinkedIn
+                </a>
+                <div class="navbar-burger" data-target="navigation-items">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+            <div id="navigation-items" class="navbar-menu">
+                <div class="navbar-end">
+                    
+                        <a class="navbar-item " href="/">
+                            Home
+                        </a>
+                        <a class="navbar-item " href="/posts/">
+                            Archiv
+                        </a>
+                        <a class="navbar-item " href="/about/">
+                            About Me
+                        </a>
+                        <a class="navbar-item " href="/en/">
+                            English
+                        </a>
+                        <a class="navbar-item " href="/content/impressum.html">
+                            Impressum
+                        </a>
+                        <a class="navbar-item " href="/content/datenschutz.html">
+                            Datenschutzerklärung
+                        </a>
+                    <button id="darkmode" alt="dark mode">
+                        <svg width="30" height="30">
+                            <circle cx="15" cy="15" r="6" fill="currentColor"/>
+                            <line id="ray" stroke="currentColor" stroke-width="2" stroke-linecap="round" x1="15" y1="1" x2="15" y2="4"></line>
+                            <use href="#ray" transform="rotate(45 15 15)"/>
+                            <use href="#ray" transform="rotate(90 15 15)"/>
+                            <use href="#ray" transform="rotate(135 15 15)"/>
+                            <use href="#ray" transform="rotate(180 15 15)"/>
+                            <use href="#ray" transform="rotate(225 15 15)"/>
+                            <use href="#ray" transform="rotate(270 15 15)"/>
+                            <use href="#ray" transform="rotate(315 15 15)"/>
+                        </svg>
+                    </button>
+                    <!-- special thanks to https://www.freecodecamp.org/news/how-to-handle-dark-mode-with-css-and-javascript/ -->
+                </div>
+            </div>
+        </nav>
+    </div>
+</header>
+        
+<section class="section">
+  <div class="container">
+    <div class="columns is-centered">
+      <div class="column is-8">
+        <h1 class="title is-3">Warum du Bibliotheken nicht manuell speichern solltest: npm als bessere Lösung</h1>
+        <div class="post-detail__tags">
+          <h3 class="subtitle is-6">
+            <time datetime="2024-09-18">
+              18 Sep 2024
+            </time>
+          </h3>
+          <div class="tags"><a href="/tags/stenciljs/" class="post-tag">
+                <span class="tag is-black">
+                  Stenciljs
+                </span>
+              </a>
+          </div>
+        </div>
+        <div class="content post_detail__content">
+          <div class="language-hint">
+            
+              <a href="">Read in English</a>
+            
+          </div>
+          <p>Im Webentwicklungskontext sehe ich häufig, dass Entwickler Bibliotheken wie CSS- und JS-Dateien direkt in ihre Projekte kopieren und in Ordnern ablegen. Doch das ist ein veralteter Ansatz, der mehr Nachteile als Vorteile mit sich bringt. <!-- endOfPreview --></p>
+<h3>Wie es früher gemacht wurde</h3>
+<p>Ein häufiges Vorgehen bestand darin, die Bibliotheken manuell herunterzuladen und in Ordner wie <code>css</code> und <code>js</code> zu speichern. Die Struktur sah etwa so aus:</p>
+<pre><code>/project
+|-- /css
+|   |-- bootstrap.css
+|-- /js
+|   |-- jquery.js
+|-- index.html
+</code></pre>
+<p>In der <code>index.html</code> wurden die Dateien dann folgendermaßen eingebunden:</p>
+<pre class="language-html"><code class="language-html"><span class="highlight-line"><span class="token doctype"><span class="token punctuation">&lt;!</span><span class="token doctype-tag">doctype</span> <span class="token name">html</span><span class="token punctuation">></span></span></span>
+<span class="highlight-line"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>html</span> <span class="token attr-name">lang</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>en<span class="token punctuation">"</span></span><span class="token punctuation">></span></span></span>
+<span class="highlight-line">    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>head</span><span class="token punctuation">></span></span></span>
+<span class="highlight-line">        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>link</span> <span class="token attr-name">rel</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>stylesheet<span class="token punctuation">"</span></span> <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>css/bootstrap.css<span class="token punctuation">"</span></span> <span class="token punctuation">/></span></span></span>
+<span class="highlight-line">    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>head</span><span class="token punctuation">></span></span></span>
+<span class="highlight-line">    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>body</span><span class="token punctuation">></span></span></span>
+<span class="highlight-line">        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>js/jquery.js<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token script"></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">></span></span></span>
+<span class="highlight-line">    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>body</span><span class="token punctuation">></span></span></span>
+<span class="highlight-line"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>html</span><span class="token punctuation">></span></span></span></code></pre>
+<p>Dieses manuelle Vorgehen brachte jedoch Probleme mit sich, wie z. B. die Notwendigkeit, bei jeder neuen Version die Dateien zu aktualisieren und sicherzustellen, dass sie korrekt verlinkt und geladen werden.</p>
+<h3>Warum npm?</h3>
+<p><strong>1. Einfaches Versioning</strong><br>
+Mit npm kannst du Bibliotheken gezielt in den benötigten Versionen installieren und aktualisieren. Dadurch vermeidest du Inkompatibilitäten und erhältst Sicherheitsupdates automatisch.</p>
+<p><strong>2. Dependency Management</strong><br>
+npm übernimmt für dich das Verwalten von Abhängigkeiten. Anstatt mehrere Dateien manuell herunterzuladen und zu aktualisieren, ziehst du mit einem Befehl (z.B. <code>npm install</code>) alle Abhängigkeiten ins Projekt.</p>
+<p><strong>3. Modularität</strong><br>
+Mit npm kannst du spezifische Teile von Bibliotheken einbinden und nur das verwenden, was du tatsächlich benötigst. Das spart Platz und verbessert die Ladezeiten deiner Webseite.</p>
+<h3>Der Build-Prozess: Mehr als nur Dateien verschieben</h3>
+<p>Moderne Build-Tools wie Webpack oder Vite nutzen npm, um CSS und JS zu verarbeiten und zu optimieren. Anstatt unkomprimierte, riesige Bibliotheksdateien zu laden, bündelt npm diese und optimiert sie für die Produktion. Dadurch wird deine Webseite schneller und performanter.</p>
+<h3>Wie geht's? Ein einfaches Beispiel</h3>
+<p>Statt Bootstrap herunterzuladen und in einen Ordner zu legen, kannst du es so in dein Projekt integrieren:</p>
+<pre class="language-bash"><code class="language-bash"><span class="highlight-line"><span class="token function">npm</span> <span class="token function">install</span> bootstrap</span></code></pre>
+<p>Anschließend kannst du die benötigten Teile importieren und in deinem Build-Prozess verarbeiten:</p>
+<pre class="language-javascript"><code class="language-javascript"><span class="highlight-line"><span class="token keyword">import</span> <span class="token string">"bootstrap/dist/css/bootstrap.min.css"</span><span class="token punctuation">;</span></span></code></pre>
+<h2>Fazit</h2>
+<p>Das manuelle Hinzufügen von Bibliotheken gehört der Vergangenheit an. Mit npm hast du die Kontrolle, Flexibilität und Effizienz, um deine Projekte skalierbarer und sicherer zu machen. Wer heutzutage noch auf die manuelle Methode setzt, verpasst wesentliche Vorteile moderner Webentwicklung.</p>
+
+            <hr>
+              <ul class="post-navigation">
+                  <li>Vorheriger Artikel:
+                    <a href="/posts/0924/modernized/">Modernisiert und Open Source</a>
+                  </li>
+                
+              </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+        <!-- Current page: /posts/0924/web-dependency-management/ -->
+        <footer class="footer">
+    <hr/>
+    <div class="content has-text-centered">
+        <p>
+            der_kuba - 2021-2024 -
+            <a href="/content/impressum.html">Impressum</a>
+            -
+            <a href="/content/datenschutz.html">Datenschutzerklärung</a>
+        </p>
+    </div>
+</footer>
+    </body>
+</html>

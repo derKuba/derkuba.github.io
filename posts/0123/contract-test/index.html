@@ -1,0 +1,309 @@
+<!doctype html>
+<html lang="de">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1"/>
+        <title>Contract-Testing mit hurl</title>
+        <meta name="description" content="Ein simples Setup für rudimentäre Contract-Tests">
+        <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+        <link rel="alternate" href="/feed/feed.xml" type="application/atom+xml" title="der_kuba">
+        <link rel="alternate" href="/feed/feed.json" type="application/json" title="der_kuba">
+        <link rel="stylesheet" href="/assets/css/prism.css">
+        <link rel="stylesheet" href="/assets/css/bulma.css">
+        <link rel="stylesheet" href="/assets/css/custom.css">
+        <script>
+            document.addEventListener("DOMContentLoaded", () => {
+                const e = Array
+                    .prototype
+                    .slice
+                    .call(document.querySelectorAll(".navbar-burger"), 0);
+                e.length > 0 && e.forEach(e => {
+                    e.addEventListener("click", () => {
+                        const t = e.dataset.target,
+                            a = document.getElementById(t);
+                        e.classList.toggle("is-active"),
+                        a.classList.toggle("is-active")
+                    })
+                })
+                const disableDarkMode = () => {
+                    const bodyNode = document.querySelector("body");
+                    bodyNode
+                        .classList
+                        .remove("dark-mode")
+                        localStorage
+                        .setItem('darkMode', 'disabled');
+                }
+                const enableDarkMode = () => {
+                    const bodyNode = document.querySelector("body");
+                    bodyNode
+                        .classList
+                        .add("dark-mode")
+                        localStorage
+                        .setItem('darkMode', 'enabled');
+                }
+                const button = document.getElementById("darkmode");
+                button.addEventListener("click", () => {
+                    const bodyNode = document.querySelector("body");
+                    if (bodyNode.classList.contains("dark-mode")) {
+                        disableDarkMode();
+                    } else {
+                        enableDarkMode();
+                    }
+                })
+                if (localStorage.getItem('darkMode') === 'enabled') {
+                    enableDarkMode();
+                }
+            });
+        </script>
+    </head>
+    <body><header>
+    <div class="container">
+        <nav class="navbar">
+            <div class="navbar-brand">
+                <a class="navbar-item navbar-brand__title " href="/">
+                    der_kuba
+                </a>
+                <a class="navbar-item" href="https://github.com/derKuba">
+                    @Github
+                </a>
+                <a class="navbar-item" href="https://twitter.com/der_kuba">
+                    @Twitter
+                </a>
+                <a class="navbar-item" href="https://www.linkedin.com/in/jacob-pawlik-08a40015b/">
+                    @LinkedIn
+                </a>
+                <div class="navbar-burger" data-target="navigation-items">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+            <div id="navigation-items" class="navbar-menu">
+                <div class="navbar-end">
+                    
+                        <a class="navbar-item " href="/">
+                            Home
+                        </a>
+                        <a class="navbar-item " href="/posts/">
+                            Archiv
+                        </a>
+                        <a class="navbar-item " href="/about/">
+                            About Me
+                        </a>
+                        <a class="navbar-item " href="/en/">
+                            English
+                        </a>
+                        <a class="navbar-item " href="/content/impressum.html">
+                            Impressum
+                        </a>
+                        <a class="navbar-item " href="/content/datenschutz.html">
+                            Datenschutzerklärung
+                        </a>
+                    <button id="darkmode" alt="dark mode">
+                        <svg width="30" height="30">
+                            <circle cx="15" cy="15" r="6" fill="currentColor"/>
+                            <line id="ray" stroke="currentColor" stroke-width="2" stroke-linecap="round" x1="15" y1="1" x2="15" y2="4"></line>
+                            <use href="#ray" transform="rotate(45 15 15)"/>
+                            <use href="#ray" transform="rotate(90 15 15)"/>
+                            <use href="#ray" transform="rotate(135 15 15)"/>
+                            <use href="#ray" transform="rotate(180 15 15)"/>
+                            <use href="#ray" transform="rotate(225 15 15)"/>
+                            <use href="#ray" transform="rotate(270 15 15)"/>
+                            <use href="#ray" transform="rotate(315 15 15)"/>
+                        </svg>
+                    </button>
+                    <!-- special thanks to https://www.freecodecamp.org/news/how-to-handle-dark-mode-with-css-and-javascript/ -->
+                </div>
+            </div>
+        </nav>
+    </div>
+</header>
+        
+<section class="section">
+  <div class="container">
+    <div class="columns is-centered">
+      <div class="column is-8">
+        <h1 class="title is-3">Contract-Testing mit hurl</h1>
+        <div class="post-detail__tags">
+          <h3 class="subtitle is-6">
+            <time datetime="2023-01-01">
+              01 Jan 2023
+            </time>
+          </h3>
+          <div class="tags"><a href="/tags/testing/" class="post-tag">
+                <span class="tag is-black">
+                  Testing
+                </span>
+              </a><a href="/tags/hurl/" class="post-tag">
+                <span class="tag is-primary">
+                  Hurl
+                </span>
+              </a>
+          </div>
+        </div>
+        <div class="content post_detail__content">
+          <div class="language-hint">
+            
+              <a href="/posts/en/0123/contract-test">Read in English</a>
+            
+          </div>
+          <p>Wenn man auf der Testing-Pyramide weiter nach oben wandert, stößt man auf Contract- oder Servicetests. Diese Art von Tests stellt sicher, dass das Frontend auch nach Änderungen oder einem Deployment weiterhin mit dem Backend oder den dazugehörigen Services funktioniert.<!-- endOfPreview --></p>
+<p>Im Prinzip geht es darum, eine bestimmte Antwort der Schnittstelle sicherzustellen. In diesem Beispiel werden echte Requests an die Schnittstelle gesendet. Das erzeugt einiges an Traffic und Last auf den echten Services. Diesen Weg würde ich nur gehen, wenn man sich nicht auf einen echten Contract mit dem Backend einigen kann.</p>
+<p>Wenn möglich, würde ich <a href="https://docs.pact.io/">PACT</a> empfehlen. Dabei stellt ein Broker sicher, dass der Contract (eine JSON-Datei) noch funktioniert. Man muss dafür allerdings etwas Aufwand und Infrastruktur bereitstellen.</p>
+<p>Vor einem Jahr habe ich solche Tests noch selbst geschrieben. Mit Node.js habe ich programmatisch <em>fetch</em>-Aufrufe gegen mein &quot;Backend&quot; gesendet, um sicherzustellen, dass mein Frontend weiterhin kompatibel ist. Ein Kollege hat mich vor einiger Zeit auf <a href="https://hurl.dev/">hurl</a> aufmerksam gemacht. Dieses Framework übernimmt das Absetzen der Requests, sammelt die Testdateien ein und gibt eine übersichtliche Zusammenfassung der Tests aus. Darüber hinaus bietet es einen HTML-Report, die Möglichkeit, Variablen in eine .env-Datei auszulagern, und viele Vergleichsoperationen.</p>
+<p><img src="/img/0123/hurl.png" alt="Hurl" title="hurl testing"></p>
+<p>Heute zeige ich anhand eines kleinen Backends, wie man bestimmte Daten und Cookies erwartet, .env-Dateien verwendet und das HTML-Reporting aktiviert – alles integriert in ein NPM-Projekt.</p>
+<h3>Installation</h3>
+<p>Um hurl in npm zu integrieren, legen wir ein neues Projekt an:</p>
+<pre class="language-bash"><code class="language-bash"><span class="highlight-line"><span class="token function">mkdir</span> contract-testing</span>
+<span class="highlight-line"><span class="token function">npm</span> init <span class="token parameter variable">-y</span></span></code></pre>
+<p>Installieren wir nun hurl:</p>
+<pre class="language-bash"><code class="language-bash"><span class="highlight-line"><span class="token function">npm</span> <span class="token function">install</span> @orangeopensource/hurl</span></code></pre>
+<p>Jetzt fehlen nur noch die Test-Dateien im Testordner. Die Dateiendung .hurl zeigt hurl, dass dort die Tests hinterlegt sind:</p>
+<pre class="language-bash"><code class="language-bash"><span class="highlight-line"><span class="token function">mkdir</span> contract-test</span>
+<span class="highlight-line"><span class="token builtin class-name">cd</span> contract-test</span>
+<span class="highlight-line"><span class="token function">touch</span> simple.hurl</span>
+<span class="highlight-line"><span class="token function">touch</span> cookie.hurl</span>
+<span class="highlight-line"><span class="token function">touch</span> content.hurl</span></code></pre>
+<p>Der erste Test sieht folgendermaßen aus:</p>
+<pre class="language-bash"><code class="language-bash"><span class="highlight-line">// simple.hurl</span>
+<span class="highlight-line"></span>
+<span class="highlight-line"><span class="token comment"># is application running</span></span>
+<span class="highlight-line">GET http://localhost:3000/random</span>
+<span class="highlight-line">HTTP/1.1 <span class="token number">200</span></span></code></pre>
+<p>Es wird ein <em>GET</em> gegen eine URL gesendet. Als Antwort wird ein Statuscode 200 im HTTP 1.1-Protokoll erwartet.</p>
+<p>Für die Ausführung fehlt in der <em>package.json</em> noch das passende Script:</p>
+<pre class="language-bash"><code class="language-bash"><span class="highlight-line">// package.json</span>
+<span class="highlight-line"><span class="token string">"scripts"</span><span class="token builtin class-name">:</span> <span class="token punctuation">{</span></span>
+<span class="highlight-line">   <span class="token string">"test:contract"</span><span class="token builtin class-name">:</span> <span class="token string">"hurl --test --glob contract-test/*.hurl --report-html ./reports --variables-file ./contract-test/contract-testing.env"</span></span>
+<span class="highlight-line"> <span class="token punctuation">}</span>,</span></code></pre>
+<p>Der Befehl startet hurl mit folgenden Optionen:</p>
+<table>
+<thead>
+<tr>
+<th>Option</th>
+<th>Bedeutung</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>--test</td>
+<td>startet hurl als Test-Tool mit angepasstem Output</td>
+</tr>
+<tr>
+<td>--glob</td>
+<td>gibt den Ort und die Benennung der Testdateien an</td>
+</tr>
+<tr>
+<td>--report-html</td>
+<td>legt den Speicherort für den HTML-Report fest</td>
+</tr>
+<tr>
+<td>--variables-file</td>
+<td>benennt die .env-Datei mit Umgebungsvariablen</td>
+</tr>
+</tbody>
+</table>
+<p>Jetzt müssen die Tests nur noch ausgeführt werden:</p>
+<pre class="language-bash"><code class="language-bash"><span class="highlight-line"><span class="token function">npm</span> run test:contract</span></code></pre>
+<p>Die Ausgabe sollte dann folgendermaßen aussehen:</p>
+<pre class="language-bash"><code class="language-bash"><span class="highlight-line">contract-test/cookies.hurl: Running <span class="token punctuation">[</span><span class="token number">1</span>/3<span class="token punctuation">]</span></span>
+<span class="highlight-line">contract-test/cookies.hurl: Success <span class="token punctuation">(</span><span class="token number">1</span> request<span class="token punctuation">(</span>s<span class="token punctuation">)</span> <span class="token keyword">in</span> <span class="token number">0</span> ms<span class="token punctuation">)</span></span>
+<span class="highlight-line">contract-test/simple.hurl: Running <span class="token punctuation">[</span><span class="token number">2</span>/3<span class="token punctuation">]</span></span>
+<span class="highlight-line">contract-test/simple.hurl: Success <span class="token punctuation">(</span><span class="token number">1</span> request<span class="token punctuation">(</span>s<span class="token punctuation">)</span> <span class="token keyword">in</span> <span class="token number">0</span> ms<span class="token punctuation">)</span></span>
+<span class="highlight-line">contract-test/content.hurl: Running <span class="token punctuation">[</span><span class="token number">3</span>/3<span class="token punctuation">]</span></span>
+<span class="highlight-line">contract-test/content.hurl: Success <span class="token punctuation">(</span><span class="token number">1</span> request<span class="token punctuation">(</span>s<span class="token punctuation">)</span> <span class="token keyword">in</span> <span class="token number">0</span> ms<span class="token punctuation">)</span></span>
+<span class="highlight-line">--------------------------------------------------------------------------------</span>
+<span class="highlight-line">Executed files:  <span class="token number">3</span></span>
+<span class="highlight-line">Succeeded files: <span class="token number">3</span> <span class="token punctuation">(</span><span class="token number">100.0</span>%<span class="token punctuation">)</span></span>
+<span class="highlight-line">Failed files:    <span class="token number">0</span> <span class="token punctuation">(</span><span class="token number">0.0</span>%<span class="token punctuation">)</span></span>
+<span class="highlight-line">Duration:        <span class="token number">4</span> ms</span></code></pre>
+<h3>Tests</h3>
+<p>Das vorhandene Backend gibt nicht viel her. Unter der Route <em>/random</em> wird ein JSON zurückgegeben, das ich mit Hilfe von <a href="https://json-generator.com/">JSON-Generator</a> erstellt habe. Zusätzlich habe ich noch einen Cookie eingefügt.</p>
+<p><img src="/img/0123/jsonResponse.png" alt="JSON Response" title="json response"></p>
+<p><img src="/img/0123/cookie.png" alt="Cookie" title="cookie"></p>
+<p>Aber es reicht, um den wesentlichen Nutzen zu demonstrieren. Man stellt sicher, dass ein bestimmter Aufruf eine vordefinierte Antwort liefert.</p>
+<h3>GET &amp; POST</h3>
+<pre class="language-ts"><code class="language-ts"><span class="highlight-line"># validate response</span>
+<span class="highlight-line"><span class="token constant">GET</span> <span class="token operator">/</span>random</span>
+<span class="highlight-line"><span class="token constant">HTTP</span><span class="token operator">/</span><span class="token number">1.1</span> <span class="token number">200</span></span>
+<span class="highlight-line"><span class="token punctuation">[</span><span class="token punctuation">{</span><span class="token string-property property">"_id"</span><span class="token operator">:</span><span class="token string">"63b17cafa115a1682550035e"</span><span class="token punctuation">,</span><span class="token string-property property">"index"</span><span class="token operator">:</span><span class="token number">0</span><span class="token punctuation">,</span>"gui<span class="token operator">...</span> Achtung gekürzt</span>
+<span class="highlight-line"></span>
+<span class="highlight-line"># send post request</span>
+<span class="highlight-line"></span>
+<span class="highlight-line"><span class="token constant">POST</span> <span class="token operator">/</span>random</span>
+<span class="highlight-line"><span class="token punctuation">{</span></span>
+<span class="highlight-line">  <span class="token string-property property">"name"</span><span class="token operator">:</span> <span class="token string">"Kuba"</span></span>
+<span class="highlight-line"><span class="token punctuation">}</span></span>
+<span class="highlight-line"></span>
+<span class="highlight-line"><span class="token constant">HTTP</span><span class="token operator">/</span><span class="token number">1.1</span> <span class="token number">200</span></span>
+<span class="highlight-line"></span>
+<span class="highlight-line"><span class="token punctuation">[</span>Asserts<span class="token punctuation">]</span></span>
+<span class="highlight-line">body contains <span class="token string">"Hello Kuba"</span></span></code></pre>
+<p>Der erste Test ruft die URL auf (Zeile 2). In Zeile 3 wird, wie oben, auf das Protokoll und den Statuscode geprüft. Die nächste Zeile enthält das zu erwartende JSON. Weicht es ab, wird dieser Test scheitern.</p>
+<p>Der nächste Test ist ein POST-Request. Ein JSON-Objekt wird übermittelt (Zeile 8-9). Nach Prüfung des Protokolls und des Statuscodes folgt der <em>Asserts</em>-Block. Hier kann man Vergleiche anstellen. Unter <a href="https://hurl.dev/docs/asserting-response.html">Hurl Asserts</a> sieht man das verfügbare Set: status, header, url, cookie, body, bytes, xpath, jsonpath, regex, sha256, md5, variable, duration.</p>
+<p>Ich verwende <em>body</em> und prüfe, ob der Inhalt die Zeichenkette „Hello Kuba“ enthält. Der eigenen Kreativität sind hier kaum Grenzen gesetzt.</p>
+<h3>Cookie</h3>
+<pre class="language-ts"><code class="language-ts"><span class="highlight-line"><span class="token comment">// cookie.hurl</span></span>
+<span class="highlight-line"></span>
+<span class="highlight-line"><span class="token constant">GET</span> <span class="token operator">/</span>random</span>
+<span class="highlight-line"><span class="token constant">HTTP</span><span class="token operator">/</span><span class="token number">1.1</span> <span class="token number">200</span></span>
+<span class="highlight-line"></span>
+<span class="highlight-line"><span class="token punctuation">[</span>Asserts<span class="token punctuation">]</span></span>
+<span class="highlight-line">cookie <span class="token string">"foo"</span> exists</span>
+<span class="highlight-line">cookie <span class="token string">"foo[HttpOnly]"</span> exists</span>
+<span class="highlight-line">cookie <span class="token string">"foo[Secure]"</span> exists</span>
+<span class="highlight-line">cookie <span class="token string">"foo[SameSite]"</span> equals <span class="token string">"Lax"</span></span></code></pre>
+<p>In diesem Test werden die Werte des Cookies im <em>Assert</em>-Block überprüft. Das Keyword <em>cookie</em> sucht nach dem benannten Cookie und prüft dessen Eigenschaften.</p>
+<h3>Die .env-Datei</h3>
+<p>Um in verschiedenen Umgebungen Umgebungsvariablen anzubieten, gibt es die oben beschriebene Option <em>--variables-file</em>. In dieser Datei können Variablen abgelegt werden:</p>
+<pre class="language-ts"><code class="language-ts"><span class="highlight-line"><span class="token comment">// contract-testing.env</span></span>
+<span class="highlight-line">base_url<span class="token operator">=</span>http<span class="token operator">:</span><span class="token operator">/</span><span class="token operator">/</span>localhost<span class="token operator">:</span><span class="token number">3000</span></span></code></pre>
+<p>Hier wird die <em>base_url</em> definiert. Natürlich kann diese je nach Umgebung variieren. Hier könnten z.B. auch Login-Daten abgelegt werden.</p>
+<p>In den Hurl-Dateien kann dann darauf zugegriffen werden:</p>
+<pre class="language-ts"><code class="language-ts"><span class="highlight-line"><span class="token constant">GET</span> <span class="token operator">/</span>random</span>
+<span class="highlight-line"><span class="token constant">HTTP</span><span class="token operator">/</span><span class="token number">1.1</span> <span class="token number">200</span></span></code></pre>
+<p>Dem aufmerksamen Leser ist sicher schon aufgefallen: Möchte man auf diese Variablen im POST-Body zugreifen, muss dieser in dreifachen Hochkommata stehen.</p>
+<h3>Der HTML-Report</h3>
+<p>Die Option <em>--report-html ./reports</em> sorgt dafür, dass nach der Ausführung ein Ordner <em>reports</em> erscheint. Darin befindet sich eine HTML-Datei, die ausgeführt so aussieht:</p>
+<p><img src="/img/0123/hurl-report.png" alt="hurl report" title="Reporting"></p>
+<p>Die Ergebnisse der Tests werden in einer Übersicht dargestellt, und man sieht, welche Tests bestanden und welche fehlgeschlagen sind. Es ist ein nettes Feature, das nicht extrem viele Informationen bietet, aber in zukünftigen Releases sicher erweitert wird.</p>
+<h3>Fazit</h3>
+<p>Dieser Artikel gibt einen Einblick, wie man diese Art von Tests einrichtet und ausführt. Der Nutzen ist klar: Es ist ein praktisches und einfaches Tool. Ich wünsche euch viel Spaß damit!</p>
+<p>Der Code dazu liegt auf <a href="https://github.com/derKuba/contract-testing">Github</a>.</p>
+<p>Ihr habt Fragen oder Anregungen? Schreibt mir bei <a href="https://twitter.com/der_kuba">Twitter</a> oder bei <a href="https://www.linkedin.com/in/jacob-pawlik-08a40015b/">LinkedIn</a>.
+Tausend Dank fürs Lesen!</p>
+<p>Kuba</p>
+
+            <hr>
+              <ul class="post-navigation">
+                  <li>Nächster Artikel:
+                    <a href="/posts/en/0123/contract-test/">Contract Testing with hurl</a>
+                  </li>
+                
+                  <li>Vorheriger Artikel:
+                    <a href="/posts/en/1222/agile/planning2/">Planning 2: Process for Devs</a>
+                  </li>
+                
+              </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+        <!-- Current page: /posts/0123/contract-test/ -->
+        <footer class="footer">
+    <hr/>
+    <div class="content has-text-centered">
+        <p>
+            der_kuba - 2021-2024 -
+            <a href="/content/impressum.html">Impressum</a>
+            -
+            <a href="/content/datenschutz.html">Datenschutzerklärung</a>
+        </p>
+    </div>
+</footer>
+    </body>
+</html>

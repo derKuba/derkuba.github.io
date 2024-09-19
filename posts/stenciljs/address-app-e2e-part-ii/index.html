@@ -1,0 +1,407 @@
+<!doctype html>
+<html lang="de">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1"/>
+        <title>StencilJS-Tutorial: E2E Tests mit Playwright - Tests</title>
+        <meta name="description" content="Wie testet ich die fertige Applikation">
+        <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+        <link rel="alternate" href="/feed/feed.xml" type="application/atom+xml" title="der_kuba">
+        <link rel="alternate" href="/feed/feed.json" type="application/json" title="der_kuba">
+        <link rel="stylesheet" href="/assets/css/prism.css">
+        <link rel="stylesheet" href="/assets/css/bulma.css">
+        <link rel="stylesheet" href="/assets/css/custom.css">
+        <script>
+            document.addEventListener("DOMContentLoaded", () => {
+                const e = Array
+                    .prototype
+                    .slice
+                    .call(document.querySelectorAll(".navbar-burger"), 0);
+                e.length > 0 && e.forEach(e => {
+                    e.addEventListener("click", () => {
+                        const t = e.dataset.target,
+                            a = document.getElementById(t);
+                        e.classList.toggle("is-active"),
+                        a.classList.toggle("is-active")
+                    })
+                })
+                const disableDarkMode = () => {
+                    const bodyNode = document.querySelector("body");
+                    bodyNode
+                        .classList
+                        .remove("dark-mode")
+                        localStorage
+                        .setItem('darkMode', 'disabled');
+                }
+                const enableDarkMode = () => {
+                    const bodyNode = document.querySelector("body");
+                    bodyNode
+                        .classList
+                        .add("dark-mode")
+                        localStorage
+                        .setItem('darkMode', 'enabled');
+                }
+                const button = document.getElementById("darkmode");
+                button.addEventListener("click", () => {
+                    const bodyNode = document.querySelector("body");
+                    if (bodyNode.classList.contains("dark-mode")) {
+                        disableDarkMode();
+                    } else {
+                        enableDarkMode();
+                    }
+                })
+                if (localStorage.getItem('darkMode') === 'enabled') {
+                    enableDarkMode();
+                }
+            });
+        </script>
+    </head>
+    <body><header>
+    <div class="container">
+        <nav class="navbar">
+            <div class="navbar-brand">
+                <a class="navbar-item navbar-brand__title " href="/">
+                    der_kuba
+                </a>
+                <a class="navbar-item" href="https://github.com/derKuba">
+                    @Github
+                </a>
+                <a class="navbar-item" href="https://twitter.com/der_kuba">
+                    @Twitter
+                </a>
+                <a class="navbar-item" href="https://www.linkedin.com/in/jacob-pawlik-08a40015b/">
+                    @LinkedIn
+                </a>
+                <div class="navbar-burger" data-target="navigation-items">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+            <div id="navigation-items" class="navbar-menu">
+                <div class="navbar-end">
+                    
+                        <a class="navbar-item " href="/">
+                            Home
+                        </a>
+                        <a class="navbar-item " href="/posts/">
+                            Archiv
+                        </a>
+                        <a class="navbar-item " href="/about/">
+                            About Me
+                        </a>
+                        <a class="navbar-item " href="/en/">
+                            English
+                        </a>
+                        <a class="navbar-item " href="/content/impressum.html">
+                            Impressum
+                        </a>
+                        <a class="navbar-item " href="/content/datenschutz.html">
+                            Datenschutzerklärung
+                        </a>
+                    <button id="darkmode" alt="dark mode">
+                        <svg width="30" height="30">
+                            <circle cx="15" cy="15" r="6" fill="currentColor"/>
+                            <line id="ray" stroke="currentColor" stroke-width="2" stroke-linecap="round" x1="15" y1="1" x2="15" y2="4"></line>
+                            <use href="#ray" transform="rotate(45 15 15)"/>
+                            <use href="#ray" transform="rotate(90 15 15)"/>
+                            <use href="#ray" transform="rotate(135 15 15)"/>
+                            <use href="#ray" transform="rotate(180 15 15)"/>
+                            <use href="#ray" transform="rotate(225 15 15)"/>
+                            <use href="#ray" transform="rotate(270 15 15)"/>
+                            <use href="#ray" transform="rotate(315 15 15)"/>
+                        </svg>
+                    </button>
+                    <!-- special thanks to https://www.freecodecamp.org/news/how-to-handle-dark-mode-with-css-and-javascript/ -->
+                </div>
+            </div>
+        </nav>
+    </div>
+</header>
+        
+<section class="section">
+  <div class="container">
+    <div class="columns is-centered">
+      <div class="column is-8">
+        <h1 class="title is-3">StencilJS-Tutorial: E2E Tests mit Playwright - Tests</h1>
+        <div class="post-detail__tags">
+          <h3 class="subtitle is-6">
+            <time datetime="2021-09-17">
+              17 Sep 2021
+            </time>
+          </h3>
+          <div class="tags"><a href="/tags/stenciljs/" class="post-tag">
+                <span class="tag is-black">
+                  Stenciljs
+                </span>
+              </a>
+          </div>
+        </div>
+        <div class="content post_detail__content">
+          <div class="language-hint">
+            
+          </div>
+          <p>Mit dem Wissen des letzten Artikels können wir uns dem eigentlichen Thema widmen: Tests schreiben. Das Framework ist installiert, der erste Test steht und nach dem Ausführen laufen die Browser los und testen die Anwendung.<!-- endOfPreview --></p>
+<h4>Page Object Model</h4>
+<p>Meine ersten Erfahrungen mit Playwright waren sehr positiv. Aber die Teststruktur war einfach nur chaotisch. Es gab eine Datei mit Selektoren, eine Datei mit Operationen und die Testdateien, die sich diese importieren und verwenden. Man konnte nicht nachvollziehen welcher Selektor zu welcher Seite gehört und wie es mit den Operationen oder Aktionen auf der Seite zusammenspielt. Hier bietet die <a href="https://playwright.dev/docs/test-pom">Playwright Dokumentation das Page Object Model</a> (kurz POM) an. Die Idee dahinter ist so einfach wie genial. Man teilt die Anwendung in Seiten oder Module ein und erstellt für jedes Teil eine Klasse. In dieser Klasse befinden sich dann die dazugehörigen Selektoren und Operationen. Ohne konkretes Wissen über den strukturellen Aufbau kann man damit die Seite programmatisch bedienen. Nehmen wir als Beispiel die Formularseite zum Anlegen eines Kontaktes. Es besteht aus 3 Feldern (Vorname, Name, Adresse), einem Zurückknopf und einem Speicherknopf. Das dazugehörige POM sieht dann in Pseudocode so aus:</p>
+<pre class="language-ts"><code class="language-ts"><span class="highlight-line"><span class="token keyword">class</span> <span class="token class-name">Kontaktformular</span> <span class="token punctuation">{</span></span>
+<span class="highlight-line">    <span class="token keyword">private</span> zurückSelektor <span class="token operator">=</span> <span class="token string">"link zurück"</span><span class="token punctuation">;</span></span>
+<span class="highlight-line">    <span class="token keyword">private</span> speicherKnopf <span class="token operator">=</span> <span class="token string">"knopf speichern"</span><span class="token punctuation">;</span></span>
+<span class="highlight-line">    <span class="token keyword">private</span> vornameSelektor <span class="token operator">=</span> <span class="token string">"eingabefeld vorname"</span><span class="token punctuation">;</span></span>
+<span class="highlight-line">    <span class="token keyword">private</span> nachnameSelektor <span class="token operator">=</span> <span class="token string">"eingabefeld name"</span><span class="token punctuation">;</span></span>
+<span class="highlight-line">    <span class="token keyword">private</span> adressSelektor <span class="token operator">=</span> <span class="token string">"eingabeFeld adresse"</span><span class="token punctuation">;</span></span>
+<span class="highlight-line"></span>
+<span class="highlight-line">    <span class="token function-variable function">klickeZurück</span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=></span> playwright<span class="token punctuation">.</span><span class="token function">klickMagie</span><span class="token punctuation">(</span>zurückSelektor<span class="token punctuation">)</span><span class="token punctuation">;</span></span>
+<span class="highlight-line">    <span class="token function-variable function">klickeSpeichern</span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=></span> playwright<span class="token punctuation">.</span><span class="token function">klickMagie</span><span class="token punctuation">(</span>speicherKnopf<span class="token punctuation">)</span><span class="token punctuation">;</span></span>
+<span class="highlight-line">    <span class="token function-variable function">fülleVornameFeldAus</span> <span class="token operator">=</span> <span class="token punctuation">(</span>vorname<span class="token punctuation">)</span> <span class="token operator">=></span></span>
+<span class="highlight-line">        playwright<span class="token punctuation">.</span><span class="token function">füllMagie</span><span class="token punctuation">(</span>vornameSelektor<span class="token punctuation">,</span> vorname<span class="token punctuation">)</span><span class="token punctuation">;</span></span>
+<span class="highlight-line">    <span class="token operator">...</span><span class="token punctuation">.</span></span>
+<span class="highlight-line"><span class="token punctuation">}</span></span></code></pre>
+<p>Man erkennt die Klassenstruktur. Die Klassen haben die Selektoren als private Attribute. Die Interaktionsmöglichkeiten der Seite sind in den Methoden abgebildet und benutzen die gekapselten Selektoren. Ohne die Seite gesehen zu haben kann ich, sobald ich eine Instanz dieser Klasse angelegt habe, die Seite bedienen ohne mir die Struktur anzuschauen. Ich finde mich ohne langes Suchen sofort zurecht. Das ist ein entscheidender Vorteil gegenüber meinem ersten Vorgehen.</p>
+<p>Da die Adressbuchapplikation zwei Seiten besitzt habe ich mich für zwei POMs entschieden. Eine für die <em>Kuba-Home</em> und eine für die <em>Kuba-Address-Form</em>. Die Selektoren und Operationen entsprechen den Interaktionsmöglichkeiten auf der Seite.</p>
+<p><strong>Kuba-Home</strong>
+Die Home besteht aus einem Link um einen neuen Kontakt anzulegen und aus der Tabelle aller Kontakte. In jeder Zeile, sofern Kontakt vorhanden, hat man die Möglichkeit die Zeile zu bearbeiten oder zu löschen.</p>
+<pre class="language-ts"><code class="language-ts"><span class="highlight-line"><span class="token keyword">import</span> <span class="token punctuation">{</span> Page <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">"playwright"</span><span class="token punctuation">;</span></span>
+<span class="highlight-line"></span>
+<span class="highlight-line"><span class="token keyword">class</span> <span class="token class-name">KubaHomePom</span> <span class="token punctuation">{</span></span>
+<span class="highlight-line">    <span class="token keyword">private</span> page<span class="token operator">:</span> Page<span class="token punctuation">;</span></span>
+<span class="highlight-line"></span>
+<span class="highlight-line">    <span class="token function">constructor</span><span class="token punctuation">(</span>page<span class="token operator">:</span> Page<span class="token punctuation">)</span> <span class="token punctuation">{</span></span>
+<span class="highlight-line">        <span class="token keyword">this</span><span class="token punctuation">.</span>page <span class="token operator">=</span> page<span class="token punctuation">;</span></span>
+<span class="highlight-line">    <span class="token punctuation">}</span></span>
+<span class="highlight-line"></span>
+<span class="highlight-line">    <span class="token keyword">private</span> newButtonSelector <span class="token operator">=</span> <span class="token string">"app-root >> #addressbook_new_contact >> a"</span><span class="token punctuation">;</span></span>
+<span class="highlight-line">    <span class="token keyword">private</span> tableSelector <span class="token operator">=</span> <span class="token string">"app-root >> kuba-table-options >> table tbody tr"</span><span class="token punctuation">;</span></span>
+<span class="highlight-line"></span>
+<span class="highlight-line">    <span class="token keyword">async</span> <span class="token function">openNewContactForm</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span></span>
+<span class="highlight-line">        <span class="token keyword">await</span> <span class="token keyword">this</span><span class="token punctuation">.</span>page<span class="token punctuation">.</span><span class="token function">click</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span>newButtonSelector<span class="token punctuation">)</span><span class="token punctuation">;</span></span>
+<span class="highlight-line">    <span class="token punctuation">}</span></span>
+<span class="highlight-line"></span>
+<span class="highlight-line">    <span class="token keyword">async</span> <span class="token function">editContact</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span></span>
+<span class="highlight-line">        <span class="token keyword">await</span> <span class="token keyword">this</span><span class="token punctuation">.</span>page<span class="token punctuation">.</span><span class="token function">click</span><span class="token punctuation">(</span><span class="token template-string"><span class="token template-punctuation string">`</span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span><span class="token keyword">this</span><span class="token punctuation">.</span>tableSelector<span class="token interpolation-punctuation punctuation">}</span></span><span class="token string"> a</span><span class="token template-punctuation string">`</span></span><span class="token punctuation">)</span><span class="token punctuation">;</span></span>
+<span class="highlight-line">    <span class="token punctuation">}</span></span>
+<span class="highlight-line"></span>
+<span class="highlight-line">    <span class="token keyword">async</span> <span class="token function">deleteContact</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span></span>
+<span class="highlight-line">        <span class="token keyword">await</span> <span class="token keyword">this</span><span class="token punctuation">.</span>page<span class="token punctuation">.</span><span class="token function">click</span><span class="token punctuation">(</span><span class="token template-string"><span class="token template-punctuation string">`</span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span><span class="token keyword">this</span><span class="token punctuation">.</span>tableSelector<span class="token interpolation-punctuation punctuation">}</span></span><span class="token string"> button</span><span class="token template-punctuation string">`</span></span><span class="token punctuation">)</span><span class="token punctuation">;</span></span>
+<span class="highlight-line">    <span class="token punctuation">}</span></span>
+<span class="highlight-line"></span>
+<span class="highlight-line">    <span class="token keyword">async</span> <span class="token function">getTableLocator</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span></span>
+<span class="highlight-line">        <span class="token keyword">return</span> <span class="token keyword">await</span> <span class="token keyword">this</span><span class="token punctuation">.</span>page<span class="token punctuation">.</span><span class="token function">locator</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span>tableSelector<span class="token punctuation">)</span><span class="token punctuation">;</span></span>
+<span class="highlight-line">    <span class="token punctuation">}</span></span>
+<span class="highlight-line"><span class="token punctuation">}</span></span>
+<span class="highlight-line"><span class="token keyword">export</span> <span class="token keyword">default</span> KubaHomePom<span class="token punctuation">;</span></span></code></pre>
+<p>Es handelt sich um eine normale Javascript-Klasse. Das einzige framework-spezifische aus Playwright ist das Attribut page vom Typ Page, welches über den Konstruktor gesetzt wird. Damit habe ich operationellen Zugriff auf den Browser. Die Zeilen 10 und 11 zeigen die Selektoren für den Link und die Tabelle. Es handelt sich um einfache Strings, die eine leicht abgewandelte CSS-Selektor-Syntax verwenden. Dazu empfehle ich <a href="https://playwright.dev/docs/selectors">die Dokumentation zu lesen</a>. Man findet sich schnell zurecht. Als Operationen auf der Seite gibt es den Klick auf den &quot;Neuer Kontakt&quot;-Link, den Klick auf &quot;Editieren&quot; und &quot;Löschen&quot;, sowie das Auslesen der Tabelle.</p>
+<p><strong>Kuba-Form</strong>
+Den Aufbau der Seite habe ich oben beschrieben. Sie besteht aus einem Link, drei Eingabefeldern und einem Speicherknopf.</p>
+<pre class="language-ts"><code class="language-ts"><span class="highlight-line"><span class="token keyword">import</span> <span class="token punctuation">{</span> Page <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">"playwright"</span><span class="token punctuation">;</span></span>
+<span class="highlight-line"></span>
+<span class="highlight-line"><span class="token keyword">class</span> <span class="token class-name">KubaFormPom</span> <span class="token punctuation">{</span></span>
+<span class="highlight-line">    <span class="token keyword">private</span> page<span class="token operator">:</span> Page<span class="token punctuation">;</span></span>
+<span class="highlight-line"></span>
+<span class="highlight-line">    <span class="token function">constructor</span><span class="token punctuation">(</span>page<span class="token operator">:</span> Page<span class="token punctuation">)</span> <span class="token punctuation">{</span></span>
+<span class="highlight-line">        <span class="token keyword">this</span><span class="token punctuation">.</span>page <span class="token operator">=</span> page<span class="token punctuation">;</span></span>
+<span class="highlight-line">    <span class="token punctuation">}</span></span>
+<span class="highlight-line"></span>
+<span class="highlight-line">    <span class="token keyword">private</span> <span class="token constant">APP_NAME</span> <span class="token operator">=</span> <span class="token string">"app-root"</span><span class="token punctuation">;</span></span>
+<span class="highlight-line"></span>
+<span class="highlight-line">    <span class="token keyword">private</span> backButtonSelector <span class="token operator">=</span> <span class="token template-string"><span class="token template-punctuation string">`</span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span><span class="token keyword">this</span><span class="token punctuation">.</span><span class="token constant">APP_NAME</span><span class="token interpolation-punctuation punctuation">}</span></span><span class="token string"> >> #backLink >> a</span><span class="token template-punctuation string">`</span></span><span class="token punctuation">;</span></span>
+<span class="highlight-line">    <span class="token keyword">private</span> firstNameInputSelector <span class="token operator">=</span> <span class="token template-string"><span class="token template-punctuation string">`</span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span><span class="token keyword">this</span><span class="token punctuation">.</span><span class="token constant">APP_NAME</span><span class="token interpolation-punctuation punctuation">}</span></span><span class="token string"> >> #first-name</span><span class="token template-punctuation string">`</span></span><span class="token punctuation">;</span></span>
+<span class="highlight-line">    <span class="token keyword">private</span> lastNameInputSelector <span class="token operator">=</span> <span class="token template-string"><span class="token template-punctuation string">`</span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span><span class="token keyword">this</span><span class="token punctuation">.</span><span class="token constant">APP_NAME</span><span class="token interpolation-punctuation punctuation">}</span></span><span class="token string"> >> #last-name</span><span class="token template-punctuation string">`</span></span><span class="token punctuation">;</span></span>
+<span class="highlight-line">    <span class="token keyword">private</span> addressInputSelector <span class="token operator">=</span> <span class="token template-string"><span class="token template-punctuation string">`</span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span><span class="token keyword">this</span><span class="token punctuation">.</span><span class="token constant">APP_NAME</span><span class="token interpolation-punctuation punctuation">}</span></span><span class="token string"> >> #street</span><span class="token template-punctuation string">`</span></span><span class="token punctuation">;</span></span>
+<span class="highlight-line">    <span class="token keyword">private</span> saveButtonSelector <span class="token operator">=</span> <span class="token template-string"><span class="token template-punctuation string">`</span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span><span class="token keyword">this</span><span class="token punctuation">.</span><span class="token constant">APP_NAME</span><span class="token interpolation-punctuation punctuation">}</span></span><span class="token string"> >> #saveContactButton</span><span class="token template-punctuation string">`</span></span><span class="token punctuation">;</span></span>
+<span class="highlight-line"></span>
+<span class="highlight-line">    <span class="token keyword">async</span> <span class="token function">goBack</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span></span>
+<span class="highlight-line">        <span class="token keyword">await</span> <span class="token keyword">this</span><span class="token punctuation">.</span>page<span class="token punctuation">.</span><span class="token function">click</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span>backButtonSelector<span class="token punctuation">)</span><span class="token punctuation">;</span></span>
+<span class="highlight-line">    <span class="token punctuation">}</span></span>
+<span class="highlight-line"></span>
+<span class="highlight-line">    <span class="token keyword">async</span> <span class="token function">clickSaveButton</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span></span>
+<span class="highlight-line">        <span class="token keyword">await</span> <span class="token keyword">this</span><span class="token punctuation">.</span>page<span class="token punctuation">.</span><span class="token function">click</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span>saveButtonSelector<span class="token punctuation">)</span><span class="token punctuation">;</span></span>
+<span class="highlight-line">    <span class="token punctuation">}</span></span>
+<span class="highlight-line"></span>
+<span class="highlight-line">    <span class="token keyword">async</span> <span class="token function">fillFirstNameInput</span><span class="token punctuation">(</span>value<span class="token punctuation">)</span> <span class="token punctuation">{</span></span>
+<span class="highlight-line">        <span class="token keyword">await</span> <span class="token keyword">this</span><span class="token punctuation">.</span>page<span class="token punctuation">.</span><span class="token function">fill</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span>firstNameInputSelector<span class="token punctuation">,</span> value<span class="token punctuation">)</span><span class="token punctuation">;</span></span>
+<span class="highlight-line">    <span class="token punctuation">}</span></span>
+<span class="highlight-line"></span>
+<span class="highlight-line">    <span class="token keyword">async</span> <span class="token function">fillLastNameInput</span><span class="token punctuation">(</span>value<span class="token punctuation">)</span> <span class="token punctuation">{</span></span>
+<span class="highlight-line">        <span class="token keyword">await</span> <span class="token keyword">this</span><span class="token punctuation">.</span>page<span class="token punctuation">.</span><span class="token function">fill</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span>lastNameInputSelector<span class="token punctuation">,</span> value<span class="token punctuation">)</span><span class="token punctuation">;</span></span>
+<span class="highlight-line">    <span class="token punctuation">}</span></span>
+<span class="highlight-line"></span>
+<span class="highlight-line">    <span class="token keyword">async</span> <span class="token function">fillAddressInput</span><span class="token punctuation">(</span>value<span class="token punctuation">)</span> <span class="token punctuation">{</span></span>
+<span class="highlight-line">        <span class="token keyword">await</span> <span class="token keyword">this</span><span class="token punctuation">.</span>page<span class="token punctuation">.</span><span class="token function">fill</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span>addressInputSelector<span class="token punctuation">,</span> value<span class="token punctuation">)</span><span class="token punctuation">;</span></span>
+<span class="highlight-line">    <span class="token punctuation">}</span></span>
+<span class="highlight-line"><span class="token punctuation">}</span></span>
+<span class="highlight-line"><span class="token keyword">export</span> <span class="token keyword">default</span> KubaFormPom<span class="token punctuation">;</span></span></code></pre>
+<p>In der bekannten Klassenstruktur finden wir die Selektoren für die genannten Felder (Zeile 12-16). Auffällig ist der Appname. Ich nehme diesen immer als ersten Knoten, um dann im Shadowdom zu suchen. Sollte sich dieser ändern ist dies leichter in einer Konstante zu bewerkstelligen. Die Pfeile &quot;&gt;&gt;&quot; sind ein Selektor, der die Klassen oder IDs innerhalb des Shadowdoms sucht. Wir dürfen nicht vergessen, dass die Komponenten aus geschützen Web-Components bestehen. Die Operationen sind das Klicken und füllen der Werte.</p>
+<h4>Playwright Interaktionen</h4>
+<p>Über das übergebene page-Objekt haben wir Zugriff auf Browseroperationen. Hier liste ich die verwendeten nochmal auf und erläutere sie.
+Auch hier empfehle ich die <a href="https://playwright.dev/docs/input">Dokumentation zu lesen</a>.</p>
+<table>
+<thead>
+<tr>
+<th>Operation</th>
+<th style="text-align:right">Playwright</th>
+<th style="text-align:right">Funktion</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Klicken</td>
+<td style="text-align:right">page.click(selector);</td>
+<td style="text-align:right">Als Parameter wird ein Selector erwartet. Dieser wird, sofern er gefunden wird, geklickt</td>
+</tr>
+<tr>
+<td>Ausfüllen von Formularfeldern</td>
+<td style="text-align:right">page.fill(selector, value);</td>
+<td style="text-align:right">Als Parameter wird der Selektor und der zu schreibende Wert erwartet.</td>
+</tr>
+</tbody>
+</table>
+<p>Diesen Operationen kann auch noch ein Konfigurationsparameter als letzten Parameter übergeben werden. Dort kann man zum Beispiel mitgeben wie lange man auf das Selektieren warten soll:</p>
+<pre class="language-ts"><code class="language-ts"><span class="highlight-line"><span class="token keyword">await</span> <span class="token keyword">this</span><span class="token punctuation">.</span>page<span class="token punctuation">.</span><span class="token function">click</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span>saveButtonSelector<span class="token punctuation">,</span> <span class="token punctuation">{</span> timeout<span class="token operator">:</span> <span class="token number">3000</span> <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span></span></code></pre>
+<p>Wenn dies nicht definiert wird, gilt der globale Timeout. Man kann einen Timeout für den einzelnen Test oder für die gesamte Teststrecke in der Konfigurationsdatei definieren:</p>
+<pre class="language-ts"><code class="language-ts"><span class="highlight-line"><span class="token keyword">const</span> config<span class="token operator">:</span> PlaywrightTestConfig <span class="token operator">=</span> <span class="token punctuation">{</span></span>
+<span class="highlight-line">    globalTimeout<span class="token operator">:</span> <span class="token number">60000</span><span class="token punctuation">,</span> <span class="token comment">// 60sekunden für alle Tests</span></span>
+<span class="highlight-line">    timeout<span class="token operator">:</span> <span class="token number">5000</span><span class="token punctuation">,</span> <span class="token comment">// 5 Sekunden pro Test</span></span>
+<span class="highlight-line"><span class="token punctuation">}</span><span class="token punctuation">;</span></span></code></pre>
+<h4>Matcher Add-on</h4>
+<p><a href="https://playwright.dev/docs/test-assertions/">Playwright bietet einige Matcher/Assertions</a> ( .toContainText() ) an. Ich ergänze diese in meinen Projekten noch um das npm-Paket <a href="https://github.com/playwright-community/expect-playwright"><em>expect-playwright</em></a>. Es ergänzt die Matcher noch um die Funktionen:</p>
+<ul>
+<li>toBeChecked</li>
+<li>toBeDisabled</li>
+<li>toBeEnabled</li>
+<li>toHaveFocus</li>
+<li>toHaveSelector</li>
+<li>toHaveSelectorCount</li>
+<li>toMatchAttribute</li>
+<li>toMatchComputedStyle</li>
+<li>toMatchText</li>
+<li>toMatchTitle</li>
+<li>toMatchURL</li>
+<li>toMatchValue</li>
+</ul>
+<p>Um diese zu installieren muss man folgendes tun:</p>
+<pre class="language-ts"><code class="language-ts"><span class="highlight-line">npm install expect<span class="token operator">-</span>playwright</span>
+<span class="highlight-line"></span>
+<span class="highlight-line"><span class="token comment">// playwright.config.ts</span></span>
+<span class="highlight-line"><span class="token keyword">import</span> <span class="token punctuation">{</span> matchers <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">"expect-playwright"</span><span class="token punctuation">;</span></span>
+<span class="highlight-line"></span>
+<span class="highlight-line">expect<span class="token punctuation">.</span><span class="token function">extend</span><span class="token punctuation">(</span>matchers<span class="token punctuation">)</span><span class="token punctuation">;</span></span></code></pre>
+<p>Und schon haben wir Zugriff auf diese erweiterte Funktionalität.</p>
+<h4>Lucky Path Test</h4>
+<p>Der glückliche Pfad ist die Klickfolge in der Anwendung, die zum erfolgreichen Abschluss führt. Dieser kann das Anlegen eines Kontaktes sein, das vollständige Ausfüllen eines Formulars oder was auch immer der Zweck der Applikation ist. Sonderfälle und Edge-Cases werden ignoriert. Diese müssen extra behandelt werden.</p>
+<p>** Test initialisierung**</p>
+<pre class="language-ts"><code class="language-ts"><span class="highlight-line">test<span class="token punctuation">.</span><span class="token function">describe</span><span class="token punctuation">(</span><span class="token string">"Lucky Path Test"</span><span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">{</span></span>
+<span class="highlight-line">  <span class="token keyword">let</span> kubaHomePom<span class="token punctuation">,</span> kubaFormPom<span class="token punctuation">;</span></span>
+<span class="highlight-line"></span>
+<span class="highlight-line">  test<span class="token punctuation">.</span><span class="token function">beforeEach</span><span class="token punctuation">(</span><span class="token keyword">async</span> <span class="token punctuation">(</span><span class="token punctuation">{</span> page <span class="token punctuation">}</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">{</span></span>
+<span class="highlight-line">    <span class="token keyword">await</span> page<span class="token punctuation">.</span><span class="token function">goto</span><span class="token punctuation">(</span><span class="token constant">TEST_URL</span><span class="token punctuation">)</span><span class="token punctuation">;</span></span>
+<span class="highlight-line">    kubaHomePom <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">KubaHomePom</span><span class="token punctuation">(</span>page<span class="token punctuation">)</span><span class="token punctuation">;</span></span>
+<span class="highlight-line">    kubaFormPom <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">KubaFormPom</span><span class="token punctuation">(</span>page<span class="token punctuation">)</span><span class="token punctuation">;</span></span>
+<span class="highlight-line">  <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span></span>
+<span class="highlight-line"></span>
+<span class="highlight-line">  test<span class="token punctuation">.</span><span class="token function">afterEach</span><span class="token punctuation">(</span><span class="token keyword">async</span> <span class="token punctuation">(</span><span class="token punctuation">{</span> page <span class="token punctuation">}</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">{</span></span>
+<span class="highlight-line">    <span class="token keyword">await</span> page<span class="token punctuation">.</span><span class="token function">reload</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span></span>
+<span class="highlight-line">  <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span></span>
+<span class="highlight-line"></span>
+<span class="highlight-line">  <span class="token operator">...</span></span>
+<span class="highlight-line"><span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span></span></code></pre>
+<p>Das Test-Setup habe ich so aufgebaut, dass die beiden POMs außerhalb der Tests instanziiert werden. Jeweils vor jedem Test. Es würde auch reichen die POMs im Dateikopf zu instanziieren.
+Zusätzlich steuern wir den Browser vor jeden Test auf die Seite der Applikation und nach jedem Test lade ich die Seite neu, damit alle Daten verschwinden.</p>
+<p>Die Adressbuch Applikation hat nur drei grundlegende Funktionen:</p>
+<ul>
+<li>Kontakt anlegen</li>
+<li>Kontakt löschen</li>
+<li>Kontakt editieren</li>
+</ul>
+<p>Genau dies sind unsere Tests.</p>
+<p><strong>Kontakt anlegen</strong></p>
+<p>Da man für alle diese Fälle einen Kontakt erst einmal anlegen muss, habe ich dies in eine Funktion ausgelagert, um Redundanz einzusparen.</p>
+<pre class="language-ts"><code class="language-ts"><span class="highlight-line"><span class="token keyword">const</span> <span class="token function-variable function">addNewContact</span> <span class="token operator">=</span> <span class="token keyword">async</span> <span class="token punctuation">(</span>kubaHomePom<span class="token punctuation">,</span> kubaFormPom<span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">{</span></span>
+<span class="highlight-line">    <span class="token keyword">await</span> kubaHomePom<span class="token punctuation">.</span><span class="token function">openNewContactForm</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span></span>
+<span class="highlight-line"></span>
+<span class="highlight-line">    <span class="token keyword">await</span> kubaFormPom<span class="token punctuation">.</span><span class="token function">fillFirstNameInput</span><span class="token punctuation">(</span><span class="token string">"Max"</span><span class="token punctuation">)</span><span class="token punctuation">;</span></span>
+<span class="highlight-line">    <span class="token keyword">await</span> kubaFormPom<span class="token punctuation">.</span><span class="token function">fillLastNameInput</span><span class="token punctuation">(</span><span class="token string">"Muster"</span><span class="token punctuation">)</span><span class="token punctuation">;</span></span>
+<span class="highlight-line">    <span class="token keyword">await</span> kubaFormPom<span class="token punctuation">.</span><span class="token function">fillAddressInput</span><span class="token punctuation">(</span><span class="token string">"Musterstraße 23, 1234 Musterstadt"</span><span class="token punctuation">)</span><span class="token punctuation">;</span></span>
+<span class="highlight-line">    <span class="token keyword">await</span> kubaFormPom<span class="token punctuation">.</span><span class="token function">clickSaveButton</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span></span>
+<span class="highlight-line">    <span class="token keyword">await</span> kubaFormPom<span class="token punctuation">.</span><span class="token function">goBack</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span></span>
+<span class="highlight-line"><span class="token punctuation">}</span><span class="token punctuation">;</span></span></code></pre>
+<p>Die Funktion bekommt die zwei POMs übergeben. Zeile 2 öffnet die <em>Kontakt anlegen</em>-Seite. In den Zeilen 4-6 werden die Inputfelder beschrieben. Zeile 7 zeigt wie der Speicherknopf betätigt wird und Zeile 8 führt uns zur Startseite mit der Tabelle. Man könnte noch die Eingabewerte auslagern und von außen reingeben. Aber für die Demonstration reicht es so aus.</p>
+<p>Der erste Test sieht dann so aus:</p>
+<pre class="language-ts"><code class="language-ts"><span class="highlight-line"><span class="token function">test</span><span class="token punctuation">(</span><span class="token string">"should add new contact"</span><span class="token punctuation">,</span> <span class="token keyword">async</span> <span class="token punctuation">(</span><span class="token punctuation">{</span> page <span class="token punctuation">}</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">{</span></span>
+<span class="highlight-line">    <span class="token keyword">await</span> <span class="token function">addNewContact</span><span class="token punctuation">(</span>kubaHomePom<span class="token punctuation">,</span> kubaFormPom<span class="token punctuation">)</span><span class="token punctuation">;</span></span>
+<span class="highlight-line"></span>
+<span class="highlight-line">    <span class="token keyword">const</span> tableLocator <span class="token operator">=</span> <span class="token keyword">await</span> kubaHomePom<span class="token punctuation">.</span><span class="token function">getTableLocator</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span></span>
+<span class="highlight-line">    <span class="token keyword">await</span> <span class="token function">expect</span><span class="token punctuation">(</span>tableLocator<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">toHaveCount</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span></span>
+<span class="highlight-line"><span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span></span></code></pre>
+<p>Zeile 2 verwendet die ausgelagerte Funktion. Nach dem Ausführen zähle ich die Tabellenzeilen und erwarte eine neue Zeile. Fertig.</p>
+<p><strong>Kontakt löschen</strong></p>
+<pre class="language-ts"><code class="language-ts"><span class="highlight-line"><span class="token function">test</span><span class="token punctuation">(</span><span class="token string">"should delete contact"</span><span class="token punctuation">,</span> <span class="token keyword">async</span> <span class="token punctuation">(</span><span class="token punctuation">{</span> page <span class="token punctuation">}</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">{</span></span>
+<span class="highlight-line">    <span class="token keyword">await</span> <span class="token function">addNewContact</span><span class="token punctuation">(</span>kubaHomePom<span class="token punctuation">,</span> kubaFormPom<span class="token punctuation">)</span><span class="token punctuation">;</span></span>
+<span class="highlight-line"></span>
+<span class="highlight-line">    <span class="token keyword">await</span> kubaHomePom<span class="token punctuation">.</span><span class="token function">deleteContact</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span></span>
+<span class="highlight-line"></span>
+<span class="highlight-line">    <span class="token keyword">const</span> tableLocator <span class="token operator">=</span> <span class="token keyword">await</span> kubaHomePom<span class="token punctuation">.</span><span class="token function">getTableLocator</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span></span>
+<span class="highlight-line">    <span class="token keyword">await</span> <span class="token function">expect</span><span class="token punctuation">(</span>tableLocator<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">toHaveCount</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">;</span></span>
+<span class="highlight-line"><span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span></span></code></pre>
+<p>Analog zu dem vorherigen Test wird ein Kontakt angelegt. Die <em>.deleteContact()</em> ist ein bisschen geschummelt. Sie sucht einfach nach dem ersten Button und drückt diesen. Danach wird durchgezählt und keine Zeile mehr in der Tabelle erwartet.</p>
+<p><strong>Kontakt editieren</strong></p>
+<p>Das ist der aufwendigste Test:</p>
+<pre class="language-ts"><code class="language-ts"><span class="highlight-line"><span class="token function">test</span><span class="token punctuation">(</span><span class="token string">"should add new contact and edit it"</span><span class="token punctuation">,</span> <span class="token keyword">async</span> <span class="token punctuation">(</span><span class="token punctuation">{</span> page <span class="token punctuation">}</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">{</span></span>
+<span class="highlight-line">    <span class="token keyword">await</span> <span class="token function">addNewContact</span><span class="token punctuation">(</span>kubaHomePom<span class="token punctuation">,</span> kubaFormPom<span class="token punctuation">)</span><span class="token punctuation">;</span></span>
+<span class="highlight-line"></span>
+<span class="highlight-line">    <span class="token keyword">await</span> kubaHomePom<span class="token punctuation">.</span><span class="token function">editContact</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span></span>
+<span class="highlight-line"></span>
+<span class="highlight-line">    <span class="token keyword">await</span> kubaFormPom<span class="token punctuation">.</span><span class="token function">fillFirstNameInput</span><span class="token punctuation">(</span><span class="token string">"Heinrich"</span><span class="token punctuation">)</span><span class="token punctuation">;</span></span>
+<span class="highlight-line">    <span class="token keyword">await</span> kubaFormPom<span class="token punctuation">.</span><span class="token function">fillLastNameInput</span><span class="token punctuation">(</span><span class="token string">"Neumuster"</span><span class="token punctuation">)</span><span class="token punctuation">;</span></span>
+<span class="highlight-line">    <span class="token keyword">await</span> kubaFormPom<span class="token punctuation">.</span><span class="token function">clickSaveButton</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span></span>
+<span class="highlight-line">    <span class="token keyword">await</span> kubaFormPom<span class="token punctuation">.</span><span class="token function">goBack</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span></span>
+<span class="highlight-line"></span>
+<span class="highlight-line">    <span class="token keyword">const</span> tableLocator <span class="token operator">=</span> <span class="token keyword">await</span> kubaHomePom<span class="token punctuation">.</span><span class="token function">getTableLocator</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span></span>
+<span class="highlight-line">    <span class="token keyword">await</span> <span class="token function">expect</span><span class="token punctuation">(</span>tableLocator<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">toContainText</span><span class="token punctuation">(</span><span class="token string">"HeinrichNeumuster"</span><span class="token punctuation">)</span><span class="token punctuation">;</span></span>
+<span class="highlight-line"><span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span></span></code></pre>
+<p>Dieser Test ist aufwendiger, da erst ein Kontakt angelegt werden muss. Dann muss auf der Hauptseite der Editier-Knopf gedrückt werden, die Werte verändert, zurücknavigiert und dann die neuen Werte erwartet.
+Die Implementierung der Tabelle macht den Vergleich etwas schwerer. Man hätte hier sauberer mit IDs arbeiten müssen. Ich mache mir es leicht und lese den Text der ersten Zeile konkateniert aus. Deswegen sieht mein Vergleichswert auf den ersten Blick merkwürdig aus. Fertig.</p>
+<h4>Warum sollte man das tun?</h4>
+<p>Ja, es ist zusätzlicher Code. Ja, es kostet Zeit diesen zu schreiben. Aber es spart diese Zeit wieder ein. In vielen Firmen werden Anwendungen noch aufwendig von Hand getestet. Man stelle sich vor, jemand erstellt einen Testkatalog mit Testdaten und 100 Testfälle. Irgendwer muss sich dann hinsetzen und alle 100 Testfälle per Hand Stück für Stück, Zeile für Zeile, Feld für Feld durchtesten. Jeder Mensch macht auch Fehler. Testfälle werden übersprungen, weil man in der Zeile verrutscht. Die Ergebnisse werden vergessen mitzuteilen.
+Diese Art Tests laufen in der Pipeline und können nach jeder Änderung automatisch durchlaufen werden. Man kann es so konfigurieren, dass nicht erfolgreiche Tests ein Deployment verhindern. Natürlich muss man nicht auf händische Tests verzichten, aber diese E2E-Tests ergänzen diese auf sehr wertvolle Art und Weise.</p>
+<p>Für mich sind diese Tests eine Pflicht in jedem Projekt.</p>
+<p>Dieses Tutorial soll den Einstieg ermöglichen. Es ist keine Musterlösung, sondern bietet den Einstieg in die Materie.</p>
+<p>Der Code hierzu liegt auf <a href="https://github.com/derKuba/stenciljs-tutorial">Github</a>.</p>
+<p>Ihr habt Fragen oder Anregungen? Schreibt mir bei <a href="https://twitter.com/der_kuba">Twitter</a>.
+<br>
+<br>
+Tausend Dank fürs Lesen!</p>
+<p>Kuba</p>
+
+            <hr>
+              <ul class="post-navigation">
+                  <li>Nächster Artikel:
+                    <a href="/posts/stenciljs/stencil-tutorial/">StencilJS-Tutorial</a>
+                  </li>
+                
+                  <li>Vorheriger Artikel:
+                    <a href="/posts/stenciljs/address-app-e2e/">StencilJS-Tutorial: E2E Tests mit Playwright - Intro</a>
+                  </li>
+                
+              </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+        <!-- Current page: /posts/stenciljs/address-app-e2e-part-ii/ -->
+        <footer class="footer">
+    <hr/>
+    <div class="content has-text-centered">
+        <p>
+            der_kuba - 2021-2024 -
+            <a href="/content/impressum.html">Impressum</a>
+            -
+            <a href="/content/datenschutz.html">Datenschutzerklärung</a>
+        </p>
+    </div>
+</footer>
+    </body>
+</html>

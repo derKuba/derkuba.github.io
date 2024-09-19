@@ -1,0 +1,283 @@
+<!doctype html>
+<html lang="de">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1"/>
+        <title>StencilJS-Tutorial: JEST</title>
+        <meta name="description" content="Unit Testing Einführung">
+        <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+        <link rel="alternate" href="/feed/feed.xml" type="application/atom+xml" title="der_kuba">
+        <link rel="alternate" href="/feed/feed.json" type="application/json" title="der_kuba">
+        <link rel="stylesheet" href="/assets/css/prism.css">
+        <link rel="stylesheet" href="/assets/css/bulma.css">
+        <link rel="stylesheet" href="/assets/css/custom.css">
+        <script>
+            document.addEventListener("DOMContentLoaded", () => {
+                const e = Array
+                    .prototype
+                    .slice
+                    .call(document.querySelectorAll(".navbar-burger"), 0);
+                e.length > 0 && e.forEach(e => {
+                    e.addEventListener("click", () => {
+                        const t = e.dataset.target,
+                            a = document.getElementById(t);
+                        e.classList.toggle("is-active"),
+                        a.classList.toggle("is-active")
+                    })
+                })
+                const disableDarkMode = () => {
+                    const bodyNode = document.querySelector("body");
+                    bodyNode
+                        .classList
+                        .remove("dark-mode")
+                        localStorage
+                        .setItem('darkMode', 'disabled');
+                }
+                const enableDarkMode = () => {
+                    const bodyNode = document.querySelector("body");
+                    bodyNode
+                        .classList
+                        .add("dark-mode")
+                        localStorage
+                        .setItem('darkMode', 'enabled');
+                }
+                const button = document.getElementById("darkmode");
+                button.addEventListener("click", () => {
+                    const bodyNode = document.querySelector("body");
+                    if (bodyNode.classList.contains("dark-mode")) {
+                        disableDarkMode();
+                    } else {
+                        enableDarkMode();
+                    }
+                })
+                if (localStorage.getItem('darkMode') === 'enabled') {
+                    enableDarkMode();
+                }
+            });
+        </script>
+    </head>
+    <body><header>
+    <div class="container">
+        <nav class="navbar">
+            <div class="navbar-brand">
+                <a class="navbar-item navbar-brand__title " href="/">
+                    der_kuba
+                </a>
+                <a class="navbar-item" href="https://github.com/derKuba">
+                    @Github
+                </a>
+                <a class="navbar-item" href="https://twitter.com/der_kuba">
+                    @Twitter
+                </a>
+                <a class="navbar-item" href="https://www.linkedin.com/in/jacob-pawlik-08a40015b/">
+                    @LinkedIn
+                </a>
+                <div class="navbar-burger" data-target="navigation-items">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+            <div id="navigation-items" class="navbar-menu">
+                <div class="navbar-end">
+                    
+                        <a class="navbar-item " href="/">
+                            Home
+                        </a>
+                        <a class="navbar-item " href="/posts/">
+                            Archiv
+                        </a>
+                        <a class="navbar-item " href="/about/">
+                            About Me
+                        </a>
+                        <a class="navbar-item " href="/en/">
+                            English
+                        </a>
+                        <a class="navbar-item " href="/content/impressum.html">
+                            Impressum
+                        </a>
+                        <a class="navbar-item " href="/content/datenschutz.html">
+                            Datenschutzerklärung
+                        </a>
+                    <button id="darkmode" alt="dark mode">
+                        <svg width="30" height="30">
+                            <circle cx="15" cy="15" r="6" fill="currentColor"/>
+                            <line id="ray" stroke="currentColor" stroke-width="2" stroke-linecap="round" x1="15" y1="1" x2="15" y2="4"></line>
+                            <use href="#ray" transform="rotate(45 15 15)"/>
+                            <use href="#ray" transform="rotate(90 15 15)"/>
+                            <use href="#ray" transform="rotate(135 15 15)"/>
+                            <use href="#ray" transform="rotate(180 15 15)"/>
+                            <use href="#ray" transform="rotate(225 15 15)"/>
+                            <use href="#ray" transform="rotate(270 15 15)"/>
+                            <use href="#ray" transform="rotate(315 15 15)"/>
+                        </svg>
+                    </button>
+                    <!-- special thanks to https://www.freecodecamp.org/news/how-to-handle-dark-mode-with-css-and-javascript/ -->
+                </div>
+            </div>
+        </nav>
+    </div>
+</header>
+        
+<section class="section">
+  <div class="container">
+    <div class="columns is-centered">
+      <div class="column is-8">
+        <h1 class="title is-3">StencilJS-Tutorial: JEST</h1>
+        <div class="post-detail__tags">
+          <h3 class="subtitle is-6">
+            <time datetime="2021-08-14">
+              14 Aug 2021
+            </time>
+          </h3>
+          <div class="tags"><a href="/tags/stenciljs/" class="post-tag">
+                <span class="tag is-black">
+                  Stenciljs
+                </span>
+              </a><a href="/tags/testing/" class="post-tag">
+                <span class="tag is-primary">
+                  Testing
+                </span>
+              </a>
+          </div>
+        </div>
+        <div class="content post_detail__content">
+          <div class="language-hint">
+            
+          </div>
+          <p><a href="https://jestjs.io/">Jest ist DAS Javascript Testing-Framework</a>. Wenn man mit Javascript/Typescript arbeitet, kommt man an diesem Schweizer-Taschenmesser des Testens nicht vorbei. Ich bin ein riesen Fan seitdem wir uns 2016 das erste mal begegnet sind. Ich habe davor mit diversen Test-Framework gearbeitet.<!-- endOfPreview --> Dazu zählen:</p>
+<ul>
+<li><a href="https://mochajs.org/">Mocha</a>,</li>
+<li><a href="https://jasmine.github.io/">Jasmine</a>,</li>
+<li><a href="https://karma-runner.github.io/latest/index.html">Karma</a>,</li>
+<li><a href="https://sinonjs.org/">Sinon</a>,</li>
+<li><a href="https://www.chaijs.com/">Chai</a>,</li>
+</ul>
+<p>Die Entwickler bei Facebook, die Jest entwickelt haben, haben sich all diese Frameworks angeschaut. Sie haben die Essenz des jeweiligen Frameworks verstanden und es in ein eigenes Framework gepackt. Jest hat das Look and Feel von Jasmine, einen Runner wie Karma, Mock- und Spy-Mechanismen wie Sinon und ist so stabil wie Mocha. Vor Jest hat man vor jedem Projektstart erstmal kompliziert die verschiedenen Testframeworks gemischt, und konfiguriert. Das ist jetzt alles Geschichte. Jest ist in sekundenschnelle installiert und läuft sofort los. In Vorbereitung auf diesen Artikel habe ich das <a href="https://github.com/facebook/jest">Github-Repo</a> von Jest durchwühlt. Der erste Commit war am 14.05.2014 mit dem Titel &quot;FIRST!&quot;. Das erste Release ging mit der Version 0.4.0 einen Jahr später am 19.02.2015 an den Start. Seitdem hat es sich stetig weiterentwickelt. Stand heute befindet sich Jest bei Version 27.0.
+Ein besonderes Merkmal ist die Vielseitigkeit. Nicht nur, dass es all die Features der aufgelisteten Frameworks vereint, es ist auch mit den großen Web-Frameworks wie React, Angular, Vue, Svelte, StencilJS, Express, Playwright etc. kompatibel. Es führt einfach kein Weg an Jest vorbei :-)</p>
+<p><br>
+Testen von, durch und mit Javascript ist ein Thema, das jedem Web-Entwickler bekannt sein muss. In allen meinen Bewerbungsgesprächen habe ich danach gefragt. Sei es als Kandidat oder als Interviewer. Schockierend waren dabei immer die Ausreden, warum nicht getestet wurde. Dies hier sind meine drei Top Ausreden, bzw. Selbstlügen:</p>
+<ol>
+<li>Keine Zeit</li>
+<li>Machen wir später</li>
+<li>Zeitverschwendung (Kosten-Nutzen-Abwägung)</li>
+</ol>
+<p>Test-Schreiben bedeutet, dass man Code schreiben muss. Das dauert natürlich. Aber man erkauft sich dadurch Sicherheit, Wartbarkeit und die Möglichkeit für Refactorings. Tests haben mich bereits unzählige Male gerettet, weil sie Fehler sofort sichtbar machen. Ich war einmal in einem Projekt, das schon über ein Jahr lief und der Code bereits über 100.000 Zeilen gewachsen war. Keine Zeile war getestet. Eine Einarbeitung war nicht möglich, da keine Dokumentation vorhanden war. Also blieb uns nur das Wegschmeißen und ein Neustart.</p>
+<p>Ich kann nachvollziehen, dass das Einarbeiten in eine neue Technologie manchen Angst macht. Es benötigt etwas Zeit und Fleiß. Aber ich möchte an dieser Stelle helfen einen Einstieg zu bekommen.</p>
+<h4>Genug geredet, Hands on</h4>
+<p><strong>Installieren</strong></p>
+<pre class="language-js"><code class="language-js"><span class="highlight-line">npm install <span class="token operator">--</span>save<span class="token operator">-</span>dev jest</span>
+<span class="highlight-line"></span>
+<span class="highlight-line"><span class="token comment">// aus den Node-Modules heraus starten</span></span>
+<span class="highlight-line"><span class="token punctuation">.</span><span class="token operator">/</span>node_modules<span class="token operator">/</span><span class="token punctuation">.</span>bin<span class="token operator">/</span>jest <span class="token operator">--</span>init</span></code></pre>
+<p>Der zweite Befehlt startet einen Installations-Wizard, der die Konfiguration übernimmt. Am Ende entsteht eine Jest-Config-Datei <strong>jest.config.js</strong>.</p>
+<p><strong>Erster Test</strong></p>
+<pre><code>// index.spec.ts
+describe(&quot;My first test&quot;, () =&gt; {
+    test(&quot;is really&quot;, () =&gt; {
+        expect(true).toBe(true);
+    });
+
+    it(&quot;should be true&quot;, () =&gt; {
+        expect(true).toBe(true);
+    });
+});
+</code></pre>
+<p>Die Tests von Jest sind BDD (Behaviour Driven) aufgebaut. Man beschreibt Was passiert und welches Verhalten man sich &quot;erhofft&quot;. Der Code muss in eine Datei, die ein <strong>.spec.</strong> oder ein .<strong>test.</strong> im Dateinamen stehen hat.
+Der <em>describe</em> Block beschreibt das WAS (Modul, Komponente, Script). Dieses lässt sich beliebig Schachteln und so Subkomponenten, oder Subtests abbilden. Das Schlüsselwort <em>test</em> oder alternativ <em>it</em> beschreibt den eigentlichen Test. Für die Übersicht sollte man genau immer nur eine Sache, Funktion, Verhalten, etc. testen. Zum Einstieg haben ich keinen Code getestet. Der <em>expect</em>-Block beinhaltet den eigentlichen Vergleich. Dieser Block sagt dem Test, ob es erfolgreich war oder gescheitert ist. Der Parameter für den <em>expect</em>-Block bekommt einen Wert und muss dann durch eine Funktion verglichen werden. Konkret in diesem Beispiel durch <em>.toBe()</em>. Es gibt eine ganze Palette an <a href="https://jestjs.io/docs/expect">Vergleichfunktionen</a>. So gibts es z.B. <em>.toEqual()</em>, .<em>toBeFalsy</em> oder <em>.toBeNull()</em>.</p>
+<p>Führt man diesen Code nun aus, erhält man folgendes Bild:</p>
+<pre class="language-js"><code class="language-js"><span class="highlight-line"><span class="token comment">// über das package.json script</span></span>
+<span class="highlight-line">npm run test</span>
+<span class="highlight-line"></span>
+<span class="highlight-line"><span class="token comment">// oder</span></span>
+<span class="highlight-line">npm test</span></code></pre>
+<p><img src="/content/img/stenciljs-tutorial/jest-first.png" alt="jest in console" title="Erster Jest-Test"><div class="has-text-right image-subline">Bild 1: npm run test</div></p>
+<p>Man findet die Beschreibung des Tests und des Verhaltens. Der grüne Pfeil zeigt, dass alles durchgelaufen ist und das Verhalten stimmt. Zusätzlich gibt es eine sogenante <em>Code-Coverage</em>, die eine Statistik darstellt, welche Zeilen des zu testenden Codes durchlaufen und getestet wurden. Da wir keinen Code ausgeführt haben, steht überall eine 0.</p>
+<p>In der Realität werden nicht immer alle Tests durchlaufen. Fügen wir nun einen <em>failenden</em> Tests hinzu und führen diesen aus:</p>
+<pre class="language-js"><code class="language-js"><span class="highlight-line"><span class="token function">it</span><span class="token punctuation">(</span><span class="token string">"should be false"</span><span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">{</span></span>
+<span class="highlight-line">    <span class="token function">expect</span><span class="token punctuation">(</span><span class="token boolean">true</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">toBe</span><span class="token punctuation">(</span><span class="token boolean">false</span><span class="token punctuation">)</span><span class="token punctuation">;</span></span>
+<span class="highlight-line"><span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span></span></code></pre>
+<p><img src="/content/img/stenciljs-tutorial/jest-fail.png" alt="jest in console" title="Erster Jest-Test"><div class="has-text-right image-subline">Bild 2: failed</div></p>
+<p>Hier sehen wir nun, dass wir zwei erfolgreiche und einen fehlenden Test haben. In einer <a href="https://de.wikipedia.org/wiki/Kontinuierliche_Integration">CI/CD-Pipeline</a> würde der Build nun scheitern und die Entwickler würden benachrichtigt werden.</p>
+<p><strong>Echter Code</strong>
+Wir bauen einen kleinen Taschenrechner. Der Code soll unter nodeJS laufen und sieht aus wie folgt:</p>
+<pre class="language-js"><code class="language-js"><span class="highlight-line"><span class="token comment">// index.js</span></span>
+<span class="highlight-line"><span class="token keyword">const</span> <span class="token function-variable function">add</span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token parameter">a<span class="token punctuation">,</span> b</span><span class="token punctuation">)</span> <span class="token operator">=></span> a <span class="token operator">+</span> b<span class="token punctuation">;</span></span>
+<span class="highlight-line"></span>
+<span class="highlight-line"><span class="token keyword">const</span> <span class="token function-variable function">sub</span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token parameter">a<span class="token punctuation">,</span> b</span><span class="token punctuation">)</span> <span class="token operator">=></span> a <span class="token operator">-</span> b<span class="token punctuation">;</span></span>
+<span class="highlight-line"></span>
+<span class="highlight-line">module<span class="token punctuation">.</span>exports <span class="token operator">=</span> <span class="token punctuation">{</span></span>
+<span class="highlight-line">    add<span class="token punctuation">,</span></span>
+<span class="highlight-line">    sub<span class="token punctuation">,</span></span>
+<span class="highlight-line"><span class="token punctuation">}</span><span class="token punctuation">;</span></span></code></pre>
+<p>Der dazugehörige Test ist folgendermaßen aufgebaut:</p>
+<pre class="language-js"><code class="language-js"><span class="highlight-line"><span class="token comment">// index.spec.js</span></span>
+<span class="highlight-line"><span class="token function">describe</span><span class="token punctuation">(</span><span class="token string">"Mini-Calculator"</span><span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">{</span></span>
+<span class="highlight-line">    <span class="token function">test</span><span class="token punctuation">(</span><span class="token string">"should add two numbers"</span><span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">{</span></span>
+<span class="highlight-line">        <span class="token keyword">const</span> sum <span class="token operator">=</span> <span class="token function">add</span><span class="token punctuation">(</span><span class="token number">25</span><span class="token punctuation">,</span> <span class="token number">17</span><span class="token punctuation">)</span><span class="token punctuation">;</span></span>
+<span class="highlight-line">        <span class="token function">expect</span><span class="token punctuation">(</span>sum<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">toBe</span><span class="token punctuation">(</span><span class="token number">42</span><span class="token punctuation">)</span><span class="token punctuation">;</span></span>
+<span class="highlight-line">    <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span></span>
+<span class="highlight-line"></span>
+<span class="highlight-line">    <span class="token function">test</span><span class="token punctuation">(</span><span class="token string">"should sub two numbers"</span><span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">{</span></span>
+<span class="highlight-line">        <span class="token keyword">const</span> diff <span class="token operator">=</span> <span class="token function">sub</span><span class="token punctuation">(</span><span class="token number">59</span><span class="token punctuation">,</span> <span class="token number">17</span><span class="token punctuation">)</span><span class="token punctuation">;</span></span>
+<span class="highlight-line">        <span class="token function">expect</span><span class="token punctuation">(</span>diff<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">toBe</span><span class="token punctuation">(</span><span class="token number">42</span><span class="token punctuation">)</span><span class="token punctuation">;</span></span>
+<span class="highlight-line">    <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span></span>
+<span class="highlight-line"><span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span></span></code></pre>
+<p><img src="/content/img/stenciljs-tutorial/jest-first-code.png" alt="jest in console" title="Erster Jest-Test"><div class="has-text-right image-subline">Bild 3: Sub und Add-Test</div></p>
+<p>Wie man sieht, rechnen die Funktionen wie sie sollen. Möchte man nun noch weitere Eck-Fälle testen würden man die Testblöcke kopieren, den Text und die Testdaten anpassen. Leider erhält man so sehr viel redundanten Code. Dazu hat Jest auch die richtige Lösung: <strong>it.each</strong>.</p>
+<pre class="language-js"><code class="language-js">test<span class="token punctuation">.</span>each<span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">
+<span class="highlight-line">    summe | summand | expected</span>
+<span class="highlight-line">    </span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span><span class="token number">1</span><span class="token interpolation-punctuation punctuation">}</span></span><span class="token string">  | </span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span><span class="token number">8</span><span class="token interpolation-punctuation punctuation">}</span></span><span class="token string">    | </span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span><span class="token number">9</span><span class="token interpolation-punctuation punctuation">}</span></span><span class="token string"></span>
+<span class="highlight-line">    </span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span><span class="token number">2</span><span class="token interpolation-punctuation punctuation">}</span></span><span class="token string">  | </span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span><span class="token number">9</span><span class="token interpolation-punctuation punctuation">}</span></span><span class="token string">    | </span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span><span class="token number">11</span><span class="token interpolation-punctuation punctuation">}</span></span><span class="token string"></span>
+<span class="highlight-line">    </span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span><span class="token number">3</span><span class="token interpolation-punctuation punctuation">}</span></span><span class="token string">  | </span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span><span class="token number">10</span><span class="token interpolation-punctuation punctuation">}</span></span><span class="token string">   | </span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span><span class="token number">13</span><span class="token interpolation-punctuation punctuation">}</span></span><span class="token string"></span>
+<span class="highlight-line">    </span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span><span class="token number">4</span><span class="token interpolation-punctuation punctuation">}</span></span><span class="token string">  | </span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span><span class="token number">11</span><span class="token interpolation-punctuation punctuation">}</span></span><span class="token string">   | </span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span><span class="token number">14</span><span class="token interpolation-punctuation punctuation">}</span></span><span class="token string"></span>
+<span class="highlight-line">    </span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span><span class="token number">5</span><span class="token interpolation-punctuation punctuation">}</span></span><span class="token string">  | </span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span><span class="token number">12</span><span class="token interpolation-punctuation punctuation">}</span></span><span class="token string">   | </span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span><span class="token number">17</span><span class="token interpolation-punctuation punctuation">}</span></span><span class="token string"></span>
+<span class="highlight-line">    </span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span><span class="token number">6</span><span class="token interpolation-punctuation punctuation">}</span></span><span class="token string">  | </span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span><span class="token number">13</span><span class="token interpolation-punctuation punctuation">}</span></span><span class="token string">   | </span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span><span class="token number">19</span><span class="token interpolation-punctuation punctuation">}</span></span><span class="token string"></span>
+<span class="highlight-line">    </span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span><span class="token number">7</span><span class="token interpolation-punctuation punctuation">}</span></span><span class="token string">  | </span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span><span class="token number">14</span><span class="token interpolation-punctuation punctuation">}</span></span><span class="token string">   | </span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span><span class="token number">21</span><span class="token interpolation-punctuation punctuation">}</span></span><span class="token string"></span>
+</span><span class="token template-punctuation string">`</span></span><span class="token punctuation">(</span><span class="token string">"should add $summe to $summand"</span><span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token parameter"><span class="token punctuation">{</span> summe<span class="token punctuation">,</span> summand<span class="token punctuation">,</span> expected <span class="token punctuation">}</span></span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">{</span>
+<span class="highlight-line">    <span class="token function">expect</span><span class="token punctuation">(</span><span class="token function">add</span><span class="token punctuation">(</span>summe<span class="token punctuation">,</span> summand<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">toBe</span><span class="token punctuation">(</span>expected<span class="token punctuation">)</span><span class="token punctuation">;</span></span>
+<span class="highlight-line"><span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span></span></code></pre>
+<p>Der Code zeigt den schleifenartigen Aufbau. Man erspart sich viel Redundanz. &quot;summe&quot;, &quot;summand&quot; und &quot;expected&quot; definieren die Variablen. Diese müssen genauso heißen, wie im Tabellenkopf angegeben. Dann hat man im Test-Body zugriff auf die Werte und kann einen <em>expect</em>-Ausdruck darum bauen. In der Beschreibung werden die Werte über das <em>$</em>-Prefix referenziert. Führt man diesen Block nun aus, erhält man folgendes Bild:</p>
+<p><img src="/content/img/stenciljs-tutorial/it.each.png" alt="it each" title="Erster Jest-Test"><div class="has-text-right image-subline">Bild 4: each</div></p>
+<p>In der Konsole wird jeder Fall leserlich aufgelistet. Ich habe mich verzählt und einer der Fälle schlägt fehl. Ich kann die Testwerte ablesen und so meinen Code überprüfen. Außerdem wird mir die Dauer der Ausführung angezeigt. So könnte man auch versuchen die Performance zu verbessern.</p>
+<p>Dies war eine kleine und schnelle Einführung in Jest. Es kratzt nur an der Oberfläche der Möglichkeiten und Fähigkeiten dieses Frameworks. Wer es noch nie ausprobiert hat, sollte es jetzt tun. Zur Übung lade ich euch weitere Tests und weiteren Code zu schreiben. Es gibt noch einige Grundrechenarten zum Spielen. Ihr könntet die Multiplikation und Division dem Mini-Taschenrechner beibringen.</p>
+<p>Im nächsten Artikel nehme ich dann Bezug zu meinem StencilJS-Projekt.</p>
+<p>Der Code hierzu liegt auf <a href="https://github.com/derKuba/stenciljs-tutorial/tree/main/jest">Github</a>.</p>
+<p>Ihr habt Fragen oder Anregungen? Schreibt mir bei <a href="https://twitter.com/der_kuba">Twitter</a>.
+<br>
+<br>
+Tausend Dank fürs Lesen!</p>
+<p>Kuba</p>
+
+            <hr>
+              <ul class="post-navigation">
+                  <li>Nächster Artikel:
+                    <a href="/posts/stenciljs/adress-app-tests/">StencilJS-Tutorial: Real World Unit Tests</a>
+                  </li>
+                
+                  <li>Vorheriger Artikel:
+                    <a href="/posts/stenciljs/address-app/">StencilJS-Tutorial: das Adressbuch</a>
+                  </li>
+                
+              </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+        <!-- Current page: /posts/stenciljs/jest-intro/ -->
+        <footer class="footer">
+    <hr/>
+    <div class="content has-text-centered">
+        <p>
+            der_kuba - 2021-2024 -
+            <a href="/content/impressum.html">Impressum</a>
+            -
+            <a href="/content/datenschutz.html">Datenschutzerklärung</a>
+        </p>
+    </div>
+</footer>
+    </body>
+</html>

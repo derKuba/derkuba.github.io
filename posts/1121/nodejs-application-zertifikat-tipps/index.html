@@ -1,0 +1,386 @@
+<!doctype html>
+<html lang="de">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1"/>
+        <title>Nodejs Zertifizierung(JSNAD) Tipps</title>
+        <meta name="description" content="OpenJS Node.js Application Developer  (JSNAD)">
+        <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+        <link rel="alternate" href="/feed/feed.xml" type="application/atom+xml" title="der_kuba">
+        <link rel="alternate" href="/feed/feed.json" type="application/json" title="der_kuba">
+        <link rel="stylesheet" href="/assets/css/prism.css">
+        <link rel="stylesheet" href="/assets/css/bulma.css">
+        <link rel="stylesheet" href="/assets/css/custom.css">
+        <script>
+            document.addEventListener("DOMContentLoaded", () => {
+                const e = Array
+                    .prototype
+                    .slice
+                    .call(document.querySelectorAll(".navbar-burger"), 0);
+                e.length > 0 && e.forEach(e => {
+                    e.addEventListener("click", () => {
+                        const t = e.dataset.target,
+                            a = document.getElementById(t);
+                        e.classList.toggle("is-active"),
+                        a.classList.toggle("is-active")
+                    })
+                })
+                const disableDarkMode = () => {
+                    const bodyNode = document.querySelector("body");
+                    bodyNode
+                        .classList
+                        .remove("dark-mode")
+                        localStorage
+                        .setItem('darkMode', 'disabled');
+                }
+                const enableDarkMode = () => {
+                    const bodyNode = document.querySelector("body");
+                    bodyNode
+                        .classList
+                        .add("dark-mode")
+                        localStorage
+                        .setItem('darkMode', 'enabled');
+                }
+                const button = document.getElementById("darkmode");
+                button.addEventListener("click", () => {
+                    const bodyNode = document.querySelector("body");
+                    if (bodyNode.classList.contains("dark-mode")) {
+                        disableDarkMode();
+                    } else {
+                        enableDarkMode();
+                    }
+                })
+                if (localStorage.getItem('darkMode') === 'enabled') {
+                    enableDarkMode();
+                }
+            });
+        </script>
+    </head>
+    <body><header>
+    <div class="container">
+        <nav class="navbar">
+            <div class="navbar-brand">
+                <a class="navbar-item navbar-brand__title " href="/">
+                    der_kuba
+                </a>
+                <a class="navbar-item" href="https://github.com/derKuba">
+                    @Github
+                </a>
+                <a class="navbar-item" href="https://twitter.com/der_kuba">
+                    @Twitter
+                </a>
+                <a class="navbar-item" href="https://www.linkedin.com/in/jacob-pawlik-08a40015b/">
+                    @LinkedIn
+                </a>
+                <div class="navbar-burger" data-target="navigation-items">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+            <div id="navigation-items" class="navbar-menu">
+                <div class="navbar-end">
+                    
+                        <a class="navbar-item " href="/">
+                            Home
+                        </a>
+                        <a class="navbar-item " href="/posts/">
+                            Archiv
+                        </a>
+                        <a class="navbar-item " href="/about/">
+                            About Me
+                        </a>
+                        <a class="navbar-item " href="/en/">
+                            English
+                        </a>
+                        <a class="navbar-item " href="/content/impressum.html">
+                            Impressum
+                        </a>
+                        <a class="navbar-item " href="/content/datenschutz.html">
+                            Datenschutzerklärung
+                        </a>
+                    <button id="darkmode" alt="dark mode">
+                        <svg width="30" height="30">
+                            <circle cx="15" cy="15" r="6" fill="currentColor"/>
+                            <line id="ray" stroke="currentColor" stroke-width="2" stroke-linecap="round" x1="15" y1="1" x2="15" y2="4"></line>
+                            <use href="#ray" transform="rotate(45 15 15)"/>
+                            <use href="#ray" transform="rotate(90 15 15)"/>
+                            <use href="#ray" transform="rotate(135 15 15)"/>
+                            <use href="#ray" transform="rotate(180 15 15)"/>
+                            <use href="#ray" transform="rotate(225 15 15)"/>
+                            <use href="#ray" transform="rotate(270 15 15)"/>
+                            <use href="#ray" transform="rotate(315 15 15)"/>
+                        </svg>
+                    </button>
+                    <!-- special thanks to https://www.freecodecamp.org/news/how-to-handle-dark-mode-with-css-and-javascript/ -->
+                </div>
+            </div>
+        </nav>
+    </div>
+</header>
+        
+<section class="section">
+  <div class="container">
+    <div class="columns is-centered">
+      <div class="column is-8">
+        <h1 class="title is-3">Nodejs Zertifizierung(JSNAD) Tipps</h1>
+        <div class="post-detail__tags">
+          <h3 class="subtitle is-6">
+            <time datetime="2021-11-27">
+              27 Nov 2021
+            </time>
+          </h3>
+          <div class="tags"><a href="/tags/nodejs/" class="post-tag">
+                <span class="tag is-black">
+                  Nodejs
+                </span>
+              </a><a href="/tags/zertifizierung/" class="post-tag">
+                <span class="tag is-primary">
+                  Zertifizierung
+                </span>
+              </a>
+          </div>
+        </div>
+        <div class="content post_detail__content">
+          <div class="language-hint">
+            
+          </div>
+          <p>Du möchtest die JSNAD Zertifizierung und brauchst ein paar Tipps? Dann bist du hier genau richtig. Ich habe diese Zertifizierung abgelegt und möchte hier meine Strategie erklären.<!-- endOfPreview -->
+Am Anfang würde ich die Leute unterteilen, die die Kosten selber tragen müssen und die die es bezahlt bekommen. Letzteren empfehle ich das gesamte Paket mit Kurs zu buchen und ersteren eben nicht. Wenn man sich die <a href="https://training.linuxfoundation.org/certification/jsnad/">Webeite</a> anschaut, bekommt man auch den genauen Überblick über die Themen und die Gewichtung. Aufmerksame Leser erkennen direkt, dass es sich zum größten Teil um die Überschriften aus der <a href="https://nodejs.org/dist/latest-v16.x/docs/api/">offiziellen Nodejs-Dokumentation</a> (hab die 16er Doku als Beispiel verlinkt) handelt.</p>
+<hr/>
+<h4><strong><a href="https://nodejs.org/dist/latest-v16.x/docs/api/buffer.html">Buffer</a></strong>, <strong><a href="https://nodejs.org/dist/latest-v16.x/docs/api/stream.html">Streams</a></strong></h4>
+<ul>
+<li>Was sind Buffer und wie funktionieren sie?</li>
+<li>Wie erzeugt man sie?</li>
+<li>Wohin kann man sie transformieren?</li>
+</ul>
+<p><em>Aufgaben</em></p>
+<ul>
+<li>Instanziiere Buffer.</li>
+<li>Lese und Schreibe die verschiedenen Datentype.</li>
+<li>Spiele mit den verschiedenen Methoden der Dokumentation.</li>
+</ul>
+<hr/>
+<h4><strong>Kontrollfluss</strong></h4>
+<p><em>Inhalt</em></p>
+<p>Empfehle diese Docs zu lesen:
+https://nodejs.org/dist/latest-v16.x/docs/api/globals.html
+https://developer.mozilla.org/de/docs/Web/JavaScript/Reference/Global_Objects/Promise</p>
+<ul>
+<li>Wie funktionieren Callbacks, Promises?</li>
+</ul>
+<p><em>Aufgaben</em></p>
+<ul>
+<li>Erzeuge eine Kette von Callbacks.</li>
+<li>Erzeuge einen Promise und fange die Fehler ab.</li>
+<li>Stoppe einen laufenden Promise.</li>
+</ul>
+<hr/>
+<h4><strong><a href="https://nodejs.org/dist/latest-v16.x/docs/api/child_process.html">Child Processes</a></strong></h4>
+<p><em>Inhalt</em></p>
+<ul>
+<li>Wie erzeuge ich aus node heraus einen child process ( wie führe ich mit nodejs weitere Anwendungen aus)?</li>
+<li>Welche verschiedenen Typen gibt es und was macht den Unterschied aus?</li>
+<li>Welche Optionen gibt es?</li>
+<li>Wie komme ich an die logs / den output heran?</li>
+</ul>
+<p><em>Aufgaben</em></p>
+<ul>
+<li>Erzeuge einen solchen <em>process</em> und gebe die Ergebnisse auf der Konsole aus.</li>
+</ul>
+<hr/>
+<h4><strong><a href="https://nodejs.org/dist/latest-v16.x/docs/api/debugger.html">Debugging</a></strong></h4>
+<p><em>Inhalt</em></p>
+<ul>
+<li>Wie bringe ich nodejs in den <em>debug</em>-Modus?</li>
+<li>Wie verknüpfe ich Chrome mit nodejs?</li>
+<li>Wie halte ich an Breakpoints an?</li>
+</ul>
+<p><em>Aufgaben</em></p>
+<ul>
+<li>Löse die oberen Fragen :-)</li>
+</ul>
+<hr/>
+<h4><strong><a href="https://nodejs.org/dist/latest-v16.x/docs/api/errors.html">Error Handling</a></strong></h4>
+<p><em>Inhalt</em></p>
+<ul>
+<li>Welche Fehler gibt es?</li>
+<li>Wie und wann werden sie geworfen?</li>
+<li>Wie wirft man sie programmatisch?</li>
+<li>Wie fängt man sie ab?</li>
+</ul>
+<p><em>Aufgaben</em></p>
+<ul>
+<li>Fange Fehler aus Promises ab.</li>
+<li>Schreib einen eigenen Fehler.</li>
+<li>Versuche in Abhängigkeit des Fehlertyps eine andere Fehlermeldung zu werfen.</li>
+</ul>
+<hr/>
+<h4><strong><a href="https://nodejs.org/dist/latest-v16.x/docs/api/cli.html">Node.js CLI</a></strong></h4>
+<p><em>Inhalt</em></p>
+<ul>
+<li>Welche Kommandozeilenparameter gibt es?</li>
+<li>Wie lade ich Abhängigkeiten vor dem Ausführen?</li>
+<li>Wie überprüfe ich die Syntax ohne das Programm auszuführen?</li>
+</ul>
+<p><em>Aufgaben</em></p>
+<ul>
+<li>Löse die oberen Fragen :-)</li>
+</ul>
+<hr/>
+<h4><strong><a href="https://nodejs.org/dist/latest-v16.x/docs/api/events.html">Events</a></strong></h4>
+<p><em>Inhalt</em></p>
+<ul>
+<li>Was sind Events?</li>
+<li>Welche feste Typen gibt es?</li>
+<li>Wie werfe ich sie?</li>
+<li>Wie reagiere ich auf sie?</li>
+<li>Wie sorge ich dafür, dass der Listener ganz oben steht oder nur einmal ausgeführt wird?</li>
+</ul>
+<p><em>Aufgaben</em></p>
+<ul>
+<li>Erzeuge einen Event und reagiere auf die verschiedenen Typen.</li>
+<li>Spiele mit den weiteren Methoden.</li>
+</ul>
+<hr/>
+<h4><strong><a href="https://nodejs.org/dist/latest-v16.x/docs/api/fs.html">File System</a></strong></h4>
+<p><em>Inhalt</em></p>
+<ul>
+<li>Wie schreibe ich Dateien?</li>
+<li>Wie lese ich Dateien?</li>
+<li>Was ist der Unterschied zwischen Synchron, Asynchron?</li>
+<li>Wie lese und unterscheide ich Verzeichnisse?</li>
+<li>Wie erkenne ich welche Datei neu oder geändert wurde?</li>
+</ul>
+<p><em>Aufgaben</em></p>
+<ul>
+<li>Löse die oberen Fragen :-)</li>
+</ul>
+<hr/>
+<h4><strong>JavaScript Prerequisites</strong></h4>
+<p>https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Objects
+https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Objects/Object_prototypes</p>
+<p><em>Inhalt</em></p>
+<ul>
+<li>Wie sind Objekte aufgebaut?</li>
+<li>Wie funktioniert Vererbung?</li>
+<li>Wie hat sich die Vererbung syntaktisch verändert?</li>
+<li>Wie funktionieren Callbacks und Closures?</li>
+</ul>
+<p><em>Aufgaben</em></p>
+<ul>
+<li>Erzeuge eine Kette von Objekten, die ihre Eigenschaften/Methoden vererben.</li>
+<li>Erzeuge eine Funktion, die eine Funktion zurückgibt.</li>
+</ul>
+<hr/>
+<h4><strong>Module system</strong></h4>
+<p>https://nodejs.org/dist/latest-v16.x/docs/api/modules.html
+https://nodejs.org/dist/latest-v16.x/docs/api/esm.html
+https://nodejs.org/dist/latest-v16.x/docs/api/module.html
+https://nodejs.org/dist/latest-v16.x/docs/api/packages.html</p>
+<p><em>Inhalt</em></p>
+<ul>
+<li>Was sind Module?</li>
+<li>Welche Typen gibt es?</li>
+<li>Wie exportiere ich meine Objekte, Funktionen?</li>
+</ul>
+<p><em>Aufgaben</em></p>
+<ul>
+<li>Schreibe eine Funktion, exportiere sie und importiere sie in einer weiteren Datei.</li>
+</ul>
+<hr/>
+<h4><strong>Process/Operating System</strong></h4>
+<p>https://nodejs.org/dist/latest-v16.x/docs/api/os.html
+https://nodejs.org/dist/latest-v16.x/docs/api/process.html</p>
+<p><em>Inhalt</em></p>
+<ul>
+<li>Wie zeige ich das Betriebssystem an?</li>
+<li>Wie beende ich den Process?</li>
+<li>Wie zeige ich Statistiken an?</li>
+</ul>
+<p><em>Aufgaben</em></p>
+<ul>
+<li>Löse die oberen Fragen :-)</li>
+</ul>
+<hr/>
+<h4><strong>Package.json</strong></h4>
+<p>https://docs.npmjs.com/cli/v8/configuring-npm/package-json
+https://semver.npmjs.com/</p>
+<p><em>Inhalt</em></p>
+<ul>
+<li>Was ist Semver und wie funktioniert es?</li>
+<li>Wie installiere ich welche Version?</li>
+<li>Was ist der Unterschied zwischen den Zeichen ~,^. &gt;,&lt;, etc.</li>
+<li>Wie installiere ich nur Major, Minor und/oder Patches?</li>
+</ul>
+<p><em>Aufgaben</em></p>
+<ul>
+<li>Spiele mit dem semver-calculator.</li>
+</ul>
+<hr/>
+<h4><strong>Unit Testing</strong></h4>
+<p>https://jestjs.io/
+https://derkuba.de/content/posts/stenciljs/jest-intro/
+https://nodejs.org/dist/latest-v16.x/docs/api/assert.html</p>
+<p><em>Inhalt</em></p>
+<ul>
+<li>Wie schreibt man Unit-Tests?</li>
+<li>Wie testet man auf geworfene Fehler?</li>
+<li>Wie geht man mit Callbacks um ?</li>
+<li>Wie geht man mit Promises um?</li>
+</ul>
+<p><em>Aufgaben</em></p>
+<ul>
+<li>Löse die oberen Fragen :-)</li>
+</ul>
+<hr/>
+<h4>Vorgehen</h4>
+<p>Ich war im ersten Anlauf schlecht vorbereitet, weil ich nicht wusste was mich erwartet. Aber man hat zwei Versuche für die Prüfung. Um nicht unnötig etwas auswendig zu lernen und Zeit zu verschwenden, bin ich einfach in die erste Prüfung gegangen. Mit den Erfahrungen aus der ersten Prüfung stand einem erfolgreichen Abschluss im zweiten Anlauf nichts im Weg. Dies würde ich auch jedem so raten.</p>
+<p>Wenn man bestanden hat bekommt man eine PDF mit folgendem Inhalt:</p>
+<p><img src="/img/1121/zert.png" alt="Dateiauswahl" title="Dateiauswahl"><div class="has-text-right image-subline">Bild 1: Mein Zertifikat</div></p>
+<p>Dort ist eine Nummer aufgeführt, die man in einen <a href="https://training.linuxfoundation.org/certification/verify/">Service der Linux-Foundation</a> eingeben kann und bestätigt bekommt, dass es noch gültig ist:</p>
+<pre class="language-ts"><code class="language-ts"><span class="highlight-line">Owner<span class="token operator">:</span> Jacob Pawlik</span>
+<span class="highlight-line">Certification<span class="token operator">:</span> OpenJS Node<span class="token punctuation">.</span>js Application Developer</span>
+<span class="highlight-line">Date <span class="token keyword">of</span> Certification Achievement<span class="token operator">:</span> <span class="token number">2021</span><span class="token operator">-</span><span class="token number">11</span><span class="token operator">-</span><span class="token number">26</span></span>
+<span class="highlight-line">Status<span class="token operator">:</span> Active</span></code></pre>
+<hr/>
+<h4>Fazit</h4>
+<p>Wenn man mit allen Inhalten und Aufgaben was anfangen kann, dann ist man bereit für die Prüfung.</p>
+<p>Mit diesem Wissen sollte jedem diese Prüfung gelingen.</p>
+<p>Ihr habt Fragen oder Anregungen? Schreibt mir bei <a href="https://twitter.com/der_kuba">Twitter</a>.</p>
+<p><br>
+Tausend Dank fürs Lesen!</p>
+<p>Kuba</p>
+
+            <hr>
+              <ul class="post-navigation">
+                  <li>Nächster Artikel:
+                    <a href="/posts/1221/ios-safari-pdf-im-neuen-tab/">IOS &amp; Safari: Öffne PDF im neuen Tab</a>
+                  </li>
+                
+                  <li>Vorheriger Artikel:
+                    <a href="/posts/1121/nodejs-application-zertifikat/">Meine Erfahrung mit der Nodejs Zertifizierung</a>
+                  </li>
+                
+              </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+        <!-- Current page: /posts/1121/nodejs-application-zertifikat-tipps/ -->
+        <footer class="footer">
+    <hr/>
+    <div class="content has-text-centered">
+        <p>
+            der_kuba - 2021-2024 -
+            <a href="/content/impressum.html">Impressum</a>
+            -
+            <a href="/content/datenschutz.html">Datenschutzerklärung</a>
+        </p>
+    </div>
+</footer>
+    </body>
+</html>

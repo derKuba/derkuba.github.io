@@ -1,0 +1,213 @@
+<!doctype html>
+<html lang="de">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1"/>
+        <title>Planning 2: Process for Devs</title>
+        <meta name="description" content="A successful and satisfying Planning 2">
+        <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+        <link rel="alternate" href="/feed/feed.xml" type="application/atom+xml" title="der_kuba">
+        <link rel="alternate" href="/feed/feed.json" type="application/json" title="der_kuba">
+        <link rel="stylesheet" href="/assets/css/prism.css">
+        <link rel="stylesheet" href="/assets/css/bulma.css">
+        <link rel="stylesheet" href="/assets/css/custom.css">
+        <script>
+            document.addEventListener("DOMContentLoaded", () => {
+                const e = Array
+                    .prototype
+                    .slice
+                    .call(document.querySelectorAll(".navbar-burger"), 0);
+                e.length > 0 && e.forEach(e => {
+                    e.addEventListener("click", () => {
+                        const t = e.dataset.target,
+                            a = document.getElementById(t);
+                        e.classList.toggle("is-active"),
+                        a.classList.toggle("is-active")
+                    })
+                })
+                const disableDarkMode = () => {
+                    const bodyNode = document.querySelector("body");
+                    bodyNode
+                        .classList
+                        .remove("dark-mode")
+                        localStorage
+                        .setItem('darkMode', 'disabled');
+                }
+                const enableDarkMode = () => {
+                    const bodyNode = document.querySelector("body");
+                    bodyNode
+                        .classList
+                        .add("dark-mode")
+                        localStorage
+                        .setItem('darkMode', 'enabled');
+                }
+                const button = document.getElementById("darkmode");
+                button.addEventListener("click", () => {
+                    const bodyNode = document.querySelector("body");
+                    if (bodyNode.classList.contains("dark-mode")) {
+                        disableDarkMode();
+                    } else {
+                        enableDarkMode();
+                    }
+                })
+                if (localStorage.getItem('darkMode') === 'enabled') {
+                    enableDarkMode();
+                }
+            });
+        </script>
+    </head>
+    <body><header>
+    <div class="container">
+        <nav class="navbar">
+            <div class="navbar-brand">
+                <a class="navbar-item navbar-brand__title " href="/">
+                    der_kuba
+                </a>
+                <a class="navbar-item" href="https://github.com/derKuba">
+                    @Github
+                </a>
+                <a class="navbar-item" href="https://twitter.com/der_kuba">
+                    @Twitter
+                </a>
+                <a class="navbar-item" href="https://www.linkedin.com/in/jacob-pawlik-08a40015b/">
+                    @LinkedIn
+                </a>
+                <div class="navbar-burger" data-target="navigation-items">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+            <div id="navigation-items" class="navbar-menu">
+                <div class="navbar-end">
+                    
+                        <a class="navbar-item " href="/">
+                            Home
+                        </a>
+                        <a class="navbar-item " href="/posts/">
+                            Archiv
+                        </a>
+                        <a class="navbar-item " href="/about/">
+                            About Me
+                        </a>
+                        <a class="navbar-item " href="/en/">
+                            English
+                        </a>
+                        <a class="navbar-item " href="/content/impressum.html">
+                            Impressum
+                        </a>
+                        <a class="navbar-item " href="/content/datenschutz.html">
+                            Datenschutzerklärung
+                        </a>
+                    <button id="darkmode" alt="dark mode">
+                        <svg width="30" height="30">
+                            <circle cx="15" cy="15" r="6" fill="currentColor"/>
+                            <line id="ray" stroke="currentColor" stroke-width="2" stroke-linecap="round" x1="15" y1="1" x2="15" y2="4"></line>
+                            <use href="#ray" transform="rotate(45 15 15)"/>
+                            <use href="#ray" transform="rotate(90 15 15)"/>
+                            <use href="#ray" transform="rotate(135 15 15)"/>
+                            <use href="#ray" transform="rotate(180 15 15)"/>
+                            <use href="#ray" transform="rotate(225 15 15)"/>
+                            <use href="#ray" transform="rotate(270 15 15)"/>
+                            <use href="#ray" transform="rotate(315 15 15)"/>
+                        </svg>
+                    </button>
+                    <!-- special thanks to https://www.freecodecamp.org/news/how-to-handle-dark-mode-with-css-and-javascript/ -->
+                </div>
+            </div>
+        </nav>
+    </div>
+</header>
+        
+<section class="section">
+  <div class="container">
+    <div class="columns is-centered">
+      <div class="column is-8">
+        <h1 class="title is-3">Planning 2: Process for Devs</h1>
+        <div class="post-detail__tags">
+          <h3 class="subtitle is-6">
+            <time datetime="2022-12-28">
+              28 Dec 2022
+            </time>
+          </h3>
+          <div class="tags"><a href="/tags/agile/" class="post-tag">
+                <span class="tag is-black">
+                  Agile
+                </span>
+              </a><a href="/tags/scrum/" class="post-tag">
+                <span class="tag is-primary">
+                  Scrum
+                </span>
+              </a>
+          </div>
+        </div>
+        <div class="content post_detail__content">
+          <div class="language-hint">
+            
+              <a href="/posts/1222/agile/planning2">Auf Deutsch lesen</a>
+            
+          </div>
+          <p>Every time I meet someone who says they work in an agile team using Scrum, I ask about Planning 2. <!-- endOfPreview --> My personal statistics (my surveys are of course not representative) show that in 9 out of 10 cases, it is skipped. I then ask further about the &quot;why,&quot; and in most cases, the answer is that they are not even aware of the existence of this ceremony. To be fair, the <a href="https://scrumguides.org/scrum-guide.html#sprint-planning">official Scrum Guide</a> is somewhat vague in this regard and does not distinguish between Planning 1 and Planning 2. There is a common and shared timebox.</p>
+<p>I don’t want to start a discussion, but simply describe a helpful tool. It serves as an impulse for your next Planning 2!</p>
+<h2>What is the difference?</h2>
+<p>My team and I have transformed it from the initial &quot;we just write down the tasks&quot; to a proper ceremony. But how do you distinguish the first from the second planning:</p>
+<p><img src="/img/1222/what.png" alt="What is Planning 2" title="What is Planning 2"></p>
+<p>In the first part, everyone gathers: Product Owner, Business Analyst, Developers, QA, UI/UX, domain experts, etc. The &quot;what&quot; is clarified. It’s about scope. Which stories/tickets will be taken into the next sprint? It’s done by consensus. A commitment is made.</p>
+<p>For Planning 2, these stories serve as the basis. Now, the focus is on how to technically and specifically solve the issue. All questions should already have been clarified during refinement. My personal experience shows that usually, the same people speak and think in these sessions :-) I’m not one of them.</p>
+<p>Now is the right time to rethink everything, ask questions, and then collectively define a solution path. But how do you proceed? I recommend a process that can be repeated over and over again:</p>
+<p><img src="/img/1222/ceremony.png" alt="How does it work?" title="How does it work?"></p>
+<h2>How does it work?</h2>
+<p>Before each round, someone should be designated to present. This person presents their results, takes notes, groups, etc. A Scrum Master can certainly help. For better processing, I recommend using some kind of board (virtual or analog), along with pen and paper.</p>
+<h3>1. Understand</h3>
+<p>The board is divided, and the first ticket is opened. First, the team begins by understanding. Each participant reads the requirements and tries to grasp the main idea. Open questions are answered, the requirements are possibly refined, and/or acceptance criteria are added. In the end, everyone has &quot;almost&quot; the same understanding of the topic.</p>
+<h3>2. Plan</h3>
+<p>In the next step, a timebox is agreed upon. Maybe 3-5 minutes, depending on the size and scope of the ticket. Each person thinks for themselves how the story can be broken down into meaningful, small tasks, and writes them down.</p>
+<h5>Example</h5>
+<p>Let’s take a form as an example story. A new input field for age is to be added.</p>
+<p>At this point, inexperienced colleagues often say that there’s only one task to complete: adding the field. But with a little more thought, several more tasks come to mind. I always recommend dividing tasks in a way that they could theoretically be implemented in parallel by multiple people:</p>
+<p>You need to add a new field to the UI, extend the data model, write the backend integration, possibly extend the database, write tests, etc.</p>
+<p>With this, we have a good basis for the next step.</p>
+<h3>3. Discuss</h3>
+<p>The collected points are now presented by the chosen presenter. This role changes with each story, so everyone gets a turn. The presenter explains their collected points. Additional points from other participants can be gathered, discussed, dependencies clarified, and an order of tasks is defined. Often, there’s a sense of satisfaction when others come up with the same points. Even more so when additional points are raised that you hadn’t thought of.</p>
+<h3>4. Agreement</h3>
+<p>In the final step, everyone should agree that a clear path through the story has been found. If not, take a step back and discuss again. The goal is for everyone to follow the same development path. Of course, that’s not always the case, but the plan can be adjusted during the daily meetings. No one starts aimlessly anymore, only to realize after a few days that they’ve gone off track. Now, you can write down the collected tasks as sub-tasks and move on to the next story. Alternatively, sometimes we write all sub-tasks at the end.</p>
+<h2>Conclusion</h2>
+<p>With this method, you force yourself to review and rethink the current sprint you’ve committed to in detail. Everyone is involved. Even the quieter members of the team get a chance to speak. In the end, everyone shares the same plan for the sprint, and it no longer matters who takes which story. There is consensus, and there is a plan. Especially inexperienced and disorganized colleagues ;-) are involved and guided. This can significantly shorten the retrospective.</p>
+<p>Over time, this ceremony also becomes shorter. My team and I have saved a lot of time, discussion, and nerves using this method.</p>
+<p>Do you have any questions or suggestions? Feel free to contact me on <a href="https://twitter.com/der_kuba">Twitter</a> or <a href="https://www.linkedin.com/in/jacob-pawlik-08a40015b/">LinkedIn</a>.
+<br>
+Thank you so much for reading!</p>
+<p>Kuba</p>
+
+            <hr>
+              <ul class="post-navigation">
+                  <li>Nächster Artikel:
+                    <a href="/posts/0123/contract-test/">Contract-Testing mit hurl</a>
+                  </li>
+                
+                  <li>Vorheriger Artikel:
+                    <a href="/posts/1222/agile/planning2/">Planning 2: Ablauf für Devs</a>
+                  </li>
+                
+              </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+        <!-- Current page: /posts/en/1222/agile/planning2/ -->
+        <footer class="footer">
+    <hr/>
+    <div class="content has-text-centered">
+        <p>
+            der_kuba - 2021-2024 -
+            <a href="/content/impressum.html">Impressum</a>
+            -
+            <a href="/content/datenschutz.html">Datenschutzerklärung</a>
+        </p>
+    </div>
+</footer>
+    </body>
+</html>
