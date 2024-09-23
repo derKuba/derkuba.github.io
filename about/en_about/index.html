@@ -1,0 +1,169 @@
+<!doctype html>
+<html lang="de">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1"/>
+        <title>Hi...</title>
+        <meta name="description" content="IT Blog mit Tipps und Tricks aus dem Arbeitsalltag eines Software-Enwicklers">
+        <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+        <link rel="alternate" href="/feed/feed.xml" type="application/atom+xml" title="der_kuba">
+        <link rel="alternate" href="/feed/feed.json" type="application/json" title="der_kuba">
+        <link rel="stylesheet" href="/assets/css/prism.css">
+        <link rel="stylesheet" href="/assets/css/bulma.css">
+        <link rel="stylesheet" href="/assets/css/custom.css">
+        <script>
+            document.addEventListener("DOMContentLoaded", () => {
+                const e = Array
+                    .prototype
+                    .slice
+                    .call(document.querySelectorAll(".navbar-burger"), 0);
+                e.length > 0 && e.forEach(e => {
+                    e.addEventListener("click", () => {
+                        const t = e.dataset.target,
+                            a = document.getElementById(t);
+                        e.classList.toggle("is-active"),
+                        a.classList.toggle("is-active")
+                    })
+                })
+                const disableDarkMode = () => {
+                    const bodyNode = document.querySelector("body");
+                    bodyNode
+                        .classList
+                        .remove("dark-mode")
+                        localStorage
+                        .setItem('darkMode', 'disabled');
+                }
+                const enableDarkMode = () => {
+                    const bodyNode = document.querySelector("body");
+                    bodyNode
+                        .classList
+                        .add("dark-mode")
+                        localStorage
+                        .setItem('darkMode', 'enabled');
+                }
+                const button = document.getElementById("darkmode");
+                button.addEventListener("click", () => {
+                    const bodyNode = document.querySelector("body");
+                    if (bodyNode.classList.contains("dark-mode")) {
+                        disableDarkMode();
+                    } else {
+                        enableDarkMode();
+                    }
+                })
+                if (localStorage.getItem('darkMode') === 'enabled') {
+                    enableDarkMode();
+                }
+            });
+        </script>
+    </head>
+    <body><header>
+    <div class="container">
+        <nav class="navbar">
+            <div class="navbar-brand">
+                <a class="navbar-item navbar-brand__title " href="/">
+                    der_kuba
+                </a>
+                <a class="navbar-item is-size-7-mobile" href="https://github.com/derKuba">
+                    @Github
+                </a>
+                <a class="navbar-item is-size-7-mobile" href="https://twitter.com/der_kuba">
+                    @Twitter
+                </a>
+                <a class="navbar-item is-size-7-mobile" href="https://www.linkedin.com/in/jacob-pawlik-08a40015b/">
+                    @LinkedIn
+                </a>
+                <div class="navbar-burger" data-target="navigation-items">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+            <div id="navigation-items" class="navbar-menu">
+                <div class="navbar-end">
+                    
+                        <a class="navbar-item " href="/">
+                            Home
+                        </a>
+                        <a class="navbar-item " href="/posts/">
+                            Archiv
+                        </a>
+                        <a class="navbar-item " href="/about/">
+                            About Me
+                        </a>
+                        <a class="navbar-item " href="/en/">
+                            English
+                        </a>
+                        <a class="navbar-item " href="/content/impressum.html">
+                            Impressum
+                        </a>
+                        <a class="navbar-item " href="/content/datenschutz.html">
+                            Datenschutzerklärung
+                        </a>
+                    <button id="darkmode" alt="dark mode">
+                        <svg width="30" height="30">
+                            <circle cx="15" cy="15" r="6" fill="currentColor"/>
+                            <line id="ray" stroke="currentColor" stroke-width="2" stroke-linecap="round" x1="15" y1="1" x2="15" y2="4"></line>
+                            <use href="#ray" transform="rotate(45 15 15)"/>
+                            <use href="#ray" transform="rotate(90 15 15)"/>
+                            <use href="#ray" transform="rotate(135 15 15)"/>
+                            <use href="#ray" transform="rotate(180 15 15)"/>
+                            <use href="#ray" transform="rotate(225 15 15)"/>
+                            <use href="#ray" transform="rotate(270 15 15)"/>
+                            <use href="#ray" transform="rotate(315 15 15)"/>
+                        </svg>
+                    </button>
+                    <!-- special thanks to https://www.freecodecamp.org/news/how-to-handle-dark-mode-with-css-and-javascript/ -->
+                </div>
+            </div>
+        </nav>
+    </div>
+</header>
+        
+<section class="section">
+  <div class="container">
+    <div class="columns is-centered">
+      <div class="column is-8">
+        <h1 class="title is-3">Hi...</h1>
+        <div class="post-detail__tags">
+          <h3 class="subtitle is-6">
+            <time datetime="2024-09-20">
+              20 Sep 2024
+            </time>
+          </h3>
+          <div class="tags">
+          </div>
+        </div>
+        <div class="content post_detail__content">
+          <div class="language-hint">
+            
+              <a href="/about/">Auf Deutsch lesen</a>
+            
+          </div>
+          <p>Hi, I’m Kuba. As a child, my passion for video games sparked my curiosity for computers and electronics. Becoming a software developer was the only logical career choice for me.</p>
+<p>Since 2010, I’ve been developing software professionally, gaining experience with a wide range of programming languages, frameworks, and methodologies. Right after graduation, I had the opportunity to start as a Python developer and program my first modern web application using the Django framework. During my studies, I had some initial exposure to Java and C++, but I was impressed with how much faster development was with Python – especially since it required significantly less code. Around this time, I also discovered jQuery and was excited that JavaScript could be used professionally. #python #django #jquery</p>
+<p>Unfortunately, there weren’t many Python projects in my area, so I assumed that Java was the only viable next step. As a Junior Java Consultant, I was primarily assigned to the dreaded frontend tasks, which allowed me to further expand my jQuery skills. #javaEE #applicationServer #boilerplate</p>
+<p>At that time, AngularJS was at its peak – and it was love at first sight. The development speed was incredible, and the testability was outstanding. My shock was great when, in October 2014, I was in Paris to witness Google announce the end of AngularJS’s core concepts ($scope, controllers, jqLite). At that time, I was experimenting with Phonegap/Cordova and hybrid apps based on AngularJS, all connected to REST APIs. #angularJS #rest #HATEOAS</p>
+<p>This was followed by my time working in large corporations – an experience that had a lasting impact on me. Technology became secondary; the biggest challenge was managing people’s interactions with technology. Previously, I had always worked in small teams of 2-3 specialists (frontend, backend, DevOps), each focused on their niche and tasks. Suddenly, I found myself in cross-functional teams where potentially everyone worked on everything, and the code was merged back into a large, shared code repository. This taught me the critical importance of conventions and quality standards, which should be automated as much as possible. My main principle became to develop for the team – ensuring that if I were unavailable, anyone could continue from where I left off with minimal effort. #100devs #prettierLintTest</p>
+<p>I was able to bring these principles to the next companies I worked for, helping to build new teams, tech stacks, and developers. Now, I want to share this knowledge with a broader community – especially with those who aspire to become developers. That’s the motivation behind this website.</p>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+        <!-- Current page: /about/en_about/ -->
+        <footer class="footer">
+    <hr/>
+    <div class="content has-text-centered">
+        <p>
+            der_kuba - 2021-2024 -
+            <a href="/content/impressum.html">Impressum</a>
+            -
+            <a href="/content/datenschutz.html">Datenschutzerklärung</a>
+        </p>
+    </div>
+</footer>
+    </body>
+</html>

@@ -1,0 +1,265 @@
+<!doctype html>
+<html lang="de">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1"/>
+        <title>How to Ace Almost Any Job Interview</title>
+        <meta name="description" content="How I display the first sentence in the post list">
+        <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+        <link rel="alternate" href="/feed/feed.xml" type="application/atom+xml" title="der_kuba">
+        <link rel="alternate" href="/feed/feed.json" type="application/json" title="der_kuba">
+        <link rel="stylesheet" href="/assets/css/prism.css">
+        <link rel="stylesheet" href="/assets/css/bulma.css">
+        <link rel="stylesheet" href="/assets/css/custom.css">
+        <script>
+            document.addEventListener("DOMContentLoaded", () => {
+                const e = Array
+                    .prototype
+                    .slice
+                    .call(document.querySelectorAll(".navbar-burger"), 0);
+                e.length > 0 && e.forEach(e => {
+                    e.addEventListener("click", () => {
+                        const t = e.dataset.target,
+                            a = document.getElementById(t);
+                        e.classList.toggle("is-active"),
+                        a.classList.toggle("is-active")
+                    })
+                })
+                const disableDarkMode = () => {
+                    const bodyNode = document.querySelector("body");
+                    bodyNode
+                        .classList
+                        .remove("dark-mode")
+                        localStorage
+                        .setItem('darkMode', 'disabled');
+                }
+                const enableDarkMode = () => {
+                    const bodyNode = document.querySelector("body");
+                    bodyNode
+                        .classList
+                        .add("dark-mode")
+                        localStorage
+                        .setItem('darkMode', 'enabled');
+                }
+                const button = document.getElementById("darkmode");
+                button.addEventListener("click", () => {
+                    const bodyNode = document.querySelector("body");
+                    if (bodyNode.classList.contains("dark-mode")) {
+                        disableDarkMode();
+                    } else {
+                        enableDarkMode();
+                    }
+                })
+                if (localStorage.getItem('darkMode') === 'enabled') {
+                    enableDarkMode();
+                }
+            });
+        </script>
+    </head>
+    <body><header>
+    <div class="container">
+        <nav class="navbar">
+            <div class="navbar-brand">
+                <a class="navbar-item navbar-brand__title " href="/">
+                    der_kuba
+                </a>
+                <a class="navbar-item is-size-7-mobile" href="https://github.com/derKuba">
+                    @Github
+                </a>
+                <a class="navbar-item is-size-7-mobile" href="https://twitter.com/der_kuba">
+                    @Twitter
+                </a>
+                <a class="navbar-item is-size-7-mobile" href="https://www.linkedin.com/in/jacob-pawlik-08a40015b/">
+                    @LinkedIn
+                </a>
+                <div class="navbar-burger" data-target="navigation-items">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+            <div id="navigation-items" class="navbar-menu">
+                <div class="navbar-end">
+                    
+                        <a class="navbar-item " href="/">
+                            Home
+                        </a>
+                        <a class="navbar-item " href="/posts/">
+                            Archiv
+                        </a>
+                        <a class="navbar-item " href="/about/">
+                            About Me
+                        </a>
+                        <a class="navbar-item " href="/en/">
+                            English
+                        </a>
+                        <a class="navbar-item " href="/content/impressum.html">
+                            Impressum
+                        </a>
+                        <a class="navbar-item " href="/content/datenschutz.html">
+                            Datenschutzerklärung
+                        </a>
+                    <button id="darkmode" alt="dark mode">
+                        <svg width="30" height="30">
+                            <circle cx="15" cy="15" r="6" fill="currentColor"/>
+                            <line id="ray" stroke="currentColor" stroke-width="2" stroke-linecap="round" x1="15" y1="1" x2="15" y2="4"></line>
+                            <use href="#ray" transform="rotate(45 15 15)"/>
+                            <use href="#ray" transform="rotate(90 15 15)"/>
+                            <use href="#ray" transform="rotate(135 15 15)"/>
+                            <use href="#ray" transform="rotate(180 15 15)"/>
+                            <use href="#ray" transform="rotate(225 15 15)"/>
+                            <use href="#ray" transform="rotate(270 15 15)"/>
+                            <use href="#ray" transform="rotate(315 15 15)"/>
+                        </svg>
+                    </button>
+                    <!-- special thanks to https://www.freecodecamp.org/news/how-to-handle-dark-mode-with-css-and-javascript/ -->
+                </div>
+            </div>
+        </nav>
+    </div>
+</header>
+        
+<section class="section">
+  <div class="container">
+    <div class="columns is-centered">
+      <div class="column is-8">
+        <h1 class="title is-3">How to Ace Almost Any Job Interview</h1>
+        <div class="post-detail__tags">
+          <h3 class="subtitle is-6">
+            <time datetime="2021-04-17">
+              17 Apr 2021
+            </time>
+          </h3>
+          <div class="tags"><a href="/tags/recruiting/" class="post-tag">
+                <span class="tag is-black">
+                  Recruiting
+                </span>
+              </a><a href="/tags/job-interview/" class="post-tag">
+                <span class="tag is-primary">
+                  Job-interview
+                </span>
+              </a>
+          </div>
+        </div>
+        <div class="content post_detail__content">
+          <div class="language-hint">
+            
+              <a href="/posts/0421/so-klappt-jedes-vorstellungsgespraech">Auf Deutsch lesen</a>
+            
+          </div>
+          <p>In recent years, I’ve gained a wealth of experience from well over a hundred job interviews, whether as a candidate or as a technical expert. I’ve distilled this experience into the following points, which can make any interview more successful. <!-- endOfPreview --> As a software developer, I am focusing exclusively on the IT industry. These tips may also be useful in other sectors, but I cannot personally vouch for them.</p>
+<h4>1. Practice Makes Perfect</h4>
+<p>The more often you face the situation of a job interview, the more confident you will become. I recommend practicing with friends or family. If no one is available, consider applying to jobs you’re not necessarily interested in taking.</p>
+<p><strong><em>Rule:</em> Attend every interview you are invited to!</strong></p>
+<hr/>
+<h4>2. Your Resume Is a Story</h4>
+<p>Many candidates struggle to present their resumes in an organized, chronological, and fluent manner. As an interviewer, you often ask the same questions to ensure comparability between candidates. You can easily score points here if you can present your milestones confidently and smoothly.</p>
+<ul>
+<li>Start with your graduation.</li>
+<li>What motivated you to pursue your studies or training?</li>
+<li>What were the key focus areas of your studies/training?</li>
+<li>Then describe your previous jobs. Emphasize what <strong>you</strong> did, not what the company did: What were your key tasks and the technologies you used? What did you learn?</li>
+<li>The next point is your motivation for change: What prompted you to apply to this company? <strong>Note:</strong> Do not badmouth your previous company. Instead, frame weaknesses as learning opportunities in the new company.</li>
+<li>Finally, tie your goals to the current company: What do you hope to gain from this new opportunity?</li>
+<li><em>Good:</em> New technology, agile work environment, large teams, mentors, exciting industry.</li>
+<li><em>Bad:</em> Salary, promotions, less work.</li>
+</ul>
+<hr/>
+<h4>3. Who Leads the Interview?</h4>
+<p>In the interview confirmation, you’ll often see the names of the participants. Always take this opportunity to research them:</p>
+<ul>
+<li>If someone from HR is attending, be prepared for classic interview questions (strengths/weaknesses, biggest successes, where do you see yourself in five years, etc.).
+<strong>Be ready to answer standard HR questions.</strong></li>
+<li>If a manager or technical colleague is present, go over your list of technologies and ensure you can answer more in-depth questions about each. <strong>Tech talk helps. Often, the technical colleague will want to show off in front of the manager and may not get around to asking questions.</strong></li>
+</ul>
+<hr/>
+<h4>4. Would You Like a Drink? Yes.</h4>
+<p>Never refuse a drink. You wouldn’t believe how often your voice can fail. If someone has to get a drink during the interview, it can disrupt the flow of the conversation. Taking a sip of water also gives you a chance to pause, think, and calm your nerves.
+<strong><em>Rule:</em> Always accept the drink!</strong></p>
+<hr/>
+<h4>5. Can’t Answer a Question?</h4>
+<p>That’s absolutely fine. But don’t start rambling or making something up. Any experienced colleague will immediately sense your uncertainty and may reject you. Be honest and say you don’t know, and then turn the question back. The technical colleague will likely explain it in front of the manager, and you will have learned something new.</p>
+<hr/>
+<h4>6. Uncomfortable Clothing</h4>
+<p>Far too often, candidates show up in suits that are too tight or too loose, fidgeting with their collars and sweating. It’s not a problem to ask about the dress code beforehand. The company’s website often gives you a good idea of what to expect in terms of clothing. While clothes do make the man, they also reveal whether you feel comfortable. If you’re not a fan of suits, wearing slacks with a polo shirt is perfectly fine. It’s important to consider whether you’re applying for a consulting role or an in...
+A neat appearance and clean clothes are more than enough. You don’t always need a suit.</p>
+<hr/>
+<h4>7. Pen and Paper</h4>
+<p>Only one in fifteen candidates brings something to write with. I think that’s a big mistake. As mentioned earlier, you can jot down questions you couldn’t answer. You might also want to note:</p>
+<ul>
+<li>Unfamiliar technologies</li>
+<li>Clients</li>
+<li>Perks</li>
+<li>Team size/work methods</li>
+<li>...etc.</li>
+</ul>
+<p>Due to nerves, you’ll often forget much of the conversation afterward. Taking occasional notes also shows you’re interested and well-organized.</p>
+<hr/>
+<h4>8. Do You Have Any Questions?</h4>
+<p>Candidates without a pen and paper usually have only one or two questions. They forget the rest, which is a big mistake. If you don’t ask questions, it shows that you haven’t engaged with the company. It suggests:</p>
+<ul>
+<li>You’re unprepared.</li>
+<li>You have no interest in the way they work.</li>
+<li>Or, you’re not curious about the company structure.</li>
+</ul>
+<p>My best interview as a candidate was when the potential new team tried to grill me. I sat alone in the middle of a circle of people. But since I had my notebook full of questions, I was able to turn the tables on them.</p>
+<p>Good areas for questions include:</p>
+<ul>
+<li>Team size and work methods?</li>
+<li>What does a typical workday look like (from morning to evening)?</li>
+<li>How is agility implemented?</li>
+<li>How is quality ensured?</li>
+<li>What’s the process for taking a feature from concept to live deployment?</li>
+<li>How, when, and with what is deployed?</li>
+<li>How do teams collaborate, and how does communication flow?</li>
+<li>Imagine your ideal workday, and ask questions based on that.</li>
+</ul>
+<hr/>
+<h4>9. Interview Etiquette</h4>
+<p>It might sound obvious, but it’s too often neglected:</p>
+<ul>
+<li>Punctuality</li>
+<li>Sit up straight.</li>
+<li>No fidgeting.</li>
+<li>Maintain eye contact.</li>
+<li>Speak in complete sentences.</li>
+<li>Don’t interrupt.
+While nerves can explain some slip-ups (and they are understandable), they can leave a negative impression on the interviewer. But these are things you can work on. I recommend practicing with a quick role-play, recording it, or asking someone to observe and give feedback.</li>
+</ul>
+<hr/>
+<h4>10. What Motivates You?</h4>
+<p>In my experience, it’s rarely about finding someone with a specific skill set. It’s about finding the right mindset. Everything else can be taught. No one wants to work with (or keep) a brilliant developer who can’t collaborate, refuses to accept other opinions, and makes everyone else’s life miserable. So, what drives you? What do you need to thrive? What do you want to learn? How do you want to grow? Answer these questions for yourself and bring them up in the interview, even if you’re not asked.</p>
+<p>Do you have questions or suggestions? Reach out to me on <a href="https://twitter.com/der_kuba">Twitter</a></p>
+
+            <hr>
+              <ul class="post-navigation">
+                  <li>Nächster Artikel:
+                    <a href="/posts/0421/typescript-spread-operator-aha/">Spass mit Typescript: Spread-Operator AHA-Moment</a>
+                  </li>
+                
+                  <li>Vorheriger Artikel:
+                    <a href="/posts/0421/so-klappt-jedes-vorstellungsgespraech/">So klappt fast jedes Vorstellungsgespräch</a>
+                  </li>
+                
+              </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+        <!-- Current page: /posts/en/0421/job-interview/ -->
+        <footer class="footer">
+    <hr/>
+    <div class="content has-text-centered">
+        <p>
+            der_kuba - 2021-2024 -
+            <a href="/content/impressum.html">Impressum</a>
+            -
+            <a href="/content/datenschutz.html">Datenschutzerklärung</a>
+        </p>
+    </div>
+</footer>
+    </body>
+</html>

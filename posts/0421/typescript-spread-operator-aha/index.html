@@ -65,13 +65,13 @@
                 <a class="navbar-item navbar-brand__title " href="/">
                     der_kuba
                 </a>
-                <a class="navbar-item" href="https://github.com/derKuba">
+                <a class="navbar-item is-size-7-mobile" href="https://github.com/derKuba">
                     @Github
                 </a>
-                <a class="navbar-item" href="https://twitter.com/der_kuba">
+                <a class="navbar-item is-size-7-mobile" href="https://twitter.com/der_kuba">
                     @Twitter
                 </a>
-                <a class="navbar-item" href="https://www.linkedin.com/in/jacob-pawlik-08a40015b/">
+                <a class="navbar-item is-size-7-mobile" href="https://www.linkedin.com/in/jacob-pawlik-08a40015b/">
                     @LinkedIn
                 </a>
                 <div class="navbar-burger" data-target="navigation-items">
@@ -142,28 +142,30 @@
         <div class="content post_detail__content">
           <div class="language-hint">
             
+              <a href="/posts/en/0421/typescript-spread-operator-aha">Read in English</a>
+            
           </div>
           <p>Diese Woche bin ich über den Spread-Operator gestolpert und möchte diese Erfahrung teilen. <!-- endOfPreview --></p>
 <p>Folgendes Szenario:
 Ich möchte ein Objekt erstellen, dass aus einem Key &quot;Name eines Testfalls&quot; und als Value ein weiteres Objekt aus benannnte Zahlenpaaren enthält. Ich habe dazu ein Array aus Namen der Testfälle und ein ein Objekt, das ein Objektschema enthält.</p>
 <pre class="language-typescript"><code class="language-typescript"><span class="highlight-line"><span class="token keyword">const</span> testCases <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token string">"testcase 0"</span><span class="token punctuation">,</span> <span class="token string">"testcase 1"</span><span class="token punctuation">,</span> <span class="token string">"testcase 2"</span><span class="token punctuation">,</span> <span class="token string">"testcase 3"</span><span class="token punctuation">]</span><span class="token punctuation">;</span></span>
 <span class="highlight-line"><span class="token keyword">const</span> schema <span class="token operator">=</span> <span class="token punctuation">{</span></span>
-<span class="highlight-line">     <span class="token string-property property">"first"</span><span class="token operator">:</span> <span class="token punctuation">{</span></span>
+<span class="highlight-line">    first<span class="token operator">:</span> <span class="token punctuation">{</span></span>
 <span class="highlight-line">        a<span class="token operator">:</span> <span class="token number">0</span><span class="token punctuation">,</span></span>
 <span class="highlight-line">        b<span class="token operator">:</span> <span class="token number">0</span><span class="token punctuation">,</span></span>
-<span class="highlight-line">        c<span class="token operator">:</span> <span class="token number">0</span></span>
+<span class="highlight-line">        c<span class="token operator">:</span> <span class="token number">0</span><span class="token punctuation">,</span></span>
 <span class="highlight-line">    <span class="token punctuation">}</span><span class="token punctuation">,</span></span>
-<span class="highlight-line">    <span class="token string-property property">"second"</span><span class="token operator">:</span> <span class="token punctuation">{</span></span>
+<span class="highlight-line">    second<span class="token operator">:</span> <span class="token punctuation">{</span></span>
 <span class="highlight-line">        a<span class="token operator">:</span> <span class="token number">0</span><span class="token punctuation">,</span></span>
 <span class="highlight-line">        b<span class="token operator">:</span> <span class="token number">0</span><span class="token punctuation">,</span></span>
-<span class="highlight-line">        c<span class="token operator">:</span> <span class="token number">0</span></span>
+<span class="highlight-line">        c<span class="token operator">:</span> <span class="token number">0</span><span class="token punctuation">,</span></span>
 <span class="highlight-line">    <span class="token punctuation">}</span><span class="token punctuation">,</span></span>
-<span class="highlight-line">    <span class="token string-property property">"third"</span><span class="token operator">:</span> <span class="token punctuation">{</span></span>
+<span class="highlight-line">    third<span class="token operator">:</span> <span class="token punctuation">{</span></span>
 <span class="highlight-line">        a<span class="token operator">:</span> <span class="token number">0</span><span class="token punctuation">,</span></span>
 <span class="highlight-line">        b<span class="token operator">:</span> <span class="token number">0</span><span class="token punctuation">,</span></span>
-<span class="highlight-line">        c<span class="token operator">:</span> <span class="token number">0</span></span>
+<span class="highlight-line">        c<span class="token operator">:</span> <span class="token number">0</span><span class="token punctuation">,</span></span>
 <span class="highlight-line">    <span class="token punctuation">}</span><span class="token punctuation">,</span></span>
-<span class="highlight-line"><span class="token punctuation">}</span></span></code></pre>
+<span class="highlight-line"><span class="token punctuation">}</span><span class="token punctuation">;</span></span></code></pre>
 <p>Aus den Namen und dem Schema, soll dann ein großes Objekt entstehen, das wie folgt aussieht.</p>
 <pre class="language-typescript"><code class="language-typescript"><span class="highlight-line"><span class="token keyword">const</span> testDataDefaults <span class="token operator">=</span> <span class="token punctuation">{</span></span>
 <span class="highlight-line">    <span class="token string-property property">"testcase 0"</span><span class="token operator">:</span> <span class="token punctuation">{</span></span>
@@ -187,7 +189,7 @@ Ich möchte ein Objekt erstellen, dass aus einem Key &quot;Name eines Testfalls&
 <span class="highlight-line"><span class="token punctuation">}</span></span></code></pre>
 <p>Man schreibt ganz schnell eine kleine Schleife über die Namen der Testfälle, initiiert das Sammelobjekt und setzt für jeden Testfall das Schema:</p>
 <pre class="language-typescript"><code class="language-typescript"><span class="highlight-line"><span class="token keyword">const</span> testDataDefaults <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">;</span></span>
-<span class="highlight-line">testCases<span class="token punctuation">.</span><span class="token function">forEach</span><span class="token punctuation">(</span>testCase <span class="token operator">=></span> <span class="token punctuation">{</span></span>
+<span class="highlight-line">testCases<span class="token punctuation">.</span><span class="token function">forEach</span><span class="token punctuation">(</span><span class="token punctuation">(</span>testCase<span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">{</span></span>
 <span class="highlight-line">    testDataDefaults<span class="token punctuation">[</span>testCase<span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token punctuation">{</span></span>
 <span class="highlight-line">        <span class="token operator">...</span>numbers<span class="token punctuation">,</span></span>
 <span class="highlight-line">    <span class="token punctuation">}</span><span class="token punctuation">;</span></span>
@@ -221,11 +223,11 @@ Ich möchte ein Objekt erstellen, dass aus einem Key &quot;Name eines Testfalls&
 <p>Schnell mal googeln wie man sonst noch Objekte klonen kann:</p>
 <p>https://www.samanthaming.com/tidbits/70-3-ways-to-clone-objects/</p>
 <p>Also nochmal von vorne und das mit allen 3 Lösungen:</p>
-<pre class="language-typescript"><code class="language-typescript"><span class="highlight-line">tests<span class="token punctuation">.</span><span class="token function">forEach</span><span class="token punctuation">(</span>testCase <span class="token operator">=></span> <span class="token punctuation">{</span></span>
+<pre class="language-typescript"><code class="language-typescript"><span class="highlight-line">tests<span class="token punctuation">.</span><span class="token function">forEach</span><span class="token punctuation">(</span><span class="token punctuation">(</span>testCase<span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">{</span></span>
 <span class="highlight-line">    spreadMapped<span class="token punctuation">[</span>testCase<span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token punctuation">{</span></span>
 <span class="highlight-line">        <span class="token operator">...</span>numbers<span class="token punctuation">,</span></span>
 <span class="highlight-line">    <span class="token punctuation">}</span><span class="token punctuation">;</span></span>
-<span class="highlight-line">    jsonMapped<span class="token punctuation">[</span>testCase<span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token constant">JSON</span><span class="token punctuation">.</span><span class="token function">parse</span><span class="token punctuation">(</span><span class="token constant">JSON</span><span class="token punctuation">.</span><span class="token function">stringify</span><span class="token punctuation">(</span>numbers<span class="token punctuation">)</span><span class="token punctuation">)</span></span>
+<span class="highlight-line">    jsonMapped<span class="token punctuation">[</span>testCase<span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token constant">JSON</span><span class="token punctuation">.</span><span class="token function">parse</span><span class="token punctuation">(</span><span class="token constant">JSON</span><span class="token punctuation">.</span><span class="token function">stringify</span><span class="token punctuation">(</span>numbers<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span></span>
 <span class="highlight-line">    objectAssignMapped<span class="token punctuation">[</span>testCase<span class="token punctuation">]</span> <span class="token operator">=</span> Object<span class="token punctuation">.</span><span class="token function">assign</span><span class="token punctuation">(</span><span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">,</span> numbers<span class="token punctuation">)</span><span class="token punctuation">;</span></span>
 <span class="highlight-line"><span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span></span>
 <span class="highlight-line"></span>
@@ -314,11 +316,11 @@ Ich möchte ein Objekt erstellen, dass aus einem Key &quot;Name eines Testfalls&
             <hr>
               <ul class="post-navigation">
                   <li>Nächster Artikel:
-                    <a href="/posts/0521/flutter-export-sqlite-db/">How to export SQlite Database File in Flutter (Android)</a>
+                    <a href="/posts/en/0421/typescript-spread-operator-aha/">Fun with TypeScript: Spread Operator AHA Moment</a>
                   </li>
                 
                   <li>Vorheriger Artikel:
-                    <a href="/posts/0421/so-klappt-jedes-vorstellungsgespraech/">So klappt fast jedes Vorstellungsgespräch</a>
+                    <a href="/posts/en/0421/job-interview/">How to Ace Almost Any Job Interview</a>
                   </li>
                 
               </ul>

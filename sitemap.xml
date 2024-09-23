@@ -37,7 +37,17 @@
 		</url>
 		
 		<url>
+			<loc>https://derkuba.de/posts/en/0421/job-interview/</loc>
+			<lastmod>2021-04-17</lastmod>
+		</url>
+		
+		<url>
 			<loc>https://derkuba.de/posts/0421/typescript-spread-operator-aha/</loc>
+			<lastmod>2021-04-24</lastmod>
+		</url>
+		
+		<url>
+			<loc>https://derkuba.de/posts/en/0421/typescript-spread-operator-aha/</loc>
 			<lastmod>2021-04-24</lastmod>
 		</url>
 		
@@ -48,6 +58,11 @@
 		
 		<url>
 			<loc>https://derkuba.de/posts/0521/bewerbungsgespraech-leiten/</loc>
+			<lastmod>2021-05-07</lastmod>
+		</url>
+		
+		<url>
+			<loc>https://derkuba.de/posts/en/0521/how-to-lead-job-interviews/</loc>
 			<lastmod>2021-05-07</lastmod>
 		</url>
 		
@@ -292,56 +307,6 @@
 		</url>
 		
 		<url>
-			<loc>https://derkuba.de/tags/11nty/</loc>
-			<lastmod>2024-09-19</lastmod>
-		</url>
-		
-		<url>
-			<loc>https://derkuba.de/tags/bulma/</loc>
-			<lastmod>2024-09-19</lastmod>
-		</url>
-		
-		<url>
-			<loc>https://derkuba.de/tags/prism/</loc>
-			<lastmod>2024-09-19</lastmod>
-		</url>
-		
-		<url>
-			<loc>https://derkuba.de/tags/11ty/</loc>
-			<lastmod>2024-09-19</lastmod>
-		</url>
-		
-		<url>
-			<loc>https://derkuba.de/tags/excerpt/</loc>
-			<lastmod>2024-09-19</lastmod>
-		</url>
-		
-		<url>
-			<loc>https://derkuba.de/tags/blog/</loc>
-			<lastmod>2024-09-19</lastmod>
-		</url>
-		
-		<url>
-			<loc>https://derkuba.de/tags/tutorial/</loc>
-			<lastmod>2024-09-19</lastmod>
-		</url>
-		
-		<url>
-			<loc>https://derkuba.de/tags/recruting/</loc>
-			<lastmod>2024-09-19</lastmod>
-		</url>
-		
-		<url>
-			<loc>https://derkuba.de/tags/job-interview/</loc>
-			<lastmod>2024-09-19</lastmod>
-		</url>
-		
-		<url>
-			<loc>https://derkuba.de/tags/typescript/</loc>
-			<lastmod>2024-09-19</lastmod>
-		</url>
-		
-		<url>
 			<loc>https://derkuba.de/tags/stenciljs/</loc>
 			<lastmod>2024-09-19</lastmod>
 		</url>
@@ -377,6 +342,16 @@
 		</url>
 		
 		<url>
+			<loc>https://derkuba.de/tags/recruiting/</loc>
+			<lastmod>2024-09-19</lastmod>
+		</url>
+		
+		<url>
+			<loc>https://derkuba.de/tags/job-interview/</loc>
+			<lastmod>2024-09-19</lastmod>
+		</url>
+		
+		<url>
 			<loc>https://derkuba.de/tags/flutter/</loc>
 			<lastmod>2024-09-19</lastmod>
 		</url>
@@ -387,7 +362,52 @@
 		</url>
 		
 		<url>
+			<loc>https://derkuba.de/tags/typescript/</loc>
+			<lastmod>2024-09-19</lastmod>
+		</url>
+		
+		<url>
 			<loc>https://derkuba.de/tags/enterjs/</loc>
+			<lastmod>2024-09-19</lastmod>
+		</url>
+		
+		<url>
+			<loc>https://derkuba.de/tags/11nty/</loc>
+			<lastmod>2024-09-19</lastmod>
+		</url>
+		
+		<url>
+			<loc>https://derkuba.de/tags/bulma/</loc>
+			<lastmod>2024-09-19</lastmod>
+		</url>
+		
+		<url>
+			<loc>https://derkuba.de/tags/prism/</loc>
+			<lastmod>2024-09-19</lastmod>
+		</url>
+		
+		<url>
+			<loc>https://derkuba.de/tags/11ty/</loc>
+			<lastmod>2024-09-19</lastmod>
+		</url>
+		
+		<url>
+			<loc>https://derkuba.de/tags/excerpt/</loc>
+			<lastmod>2024-09-19</lastmod>
+		</url>
+		
+		<url>
+			<loc>https://derkuba.de/tags/blog/</loc>
+			<lastmod>2024-09-19</lastmod>
+		</url>
+		
+		<url>
+			<loc>https://derkuba.de/tags/tutorial/</loc>
+			<lastmod>2024-09-19</lastmod>
+		</url>
+		
+		<url>
+			<loc>https://derkuba.de/tags/html/</loc>
 			<lastmod>2024-09-19</lastmod>
 		</url>
 		
@@ -439,5 +459,10 @@
 		<url>
 			<loc>https://derkuba.de/tags/englishposts/</loc>
 			<lastmod>2024-09-19</lastmod>
+		</url>
+		
+		<url>
+			<loc>https://derkuba.de/about/en_about/</loc>
+			<lastmod>2024-09-20</lastmod>
 		</url>
 </urlset>
