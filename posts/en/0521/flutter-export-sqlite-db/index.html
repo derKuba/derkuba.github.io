@@ -3,8 +3,8 @@
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1"/>
-        <title>How to export SQlite Database File in Flutter (Android)</title>
-        <meta name="description" content="SQlite-Datenbank aus der App unter Android exportieren">
+        <title>How to export SQLite Database File in Flutter (Android)</title>
+        <meta name="description" content="Exporting SQLite database from the app in Android">
         <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
         <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
         <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
@@ -125,7 +125,7 @@
   <div class="container">
     <div class="columns is-centered">
       <div class="column is-8">
-        <h1 class="title is-3">How to export SQlite Database File in Flutter (Android)</h1>
+        <h1 class="title is-3">How to export SQLite Database File in Flutter (Android)</h1>
         <div class="post-detail__tags">
           <h3 class="subtitle is-6">
             <time datetime="2021-05-02">
@@ -146,12 +146,12 @@
         <div class="content post_detail__content">
           <div class="language-hint">
             
-              <a href="/posts/en/0521/flutter-export-sqlite-db">Read in English <img width="25" src="/assets/images/gb.png"/></a>
+              <a href="/posts/0521/flutter-export-sqlite-db">Auf Deutsch lesen <img width="25" src="/assets/images/de.png"/></a>
             
           </div>
-          <p>Eine der vielen Möglichkeiten, Daten in einer <a href="https://flutter.dev/">Flutter-App</a> zu speichern, ist <a href="https://www.sqlite.org/index.html">SQLite</a>. SQLite bietet eine relationale Datenbank innerhalb der App, ohne externe Abhängigkeiten und ohne Datenverkehr über das Internet. <!-- endOfPreview --> Es ist sehr praktisch und für kleinere, einfachere Anfragen performant. Wer eine Übersicht über die Möglichkeiten zum Speichern von Daten in Flutter sucht, dem empfehle ich diesen [Artikel (flutter-databases-sqf...</p>
-<p>Ich habe eine App erstellt, die Daten in einer SQLite-Datenbank speichert. Nun stand ich vor dem Problem, wie ich die Daten migrieren kann, z. B. wenn ich das Handy wechsle. Da SQLite die Daten in eine *.db-Datei schreibt, muss es eine Möglichkeit geben, auf diese Datei auf dem Telefon zuzugreifen und sie aus der App zu exportieren. Wie man das erreicht, möchte ich hier teilen.</p>
-<p>Voraussetzung ist eine Flutter-App und die folgenden Bibliotheken:</p>
+          <p>One of the many ways to store data in a <a href="https://flutter.dev/">Flutter app</a> is <a href="https://www.sqlite.org/index.html">SQLite</a>. SQLite offers a relational database within the app without external dependencies or internet traffic. <!-- endOfPreview --> It is very practical and performs well for smaller, simpler queries. If you're looking for an overview of the options for storing data in Flutter, I recommend this [article (flutter-databases-sqflite-hive-objectbox-and-moor)](https://objectbox.io/flutter-databa...</p>
+<p>I built an app that stores data in an SQLite database. I then faced the problem of how to migrate the data, for example, when switching phones. Since SQLite writes data to a *.db file, there must be a way to access this file on the phone and export it from the app. I want to share how this can be achieved.</p>
+<p>Prerequisites include a Flutter app and the following libraries:</p>
 <pre class="language-yaml"><code class="language-yaml"><span class="highlight-line"><span class="token key atrule">dependencies</span><span class="token punctuation">:</span></span>
 <span class="highlight-line">    <span class="token key atrule">flutter</span><span class="token punctuation">:</span></span>
 <span class="highlight-line">        <span class="token key atrule">sdk</span><span class="token punctuation">:</span> flutter</span>
@@ -160,48 +160,48 @@
 <span class="highlight-line">    <span class="token key atrule">permission_handler</span><span class="token punctuation">:</span> ^7.0.0</span>
 <span class="highlight-line">    <span class="token key atrule">downloads_path_provider</span><span class="token punctuation">:</span> ^0.1.0</span></code></pre>
 <ul>
-<li><strong>sqflite</strong>: SQLite-Bibliothek</li>
-<li><strong>path</strong>: Dateipfade</li>
-<li><strong>permission_handler</strong>: Berechtigungen auf dem Gerät</li>
-<li><strong>downloads_path_provider</strong>: Pfad zum Download-Ordner</li>
+<li><strong>sqflite</strong>: SQLite library</li>
+<li><strong>path</strong>: File paths</li>
+<li><strong>permission_handler</strong>: Permissions on the device</li>
+<li><strong>downloads_path_provider</strong>: Path to the download folder</li>
 </ul>
-<p>Die Umsetzungsidee war wie folgt:</p>
+<p>The implementation idea was as follows:</p>
 <ol>
-<li>Überprüfe die Schreibrechte auf dem Gerät.</li>
-<li>Finde den Pfad zur *.db-Datei.</li>
-<li>Öffne die Datei und speichere eine Kopie im Download-Ordner des Telefons.</li>
+<li>Check the write permissions on the device.</li>
+<li>Find the path to the *.db file.</li>
+<li>Open the file and write a copy to the download directory on the phone.</li>
 </ol>
 <br/>
-<h4>1. Schreibrechte</h4>
-<p>Um Dateien auf dem Telefon lesen und schreiben zu können, benötigt man Schreibrechte. <strong>Achtung!</strong> Ich beziehe mich hier nur auf das Android-System.
-Um Schreibrechte zu erhalten, füge die folgenden Zeilen in die Datei <strong><em>/android/app/src/main/AndroidManifest.xml</em></strong> ein:</p>
+<h4>1. Write Permissions</h4>
+<p>To read and write files on the phone, you need write permissions. <strong>Note:</strong> I am referring only to the Android system here.
+To get write permissions, add the following lines to the <strong><em>/android/app/src/main/AndroidManifest.xml</em></strong> file:</p>
 <pre class="language-xml"><code class="language-xml"><span class="highlight-line"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>uses-permission</span> <span class="token attr-name"><span class="token namespace">android:</span>name</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>android.permission.READ_EXTERNAL_STORAGE<span class="token punctuation">"</span></span><span class="token punctuation">/></span></span></span>
 <span class="highlight-line"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>uses-permission</span> <span class="token attr-name"><span class="token namespace">android:</span>name</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>android.permission.WRITE_EXTERNAL_STORAGE<span class="token punctuation">"</span></span><span class="token punctuation">/></span></span></span></code></pre>
-<p>Damit der Nutzer überhaupt erkennt, dass diese Rechte benötigt werden, empfehle ich das Paket <em>permission_handler</em>. Damit kann man den Nutzer komfortabel auf die benötigten Schreibrechte hinweisen und diese direkt abfragen.</p>
+<p>To notify the user that these permissions are required, I recommend the <em>permission_handler</em> package. This allows you to prompt the user for the necessary write permissions and request them directly.</p>
 <pre class="language-dart"><code class="language-dart"><span class="highlight-line"><span class="token keyword">var</span> status <span class="token operator">=</span> <span class="token keyword">await</span> <span class="token class-name">Permission</span><span class="token punctuation">.</span>storage<span class="token punctuation">.</span>status<span class="token punctuation">;</span></span>
 <span class="highlight-line"><span class="token keyword">if</span> <span class="token punctuation">(</span>status<span class="token punctuation">.</span>isDenied<span class="token punctuation">)</span> <span class="token punctuation">{</span></span>
 <span class="highlight-line">    <span class="token keyword">await</span> <span class="token class-name">Permission</span><span class="token punctuation">.</span>storage<span class="token punctuation">.</span><span class="token function">request</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span></span>
 <span class="highlight-line">    <span class="token keyword">return</span><span class="token punctuation">;</span></span>
 <span class="highlight-line"><span class="token punctuation">}</span></span></code></pre>
-<p>Die erste Zeile prüft, ob die Rechte in der oben beschriebenen XML-Datei eingetragen wurden, und anschließend, ob der Nutzer die Rechte freigegeben hat. Die dritte Zeile lässt einen Dialog erscheinen, der dem Nutzer diese Auswahl anbietet.</p>
-<p><img src="/img/0521/right-granted.png" alt="schreibrechte" title="schreibrechte"></p>
-<p>Sobald die Rechte erteilt wurden, können wir Dateien schreiben.</p>
-<h4>2. Dateipfade</h4>
-<p>Die Dateipfade sind etwas versteckt, und wir benötigen die oben genannten Module als Hilfe.</p>
-<p><strong>Pfad zur bestehenden Datenbank.db</strong></p>
-<pre class="language-dart"><code class="language-dart"><span class="highlight-line"><span class="token class-name">String</span> dbName <span class="token operator">=</span> <span class="token string-literal"><span class="token string">"doggie_database.db"</span></span><span class="token punctuation">;</span> <span class="token comment">// Name der Datenbank</span></span>
-<span class="highlight-line"><span class="token keyword">var</span> databasesPath <span class="token operator">=</span> <span class="token keyword">await</span> <span class="token function">getDatabasesPath</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// Standard-Datenbankpfad</span></span>
+<p>The first line checks if the permissions have been declared in the XML file, and then whether the user has granted them. The third line displays a dialog asking the user to grant the permissions.</p>
+<p><img src="/img/0521/right-granted.png" alt="write permissions" title="write permissions"></p>
+<p>Once the permissions are granted, you can write files.</p>
+<h4>2. File Paths</h4>
+<p>The file paths are a bit hidden, and we need the modules mentioned above to help.</p>
+<p><strong>Path to the existing database.db</strong></p>
+<pre class="language-dart"><code class="language-dart"><span class="highlight-line"><span class="token class-name">String</span> dbName <span class="token operator">=</span> <span class="token string-literal"><span class="token string">"doggie_database.db"</span></span><span class="token punctuation">;</span> <span class="token comment">// name of the database</span></span>
+<span class="highlight-line"><span class="token keyword">var</span> databasesPath <span class="token operator">=</span> <span class="token keyword">await</span> <span class="token function">getDatabasesPath</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// default database path</span></span>
 <span class="highlight-line"><span class="token keyword">var</span> innerPath <span class="token operator">=</span> <span class="token function">join</span><span class="token punctuation">(</span>databasesPath<span class="token punctuation">,</span> dbName<span class="token punctuation">)</span><span class="token punctuation">;</span></span>
 <span class="highlight-line"><span class="token function">print</span><span class="token punctuation">(</span>innerPath<span class="token punctuation">)</span><span class="token punctuation">;</span></span>
 <span class="highlight-line"><span class="token comment">// /data/user/0/com.example.flutter_sqlite_database_export/databases/doggie_database.db</span></span></code></pre>
-<p><strong>Pfad zum Download-Verzeichnis</strong></p>
+<p><strong>Path to the download directory</strong></p>
 <pre class="language-dart"><code class="language-dart"><span class="highlight-line"><span class="token class-name">Directory</span> tempDir <span class="token operator">=</span> <span class="token keyword">await</span> <span class="token class-name">DownloadsPathProvider</span><span class="token punctuation">.</span>downloadsDirectory<span class="token punctuation">;</span></span>
 <span class="highlight-line"><span class="token class-name">String</span> tempPath <span class="token operator">=</span> tempDir<span class="token punctuation">.</span>path<span class="token punctuation">;</span></span></code></pre>
-<p><strong>Einblick ins Android-Datenbankverzeichnis</strong>
-Wer in seine laufende Applikation schauen möchte, dem empfehle ich im Android-Studio den <strong><em>Device-File-Explorer</em></strong>.</p>
+<p><strong>Exploring the Android Database Directory</strong>
+If you want to inspect your running application, I recommend using the <strong><em>Device File Explorer</em></strong> in Android Studio.</p>
 <p><img src="/img/0521/file-explorer.png" alt="device file explorer" title="device file explorer"></p>
-<p>Unter <strong><em>/data/data/[name eurer Applikation]/databases/[NameEurerDB].db</em></strong> findet ihr eure SQLite-Datenbank und könnt diese exportieren.</p>
-<h4>3. Datenbank.db exportieren</h4>
+<p>Under <strong><em>/data/data/[your app name]/databases/[yourDBName].db</em></strong> you can find your SQLite database and export it.</p>
+<h4>3. Exporting the database.db</h4>
 <pre class="language-dart"><code class="language-dart"><span class="highlight-line"><span class="token keyword">var</span> dbFile <span class="token operator">=</span> <span class="token class-name">File</span><span class="token punctuation">(</span>innerPath<span class="token punctuation">)</span><span class="token punctuation">;</span></span>
 <span class="highlight-line"><span class="token keyword">var</span> filePath <span class="token operator">=</span> tempPath <span class="token operator">+</span> <span class="token string-literal"><span class="token string">'/</span><span class="token interpolation"><span class="token punctuation">$</span><span class="token expression">dbName</span></span><span class="token string">'</span></span><span class="token punctuation">;</span></span>
 <span class="highlight-line"><span class="token keyword">var</span> dbFileBytes <span class="token operator">=</span> dbFile<span class="token punctuation">.</span><span class="token function">readAsBytesSync</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span></span>
@@ -212,8 +212,8 @@ Wer in seine laufende Applikation schauen möchte, dem empfehle ich im Android-S
 <span class="highlight-line">  buffer<span class="token punctuation">.</span><span class="token function">asUint8List</span><span class="token punctuation">(</span></span>
 <span class="highlight-line">    dbFileBytes<span class="token punctuation">.</span>offsetInBytes<span class="token punctuation">,</span> dbFileBytes<span class="token punctuation">.</span>lengthInBytes</span>
 <span class="highlight-line"><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span></span></code></pre>
-<p>Die Datenbankdatei wird als Byte-Daten gelesen und im Standard-Dart-I/O-Verfahren von einem Ort an einen anderen kopiert. So erhält man einen Export der in der App verwendeten Datenbank.</p>
-<p>Hier nochmal die komplette Methode mit Aufruf:</p>
+<p>The database file is read as byte data and copied from one location to another using the standard Dart I/O procedure. This allows you to export the database used in the app.</p>
+<p>Here is the complete method with invocation:</p>
 <pre class="language-dart"><code class="language-dart"><span class="highlight-line"><span class="token class-name">Future</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token class-name">File</span><span class="token punctuation">></span></span> <span class="token function">_writeDBFileToDownloadFolder</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token keyword">async</span> <span class="token punctuation">{</span></span>
 <span class="highlight-line">    <span class="token class-name">String</span> dbName <span class="token operator">=</span> <span class="token string-literal"><span class="token string">"doggie_database.db"</span></span><span class="token punctuation">;</span></span>
 <span class="highlight-line">    <span class="token keyword">var</span> databasesPath <span class="token operator">=</span> <span class="token keyword">await</span> <span class="token function">getDatabasesPath</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span></span>
@@ -236,7 +236,7 @@ Wer in seine laufende Applikation schauen möchte, dem empfehle ich im Android-S
 <span class="highlight-line"><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span></span>
 <span class="highlight-line">onPressed<span class="token punctuation">:</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token keyword">async</span> <span class="token punctuation">{</span></span>
 <span class="highlight-line">  <span class="token keyword">var</span> status <span class="token operator">=</span> <span class="token keyword">await</span> <span class="token class-name">Permission</span><span class="token punctuation">.</span>storage<span class="token punctuation">.</span>status<span class="token punctuation">;</span></span>
-<span class="highlight-line">  <span class="token keyword">if</span> <span class="token punctuation">(</span>status<span class="token punctuation">.</span>isDenied<span class="token punctuation">)</span> <span class="token punctuation">{</span></span>
+<span class="highlight-line">  <span class="token keyword">if</span> <span class="token punctuation">(</span>status isDenied<span class="token punctuation">)</span> <span class="token punctuation">{</span></span>
 <span class="highlight-line">    <span class="token keyword">await</span> <span class="token class-name">Permission</span><span class="token punctuation">.</span>storage<span class="token punctuation">.</span><span class="token function">request</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span></span>
 <span class="highlight-line">    <span class="token keyword">return</span><span class="token punctuation">;</span></span>
 <span class="highlight-line">  <span class="token punctuation">}</span></span>
@@ -248,15 +248,15 @@ Wer in seine laufende Applikation schauen möchte, dem empfehle ich im Android-S
 <span class="highlight-line"><span class="token punctuation">}</span><span class="token punctuation">,</span></span>
 <span class="highlight-line"><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span></span>
 <span class="highlight-line"></span></code></pre>
-<p>Wenn man auf dem Telefon die App &quot;Files&quot; öffnet und in das Download-Verzeichnis schaut, findet man die exportierte Datei.</p>
+<p>When you open the &quot;Files&quot; app on your phone and look in the download directory, you should find the exported file.</p>
 <p>Great Success! :-)</p>
-<p>Diese Code-Blöcke, eingebettet in die Flutter-Starter-App, habe ich für euch auf <a href="https://github.com/derKuba/flutter-sqlite-database-export">GitHub</a> bereitgestellt.</p>
-<p>Ihr habt Fragen oder Anregungen? Schreibt mir bei <a href="https://twitter.com/der_kuba">Twitter</a>.</p>
-<p><strong><em>Nachtrag vom 07.05.2021</em></strong>
-In Android Q reicht der oben erwähnte Eintrag in der XML nicht aus. Es muss noch Folgendes hinzugefügt werden:</p>
+<p>I have made these code snippets embedded in the Flutter Starter App available to you on <a href="https://github.com/derKuba/flutter-sqlite-database-export">GitHub</a>.</p>
+<p>If you have any questions or suggestions, feel free to reach out to me on <a href="https://twitter.com/der_kuba">Twitter</a>.</p>
+<p><strong><em>Addendum from 07.05.2021</em></strong>
+On Android Q, the aforementioned entry in the XML file is not sufficient. You also need to add the following:</p>
 <pre><code>  android:requestLegacyExternalStorage=&quot;true&quot;
 </code></pre>
-<p>sodass die <strong><em>/android/app/src/main/AndroidManifest.xml</em></strong> wie folgt aussieht:</p>
+<p>so that the <strong><em>/android/app/src/main/AndroidManifest.xml</em></strong> looks like this:</p>
 <pre class="language-xml"><code class="language-xml"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>manifest</span> <span class="token attr-name"><span class="token namespace">xmlns:</span>android</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>http://schemas.android.com/apk/res/android<span class="token punctuation">"</span></span>
   <span class="token attr-name">package</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>com.example.flutter_sqlite_database_export<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
   <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>application</span>
@@ -268,18 +268,18 @@ In Android Q reicht der oben erwähnte Eintrag in der XML nicht aus. Es muss noc
 <span class="highlight-line">    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>uses-permission</span> <span class="token attr-name"><span class="token namespace">android:</span>name</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>android.permission.READ_EXTERNAL_STORAGE<span class="token punctuation">"</span></span><span class="token punctuation">/></span></span></span>
 <span class="highlight-line">    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>uses-permission</span> <span class="token attr-name"><span class="token namespace">android:</span>name</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>android.permission.WRITE_EXTERNAL_STORAGE<span class="token punctuation">"</span></span><span class="token punctuation">/></span></span></span>
 <span class="highlight-line"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>manifest</span><span class="token punctuation">></span></span></span></code></pre>
-<p>Ihr habt Fragen oder Anregungen? Schreibt mir bei <a href="https://twitter.com/der_kuba">Twitter</a>.</p>
-<p>Tausend Dank fürs Lesen!</p>
+<p>If you have any questions or suggestions, feel free to reach out to me on <a href="https://twitter.com/der_kuba">Twitter</a>.</p>
+<p>Thank you so much for reading!</p>
 <p>Kuba</p>
 
             <hr>
               <ul class="post-navigation">
                   <li>Nächster Artikel:
-                    <a href="/posts/en/0521/flutter-export-sqlite-db/">How to export SQLite Database File in Flutter (Android)</a>
+                    <a href="/posts/0521/bewerbungsgespraech-leiten/">Vorstellungsgespräche leiten: Ein gutes Gespräch für beide Seiten</a>
                   </li>
                 
                   <li>Vorheriger Artikel:
-                    <a href="/posts/en/0421/typescript-spread-operator-aha/">Fun with TypeScript: Spread Operator AHA Moment</a>
+                    <a href="/posts/0521/flutter-export-sqlite-db/">How to export SQlite Database File in Flutter (Android)</a>
                   </li>
                 
               </ul>
@@ -288,7 +288,7 @@ In Android Q reicht der oben erwähnte Eintrag in der XML nicht aus. Es muss noc
       </div>
     </div>
   </section>
-        <!-- Current page: /posts/0521/flutter-export-sqlite-db/ -->
+        <!-- Current page: /posts/en/0521/flutter-export-sqlite-db/ -->
         <footer class="footer">
     <hr/>
     <div class="content has-text-centered">

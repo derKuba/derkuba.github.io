@@ -146,9 +146,9 @@
           <p>Wir haben eine funktionsfähige Umgebung und können endlich mit der Entwicklung starten. <!-- endOfPreview --> In der <strong>package.json</strong> ist ein Skript zum Hinzufügen von Komponenten vorhanden: <em>generate</em>.</p>
 <pre class="language-bash"><code class="language-bash"><span class="highlight-line"><span class="token function">npm</span> run generate kuba-input</span></code></pre>
 <p>Der Befehl startet eine Art Wizard und fragt ab was wir erzeugen möchten:</p>
-<p><img src="/content/img/stenciljs-tutorial/generate.png" alt="generate" title="generate"><div class="has-text-right image-subline">Bild 1: Generator</div></p>
+<p><img src="/img/stenciljs-tutorial/generate.png" alt="generate" title="generate"><div class="has-text-right image-subline">Bild 1: Generator</div></p>
 <p>Ich habe mich für Stylesheet und Unit-Test entschieden. Die E2E Tests lasse ich erstmal außen vor.</p>
-<p><img src="/content/img/stenciljs-tutorial/kuba-input.png" alt="kuba-input" title="kuba input"><div class="has-text-right image-subline">Bild 2: Meine erste Komponente</div></p>
+<p><img src="/img/stenciljs-tutorial/kuba-input.png" alt="kuba-input" title="kuba input"><div class="has-text-right image-subline">Bild 2: Meine erste Komponente</div></p>
 <p>&quot;kuba-input&quot; ist meine erste Komponente. Der Name setzt sich aus [namespace]-[Komponentenname] zusammen und entspricht dem zukünftigen HTML-Tag. Man findet einen Ordner kuba-input unter src/components/kuba-input, in dem sich drei Dateien befinden. Die eigentliche Komponente <em>kuba-input.tsx</em>, die dazugehörige CSS <em>kuba-input.css</em> und der Unit-Test <em>kuba-input.spec.tsx</em>. Wer sich jetzt über die Dateiendung <em>.tsx</em> wundert, sollte sich nicht abschrecken lassen. TSX bedeutet, dass es sich um eine Typescript Datei handelt, in der sich HTML innerhalb des Codes befindet.</p>
 <p>Der Inhalt der kuba-input.tsx setzt sich zusammen wie folgt:</p>
 <pre class="language-typescript"><code class="language-typescript"><span class="highlight-line"><span class="token keyword">import</span> <span class="token punctuation">{</span> Component<span class="token punctuation">,</span> Host<span class="token punctuation">,</span> h <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">"@stencil/core"</span><span class="token punctuation">;</span> <span class="token comment">// hole die Komponente aus dem Stencil-Kern</span></span>
@@ -190,7 +190,7 @@
 <span class="highlight-line">                    <span class="token operator">&lt;</span>kuba<span class="token operator">-</span>input<span class="token operator">></span><span class="token operator">&lt;</span><span class="token operator">/</span>kuba<span class="token operator">-</span>input<span class="token operator">></span></span>
 <span class="highlight-line">                <span class="token operator">&lt;</span><span class="token operator">/</span>main<span class="token operator">></span></span>
 <span class="highlight-line"></span>
-                <span class="token punctuation">{</span><span class="token comment">/* 
+                <span class="token punctuation">{</span><span class="token comment">/*
 <span class="highlight-line">          &lt;stencil-router></span>
 <span class="highlight-line">            &lt;stencil-route-switch scrollTopOffset={0}></span>
 <span class="highlight-line">              &lt;stencil-route url="/" component="app-home" exact={true} /></span>
@@ -203,7 +203,7 @@
 <span class="highlight-line">    <span class="token punctuation">}</span></span>
 <span class="highlight-line"><span class="token punctuation">}</span></span></code></pre>
 <p>Für dieses Tutorial möchte ich folgenden Fall umsetzen. Wir legen Komponente an, die ein Inputfeld und einen Button besitzt. Wenn ich den Button drücke, bekomme ich den Inhalt in einem Alert angezeigt.</p>
-<p><img src="/content/img/stenciljs-tutorial/simple-input.png" alt="simple-input" title="simple input"><div class="has-text-right image-subline">Bild 3: Use-Case</div></p>
+<p><img src="/img/stenciljs-tutorial/simple-input.png" alt="simple-input" title="simple input"><div class="has-text-right image-subline">Bild 3: Use-Case</div></p>
 <p>Dazu brauchen wir drei Komponenten:</p>
 <ol>
 <li>Kontakt-Formular</li>
