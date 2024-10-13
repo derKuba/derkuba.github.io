@@ -3,8 +3,8 @@
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1"/>
-        <title>Warum du Bibliotheken nicht manuell speichern solltest: npm als bessere Lösung</title>
-        <meta name="description" content="Frühjahresputz im Herbst">
+        <title>Fuckup der Woche: Raspberry Pi Zero 2 W - Wenn das Setup nervt und der Wlan-Zugang klemmt</title>
+        <meta name="description" content="Wie stellt man Storybook ein?">
         <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
         <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
         <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
@@ -125,16 +125,20 @@
   <div class="container">
     <div class="columns is-centered">
       <div class="column is-8">
-        <h1 class="title is-3">Warum du Bibliotheken nicht manuell speichern solltest: npm als bessere Lösung</h1>
+        <h1 class="title is-3">Fuckup der Woche: Raspberry Pi Zero 2 W - Wenn das Setup nervt und der Wlan-Zugang klemmt</h1>
         <div class="post-detail__tags">
           <h3 class="subtitle is-6">
-            <time datetime="2024-09-18">
-              18 Sep 2024
+            <time datetime="2024-10-12">
+              12 Oct 2024
             </time>
           </h3>
-          <div class="tags"><a href="/tags/html/" class="post-tag">
+          <div class="tags"><a href="/tags/stenciljs/" class="post-tag">
                 <span class="tag is-black">
-                  Html
+                  Stenciljs
+                </span>
+              </a><a href="/tags/storybook/" class="post-tag">
+                <span class="tag is-primary">
+                  Storybook
                 </span>
               </a>
           </div>
@@ -142,53 +146,45 @@
         <div class="content post_detail__content">
           <div class="language-hint">
             
+              <a href="/posts/en/1024/raspberry-os">Read in English <img width="25" src="/assets/images/gb.png"/></a>
+            
           </div>
-          <p>Im Webentwicklungskontext sehe ich häufig, dass Entwickler Bibliotheken wie CSS- und JS-Dateien direkt in ihre Projekte kopieren und in Ordnern ablegen. Doch das ist ein veralteter Ansatz, der mehr Nachteile als Vorteile mit sich bringt. <!-- endOfPreview --></p>
-<h3>Wie es früher gemacht wurde</h3>
-<p>Ein häufiges Vorgehen bestand darin, die Bibliotheken manuell herunterzuladen und in Ordner wie <code>css</code> und <code>js</code> zu speichern. Die Struktur sah etwa so aus:</p>
-<pre><code>/project
-|-- /css
-|   |-- bootstrap.css
-|-- /js
-|   |-- jquery.js
-|-- index.html
-</code></pre>
-<p>In der <code>index.html</code> wurden die Dateien dann folgendermaßen eingebunden:</p>
-<pre class="language-html"><code class="language-html"><span class="highlight-line"><span class="token doctype"><span class="token punctuation">&lt;!</span><span class="token doctype-tag">doctype</span> <span class="token name">html</span><span class="token punctuation">></span></span></span>
-<span class="highlight-line"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>html</span> <span class="token attr-name">lang</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>en<span class="token punctuation">"</span></span><span class="token punctuation">></span></span></span>
-<span class="highlight-line">    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>head</span><span class="token punctuation">></span></span></span>
-<span class="highlight-line">        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>link</span> <span class="token attr-name">rel</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>stylesheet<span class="token punctuation">"</span></span> <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>css/bootstrap.css<span class="token punctuation">"</span></span> <span class="token punctuation">/></span></span></span>
-<span class="highlight-line">    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>head</span><span class="token punctuation">></span></span></span>
-<span class="highlight-line">    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>body</span><span class="token punctuation">></span></span></span>
-<span class="highlight-line">        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>js/jquery.js<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token script"></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">></span></span></span>
-<span class="highlight-line">    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>body</span><span class="token punctuation">></span></span></span>
-<span class="highlight-line"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>html</span><span class="token punctuation">></span></span></span></code></pre>
-<p>Dieses manuelle Vorgehen brachte jedoch Probleme mit sich, wie z. B. die Notwendigkeit, bei jeder neuen Version die Dateien zu aktualisieren und sicherzustellen, dass sie korrekt verlinkt und geladen werden.</p>
-<h3>Warum npm?</h3>
-<p><strong>1. Einfaches Versioning</strong><br>
-Mit npm kannst du Bibliotheken gezielt in den benötigten Versionen installieren und aktualisieren. Dadurch vermeidest du Inkompatibilitäten und erhältst Sicherheitsupdates automatisch.</p>
-<p><strong>2. Dependency Management</strong><br>
-npm übernimmt für dich das Verwalten von Abhängigkeiten. Anstatt mehrere Dateien manuell herunterzuladen und zu aktualisieren, ziehst du mit einem Befehl (z.B. <code>npm install</code>) alle Abhängigkeiten ins Projekt.</p>
-<p><strong>3. Modularität</strong><br>
-Mit npm kannst du spezifische Teile von Bibliotheken einbinden und nur das verwenden, was du tatsächlich benötigst. Das spart Platz und verbessert die Ladezeiten deiner Webseite.</p>
-<h3>Der Build-Prozess: Mehr als nur Dateien verschieben</h3>
-<p>Moderne Build-Tools wie Webpack oder Vite nutzen npm, um CSS und JS zu verarbeiten und zu optimieren. Anstatt unkomprimierte, riesige Bibliotheksdateien zu laden, bündelt npm diese und optimiert sie für die Produktion. Dadurch wird deine Webseite schneller und performanter.</p>
-<h3>Wie geht's? Ein einfaches Beispiel</h3>
-<p>Statt Bootstrap herunterzuladen und in einen Ordner zu legen, kannst du es so in dein Projekt integrieren:</p>
-<pre class="language-bash"><code class="language-bash"><span class="highlight-line"><span class="token function">npm</span> <span class="token function">install</span> bootstrap</span></code></pre>
-<p>Anschließend kannst du die benötigten Teile importieren und in deinem Build-Prozess verarbeiten:</p>
-<pre class="language-javascript"><code class="language-javascript"><span class="highlight-line"><span class="token keyword">import</span> <span class="token string">"bootstrap/dist/css/bootstrap.min.css"</span><span class="token punctuation">;</span></span></code></pre>
-<h2>Fazit</h2>
-<p>Das manuelle Hinzufügen von Bibliotheken gehört der Vergangenheit an. Mit npm hast du die Kontrolle, Flexibilität und Effizienz, um deine Projekte skalierbarer und sicherer zu machen. Wer heutzutage noch auf die manuelle Methode setzt, verpasst wesentliche Vorteile moderner Webentwicklung.</p>
+          <p>Manchmal ist es ja einfach wie verhext. Du kaufst dir voller Vorfreude ein neues Gadget, in meinem Fall einen <strong>Raspberry Pi Zero 2 W</strong>. Dieses winzige technische Wunderwerk hatte ich mir geholt, um mal wieder ein bisschen zu tüfteln und nebenbei was Cooles damit zu bauen. Die Idee: Schnell das <strong>Raspberry OS Lite</strong> über den Imager von der offiziellen <a href="https://www.raspberrypi.com/software/">Raspberry Pi Seite</a> draufklatschen und loslegen. Das war zumindest der Plan.</p>
+<p><img src="/img/1024/rasp-os1.png" alt="Image" title="Raspberry Imager"><div class="has-text-right image-subline">Bild 1: Raspberry Image</div></p>
+<p><img src="/img/1024/rasp-os2.png" alt="Image" title="Eigene Konfiguration"><div class="has-text-right image-subline">Bild 2: Eigene Konfiguration</div></p>
+<p><img src="/img/1024/rasp-os3.png" alt="Image" title="Wlan-Daten eintragen"><div class="has-text-right image-subline">Bild 3: Wlan-Daten eintragen</div></p>
+<p><img src="/img/1024/rasp-os6.png" alt="Image" title="ssh aktivieren"><div class="has-text-right image-subline">Bild 6: ssh aktivieren</div></p>
+<p>Nun, wie das mit Plänen so ist: Sie funktionieren – bis sie es nicht mehr tun.</p>
+<h3>Die böse Überraschung: USB Adapter streikt</h3>
+<p>Nachdem der Imager brav seinen Job erledigt hatte und das Image auf die SD-Karte geschaufelt war, war ich in bester Laune. <strong>Aber dann kam der Moment der Wahrheit</strong>: Ich schloss das gute Stück an meinen USB-Adapter an und wollte voller Erwartung darauf zugreifen. Doch nichts. Kein Lebenszeichen. Der Pi blieb hartnäckig und stumm. Kein Zugriff, keine Interaktion, einfach nada.</p>
+<p>Nun gut, dachte ich mir, nicht gleich verzweifeln. Also Plan B: Schnell mal per SSH drauf connecten. Über den Imager lässt sich ja auch ganz komfortabel <strong>SSH aktivieren</strong> und sogar die Zugangsdaten eintragen. Das muss ja klappen, dachte ich optimistisch.</p>
+<h3>Spoiler: Es klappte natürlich nicht.</h3>
+<h3>Der steinige Weg zur Lösung: Viel Fluchen, wenig Fortschritt</h3>
+<p>Nach gefühlt hundert Versuchen – Neustarts, Kabelwechsel, wütenden Googlesuchen – war immer noch nichts. Irgendwann dämmerte es mir: Irgendwo muss der Haken sein. Und so begann das klassische <strong>Trial-and-Error-Spiel</strong>. Ich tauchte tief in Foren ein, las Anleitungen, durchforstete Blogartikel, die von ähnlichen Problemen berichteten. Doch alles, was ich versuchte, lief ins Leere.</p>
+<p>Als ich schon fast drauf und dran war, das Ding aus dem Fenster zu werfen, kam mir eine Idee, die sich letztlich als <strong>Lichtblick</strong> herausstellte. Ein Blick auf die SD-Karte verriet mir nämlich, dass auf der Boot-Partition eine kleine Datei mit dem Namen <code>firstrun.sh</code> existiert. Hm, dachte ich, was könnte da wohl drinstehen?</p>
+<h3>Die Lösung: <code>firstrun.sh</code> – Dein neuer bester Freund</h3>
+<p>Also öffnete ich die Datei und fand dort etwas Interessantes: <strong>Netzwerkeinstellungen</strong>. Und siehe da, genau hier lag der Hund begraben. Während der Imager zwar die Oberfläche für das Einrichten der SSH-Verbindung bietet, scheint irgendwas beim Schreiben der Zugangsdaten nicht sauber zu laufen. Also: Selbst ist der Mann (oder die Frau)!</p>
+<p>Der Trick war einfach, aber effektiv. In der Datei gibt es einen Abschnitt, der sich um das WLAN kümmert. Ich musste also <strong>händisch</strong> mein WLAN-Passwort eintragen. Und zwar <strong>im Klartext</strong>. Japp, genau, direkt und unverschlüsselt. Was soll’s, dachte ich. Also flugs den Text reingehauen, SD-Karte zurück in den Pi, und…</p>
+<p><img src="/img/1024/rasp-os4.png" alt="Image" title="firstrun.sh"><div class="has-text-right image-subline">Bild 4: firstrun.sh editieren</div></p>
+<p><img src="/img/1024/rasp-os5.png" alt="Image" title="firstrun.sh passwort in klartext"><div class="has-text-right image-subline">Bild 5: firstrun.sh passwort in klartext eintragen</div></p>
+<h3>…wie von Zauberhand: Verbindung steht!</h3>
+<p>Nach dem nächsten Bootvorgang hat sich der Raspberry Pi Zero 2 W endlich brav ins WLAN eingeloggt. Der SSH-Zugang funktionierte einwandfrei, und ich konnte endlich auf das Gerät zugreifen.</p>
+<h3>Fazit: Von Frust zu Fortschritt</h3>
+<p>Am Ende bleibt ein wertvoller <strong>Lerneffekt</strong>: Manchmal reicht es nicht, sich auf die automatischen Tools zu verlassen. Ein Blick „unter die Haube“ hilft oft, den wahren Fehler zu finden. Hätte mir jemand zu Beginn gesagt, dass ich das WLAN-Passwort manuell und unverschlüsselt in einer Skriptdatei hinterlegen muss, hätte ich mir wahrscheinlich ein paar Nerven gespart.</p>
+<p>Also, lesson learned: Der Raspberry Pi mag klein und zickig sein, aber mit ein bisschen Detektivarbeit kriegt man auch den störrischsten Zero 2 W zum Laufen.</p>
+<p>Für Feedback bin ich immer dankbar.
+Gerne an jacob@derkuba.de</p>
+<p>Viele Grüße</p>
+<p>Euer Kuba</p>
 
             <hr>
               <ul class="post-navigation">
                   <li>Nächster Artikel:
-                    <a href="/posts/1024/raspberry-os/">Fuckup der Woche: Raspberry Pi Zero 2 W - Wenn das Setup nervt und der Wlan-Zugang klemmt</a>
+                    <a href="/posts/en/1024/raspberry-os/">Weekly Fuckup: Raspberry Pi Zero 2 W – A Small Wiring Mess with a Big Lesson</a>
                   </li>
                 
                   <li>Vorheriger Artikel:
-                    <a href="/posts/0924/modernized/">Modernisiert und Open Source</a>
+                    <a href="/posts/0924/web-dependency-management/">Warum du Bibliotheken nicht manuell speichern solltest: npm als bessere Lösung</a>
                   </li>
                 
               </ul>
@@ -197,7 +193,7 @@ Mit npm kannst du spezifische Teile von Bibliotheken einbinden und nur das verwe
       </div>
     </div>
   </section>
-        <!-- Current page: /posts/0924/web-dependency-management/ -->
+        <!-- Current page: /posts/1024/raspberry-os/ -->
         <footer class="footer">
     <hr/>
     <div class="content has-text-centered">

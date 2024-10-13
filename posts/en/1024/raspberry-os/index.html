@@ -1,0 +1,205 @@
+<!doctype html>
+<html lang="de">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1"/>
+        <title>Weekly Fuckup: Raspberry Pi Zero 2 W – A Small Wiring Mess with a Big Lesson</title>
+        <meta name="description" content="Wie stellt man Storybook ein?">
+        <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+        <link rel="alternate" href="/feed/feed.xml" type="application/atom+xml" title="der_kuba">
+        <link rel="alternate" href="/feed/feed.json" type="application/json" title="der_kuba">
+        <link rel="stylesheet" href="/assets/css/prism.css">
+        <link rel="stylesheet" href="/assets/css/bulma.css">
+        <link rel="stylesheet" href="/assets/css/custom.css">
+        <script>
+            document.addEventListener("DOMContentLoaded", () => {
+                const e = Array
+                    .prototype
+                    .slice
+                    .call(document.querySelectorAll(".navbar-burger"), 0);
+                e.length > 0 && e.forEach(e => {
+                    e.addEventListener("click", () => {
+                        const t = e.dataset.target,
+                            a = document.getElementById(t);
+                        e.classList.toggle("is-active"),
+                        a.classList.toggle("is-active")
+                    })
+                })
+                const disableDarkMode = () => {
+                    const bodyNode = document.querySelector("body");
+                    bodyNode
+                        .classList
+                        .remove("dark-mode")
+                        localStorage
+                        .setItem('darkMode', 'disabled');
+                }
+                const enableDarkMode = () => {
+                    const bodyNode = document.querySelector("body");
+                    bodyNode
+                        .classList
+                        .add("dark-mode")
+                        localStorage
+                        .setItem('darkMode', 'enabled');
+                }
+                const button = document.getElementById("darkmode");
+                button.addEventListener("click", () => {
+                    const bodyNode = document.querySelector("body");
+                    if (bodyNode.classList.contains("dark-mode")) {
+                        disableDarkMode();
+                    } else {
+                        enableDarkMode();
+                    }
+                })
+                if (localStorage.getItem('darkMode') === 'enabled') {
+                    enableDarkMode();
+                }
+            });
+        </script>
+    </head>
+    <body><header>
+    <div class="container">
+        <nav class="navbar">
+            <div class="navbar-brand">
+                <a class="navbar-item navbar-brand__title " href="/">
+                    der_kuba
+                </a>
+                <a class="navbar-item is-size-7-mobile" href="https://github.com/derKuba">
+                    @Github
+                </a>
+                <a class="navbar-item is-size-7-mobile" href="https://twitter.com/der_kuba">
+                    @Twitter
+                </a>
+                <a class="navbar-item is-size-7-mobile" href="https://www.linkedin.com/in/jacob-pawlik-08a40015b/">
+                    @LinkedIn
+                </a>
+                <div class="navbar-burger" data-target="navigation-items">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+            <div id="navigation-items" class="navbar-menu">
+                <div class="navbar-end">
+                    
+                        <a class="navbar-item " href="/">
+                            Home
+                        </a>
+                        <a class="navbar-item " href="/posts/">
+                            Archiv
+                        </a>
+                        <a class="navbar-item " href="/about/">
+                            About Me
+                        </a>
+                        <a class="navbar-item " href="/en/">
+                            English
+                        </a>
+                        <a class="navbar-item " href="/content/impressum.html">
+                            Impressum
+                        </a>
+                        <a class="navbar-item " href="/content/datenschutz.html">
+                            Datenschutzerklärung
+                        </a>
+                    <button id="darkmode" alt="dark mode">
+                        <svg width="30" height="30">
+                            <circle cx="15" cy="15" r="6" fill="currentColor"/>
+                            <line id="ray" stroke="currentColor" stroke-width="2" stroke-linecap="round" x1="15" y1="1" x2="15" y2="4"></line>
+                            <use href="#ray" transform="rotate(45 15 15)"/>
+                            <use href="#ray" transform="rotate(90 15 15)"/>
+                            <use href="#ray" transform="rotate(135 15 15)"/>
+                            <use href="#ray" transform="rotate(180 15 15)"/>
+                            <use href="#ray" transform="rotate(225 15 15)"/>
+                            <use href="#ray" transform="rotate(270 15 15)"/>
+                            <use href="#ray" transform="rotate(315 15 15)"/>
+                        </svg>
+                    </button>
+                    <!-- special thanks to https://www.freecodecamp.org/news/how-to-handle-dark-mode-with-css-and-javascript/ -->
+                </div>
+            </div>
+        </nav>
+    </div>
+</header>
+        
+<section class="section">
+  <div class="container">
+    <div class="columns is-centered">
+      <div class="column is-8">
+        <h1 class="title is-3">Weekly Fuckup: Raspberry Pi Zero 2 W – A Small Wiring Mess with a Big Lesson</h1>
+        <div class="post-detail__tags">
+          <h3 class="subtitle is-6">
+            <time datetime="2024-10-12">
+              12 Oct 2024
+            </time>
+          </h3>
+          <div class="tags"><a href="/tags/stenciljs/" class="post-tag">
+                <span class="tag is-black">
+                  Stenciljs
+                </span>
+              </a><a href="/tags/storybook/" class="post-tag">
+                <span class="tag is-primary">
+                  Storybook
+                </span>
+              </a>
+          </div>
+        </div>
+        <div class="content post_detail__content">
+          <div class="language-hint">
+            
+              <a href="/posts/1024/raspberry-os">Auf Deutsch lesen <img width="25" src="/assets/images/de.png"/></a>
+            
+          </div>
+          <p>Sometimes, things just seem cursed. You buy yourself a new gadget with all the excitement in the world—like I did with the <strong>Raspberry Pi Zero 2 W</strong>. This tiny technological marvel was supposed to spark a new project, something cool to tinker with. The plan: quickly flash the <strong>Raspberry OS Lite</strong> onto an SD card using the official <a href="https://www.raspberrypi.com/software/">Raspberry Pi Imager</a> and get started. That was the idea, at least.</p>
+<p><img src="/img/1024/rasp-os1.png" alt="Image" title="Raspberry Imager"><div class="has-text-right image-subline">Bild 1: Raspberry Image</div></p>
+<p><img src="/img/1024/rasp-os2.png" alt="Image" title="Eigene Konfiguration"><div class="has-text-right image-subline">Bild 2: Eigene Konfiguration</div></p>
+<p><img src="/img/1024/rasp-os3.png" alt="Image" title="Wlan-Daten eintragen"><div class="has-text-right image-subline">Bild 3: Wlan-Daten eintragen</div></p>
+<p><img src="/img/1024/rasp-os6.png" alt="Image" title="ssh aktivieren"><div class="has-text-right image-subline">Bild 6: ssh aktivieren</div></p>
+<p>Well, you know how plans go: they work—until they don't.</p>
+<h3>The Unpleasant Surprise: USB Adapter Not Working</h3>
+<p>After the Imager did its job, writing the image to the SD card, I was still in a good mood. <strong>But then came the moment of truth</strong>: I connected the Pi to my USB adapter and eagerly tried to access it. But nothing. No response. The Pi stayed silent, stubbornly refusing to interact. No access, no interaction—just nothing.</p>
+<p>Alright, I thought, no need to panic. So, onto Plan B: quickly SSH into the device. The Imager conveniently lets you <strong>enable SSH</strong> and even enter the login credentials. This should work, I thought, still optimistic.</p>
+<h3>Spoiler: It didn't.</h3>
+<h3>The Rocky Road to a Solution: Lots of Swearing, Little Progress</h3>
+<p>After what felt like a hundred attempts—restarting, switching cables, furiously Googling—still nothing. At some point, it dawned on me: something had to be missing. And so began the classic <strong>trial-and-error game</strong>. I dove deep into forums, read guides, and scoured blog posts describing similar issues. But everything I tried led nowhere.</p>
+<p>Just when I was about to throw the thing out the window, an idea struck me that turned out to be the <strong>breakthrough</strong> I needed. A glance at the SD card showed me a little file on the boot partition named <code>firstrun.sh</code>. Hmm, I wondered, what's inside that?</p>
+<h3>The Solution: <code>firstrun.sh</code> – Your New Best Friend</h3>
+<p>So, I opened the file and found something interesting: <strong>network settings</strong>. And there it was, the key to the problem. While the Imager offers a nice interface for setting up SSH and entering credentials, something wasn't working properly behind the scenes. So, time to take matters into my own hands!</p>
+<p>The trick was simple but effective. Inside the file, there was a section dealing with Wi-Fi. I needed to <strong>manually</strong> enter my Wi-Fi password. And yes, <strong>in plain text</strong>. Yep, exactly—directly, unencrypted. Well, whatever, I thought. So I quickly added my credentials, popped the SD card back into the Pi, and…</p>
+<p><img src="/img/1024/rasp-os4.png" alt="Image" title="firstrun.sh"><div class="has-text-right image-subline">Bild 4: firstrun.sh editieren</div></p>
+<p><img src="/img/1024/rasp-os5.png" alt="Image" title="firstrun.sh passwort in klartext"><div class="has-text-right image-subline">Bild 5: firstrun.sh passwort in klartext eintragen</div></p>
+<h3>…like magic: Connection established!</h3>
+<p>After the next boot, the Raspberry Pi Zero 2 W finally logged into my Wi-Fi network. The SSH connection worked flawlessly, and I could finally access the device.</p>
+<h3>Conclusion: From Frustration to Progress</h3>
+<p>In the end, a valuable <strong>lesson</strong> was learned: Sometimes, you can’t rely entirely on automatic tools. A peek “under the hood” often helps to find the real problem. Had someone told me at the start that I’d have to manually enter my Wi-Fi password unencrypted in a script file, I might have saved myself a few headaches.</p>
+<p>So, lesson learned: The Raspberry Pi might be small and temperamental, but with a little detective work, even the most stubborn Zero 2 W can be coaxed into working.</p>
+<p>I’m always grateful for feedback.
+Feel free to send it to jacob@derkuba.de.</p>
+<p>Best regards,</p>
+<p>Yours, Kuba</p>
+
+            <hr>
+              <ul class="post-navigation">
+                  <li>Vorheriger Artikel:
+                    <a href="/posts/1024/raspberry-os/">Fuckup der Woche: Raspberry Pi Zero 2 W - Wenn das Setup nervt und der Wlan-Zugang klemmt</a>
+                  </li>
+                
+              </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+        <!-- Current page: /posts/en/1024/raspberry-os/ -->
+        <footer class="footer">
+    <hr/>
+    <div class="content has-text-centered">
+        <p>
+            der_kuba - 2021-2024 -
+            <a href="/content/impressum.html">Impressum</a>
+            -
+            <a href="/content/datenschutz.html">Datenschutzerklärung</a>
+        </p>
+    </div>
+</footer>
+    </body>
+</html>

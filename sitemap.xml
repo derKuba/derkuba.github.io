@@ -347,36 +347,6 @@
 		</url>
 		
 		<url>
-			<loc>https://derkuba.de/tags/recruiting/</loc>
-			<lastmod>2024-09-19</lastmod>
-		</url>
-		
-		<url>
-			<loc>https://derkuba.de/tags/job-interview/</loc>
-			<lastmod>2024-09-19</lastmod>
-		</url>
-		
-		<url>
-			<loc>https://derkuba.de/tags/flutter/</loc>
-			<lastmod>2024-09-19</lastmod>
-		</url>
-		
-		<url>
-			<loc>https://derkuba.de/tags/sqlite/</loc>
-			<lastmod>2024-09-19</lastmod>
-		</url>
-		
-		<url>
-			<loc>https://derkuba.de/tags/sqllite/</loc>
-			<lastmod>2024-09-19</lastmod>
-		</url>
-		
-		<url>
-			<loc>https://derkuba.de/tags/typescript/</loc>
-			<lastmod>2024-09-19</lastmod>
-		</url>
-		
-		<url>
 			<loc>https://derkuba.de/tags/11nty/</loc>
 			<lastmod>2024-09-19</lastmod>
 		</url>
@@ -408,6 +378,36 @@
 		
 		<url>
 			<loc>https://derkuba.de/tags/tutorial/</loc>
+			<lastmod>2024-09-19</lastmod>
+		</url>
+		
+		<url>
+			<loc>https://derkuba.de/tags/recruiting/</loc>
+			<lastmod>2024-09-19</lastmod>
+		</url>
+		
+		<url>
+			<loc>https://derkuba.de/tags/job-interview/</loc>
+			<lastmod>2024-09-19</lastmod>
+		</url>
+		
+		<url>
+			<loc>https://derkuba.de/tags/typescript/</loc>
+			<lastmod>2024-09-19</lastmod>
+		</url>
+		
+		<url>
+			<loc>https://derkuba.de/tags/flutter/</loc>
+			<lastmod>2024-09-19</lastmod>
+		</url>
+		
+		<url>
+			<loc>https://derkuba.de/tags/sqlite/</loc>
+			<lastmod>2024-09-19</lastmod>
+		</url>
+		
+		<url>
+			<loc>https://derkuba.de/tags/sqllite/</loc>
 			<lastmod>2024-09-19</lastmod>
 		</url>
 		
@@ -447,17 +447,17 @@
 		</url>
 		
 		<url>
+			<loc>https://derkuba.de/tags/certification/</loc>
+			<lastmod>2024-09-19</lastmod>
+		</url>
+		
+		<url>
 			<loc>https://derkuba.de/tags/agile/</loc>
 			<lastmod>2024-09-19</lastmod>
 		</url>
 		
 		<url>
 			<loc>https://derkuba.de/tags/scrum/</loc>
-			<lastmod>2024-09-19</lastmod>
-		</url>
-		
-		<url>
-			<loc>https://derkuba.de/tags/certification/</loc>
 			<lastmod>2024-09-19</lastmod>
 		</url>
 		
@@ -474,5 +474,15 @@
 		<url>
 			<loc>https://derkuba.de/about/en_about/</loc>
 			<lastmod>2024-09-20</lastmod>
+		</url>
+		
+		<url>
+			<loc>https://derkuba.de/posts/1024/raspberry-os/</loc>
+			<lastmod>2024-10-12</lastmod>
+		</url>
+		
+		<url>
+			<loc>https://derkuba.de/posts/en/1024/raspberry-os/</loc>
+			<lastmod>2024-10-12</lastmod>
 		</url>
 </urlset>
