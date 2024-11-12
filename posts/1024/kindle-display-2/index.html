@@ -1,0 +1,206 @@
+<!doctype html>
+<html lang="de">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1"/>
+        <title>Kindle 3 als Statusdisplay II</title>
+        <meta name="description" content="Kindle Display">
+        <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+        <link rel="alternate" href="/feed/feed.xml" type="application/atom+xml" title="der_kuba">
+        <link rel="alternate" href="/feed/feed.json" type="application/json" title="der_kuba">
+        <link rel="stylesheet" href="/assets/css/prism.css">
+        <link rel="stylesheet" href="/assets/css/bulma.css">
+        <link rel="stylesheet" href="/assets/css/custom.css">
+        <script>
+            document.addEventListener("DOMContentLoaded", () => {
+                const e = Array
+                    .prototype
+                    .slice
+                    .call(document.querySelectorAll(".navbar-burger"), 0);
+                e.length > 0 && e.forEach(e => {
+                    e.addEventListener("click", () => {
+                        const t = e.dataset.target,
+                            a = document.getElementById(t);
+                        e.classList.toggle("is-active"),
+                        a.classList.toggle("is-active")
+                    })
+                })
+                const disableDarkMode = () => {
+                    const bodyNode = document.querySelector("body");
+                    bodyNode
+                        .classList
+                        .remove("dark-mode")
+                        localStorage
+                        .setItem('darkMode', 'disabled');
+                }
+                const enableDarkMode = () => {
+                    const bodyNode = document.querySelector("body");
+                    bodyNode
+                        .classList
+                        .add("dark-mode")
+                        localStorage
+                        .setItem('darkMode', 'enabled');
+                }
+                const button = document.getElementById("darkmode");
+                button.addEventListener("click", () => {
+                    const bodyNode = document.querySelector("body");
+                    if (bodyNode.classList.contains("dark-mode")) {
+                        disableDarkMode();
+                    } else {
+                        enableDarkMode();
+                    }
+                })
+                if (localStorage.getItem('darkMode') === 'enabled') {
+                    enableDarkMode();
+                }
+            });
+        </script>
+    </head>
+    <body><header>
+    <div class="container">
+        <nav class="navbar">
+            <div class="navbar-brand">
+                <a class="navbar-item navbar-brand__title " href="/">
+                    der_kuba
+                </a>
+                <a class="navbar-item is-size-7-mobile" href="https://github.com/derKuba">
+                    @Github
+                </a>
+                <a class="navbar-item is-size-7-mobile" href="https://twitter.com/der_kuba">
+                    @Twitter
+                </a>
+                <a class="navbar-item is-size-7-mobile" href="https://www.linkedin.com/in/jacob-pawlik-08a40015b/">
+                    @LinkedIn
+                </a>
+                <div class="navbar-burger" data-target="navigation-items">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+            <div id="navigation-items" class="navbar-menu">
+                <div class="navbar-end">
+                    
+                        <a class="navbar-item " href="/">
+                            Home
+                        </a>
+                        <a class="navbar-item " href="/posts/">
+                            Archiv
+                        </a>
+                        <a class="navbar-item " href="/about/">
+                            About Me
+                        </a>
+                        <a class="navbar-item " href="/en/">
+                            English
+                        </a>
+                        <a class="navbar-item " href="/content/impressum.html">
+                            Impressum
+                        </a>
+                        <a class="navbar-item " href="/content/datenschutz.html">
+                            Datenschutzerklärung
+                        </a>
+                    <button id="darkmode" alt="dark mode">
+                        <svg width="30" height="30">
+                            <circle cx="15" cy="15" r="6" fill="currentColor"/>
+                            <line id="ray" stroke="currentColor" stroke-width="2" stroke-linecap="round" x1="15" y1="1" x2="15" y2="4"></line>
+                            <use href="#ray" transform="rotate(45 15 15)"/>
+                            <use href="#ray" transform="rotate(90 15 15)"/>
+                            <use href="#ray" transform="rotate(135 15 15)"/>
+                            <use href="#ray" transform="rotate(180 15 15)"/>
+                            <use href="#ray" transform="rotate(225 15 15)"/>
+                            <use href="#ray" transform="rotate(270 15 15)"/>
+                            <use href="#ray" transform="rotate(315 15 15)"/>
+                        </svg>
+                    </button>
+                    <!-- special thanks to https://www.freecodecamp.org/news/how-to-handle-dark-mode-with-css-and-javascript/ -->
+                </div>
+            </div>
+        </nav>
+    </div>
+</header>
+        
+<section class="section">
+  <div class="container">
+    <div class="columns is-centered">
+      <div class="column is-8">
+        <h1 class="title is-3">Kindle 3 als Statusdisplay II</h1>
+        <div class="post-detail__tags">
+          <h3 class="subtitle is-6">
+            <time datetime="2024-10-30">
+              30 Oct 2024
+            </time>
+          </h3>
+          <div class="tags"><a href="/tags/blog/" class="post-tag">
+                <span class="tag is-black">
+                  Blog
+                </span>
+              </a>
+          </div>
+        </div>
+        <div class="content post_detail__content">
+          <div class="language-hint">
+            
+          </div>
+          <p>Im letzten Post habe ich darüber berichtet, wie ich erfolgreich ein eigenes Bild auf einem Kindle darstellen konnte. Ich dachte, ich wäre fast am Ziel – weit gefehlt.</p>
+<!-- endOfPreview -->
+<p>Vorweg: Ich distanziere mich ausdrücklich von jeglicher Raubkopiererei. Mein Kindle ist ein altes Modell der Version 3, das ich mir nach dem Studium aus den USA bestellt habe. Vor kurzem wurde mein Gerät von Amazon ausgemustert und kann nicht mehr auf den Kindle Store zugreifen. Amazon bot mir großzügig 15 % Rabatt auf ein neueres Modell an, doch als Verfechter der Nachhaltigkeit und Vermeider von Elektroschrott entschied ich mich, die Originalsoftware zu modifizieren. Eine Anleitung dazu wird es hier jedoch nicht geben. ;-)</p>
+<h3>Die Idee</h3>
+<p>Meine Idee ist simpel: das Display meines Kindles als Statusanzeige für verschiedene Informationen zu nutzen, darunter:</p>
+<ul>
+<li>Wetter</li>
+<li>Kalendereinträge</li>
+<li>To-do-Liste</li>
+<li>Einkaufsliste</li>
+<li>Sensor-Daten aus der Heimautomatisierung</li>
+</ul>
+<p>Alles übersichtlich verpackt und in einem schönen Holzrahmen untergebracht. Die notwendigen APIs anzusprechen sollte ja kein Hexenwerk sein, oder? :-)</p>
+<h3>Die Architektur</h3>
+<p><img src="/img/1024/architecture.png" alt="Architektur" title="Architektur"><div class="has-text-right image-subline">Bild 1: Architektur</div></p>
+<p>Der Kindle-Part ist eigentlich ziemlich simpel, hat aber dennoch die meiste Zeit beansprucht. Die Anleitungen im Internet sind etwas knifflig, und ChatGPT war eine große Hilfe. Nach etwa 12 Stunden gelang es mir, den Kindle per SSH anzusprechen und darauf Code auszuführen. Es hat riesigen Spaß gemacht! Im Grunde kopiert man zwei Bash-Skripte auf den Kindle und registriert diese als Cronjob. Diese Skripte sorgen dafür, dass ein Bild aus meinem Heimnetzwerk heruntergeladen und auf dem Display angezeigt wird. Klingt einfach, oder?</p>
+<p>Tatsächlich funktionierte es schnell – allerdings war das Bild verzerrt. Egal, was ich ausprobierte, ich konnte es nicht korrekt drehen und skalieren. Selbst Referenzbilder aus anderen Projekten wie <a href="https://github.com/mpetroff/kindle-weather-display">diesem hier</a> wurden problemlos angezeigt. Nach unzähligen Versuchen mit verschiedenen Metadaten, Bildformaten und Skalierungen war ich kurz davor aufzugeben, bis ich das Tool <a href="https://de.wikipedia.org/wiki/Pngcrush">pngCrush</a> aus dem Referenzprojekt ausprobierte. Aus unerklärlichen Gründen funktionierte es! Von da an war es „nur noch“ eine Frage der richtigen Darstellung der Daten.</p>
+<h3>Google API</h3>
+<p>Die nächste Herausforderung war das Ansprechen der Google-API. Vor einigen Jahren benötigte man dafür lediglich einen API-Key, doch inzwischen ist es ein riesiges Plattform-Ökosystem. Ich legte ein Projekt an, aktivierte die benötigten APIs, kämpfte mich durch Anmelde- und OAuth-Prozesse, aber nichts funktionierte – Google wollte mir ständig eine Anmeldemaske aufdrängen. Ich wurde schließlich auf eine Service-API verwiesen, doch das half auch nicht weiter. Meine Frustration war auf dem Höhepunkt, bis ich auf eine unerwartete Lösung stieß:</p>
+<p><strong>ALLE GOOGLE-KALENDER SIND ÖFFENTLICH EINSEHBAR über eine GEHEIME URL</strong></p>
+<p>Perfekt! Ich brauchte die überkomplizierte und schlecht dokumentierte API von Google nicht mehr. Über diesen öffentlichen Link erhalte ich eine *.ics-Datei mit allen Kalendereinträgen. Nach etwas Recherche entschied ich mich für das Tool node-ics und konnte plötzlich problemlos auf meine Kalenderdaten zugreifen.</p>
+<h3>Einkaufs- und To-do-Listen</h3>
+<p>Für die Einkaufs- und To-do-Liste wollte ich ursprünglich die Google Tasks API verwenden, aber nach der frustrierenden Erfahrung mit der Kalender-API war das für mich keine Option mehr. Ich ersetzte Google durch Trello. Die API von Trello ist einfach, benötigt nur einen API-Key und ein Token, die beide schnell und unkompliziert erstellt sind.</p>
+<h3>Wetter</h3>
+<p>Für die Wetterdaten nutze ich die <a href="https://api.open-meteo.com">Open Meteo API</a>. Da ich nur ein paar Mal am Tag Daten abfragen möchte, bleibt es kostenlos. Auch hier ist die API unkompliziert: Man gibt den Ort und die gewünschten Datenpunkte an.</p>
+<h3>Raspberry Pi</h3>
+<p>Als Server entschied ich mich für meinen Raspberry Pi Zero W, aber schnell zeigte sich, dass das kleine Gerät etwas zu langsam arbeitete, möglicherweise aufgrund der alten SD-Karte. Daher rüstete ich beides auf einen <a href="https://www.raspberrypi.com/products/raspberry-pi-zero-2-w/">Raspberry Pi Zero 2 W</a> und eine neue SD-Karte auf. Die Kosten dafür liegen bei etwa 30 Euro. Über die WLAN-Einrichtung habe ich bereits in einem anderen Post geschrieben <a href="https://derkuba.de/posts/1024/raspberry-os/">(siehe hier)</a>.</p>
+<p>Node ließ sich leicht installieren, und ich schrieb ein kleines Deployment-Skript, das mithilfe von <a href="https://github.com/maitrungduc1410/node-scp-async">node-scp</a> die Sourcen per SSH auf den Pi Zero lädt. Für das Prozess-Management wählte ich <a href="https://pm2.keymetrics.io/">PM2</a>, da ich nicht mit Docker arbeiten wollte. Ein kleines Start-Skript sorgt dafür, dass der Node-Service bei jedem Systemstart automatisch läuft.</p>
+<h3>Zusammengefügt</h3>
+<p>Alle Teile zusammen ergeben nun folgenden Ablauf:</p>
+<h4>Bildgenerierung</h4>
+<p>Das Bild wird über ein Bash-Skript generiert, das als Cronjob ausgeführt wird. Während der Bildgenerierung werden die benötigten Daten aus den verschiedenen APIs geladen und über die Node-Canvas-API auf ein Bild gezeichnet. Dieses Bild wird abschließend durch pngCrush komprimiert und von Fastify bereitgestellt.</p>
+<h4>Webserver</h4>
+<p>Ein Fastify-Webserver stellt eine Route <code>/status-display</code> zur Verfügung, über die das zuletzt generierte Bild heruntergeladen werden kann. Damit der Kindle darauf zugreifen kann, habe ich in meinem Router eine feste IP-Adresse für den Raspberry Pi Zero eingerichtet.</p>
+<h4>Kindle</h4>
+<p>Auf dem Kindle läuft ebenfalls ein Cronjob, der stündlich den Webserver aufruft, das Bild herunterlädt und anzeigt. Der Kindle bereitete mir lange Zeit Schwierigkeiten, da er regelmäßig „nach Hause telefonierte“ und Teile des neuen Codes überschrieben wurden. Eine Firewall konnte das Problem lösen. Nochmals zur Erinnerung: Der Versandriese hat meinen Kindle 3 aus dem Support genommen.</p>
+<h2>Fazit</h2>
+<p>Durch dieses Projekt konnte ich viel Neues lernen und bestehendes Wissen vertiefen. Alles fügte sich Schritt für Schritt zusammen. Ein letzter Feinschliff bleibt: Ich möchte das Display in einen schönen Rahmen einbauen.</p>
+<p>Feedback ist jederzeit willkommen! Gerne an: jacob@derkuba.de</p>
+<p>Viele Grüße<br>
+Euer Kuba</p>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+        <!-- Current page: /posts/1024/kindle-display-2/ -->
+        <footer class="footer">
+    <hr/>
+    <div class="content has-text-centered">
+        <p>
+            der_kuba - 2021-2024 -
+            <a href="/content/impressum.html">Impressum</a>
+            -
+            <a href="/content/datenschutz.html">Datenschutzerklärung</a>
+        </p>
+    </div>
+</footer>
+    </body>
+</html>

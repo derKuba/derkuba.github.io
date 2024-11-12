@@ -3,8 +3,8 @@
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1"/>
-        <title>Kindle 3 als Statusdisplay I</title>
-        <meta name="description" content="Kindle Display">
+        <title>Fuckup der Woche: Spaß mit Vitest, Jest und der CI</title>
+        <meta name="description" content="Eine Leidensgeschichte aus dem Web-Frontend">
         <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
         <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
         <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
@@ -125,16 +125,28 @@
   <div class="container">
     <div class="columns is-centered">
       <div class="column is-8">
-        <h1 class="title is-3">Kindle 3 als Statusdisplay I</h1>
+        <h1 class="title is-3">Fuckup der Woche: Spaß mit Vitest, Jest und der CI</h1>
         <div class="post-detail__tags">
           <h3 class="subtitle is-6">
-            <time datetime="2024-10-03">
-              03 Oct 2024
+            <time datetime="2024-11-12">
+              12 Nov 2024
             </time>
           </h3>
-          <div class="tags"><a href="/tags/blog/" class="post-tag">
+          <div class="tags"><a href="/tags/vite/" class="post-tag">
                 <span class="tag is-black">
-                  Blog
+                  Vite
+                </span>
+              </a><a href="/tags/vitest/" class="post-tag">
+                <span class="tag is-primary">
+                  Vitest
+                </span>
+              </a><a href="/tags/testing/" class="post-tag">
+                <span class="tag is-link">
+                  Testing
+                </span>
+              </a><a href="/tags/fuckup/" class="post-tag">
+                <span class="tag is-success">
+                  Fuckup
                 </span>
               </a>
           </div>
@@ -143,26 +155,25 @@
           <div class="language-hint">
             
           </div>
-          <p>Heute versuche ich mich inspiriert durch den wunderbaren <a href="https://lukas.pustina.de/">Dr. Lukas Pustina</a> und dem Thema Heimautomatisierung an einer Statusanzeige.
-Meine erste Idee war es sich ein E-Ink-Display zu kaufen und es mit dem Raspberry Pi zu verdrahten. <!-- endOfPreview -->Diese finde ich aber in der passenden größe ab 7 Zoll relativ teuer (~70€). Damit war meine Idee gestorben. Zufälligerweise hat der große Versandriese wieder seine neuen Promotionstage angepriesen und mir fiel ein, dass mein alter Kindle nicht mehr mit dem Store verbunden werden kann und ich mir einen günstigen neuen Kaufen müsste (mein alter hat noch eine Tastatur und gehört der dritten Generation an -&gt; nein, nicht der 90er Band :-) ).</p>
-<p>Zwecks nachhaltigkeit kam mir die Idee vielleicht einfach dieses Display zu verwenden. Dafür sollte mein neu angeschaffter Raspberry Pi 4 B herhalten. Schnell wurde mir klar, dass der Anschluss nicht möglich ist. Ein erfahrener Hacker hat es zwar geschafft diesen Kindle als Display zu verwenden, konnte aber nur ein <a href="https://www.golem.de/news/kindleberry-pi-kindle-reader-als-bildschirm-fuer-das-raspberry-pi-1209-94474.html">Terminal</a> anzeigen. Das reicht mir natürlich nicht.</p>
-<p>Weitere Recherchen haben dann folgendes <a href="https://github.com/dennisreimann/kindle-display">Finding</a> gehabt. Ein Entwickler namens <a href="https://github.com/dennisreimann">Dennis Reimann</a> nutzt seinen Kindle verpackt in einem Bilderrahmen zur Anzeige des Bitcoin-Preises. Jackpot. Genau das möchte ich auch. Dazu führt er auf einem offenen Kindle ein Script aus, dass sich ein Bild von einem Webserver lädt und anzeigt. Gleichzeitig zeigt er wie er einen kleinen Webserver programmiert, der dieses Statusbild herstellt. Ich finde die Idee total raffiniert. Für das Bild schreibt er eine kleine Webseite, macht einen Screenshot davon und stellt es dem Kindle per API zu verfügung.</p>
-<p>Los gehts.</p>
-<p>Ich zerlege mein Projekt also in folgende Schritte:</p>
+          <p>In meinem SolidJS-Projekt wollte ich unsere firmeninterne Präferenz für Vite nutzen, was nahelegt, auch <strong>Vitest</strong> als Test-Framework zu verwenden. Das schien der naheliegende Schritt für Unit-Tests zu sein, und die Integration funktionierte anfangs auch ziemlich gut. Die Tests liefen reibungslos und waren leicht zu schreiben. Aber dann fing das eigentliche Drama an…</p>
+<p><img src="/img/1124/121124-fuckup.png" alt="Image" title="github error"></p>
+<!-- endOfPreview -->
+<h2>Die erste Hürde: Coverage und Test-Thresholds</h2>
+<p>Nachdem ich den Projekt-Root auf <code>src</code> geändert hatte, funktionierte die Coverage-Berichterstattung plötzlich nicht mehr wie erwartet. Die Anzeige der Testabdeckung wollte einfach nicht wie gewünscht funktionieren, und das Einrichten von Test-Thresholds (um sicherzustellen, dass die Coverage eine bestimmte Mindestabdeckung erreicht) schlug durchweg fehl.</p>
+<p>Trotz intensiver Recherchen und diverser Konfigurationsanpassungen ließ sich kein stabiler Zustand erzielen. Immer wieder gab es kleine Probleme und Unregelmäßigkeiten in der Ausgabe der Coverage-Reports.</p>
+<h2>CI-Albtraum: Inkonsistentes Verhalten</h2>
+<p>Nachdem die Tests lokal endlich liefen, ging der Code in die CI. Und hier fing der wahre Spaß an. Trotz sämtlicher gleicher Parameter und Konfigurationen zeigte sich in der CI-Umgebung durchweg ein <strong>anderes Verhalten</strong> als lokal:</p>
 <ul>
-<li>Kindle öffnen</li>
-<li>Eigenes Bild darstellen</li>
-<li>SSH Zugang zum Kindle</li>
-<li>vom Kindle eine Api aufrufen</li>
-<li>Bild in geeigneten Ort ablegen</li>
-<li>Aktualisieren</li>
-<li>Mockserver mit einem Bild im eigenen Netzwerk platzieren</li>
-<li>Mockserver durch echten Server ersetzen.</li>
+<li><strong>Mocks ließen sich nicht zuverlässig zurücksetzen</strong>: In der CI-Umgebung verhielten sich Mocks anders und ließen sich teilweise nicht korrekt zurücksetzen. Dies führte dazu, dass Tests fehlschlugen, die lokal grün waren.</li>
+<li><strong>Tests schlugen ohne erkennbaren Grund fehl</strong>: Ständig gab es Fehler, die in der lokalen Umgebung einfach nicht auftraten. Es war, als ob die CI eine völlig andere Umgebung interpretierte, selbst mit denselben Node-Versionen und Abhängigkeiten.</li>
 </ul>
-<h2>Kindle öffnen</h2>
-<p>Es gibt sehr viele Blogposts und Tutorials. Alle Quellen verweisen auf ein altes Forum. Die Software ist schnell geladen, der Kindle per USB angeschlossen, die bin kopiert und die paar Klicks auf dem Gerät getan. Und dann? Nix. Habe diesen Vorgang mehrfach wiederholt. Nada. Nie habe ich das beschriebene Verhalten bekommen.</p>
-<p>Nach gefühlt etlichen Versuchen und diversen Webseiten, habe ich mich durch die Ordner auf dem Gerät gewühlt. Siehe da, in einer Textfile stand etwas von erfolgreicher Installation. Auf dem Gerät bekommt man sonst nichts davon mit. Danach habe ich mir den Screensaver vorgenommen, ein eigenes Bild erstellt, drauf gespielt und zack. Nach dem Ausschalten, war alles nur weiß. Ein Reboot brachte dann den erhofften Erfolg:</p>
-<p><img src="/img/1024/fam.jpg" alt="Dateiauswahl" title="Kindle"><div class="has-text-right image-subline">Bild 1: Eigener Screensaver</div></p>
+<h2>Lösung: Migration auf Jest</h2>
+<p>Nach langem Hin und Her und zahllosen Versuchen, Vitest in der CI stabil zu bekommen, blieb schließlich nur eine Lösung: <strong>die Migration auf Jest</strong>. Nachdem Jest eingerichtet war, lief alles stabil, sowohl lokal als auch in der CI. Die Konfiguration und der Testaufbau dauerten zwar etwas länger, aber die Tests zeigten nun das erwartete Verhalten – überall.</p>
+<h3>Lessons Learned</h3>
+<p>Dieser Prozess hat mich gelehrt, dass es oft sinnvoll ist, pragmatisch zu bleiben. Auch wenn ein Tool wie Vitest für Vite-Projekte naheliegt, ist es manchmal besser, auf bewährte Werkzeuge wie Jest zurückzugreifen, insbesondere wenn Stabilität in verschiedenen Umgebungen gefragt ist.</p>
+<p><strong>Moral der Geschichte</strong>: Manchmal ist der einfachste Weg tatsächlich der beste, und der „neue heiße Scheiß“ muss sich erst noch in der Praxis bewähren.</p>
+<hr>
+<p><strong>Ende</strong></p>
 <p>Für Feedback bin ich immer dankbar.
 Gerne an jacob@derkuba.de</p>
 <p>Viele Grüße</p>
@@ -170,12 +181,8 @@ Gerne an jacob@derkuba.de</p>
 
             <hr>
               <ul class="post-navigation">
-                  <li>Nächster Artikel:
-                    <a href="/posts/1024/raspberry-os/">Fuckup der Woche: Raspberry Pi Zero 2 W - Wenn das Setup nervt und der Wlan-Zugang klemmt</a>
-                  </li>
-                
                   <li>Vorheriger Artikel:
-                    <a href="/posts/0924/web-dependency-management/">Warum du Bibliotheken nicht manuell speichern solltest: npm als bessere Lösung</a>
+                    <a href="/posts/1124/fuck-up-der-woche-proxy/">Fuckup der Woche:  Fuckup der Woche: Spaß mit Vitest, Jest und der CI</a>
                   </li>
                 
               </ul>
@@ -184,7 +191,7 @@ Gerne an jacob@derkuba.de</p>
       </div>
     </div>
   </section>
-        <!-- Current page: /posts/1024/kindle-display/ -->
+        <!-- Current page: /posts/1124/fuck-up-der-woche-vitest/ -->
         <footer class="footer">
     <hr/>
     <div class="content has-text-centered">
