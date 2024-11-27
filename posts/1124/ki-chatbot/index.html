@@ -1,0 +1,340 @@
+<!doctype html>
+<html lang="de">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1"/>
+        <title>Ich mach was mit KI ;-) - der Chatbot</title>
+        <meta name="description" content="Kleines Hackingprojekt">
+        <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+        <link rel="alternate" href="/feed/feed.xml" type="application/atom+xml" title="der_kuba">
+        <link rel="alternate" href="/feed/feed.json" type="application/json" title="der_kuba">
+        <link rel="stylesheet" href="/assets/css/prism.css">
+        <link rel="stylesheet" href="/assets/css/bulma.css">
+        <link rel="stylesheet" href="/assets/css/custom.css">
+        <script>
+            document.addEventListener("DOMContentLoaded", () => {
+                const e = Array
+                    .prototype
+                    .slice
+                    .call(document.querySelectorAll(".navbar-burger"), 0);
+                e.length > 0 && e.forEach(e => {
+                    e.addEventListener("click", () => {
+                        const t = e.dataset.target,
+                            a = document.getElementById(t);
+                        e.classList.toggle("is-active"),
+                        a.classList.toggle("is-active")
+                    })
+                })
+                const disableDarkMode = () => {
+                    const bodyNode = document.querySelector("body");
+                    bodyNode
+                        .classList
+                        .remove("dark-mode")
+                        localStorage
+                        .setItem('darkMode', 'disabled');
+                }
+                const enableDarkMode = () => {
+                    const bodyNode = document.querySelector("body");
+                    bodyNode
+                        .classList
+                        .add("dark-mode")
+                        localStorage
+                        .setItem('darkMode', 'enabled');
+                }
+                const button = document.getElementById("darkmode");
+                button.addEventListener("click", () => {
+                    const bodyNode = document.querySelector("body");
+                    if (bodyNode.classList.contains("dark-mode")) {
+                        disableDarkMode();
+                    } else {
+                        enableDarkMode();
+                    }
+                })
+                if (localStorage.getItem('darkMode') === 'enabled') {
+                    enableDarkMode();
+                }
+            });
+        </script>
+    </head>
+    <body><header>
+    <div class="container">
+        <nav class="navbar">
+            <div class="navbar-brand">
+                <a class="navbar-item navbar-brand__title " href="/">
+                    der_kuba
+                </a>
+                <a class="navbar-item is-size-7-mobile" href="https://github.com/derKuba">
+                    @Github
+                </a>
+                <a class="navbar-item is-size-7-mobile" href="https://twitter.com/der_kuba">
+                    @Twitter
+                </a>
+                <a class="navbar-item is-size-7-mobile" href="https://www.linkedin.com/in/jacob-pawlik-08a40015b/">
+                    @LinkedIn
+                </a>
+                <div class="navbar-burger" data-target="navigation-items">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+            <div id="navigation-items" class="navbar-menu">
+                <div class="navbar-end">
+                    
+                        <a class="navbar-item " href="/">
+                            Home
+                        </a>
+                        <a class="navbar-item " href="/posts/">
+                            Archiv
+                        </a>
+                        <a class="navbar-item " href="/about/">
+                            About Me
+                        </a>
+                        <a class="navbar-item " href="/en/">
+                            English
+                        </a>
+                        <a class="navbar-item " href="/content/impressum.html">
+                            Impressum
+                        </a>
+                        <a class="navbar-item " href="/content/datenschutz.html">
+                            Datenschutzerklärung
+                        </a>
+                    <button id="darkmode" alt="dark mode">
+                        <svg width="30" height="30">
+                            <circle cx="15" cy="15" r="6" fill="currentColor"/>
+                            <line id="ray" stroke="currentColor" stroke-width="2" stroke-linecap="round" x1="15" y1="1" x2="15" y2="4"></line>
+                            <use href="#ray" transform="rotate(45 15 15)"/>
+                            <use href="#ray" transform="rotate(90 15 15)"/>
+                            <use href="#ray" transform="rotate(135 15 15)"/>
+                            <use href="#ray" transform="rotate(180 15 15)"/>
+                            <use href="#ray" transform="rotate(225 15 15)"/>
+                            <use href="#ray" transform="rotate(270 15 15)"/>
+                            <use href="#ray" transform="rotate(315 15 15)"/>
+                        </svg>
+                    </button>
+                    <!-- special thanks to https://www.freecodecamp.org/news/how-to-handle-dark-mode-with-css-and-javascript/ -->
+                </div>
+            </div>
+        </nav>
+    </div>
+</header>
+        
+<section class="section">
+  <div class="container">
+    <div class="columns is-centered">
+      <div class="column is-8">
+        <h1 class="title is-3">Ich mach was mit KI ;-) - der Chatbot</h1>
+        <div class="post-detail__tags">
+          <h3 class="subtitle is-6">
+            <time datetime="2024-11-27">
+              27 Nov 2024
+            </time>
+          </h3>
+          <div class="tags"><a href="/tags/ki/" class="post-tag">
+                <span class="tag is-black">
+                  Ki
+                </span>
+              </a><a href="/tags/chatbot/" class="post-tag">
+                <span class="tag is-primary">
+                  Chatbot
+                </span>
+              </a><a href="/tags/node/" class="post-tag">
+                <span class="tag is-link">
+                  Node
+                </span>
+              </a>
+          </div>
+        </div>
+        <div class="content post_detail__content">
+          <div class="language-hint">
+            
+          </div>
+          <p>In letzter Zeit werde ich ständig gefragt: &quot;Ihr macht doch was mit KI, oder? Könnt ihr nicht mal einen Chatbot bauen?&quot; Die Idee klingt simpel<!-- endOfPreview -->, aber wie so oft steckt der Teufel im Detail. Ein Chatbot, der tatsächlich nützliche Antworten liefert, erfordert weit mehr als nur eine schnelle Integration mit einer KI-API. Es braucht eine durchdachte Datenbasis, eine skalierbare Architektur und eine performante Anbindung.</p>
+<p>In diesem Artikel nehme ich euch mit auf die Reise, wie ich einen modularen Chatbot entwickelt habe. Von der Datenaufbereitung, über die Speicherung in einer Chroma-Datenbank, bis hin zur Implementierung einer Fastify-API mit GPT-4 zeigen ich die Herausforderungen und Learnings aus der Praxis. Das Ziel: Einen Bot, der nicht nur Fragen beantwortet, sondern dies auch schnell und präzise tut.</p>
+<hr>
+<h2>Das Ziel</h2>
+<p>Das Ziel war es, einen Chatbot zu entwickeln, der aus einer vorhandenen Wissensbasis – in meinem Fall aus einer Vielzahl von Dokumenten – Fragen beantwortet. Die Hauptbestandteile dieses Projekts:</p>
+<ol>
+<li><strong>Datenparsing</strong>: Daten aus JSON- oder Textquellen extrahieren und aufbereiten.</li>
+<li><strong>Chroma-DB aufsetzen und bespielen</strong>: Die aufbereiteten Daten als Vektoren in Chroma speichern.</li>
+<li><strong>Fastify API mit GPT-4</strong>: Eine REST-API, die GPT-4 anbindet, um semantisch passende Antworten zu generieren.</li>
+</ol>
+<p><img src="/img/1124/chatbot.png" alt="Image" title="chatbot architektur"></p>
+<hr>
+<h2>Phase 1: Datenparsing</h2>
+<p>Der erste Schritt war das Extrahieren und Aufbereiten der Daten. Die Daten kamen aus JSON-Dateien und enthielten Texte sowie Metadaten. Der Fokus lag darauf, die Daten so vorzubereiten, dass sie später in kleine, zusammenhängende Blöcke aufgeteilt werden können.</p>
+<p>Hier ein Ausschnitt der Funktion, die Texte aufteilt und Metadaten speichert:</p>
+<pre class="language-typescript"><code class="language-typescript"><span class="highlight-line"><span class="token keyword">export</span> <span class="token keyword">function</span> <span class="token function">splitText</span><span class="token punctuation">(</span></span>
+<span class="highlight-line">    text<span class="token operator">:</span> <span class="token builtin">string</span><span class="token punctuation">,</span></span>
+<span class="highlight-line">    maxLength<span class="token operator">:</span> <span class="token builtin">number</span><span class="token punctuation">,</span></span>
+<span class="highlight-line">    overlap<span class="token operator">:</span> <span class="token builtin">number</span><span class="token punctuation">,</span></span>
+<span class="highlight-line"><span class="token punctuation">)</span><span class="token operator">:</span> <span class="token builtin">string</span><span class="token punctuation">[</span><span class="token punctuation">]</span> <span class="token punctuation">{</span></span>
+<span class="highlight-line">    <span class="token keyword">const</span> chunks <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">;</span></span>
+<span class="highlight-line">    <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">let</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> text<span class="token punctuation">.</span>length<span class="token punctuation">;</span> i <span class="token operator">+=</span> maxLength <span class="token operator">-</span> overlap<span class="token punctuation">)</span> <span class="token punctuation">{</span></span>
+<span class="highlight-line">        chunks<span class="token punctuation">.</span><span class="token function">push</span><span class="token punctuation">(</span>text<span class="token punctuation">.</span><span class="token function">slice</span><span class="token punctuation">(</span>i<span class="token punctuation">,</span> i <span class="token operator">+</span> maxLength<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span></span>
+<span class="highlight-line">    <span class="token punctuation">}</span></span>
+<span class="highlight-line">    <span class="token keyword">return</span> chunks<span class="token punctuation">;</span></span>
+<span class="highlight-line"><span class="token punctuation">}</span></span>
+<span class="highlight-line"></span>
+<span class="highlight-line"><span class="token keyword">export</span> <span class="token keyword">async</span> <span class="token keyword">function</span> <span class="token function">processData</span><span class="token punctuation">(</span>sourcePath<span class="token operator">:</span> <span class="token builtin">string</span><span class="token punctuation">,</span> outputPath<span class="token operator">:</span> <span class="token builtin">string</span><span class="token punctuation">)</span> <span class="token punctuation">{</span></span>
+<span class="highlight-line">    <span class="token keyword">const</span> files <span class="token operator">=</span> fs<span class="token punctuation">.</span><span class="token function">readdirSync</span><span class="token punctuation">(</span>sourcePath<span class="token punctuation">)</span><span class="token punctuation">;</span></span>
+<span class="highlight-line">    <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">const</span> file <span class="token keyword">of</span> files<span class="token punctuation">)</span> <span class="token punctuation">{</span></span>
+<span class="highlight-line">        <span class="token keyword">const</span> content <span class="token operator">=</span> fs<span class="token punctuation">.</span><span class="token function">readFileSync</span><span class="token punctuation">(</span>path<span class="token punctuation">.</span><span class="token function">join</span><span class="token punctuation">(</span>sourcePath<span class="token punctuation">,</span> file<span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token string">"utf-8"</span><span class="token punctuation">)</span><span class="token punctuation">;</span></span>
+<span class="highlight-line">        <span class="token keyword">const</span> chunks <span class="token operator">=</span> <span class="token function">splitText</span><span class="token punctuation">(</span>content<span class="token punctuation">,</span> <span class="token number">1000</span><span class="token punctuation">,</span> <span class="token number">200</span><span class="token punctuation">)</span><span class="token punctuation">;</span></span>
+<span class="highlight-line">        fs<span class="token punctuation">.</span><span class="token function">writeFileSync</span><span class="token punctuation">(</span></span>
+<span class="highlight-line">            path<span class="token punctuation">.</span><span class="token function">join</span><span class="token punctuation">(</span>outputPath<span class="token punctuation">,</span> <span class="token template-string"><span class="token template-punctuation string">`</span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>file<span class="token interpolation-punctuation punctuation">}</span></span><span class="token string">.json</span><span class="token template-punctuation string">`</span></span><span class="token punctuation">)</span><span class="token punctuation">,</span></span>
+<span class="highlight-line">            <span class="token constant">JSON</span><span class="token punctuation">.</span><span class="token function">stringify</span><span class="token punctuation">(</span>chunks<span class="token punctuation">)</span><span class="token punctuation">,</span></span>
+<span class="highlight-line">        <span class="token punctuation">)</span><span class="token punctuation">;</span></span>
+<span class="highlight-line">    <span class="token punctuation">}</span></span>
+<span class="highlight-line"><span class="token punctuation">}</span></span></code></pre>
+<hr>
+<h2>Phase 2: Chroma-DB aufsetzen und bespielen</h2>
+<p>Mit den verarbeiteten Daten war der nächste Schritt das Bespielen einer Chroma-Datenbank. Dies wird als eigenständiger Job ausgeführt, der regelmäßig über einen Cronjob läuft. So bleiben die Daten stets aktuell, ohne dass die API gestört wird.</p>
+<p>Hier ein Ausschnitt der Funktion, die die Daten in Chroma speichert:</p>
+<pre class="language-typescript"><code class="language-typescript"><span class="highlight-line"><span class="token keyword">export</span> <span class="token keyword">async</span> <span class="token keyword">function</span> <span class="token function">storeEmbeddings</span><span class="token punctuation">(</span>dataDir<span class="token operator">:</span> <span class="token builtin">string</span><span class="token punctuation">,</span> collectionName<span class="token operator">:</span> <span class="token builtin">string</span><span class="token punctuation">)</span> <span class="token punctuation">{</span></span>
+<span class="highlight-line">    <span class="token keyword">const</span> client <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">ChromaClient</span><span class="token punctuation">(</span><span class="token punctuation">{</span> path<span class="token operator">:</span> <span class="token string">"http://localhost:8000"</span> <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span></span>
+<span class="highlight-line">    <span class="token keyword">const</span> collection <span class="token operator">=</span> <span class="token keyword">await</span> client<span class="token punctuation">.</span><span class="token function">createCollection</span><span class="token punctuation">(</span><span class="token punctuation">{</span> name<span class="token operator">:</span> collectionName <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span></span>
+<span class="highlight-line">    <span class="token keyword">const</span> embeddingModel <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">OpenAIEmbeddings</span><span class="token punctuation">(</span><span class="token punctuation">{</span></span>
+<span class="highlight-line">        openAIApiKey<span class="token operator">:</span> process<span class="token punctuation">.</span>env<span class="token punctuation">.</span><span class="token constant">OPENAI_API_KEY</span><span class="token punctuation">,</span></span>
+<span class="highlight-line">    <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span></span>
+<span class="highlight-line"></span>
+<span class="highlight-line">    <span class="token keyword">const</span> files <span class="token operator">=</span> fs<span class="token punctuation">.</span><span class="token function">readdirSync</span><span class="token punctuation">(</span>dataDir<span class="token punctuation">)</span><span class="token punctuation">;</span></span>
+<span class="highlight-line">    <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">const</span> file <span class="token keyword">of</span> files<span class="token punctuation">)</span> <span class="token punctuation">{</span></span>
+<span class="highlight-line">        <span class="token keyword">const</span> chunks <span class="token operator">=</span> <span class="token constant">JSON</span><span class="token punctuation">.</span><span class="token function">parse</span><span class="token punctuation">(</span></span>
+<span class="highlight-line">            fs<span class="token punctuation">.</span><span class="token function">readFileSync</span><span class="token punctuation">(</span>path<span class="token punctuation">.</span><span class="token function">join</span><span class="token punctuation">(</span>dataDir<span class="token punctuation">,</span> file<span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token string">"utf-8"</span><span class="token punctuation">)</span><span class="token punctuation">,</span></span>
+<span class="highlight-line">        <span class="token punctuation">)</span><span class="token punctuation">;</span></span>
+<span class="highlight-line">        <span class="token keyword">const</span> embeddings <span class="token operator">=</span> <span class="token keyword">await</span> embeddingModel<span class="token punctuation">.</span><span class="token function">embedMany</span><span class="token punctuation">(</span>chunks<span class="token punctuation">)</span><span class="token punctuation">;</span></span>
+<span class="highlight-line">        <span class="token keyword">await</span> collection<span class="token punctuation">.</span><span class="token function">add</span><span class="token punctuation">(</span><span class="token punctuation">{</span></span>
+<span class="highlight-line">            ids<span class="token operator">:</span> chunks<span class="token punctuation">.</span><span class="token function">map</span><span class="token punctuation">(</span><span class="token punctuation">(</span>_<span class="token punctuation">,</span> i<span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token template-string"><span class="token template-punctuation string">`</span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>file<span class="token interpolation-punctuation punctuation">}</span></span><span class="token string">_</span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>i<span class="token interpolation-punctuation punctuation">}</span></span><span class="token template-punctuation string">`</span></span><span class="token punctuation">)</span><span class="token punctuation">,</span></span>
+<span class="highlight-line">            embeddings<span class="token punctuation">,</span></span>
+<span class="highlight-line">            documents<span class="token operator">:</span> chunks<span class="token punctuation">,</span></span>
+<span class="highlight-line">            metadatas<span class="token operator">:</span> chunks<span class="token punctuation">.</span><span class="token function">map</span><span class="token punctuation">(</span><span class="token punctuation">(</span>_<span class="token punctuation">,</span> i<span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">(</span><span class="token punctuation">{</span> source<span class="token operator">:</span> file <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">,</span></span>
+<span class="highlight-line">        <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span></span>
+<span class="highlight-line">    <span class="token punctuation">}</span></span>
+<span class="highlight-line"><span class="token punctuation">}</span></span></code></pre>
+<hr>
+<h2>Phase 3: Fastify-API mit GPT-4</h2>
+<p>Die Fastify-API verbindet Chroma mit GPT-4, um Antworten aus den gespeicherten Daten zu generieren. Ein wichtiges Learning war, dass nicht jedes GPT-4-Modell gleichermaßen geeignet ist. Einige Modelle sind deutlich schneller darin, Daten entgegenzunehmen und auf deren Grundlage eine Antwort zu formulieren. Durch das Experimentieren mit verschiedenen Modellen konnte ich die Antwortzeit der API von 8 Sekunden auf 2-3 Sekunden reduzieren.</p>
+<p>Hier ist der zentrale Teil der API:</p>
+<pre class="language-typescript"><code class="language-typescript"><span class="highlight-line">fastify<span class="token punctuation">.</span><span class="token function">post</span><span class="token punctuation">(</span><span class="token string">"/query"</span><span class="token punctuation">,</span> <span class="token keyword">async</span> <span class="token punctuation">(</span>request<span class="token punctuation">,</span> reply<span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">{</span></span>
+<span class="highlight-line">    <span class="token keyword">const</span> <span class="token punctuation">{</span> query <span class="token punctuation">}</span> <span class="token operator">=</span> request<span class="token punctuation">.</span>body<span class="token punctuation">;</span></span>
+<span class="highlight-line">    <span class="token keyword">const</span> client <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">ChromaClient</span><span class="token punctuation">(</span><span class="token punctuation">{</span> path<span class="token operator">:</span> <span class="token string">"http://localhost:8000"</span> <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span></span>
+<span class="highlight-line">    <span class="token keyword">const</span> collection <span class="token operator">=</span> <span class="token keyword">await</span> client<span class="token punctuation">.</span><span class="token function">getCollection</span><span class="token punctuation">(</span><span class="token punctuation">{</span> name<span class="token operator">:</span> <span class="token string">"documents"</span> <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span></span>
+<span class="highlight-line"></span>
+<span class="highlight-line">    <span class="token keyword">const</span> embeddings <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">OpenAIEmbeddings</span><span class="token punctuation">(</span><span class="token punctuation">{</span></span>
+<span class="highlight-line">        openAIApiKey<span class="token operator">:</span> process<span class="token punctuation">.</span>env<span class="token punctuation">.</span><span class="token constant">OPENAI_API_KEY</span><span class="token punctuation">,</span></span>
+<span class="highlight-line">    <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span></span>
+<span class="highlight-line">    <span class="token keyword">const</span> queryEmbedding <span class="token operator">=</span> <span class="token keyword">await</span> embeddings<span class="token punctuation">.</span><span class="token function">embedQuery</span><span class="token punctuation">(</span>query<span class="token punctuation">)</span><span class="token punctuation">;</span></span>
+<span class="highlight-line">    <span class="token keyword">const</span> results <span class="token operator">=</span> <span class="token keyword">await</span> collection<span class="token punctuation">.</span><span class="token function">query</span><span class="token punctuation">(</span><span class="token punctuation">{</span></span>
+<span class="highlight-line">        queryEmbeddings<span class="token operator">:</span> <span class="token punctuation">[</span>queryEmbedding<span class="token punctuation">]</span><span class="token punctuation">,</span></span>
+<span class="highlight-line">        nResults<span class="token operator">:</span> <span class="token number">3</span><span class="token punctuation">,</span></span>
+<span class="highlight-line">    <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span></span>
+<span class="highlight-line"></span>
+<span class="highlight-line">    <span class="token keyword">const</span> context <span class="token operator">=</span> results<span class="token punctuation">.</span>documents<span class="token punctuation">.</span><span class="token function">join</span><span class="token punctuation">(</span><span class="token string">"\n\n"</span><span class="token punctuation">)</span><span class="token punctuation">;</span></span>
+<span class="highlight-line">    <span class="token keyword">const</span> llm <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">ChatOpenAI</span><span class="token punctuation">(</span><span class="token punctuation">{</span></span>
+<span class="highlight-line">        openAIApiKey<span class="token operator">:</span> process<span class="token punctuation">.</span>env<span class="token punctuation">.</span><span class="token constant">OPENAI_API_KEY</span><span class="token punctuation">,</span></span>
+<span class="highlight-line">        modelName<span class="token operator">:</span> <span class="token string">"gpt-4-turbo"</span><span class="token punctuation">,</span></span>
+<span class="highlight-line">    <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span></span>
+<span class="highlight-line">    <span class="token keyword">const</span> response <span class="token operator">=</span> <span class="token keyword">await</span> llm<span class="token punctuation">.</span><span class="token function">invoke</span><span class="token punctuation">(</span><span class="token punctuation">[</span></span>
+<span class="highlight-line">        <span class="token punctuation">{</span> role<span class="token operator">:</span> <span class="token string">"system"</span><span class="token punctuation">,</span> content<span class="token operator">:</span> <span class="token string">"You are a helpful assistant."</span> <span class="token punctuation">}</span><span class="token punctuation">,</span></span>
+<span class="highlight-line">        <span class="token punctuation">{</span> role<span class="token operator">:</span> <span class="token string">"user"</span><span class="token punctuation">,</span> content<span class="token operator">:</span> <span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">Answer based on this context: </span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>context<span class="token interpolation-punctuation punctuation">}</span></span><span class="token template-punctuation string">`</span></span> <span class="token punctuation">}</span><span class="token punctuation">,</span></span>
+<span class="highlight-line">    <span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span></span>
+<span class="highlight-line"></span>
+<span class="highlight-line">    reply<span class="token punctuation">.</span><span class="token function">send</span><span class="token punctuation">(</span><span class="token punctuation">{</span> answer<span class="token operator">:</span> response<span class="token punctuation">.</span>text <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span></span>
+<span class="highlight-line"><span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span></span></code></pre>
+<h3><strong>Beispiel: API in Aktion</strong></h3>
+<p>Die Fastify-API ermöglicht es, Fragen an den Chatbot zu stellen. Der Bot durchsucht die hinterlegte Datenbasis nach relevanten Informationen und liefert eine Antwort zusammen mit Metadaten (wie Links zu den Quellen).</p>
+<h4><strong>Anfrage:</strong></h4>
+<pre class="language-bash"><code class="language-bash"><span class="highlight-line">POST /chatbot</span>
+<span class="highlight-line">Content-Type: application/json</span>
+<span class="highlight-line"></span>
+<span class="highlight-line"><span class="token punctuation">{</span></span>
+<span class="highlight-line">  <span class="token string">"phrase"</span><span class="token builtin class-name">:</span> <span class="token string">"Wo finde ich Lorem Ipsum"</span></span>
+<span class="highlight-line"><span class="token punctuation">}</span></span></code></pre>
+<hr>
+<h4><strong>Antwort:</strong></h4>
+<pre class="language-json"><code class="language-json"><span class="highlight-line"><span class="token punctuation">{</span></span>
+<span class="highlight-line">    <span class="token property">"answer"</span><span class="token operator">:</span> <span class="token string">"Du findest das unter Lorem Ipsum."</span><span class="token punctuation">,</span></span>
+<span class="highlight-line">    <span class="token property">"meta"</span><span class="token operator">:</span> <span class="token punctuation">[</span></span>
+<span class="highlight-line">        <span class="token punctuation">{</span></span>
+<span class="highlight-line">            <span class="token property">"title"</span><span class="token operator">:</span> <span class="token string">"Seite 1"</span><span class="token punctuation">,</span></span>
+<span class="highlight-line">            <span class="token property">"url"</span><span class="token operator">:</span> <span class="token string">"https://example.com/lorem-ipsum"</span></span>
+<span class="highlight-line">        <span class="token punctuation">}</span><span class="token punctuation">,</span></span>
+<span class="highlight-line">        <span class="token punctuation">{</span></span>
+<span class="highlight-line">            <span class="token property">"title"</span><span class="token operator">:</span> <span class="token string">"Dokumentation zu Ipsum"</span><span class="token punctuation">,</span></span>
+<span class="highlight-line">            <span class="token property">"url"</span><span class="token operator">:</span> <span class="token string">"https://docs.example.com/ipsum"</span></span>
+<span class="highlight-line">        <span class="token punctuation">}</span></span>
+<span class="highlight-line">    <span class="token punctuation">]</span></span>
+<span class="highlight-line"><span class="token punctuation">}</span></span></code></pre>
+<hr>
+<h2>Lessons Learned</h2>
+<ul>
+<li><strong>Experimentieren mit Modellen:</strong> Unterschiedliche GPT-Modelle haben verschiedene Stärken. Modelle wie <code>gpt-4-turbo</code> erwiesen sich als schneller und effizienter für diese Art von Anwendung, ohne nennenswerte Qualitätseinbußen.</li>
+<li><strong>Separate Datenjobs:</strong> Das Sammeln und Bespielen der Daten läuft in einem separaten Job, der wöchentlich über Cron ausgeführt wird. Dadurch bleibt die API schlank und performant.</li>
+<li><strong>Chroma-DB als zuverlässige Basis:</strong> Die Kombination aus Chroma und OpenAI liefert semantisch präzise Antworten, wenn die Daten gut vorbereitet sind.</li>
+</ul>
+<hr>
+<h2>Fazit</h2>
+<p>Am Ende entstand ein modularer Chatbot, der eine semantische Suche über Dokumente bietet und GPT-4 für präzise Antworten nutzt. Der iterative Ansatz und das Feintuning – etwa beim Datenhandling oder den verwendeten Modellen – waren entscheidend, um die Geschwindigkeit und Genauigkeit zu optimieren.</p>
+<hr>
+<p>Falls du den Chatbot selbst ausprobieren möchtest, kannst du dir das fertige Produkt bald unter dieser URL anschauen <a href="https://help.scopevisio.com/">Scopevisio Onlinehilfe</a>.
+Code gibts diesmal leider nicht. Aber ich stehe für alle Fragen bereit.</p>
+<p>Viel Spaß beim Basteln! 😊</p>
+<p>Für Feedback bin ich immer dankbar.
+Gerne an jacob@derkuba.de</p>
+<p>Viele Grüße</p>
+<p>Euer Kuba</p>
+<br/>
+<p><strong>Ausnahmsweise heute mal etwas POST SCRIPTUM:</strong></p>
+<h3><strong>PS: API Keys in <code>.env</code></strong></h3>
+<p>Es ist entscheidend, API-Schlüssel niemals direkt im Code zu hinterlegen. Stattdessen sollten sie in einer <code>.env</code>-Datei gespeichert werden, die lokal geladen wird und nicht ins Versionskontrollsystem (wie GitHub) eingecheckt wird. Beispiel:</p>
+<pre><code>OPENAI_API_KEY=your-secret-api-key
+CHROMA_DB_PATH=http://localhost:8000
+</code></pre>
+<p>Vergiss nicht, die <code>.env</code>-Datei in die <code>.gitignore</code> aufzunehmen, um sie vor versehentlichem Pushen zu schützen. API-Schlüssel in öffentlichen Repositories können teuer werden – sei es durch Missbrauch oder unautorisierte Nutzung. Sollte sowas mal passieren, sofort den Key invalidieren und einen neuen Schlüssel generieren. Historie löschen alleine reicht nicht.</p>
+<hr>
+<h3><strong>PPS: Visual Studio Code REST Client</strong></h3>
+<p>Ein weiteres hilfreiches Tool für API-Arbeiten ist der <a href="https://marketplace.visualstudio.com/items?itemName=humao.rest-client">REST Client von Huachao Mao</a>. Dieser VS Code-Extension ermöglicht es, HTTP-Requests direkt im Editor zu speichern und auszuführen. Du kannst beispielsweise folgende <code>.http</code>-Datei anlegen:</p>
+<pre class="language-http"><code class="language-http"><span class="highlight-line">POST http://localhost:3000/chatbot</span>
+<span class="highlight-line"><span class="token header"><span class="token header-name keyword">Content-Type</span><span class="token punctuation">:</span> <span class="token header-value">application/json</span></span></span>
+<span class="token application-json">
+<span class="highlight-line"><span class="token punctuation">{</span></span>
+<span class="highlight-line">  <span class="token property">"phrase"</span><span class="token operator">:</span> <span class="token string">"Wo finde ich Lorem Ipsum"</span></span>
+<span class="highlight-line"><span class="token punctuation">}</span></span>
+</span></code></pre>
+<p>Die Vorteile liegen auf der Hand:</p>
+<ul>
+<li>Schneller Zugriff: Du kannst API-Aufrufe direkt neben deinem Code dokumentieren und ausführen.</li>
+<li>Flexibilität: Alle wichtigen Requests bleiben Teil des Projekts, ohne dass externe Tools erforderlich sind.</li>
+<li>Sicherheit: Schlüssel und sensible Daten können in Variablen ausgelagert werden, sodass sie nicht im Code erscheinen.</li>
+</ul>
+<p><strong>Durchsage ENDE</strong></p>
+
+            <hr>
+              <ul class="post-navigation">
+                  <li>Vorheriger Artikel:
+                    <a href="/posts/1124/fuck-up-der-woche-vitest/">Fuckup der Woche: Spaß mit Vitest, Jest und der CI</a>
+                  </li>
+                
+              </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+        <!-- Current page: /posts/1124/ki-chatbot/ -->
+        <footer class="footer">
+    <hr/>
+    <div class="content has-text-centered">
+        <p>
+            der_kuba - 2021-2024 -
+            <a href="/content/impressum.html">Impressum</a>
+            -
+            <a href="/content/datenschutz.html">Datenschutzerklärung</a>
+        </p>
+    </div>
+</footer>
+    </body>
+</html>

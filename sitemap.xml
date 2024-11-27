@@ -347,36 +347,6 @@
 		</url>
 		
 		<url>
-			<loc>https://derkuba.de/tags/recruiting/</loc>
-			<lastmod>2024-09-19</lastmod>
-		</url>
-		
-		<url>
-			<loc>https://derkuba.de/tags/job-interview/</loc>
-			<lastmod>2024-09-19</lastmod>
-		</url>
-		
-		<url>
-			<loc>https://derkuba.de/tags/flutter/</loc>
-			<lastmod>2024-09-19</lastmod>
-		</url>
-		
-		<url>
-			<loc>https://derkuba.de/tags/sqlite/</loc>
-			<lastmod>2024-09-19</lastmod>
-		</url>
-		
-		<url>
-			<loc>https://derkuba.de/tags/sqllite/</loc>
-			<lastmod>2024-09-19</lastmod>
-		</url>
-		
-		<url>
-			<loc>https://derkuba.de/tags/typescript/</loc>
-			<lastmod>2024-09-19</lastmod>
-		</url>
-		
-		<url>
 			<loc>https://derkuba.de/tags/11nty/</loc>
 			<lastmod>2024-09-19</lastmod>
 		</url>
@@ -412,7 +382,42 @@
 		</url>
 		
 		<url>
+			<loc>https://derkuba.de/tags/recruiting/</loc>
+			<lastmod>2024-09-19</lastmod>
+		</url>
+		
+		<url>
+			<loc>https://derkuba.de/tags/job-interview/</loc>
+			<lastmod>2024-09-19</lastmod>
+		</url>
+		
+		<url>
+			<loc>https://derkuba.de/tags/typescript/</loc>
+			<lastmod>2024-09-19</lastmod>
+		</url>
+		
+		<url>
+			<loc>https://derkuba.de/tags/flutter/</loc>
+			<lastmod>2024-09-19</lastmod>
+		</url>
+		
+		<url>
+			<loc>https://derkuba.de/tags/sqlite/</loc>
+			<lastmod>2024-09-19</lastmod>
+		</url>
+		
+		<url>
+			<loc>https://derkuba.de/tags/sqllite/</loc>
+			<lastmod>2024-09-19</lastmod>
+		</url>
+		
+		<url>
 			<loc>https://derkuba.de/tags/enterjs/</loc>
+			<lastmod>2024-09-19</lastmod>
+		</url>
+		
+		<url>
+			<loc>https://derkuba.de/tags/storybook/</loc>
 			<lastmod>2024-09-19</lastmod>
 		</url>
 		
@@ -432,11 +437,6 @@
 		</url>
 		
 		<url>
-			<loc>https://derkuba.de/tags/storybook/</loc>
-			<lastmod>2024-09-19</lastmod>
-		</url>
-		
-		<url>
 			<loc>https://derkuba.de/tags/vite/</loc>
 			<lastmod>2024-09-19</lastmod>
 		</url>
@@ -448,6 +448,21 @@
 		
 		<url>
 			<loc>https://derkuba.de/tags/vitest/</loc>
+			<lastmod>2024-09-19</lastmod>
+		</url>
+		
+		<url>
+			<loc>https://derkuba.de/tags/ki/</loc>
+			<lastmod>2024-09-19</lastmod>
+		</url>
+		
+		<url>
+			<loc>https://derkuba.de/tags/chatbot/</loc>
+			<lastmod>2024-09-19</lastmod>
+		</url>
+		
+		<url>
+			<loc>https://derkuba.de/tags/node/</loc>
 			<lastmod>2024-09-19</lastmod>
 		</url>
 		
@@ -524,5 +539,10 @@
 		<url>
 			<loc>https://derkuba.de/posts/1124/fuck-up-der-woche-vitest/</loc>
 			<lastmod>2024-11-12</lastmod>
+		</url>
+		
+		<url>
+			<loc>https://derkuba.de/posts/1124/ki-chatbot/</loc>
+			<lastmod>2024-11-27</lastmod>
 		</url>
 </urlset>
