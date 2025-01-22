@@ -347,6 +347,16 @@
 		</url>
 		
 		<url>
+			<loc>https://derkuba.de/tags/recruiting/</loc>
+			<lastmod>2024-09-19</lastmod>
+		</url>
+		
+		<url>
+			<loc>https://derkuba.de/tags/agile/</loc>
+			<lastmod>2024-09-19</lastmod>
+		</url>
+		
+		<url>
 			<loc>https://derkuba.de/tags/11nty/</loc>
 			<lastmod>2024-09-19</lastmod>
 		</url>
@@ -382,17 +392,22 @@
 		</url>
 		
 		<url>
-			<loc>https://derkuba.de/tags/recruiting/</loc>
-			<lastmod>2024-09-19</lastmod>
-		</url>
-		
-		<url>
 			<loc>https://derkuba.de/tags/job-interview/</loc>
 			<lastmod>2024-09-19</lastmod>
 		</url>
 		
 		<url>
 			<loc>https://derkuba.de/tags/typescript/</loc>
+			<lastmod>2024-09-19</lastmod>
+		</url>
+		
+		<url>
+			<loc>https://derkuba.de/tags/enterjs/</loc>
+			<lastmod>2024-09-19</lastmod>
+		</url>
+		
+		<url>
+			<loc>https://derkuba.de/tags/html/</loc>
 			<lastmod>2024-09-19</lastmod>
 		</url>
 		
@@ -412,17 +427,7 @@
 		</url>
 		
 		<url>
-			<loc>https://derkuba.de/tags/enterjs/</loc>
-			<lastmod>2024-09-19</lastmod>
-		</url>
-		
-		<url>
 			<loc>https://derkuba.de/tags/storybook/</loc>
-			<lastmod>2024-09-19</lastmod>
-		</url>
-		
-		<url>
-			<loc>https://derkuba.de/tags/html/</loc>
 			<lastmod>2024-09-19</lastmod>
 		</url>
 		
@@ -487,11 +492,6 @@
 		</url>
 		
 		<url>
-			<loc>https://derkuba.de/tags/agile/</loc>
-			<lastmod>2024-09-19</lastmod>
-		</url>
-		
-		<url>
 			<loc>https://derkuba.de/tags/scrum/</loc>
 			<lastmod>2024-09-19</lastmod>
 		</url>
@@ -544,5 +544,10 @@
 		<url>
 			<loc>https://derkuba.de/posts/1124/ki-chatbot/</loc>
 			<lastmod>2024-11-27</lastmod>
+		</url>
+		
+		<url>
+			<loc>https://derkuba.de/posts/0125/meeting-nettikette-teams/</loc>
+			<lastmod>2025-01-22</lastmod>
 		</url>
 </urlset>
