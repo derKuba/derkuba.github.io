@@ -357,6 +357,16 @@
 		</url>
 		
 		<url>
+			<loc>https://derkuba.de/tags/ki/</loc>
+			<lastmod>2024-09-19</lastmod>
+		</url>
+		
+		<url>
+			<loc>https://derkuba.de/tags/fullstack/</loc>
+			<lastmod>2024-09-19</lastmod>
+		</url>
+		
+		<url>
 			<loc>https://derkuba.de/tags/11nty/</loc>
 			<lastmod>2024-09-19</lastmod>
 		</url>
@@ -402,16 +412,6 @@
 		</url>
 		
 		<url>
-			<loc>https://derkuba.de/tags/enterjs/</loc>
-			<lastmod>2024-09-19</lastmod>
-		</url>
-		
-		<url>
-			<loc>https://derkuba.de/tags/html/</loc>
-			<lastmod>2024-09-19</lastmod>
-		</url>
-		
-		<url>
 			<loc>https://derkuba.de/tags/flutter/</loc>
 			<lastmod>2024-09-19</lastmod>
 		</url>
@@ -423,6 +423,16 @@
 		
 		<url>
 			<loc>https://derkuba.de/tags/sqllite/</loc>
+			<lastmod>2024-09-19</lastmod>
+		</url>
+		
+		<url>
+			<loc>https://derkuba.de/tags/enterjs/</loc>
+			<lastmod>2024-09-19</lastmod>
+		</url>
+		
+		<url>
+			<loc>https://derkuba.de/tags/html/</loc>
 			<lastmod>2024-09-19</lastmod>
 		</url>
 		
@@ -457,11 +467,6 @@
 		</url>
 		
 		<url>
-			<loc>https://derkuba.de/tags/ki/</loc>
-			<lastmod>2024-09-19</lastmod>
-		</url>
-		
-		<url>
 			<loc>https://derkuba.de/tags/chatbot/</loc>
 			<lastmod>2024-09-19</lastmod>
 		</url>
@@ -492,12 +497,12 @@
 		</url>
 		
 		<url>
-			<loc>https://derkuba.de/tags/scrum/</loc>
+			<loc>https://derkuba.de/tags/certification/</loc>
 			<lastmod>2024-09-19</lastmod>
 		</url>
 		
 		<url>
-			<loc>https://derkuba.de/tags/certification/</loc>
+			<loc>https://derkuba.de/tags/scrum/</loc>
 			<lastmod>2024-09-19</lastmod>
 		</url>
 		
@@ -548,6 +553,16 @@
 		
 		<url>
 			<loc>https://derkuba.de/posts/0125/meeting-nettikette-teams/</loc>
+			<lastmod>2025-01-22</lastmod>
+		</url>
+		
+		<url>
+			<loc>https://derkuba.de/posts/0225/speakaoke/</loc>
+			<lastmod>2025-01-22</lastmod>
+		</url>
+		
+		<url>
+			<loc>https://derkuba.de/posts/en/0225/speakaoke/</loc>
 			<lastmod>2025-01-22</lastmod>
 		</url>
 </urlset>

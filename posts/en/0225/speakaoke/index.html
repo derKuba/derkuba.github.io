@@ -1,0 +1,330 @@
+<!doctype html>
+<html lang="de">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1"/>
+        <title>Speakaoke – Spontaneous Presentations with Fastify, SolidJS, and AI</title>
+        <meta name="description" content="Spontane Vorträge üben">
+        <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+        <link rel="alternate" href="/feed/feed.xml" type="application/atom+xml" title="der_kuba">
+        <link rel="alternate" href="/feed/feed.json" type="application/json" title="der_kuba">
+        <link rel="stylesheet" href="/assets/css/prism.css">
+        <link rel="stylesheet" href="/assets/css/bulma.css">
+        <link rel="stylesheet" href="/assets/css/custom.css">
+        <script>
+            document.addEventListener("DOMContentLoaded", () => {
+                const e = Array
+                    .prototype
+                    .slice
+                    .call(document.querySelectorAll(".navbar-burger"), 0);
+                e.length > 0 && e.forEach(e => {
+                    e.addEventListener("click", () => {
+                        const t = e.dataset.target,
+                            a = document.getElementById(t);
+                        e.classList.toggle("is-active"),
+                        a.classList.toggle("is-active")
+                    })
+                })
+                const disableDarkMode = () => {
+                    const bodyNode = document.querySelector("body");
+                    bodyNode
+                        .classList
+                        .remove("dark-mode")
+                        localStorage
+                        .setItem('darkMode', 'disabled');
+                }
+                const enableDarkMode = () => {
+                    const bodyNode = document.querySelector("body");
+                    bodyNode
+                        .classList
+                        .add("dark-mode")
+                        localStorage
+                        .setItem('darkMode', 'enabled');
+                }
+                const button = document.getElementById("darkmode");
+                button.addEventListener("click", () => {
+                    const bodyNode = document.querySelector("body");
+                    if (bodyNode.classList.contains("dark-mode")) {
+                        disableDarkMode();
+                    } else {
+                        enableDarkMode();
+                    }
+                })
+                if (localStorage.getItem('darkMode') === 'enabled') {
+                    enableDarkMode();
+                }
+            });
+        </script>
+    </head>
+    <body><header>
+    <div class="container">
+        <nav class="navbar">
+            <div class="navbar-brand">
+                <a class="navbar-item navbar-brand__title " href="/">
+                    der_kuba
+                </a>
+                <a class="navbar-item is-size-7-mobile" href="https://github.com/derKuba">
+                    @Github
+                </a>
+                <a class="navbar-item is-size-7-mobile" href="https://twitter.com/der_kuba">
+                    @Twitter
+                </a>
+                <a class="navbar-item is-size-7-mobile" href="https://www.linkedin.com/in/jacob-pawlik-08a40015b/">
+                    @LinkedIn
+                </a>
+                <div class="navbar-burger" data-target="navigation-items">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+            <div id="navigation-items" class="navbar-menu">
+                <div class="navbar-end">
+                    
+                        <a class="navbar-item " href="/">
+                            Home
+                        </a>
+                        <a class="navbar-item " href="/posts/">
+                            Archiv
+                        </a>
+                        <a class="navbar-item " href="/about/">
+                            About Me
+                        </a>
+                        <a class="navbar-item " href="/en/">
+                            English
+                        </a>
+                        <a class="navbar-item " href="/content/impressum.html">
+                            Impressum
+                        </a>
+                        <a class="navbar-item " href="/content/datenschutz.html">
+                            Datenschutzerklärung
+                        </a>
+                    <button id="darkmode" alt="dark mode">
+                        <svg width="30" height="30">
+                            <circle cx="15" cy="15" r="6" fill="currentColor"/>
+                            <line id="ray" stroke="currentColor" stroke-width="2" stroke-linecap="round" x1="15" y1="1" x2="15" y2="4"></line>
+                            <use href="#ray" transform="rotate(45 15 15)"/>
+                            <use href="#ray" transform="rotate(90 15 15)"/>
+                            <use href="#ray" transform="rotate(135 15 15)"/>
+                            <use href="#ray" transform="rotate(180 15 15)"/>
+                            <use href="#ray" transform="rotate(225 15 15)"/>
+                            <use href="#ray" transform="rotate(270 15 15)"/>
+                            <use href="#ray" transform="rotate(315 15 15)"/>
+                        </svg>
+                    </button>
+                    <!-- special thanks to https://www.freecodecamp.org/news/how-to-handle-dark-mode-with-css-and-javascript/ -->
+                </div>
+            </div>
+        </nav>
+    </div>
+</header>
+        
+<section class="section">
+  <div class="container">
+    <div class="columns is-centered">
+      <div class="column is-8">
+        <h1 class="title is-3">Speakaoke – Spontaneous Presentations with Fastify, SolidJS, and AI</h1>
+        <div class="post-detail__tags">
+          <h3 class="subtitle is-6">
+            <time datetime="2025-01-22">
+              22 Jan 2025
+            </time>
+          </h3>
+          <div class="tags"><a href="/tags/ki/" class="post-tag">
+                <span class="tag is-black">
+                  Ki
+                </span>
+              </a><a href="/tags/fullstack/" class="post-tag">
+                <span class="tag is-primary">
+                  Fullstack
+                </span>
+              </a>
+          </div>
+        </div>
+        <div class="content post_detail__content">
+          <div class="language-hint">
+            
+              <a href="/posts/0225/speakaoke">Auf Deutsch lesen <img width="25" src="/assets/images/de.png"/></a>
+            
+          </div>
+          <p>Have you ever had to give a spontaneous presentation but had no idea about the topic? That’s exactly the idea behind <strong>Speakaoke</strong> – a web app that generates presentations on any topic at the push of a button! You enter a keyword (e.g., <em>jellyfish</em>), and within seconds, you get a ready-made presentation with five slides, created using OpenAI. With <strong>Reveal.js</strong>, you can immediately start presenting.</p>
+<p>In this mini-tutorial, I'll show you how Speakaoke is built and how you can create a similar project using <strong>Fastify (Backend)</strong> and <strong>SolidJS (Frontend)</strong>.</p>
+<hr>
+<h2>Architecture</h2>
+<p>Speakaoke consists of two main components:</p>
+<ol>
+<li><strong>Backend (Fastify)</strong> – A Node.js server that queries the OpenAI API and generates the presentation data.</li>
+<li><strong>Frontend (SolidJS)</strong> – A web app that provides the search field and renders the presentation using <strong>Reveal.js</strong>.</li>
+</ol>
+<p>The process works as follows:</p>
+<ol>
+<li>The user enters a keyword.</li>
+<li>The backend sends a request to OpenAI and receives a presentation.</li>
+<li>The frontend displays the presentation and starts a <strong>Reveal.js</strong> slideshow.</li>
+</ol>
+<p>Now let’s dive into the details!</p>
+<hr>
+<h2>Frontend (SolidJS + Reveal.js)</h2>
+<p><img src="/img/0225/speakaoke.png" alt="Image" title="Präsentationsbeispiel"></p>
+<p><img src="/img/0225/kuba-presentation.png" alt="Image" title="Präsentationsbeispiel"></p>
+<p>The frontend consists of two main pages:</p>
+<ol>
+<li><strong><code>SearchPage</code></strong> – Where the user enters the search term.</li>
+<li><strong><code>PresentationPage</code></strong> – Where the presentation is displayed.</li>
+</ol>
+<h3><code>SearchPage</code> – The Search Field</h3>
+<pre class="language-jsx"><code class="language-jsx"><span class="highlight-line"><span class="token keyword">import</span> <span class="token punctuation">{</span> createSignal <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">"solid-js"</span><span class="token punctuation">;</span></span>
+<span class="highlight-line"><span class="token keyword">import</span> <span class="token punctuation">{</span> useNavigate <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">"@solidjs/router"</span><span class="token punctuation">;</span></span>
+<span class="highlight-line"><span class="token keyword">import</span> <span class="token punctuation">{</span> applicationStore <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">"../store/app-store"</span><span class="token punctuation">;</span></span>
+<span class="highlight-line"></span>
+<span class="highlight-line"><span class="token keyword">const</span> <span class="token function-variable function">SearchPage</span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">{</span></span>
+<span class="highlight-line">    <span class="token keyword">const</span> <span class="token punctuation">[</span>keyword<span class="token punctuation">,</span> setKeyword<span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token function">createSignal</span><span class="token punctuation">(</span><span class="token string">""</span><span class="token punctuation">)</span><span class="token punctuation">;</span></span>
+<span class="highlight-line">    <span class="token keyword">const</span> navigate <span class="token operator">=</span> <span class="token function">useNavigate</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span></span>
+<span class="highlight-line"></span>
+<span class="highlight-line">    <span class="token keyword">const</span> <span class="token function-variable function">fetchPresentation</span> <span class="token operator">=</span> <span class="token keyword">async</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">{</span></span>
+<span class="highlight-line">        <span class="token keyword">const</span> response <span class="token operator">=</span> <span class="token keyword">await</span> <span class="token function">fetch</span><span class="token punctuation">(</span><span class="token string">"/api/presentation"</span><span class="token punctuation">,</span> <span class="token punctuation">{</span></span>
+<span class="highlight-line">            <span class="token literal-property property">method</span><span class="token operator">:</span> <span class="token string">"POST"</span><span class="token punctuation">,</span></span>
+<span class="highlight-line">            <span class="token literal-property property">headers</span><span class="token operator">:</span> <span class="token punctuation">{</span> <span class="token string-property property">"Content-Type"</span><span class="token operator">:</span> <span class="token string">"application/json"</span> <span class="token punctuation">}</span><span class="token punctuation">,</span></span>
+<span class="highlight-line">            <span class="token literal-property property">body</span><span class="token operator">:</span> <span class="token constant">JSON</span><span class="token punctuation">.</span><span class="token function">stringify</span><span class="token punctuation">(</span><span class="token punctuation">{</span> <span class="token literal-property property">keyword</span><span class="token operator">:</span> <span class="token function">keyword</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">,</span></span>
+<span class="highlight-line">        <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span></span>
+<span class="highlight-line"></span>
+<span class="highlight-line">        <span class="token keyword">const</span> data <span class="token operator">=</span> <span class="token keyword">await</span> response<span class="token punctuation">.</span><span class="token function">json</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span></span>
+<span class="highlight-line">        localStorage<span class="token punctuation">.</span><span class="token function">setItem</span><span class="token punctuation">(</span><span class="token string">"presentation"</span><span class="token punctuation">,</span> <span class="token constant">JSON</span><span class="token punctuation">.</span><span class="token function">stringify</span><span class="token punctuation">(</span>data<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span></span>
+<span class="highlight-line">        <span class="token function">navigate</span><span class="token punctuation">(</span><span class="token string">"/presentation"</span><span class="token punctuation">)</span><span class="token punctuation">;</span></span>
+<span class="highlight-line">    <span class="token punctuation">}</span><span class="token punctuation">;</span></span>
+<span class="highlight-line"></span>
+<span class="highlight-line">    <span class="token keyword">return</span> <span class="token punctuation">(</span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span><span class="token punctuation">></span></span><span class="token plain-text">
+<span class="highlight-line">            </span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>input</span></span>
+<span class="highlight-line">                <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>text<span class="token punctuation">"</span></span></span>
+<span class="highlight-line">                <span class="token attr-name">onInput</span><span class="token script language-javascript"><span class="token script-punctuation punctuation">=</span><span class="token punctuation">{</span><span class="token punctuation">(</span><span class="token parameter">e</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token function">setKeyword</span><span class="token punctuation">(</span>e<span class="token punctuation">.</span>target<span class="token punctuation">.</span>value<span class="token punctuation">)</span><span class="token punctuation">}</span></span></span>
+<span class="highlight-line">                <span class="token attr-name">placeholder</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>Enter topic...<span class="token punctuation">"</span></span></span>
+<span class="highlight-line">            <span class="token punctuation">/></span></span><span class="token plain-text"></span>
+<span class="highlight-line">            </span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>button</span> <span class="token attr-name">onClick</span><span class="token script language-javascript"><span class="token script-punctuation punctuation">=</span><span class="token punctuation">{</span>fetchPresentation<span class="token punctuation">}</span></span><span class="token punctuation">></span></span><span class="token plain-text">Generate</span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>button</span><span class="token punctuation">></span></span><span class="token plain-text"></span>
+        </span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span>
+<span class="highlight-line">    <span class="token punctuation">)</span><span class="token punctuation">;</span></span>
+<span class="highlight-line"><span class="token punctuation">}</span><span class="token punctuation">;</span></span></code></pre>
+<p>Once the user clicks the button, a request is sent to the backend, and the response is stored in <code>localStorage</code>.</p>
+<h3><code>PresentationPage</code> – The Slideshow with Theme Options</h3>
+<pre class="language-jsx"><code class="language-jsx"><span class="highlight-line"><span class="token keyword">import</span> Reveal <span class="token keyword">from</span> <span class="token string">"reveal.js"</span><span class="token punctuation">;</span></span>
+<span class="highlight-line"><span class="token keyword">import</span> <span class="token string">"reveal.js/dist/reveal.css"</span><span class="token punctuation">;</span></span>
+<span class="highlight-line"><span class="token keyword">import</span> <span class="token string">"reveal.js/dist/theme/black.css"</span><span class="token punctuation">;</span></span>
+<span class="highlight-line"><span class="token keyword">import</span> <span class="token punctuation">{</span> onMount<span class="token punctuation">,</span> createSignal <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">"solid-js"</span><span class="token punctuation">;</span></span>
+<span class="highlight-line"><span class="token keyword">import</span> <span class="token punctuation">{</span> marked <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">"marked"</span><span class="token punctuation">;</span></span>
+<span class="highlight-line"></span>
+<span class="highlight-line"><span class="token keyword">const</span> <span class="token function-variable function">PresentationPage</span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">{</span></span>
+<span class="highlight-line">    <span class="token keyword">let</span> deck<span class="token punctuation">;</span></span>
+<span class="highlight-line">    <span class="token keyword">const</span> <span class="token punctuation">[</span>theme<span class="token punctuation">,</span> setTheme<span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token function">createSignal</span><span class="token punctuation">(</span><span class="token string">"black"</span><span class="token punctuation">)</span><span class="token punctuation">;</span></span>
+<span class="highlight-line"></span>
+<span class="highlight-line">    <span class="token function">onMount</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">{</span></span>
+<span class="highlight-line">        <span class="token keyword">const</span> presentationData <span class="token operator">=</span> <span class="token constant">JSON</span><span class="token punctuation">.</span><span class="token function">parse</span><span class="token punctuation">(</span></span>
+<span class="highlight-line">            localStorage<span class="token punctuation">.</span><span class="token function">getItem</span><span class="token punctuation">(</span><span class="token string">"presentation"</span><span class="token punctuation">)</span><span class="token punctuation">,</span></span>
+<span class="highlight-line">        <span class="token punctuation">)</span><span class="token punctuation">;</span></span>
+<span class="highlight-line">        deck <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Reveal</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span></span>
+<span class="highlight-line">        deck<span class="token punctuation">.</span><span class="token function">initialize</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span></span>
+<span class="highlight-line">    <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span></span>
+<span class="highlight-line"></span>
+<span class="highlight-line">    <span class="token keyword">return</span> <span class="token punctuation">(</span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span><span class="token punctuation">></span></span><span class="token plain-text">
+<span class="highlight-line">            </span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>select</span> <span class="token attr-name">onChange</span><span class="token script language-javascript"><span class="token script-punctuation punctuation">=</span><span class="token punctuation">{</span><span class="token punctuation">(</span><span class="token parameter">e</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token function">setTheme</span><span class="token punctuation">(</span>e<span class="token punctuation">.</span>target<span class="token punctuation">.</span>value<span class="token punctuation">)</span><span class="token punctuation">}</span></span><span class="token punctuation">></span></span><span class="token plain-text"></span>
+<span class="highlight-line">                </span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>option</span> <span class="token attr-name">value</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>black<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token plain-text">Black</span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>option</span><span class="token punctuation">></span></span><span class="token plain-text"></span>
+<span class="highlight-line">                </span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>option</span> <span class="token attr-name">value</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>white<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token plain-text">White</span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>option</span><span class="token punctuation">></span></span><span class="token plain-text"></span>
+<span class="highlight-line">                </span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>option</span> <span class="token attr-name">value</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>league<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token plain-text">League</span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>option</span><span class="token punctuation">></span></span><span class="token plain-text"></span>
+<span class="highlight-line">            </span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>select</span><span class="token punctuation">></span></span><span class="token plain-text"></span>
+<span class="highlight-line">            </span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>reveal<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token plain-text"></span>
+<span class="highlight-line">                </span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>slides<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token plain-text"></span>
+                    </span><span class="token punctuation">{</span>presentationData<span class="token punctuation">.</span>slides<span class="token punctuation">.</span><span class="token function">map</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token parameter">slide</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">(</span>
+                        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>section</span>
+<span class="highlight-line">                            <span class="token attr-name">innerHTML</span><span class="token script language-javascript"><span class="token script-punctuation punctuation">=</span><span class="token punctuation">{</span><span class="token function">marked</span><span class="token punctuation">(</span>slide<span class="token punctuation">)</span><span class="token punctuation">}</span></span></span>
+<span class="highlight-line">                            <span class="token attr-name">class</span><span class="token script language-javascript"><span class="token script-punctuation punctuation">=</span><span class="token punctuation">{</span><span class="token function">theme</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">}</span></span></span>
+                        <span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>section</span><span class="token punctuation">></span></span>
+                    <span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">}</span><span class="token plain-text">
+<span class="highlight-line">                </span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span><span class="token plain-text"></span>
+<span class="highlight-line">            </span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span><span class="token plain-text"></span>
+        </span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span>
+<span class="highlight-line">    <span class="token punctuation">)</span><span class="token punctuation">;</span></span>
+<span class="highlight-line"><span class="token punctuation">}</span><span class="token punctuation">;</span></span></code></pre>
+<p>At first glance, this implementation seems to work fine. However, in SolidJS, there is an issue when switching routes: <strong>The presentation is not correctly reinitialized</strong>.</p>
+<p>To ensure that Reveal.js loads correctly, a slightly <strong>hacky solution</strong> is needed:</p>
+<pre class="language-jsx"><code class="language-jsx"><span class="highlight-line"><span class="token function">onMount</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">{</span></span>
+<span class="highlight-line">    <span class="token keyword">const</span> presentationData <span class="token operator">=</span> <span class="token constant">JSON</span><span class="token punctuation">.</span><span class="token function">parse</span><span class="token punctuation">(</span>localStorage<span class="token punctuation">.</span><span class="token function">getItem</span><span class="token punctuation">(</span><span class="token string">"presentation"</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span></span>
+<span class="highlight-line"></span>
+<span class="highlight-line">    <span class="token function">setTimeout</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">{</span></span>
+<span class="highlight-line">        <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token operator">!</span>deck<span class="token punctuation">)</span> <span class="token punctuation">{</span></span>
+<span class="highlight-line">            deck <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Reveal</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span></span>
+<span class="highlight-line">            deck<span class="token punctuation">.</span><span class="token function">initialize</span><span class="token punctuation">(</span><span class="token punctuation">{</span></span>
+<span class="highlight-line">                <span class="token literal-property property">controls</span><span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span></span>
+<span class="highlight-line">                <span class="token literal-property property">progress</span><span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span></span>
+<span class="highlight-line">                <span class="token literal-property property">hash</span><span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span></span>
+<span class="highlight-line">            <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span></span>
+<span class="highlight-line"></span>
+<span class="highlight-line">            <span class="token function">setTimeout</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=></span> deck<span class="token punctuation">.</span><span class="token function">sync</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token number">500</span><span class="token punctuation">)</span><span class="token punctuation">;</span></span>
+<span class="highlight-line">        <span class="token punctuation">}</span></span>
+<span class="highlight-line">    <span class="token punctuation">}</span><span class="token punctuation">,</span> <span class="token number">100</span><span class="token punctuation">)</span><span class="token punctuation">;</span></span>
+<span class="highlight-line"><span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span></span></code></pre>
+<p>This solution ensures that Reveal.js is initialized with a small delay to avoid timing issues when switching routes.</p>
+<hr>
+<h2>Backend (Fastify + OpenAI)</h2>
+<p>The backend is a <strong>Fastify server</strong> that provides a single API route, <code>/presentation</code>. This route receives a keyword, sends it to OpenAI, and returns the generated presentation.</p>
+<h3><strong>Fastify Route for Presentations</strong></h3>
+<pre class="language-js"><code class="language-js"><span class="highlight-line"><span class="token keyword">const</span> dotenv <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">"dotenv"</span><span class="token punctuation">)</span><span class="token punctuation">;</span></span>
+<span class="highlight-line">dotenv<span class="token punctuation">.</span><span class="token function">config</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span></span>
+<span class="highlight-line"><span class="token keyword">const</span> OpenAI <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">"openai"</span><span class="token punctuation">)</span><span class="token punctuation">;</span></span>
+<span class="highlight-line"></span>
+<span class="highlight-line"><span class="token keyword">const</span> openai <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">OpenAI</span><span class="token punctuation">(</span><span class="token punctuation">{</span> <span class="token literal-property property">apiKey</span><span class="token operator">:</span> process<span class="token punctuation">.</span>env<span class="token punctuation">.</span><span class="token constant">OPENAI_API_KEY</span> <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span></span>
+<span class="highlight-line"></span>
+<span class="highlight-line">module<span class="token punctuation">.</span><span class="token function-variable function">exports</span> <span class="token operator">=</span> <span class="token keyword">async</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token parameter">fastify</span><span class="token punctuation">)</span> <span class="token punctuation">{</span></span>
+<span class="highlight-line">    fastify<span class="token punctuation">.</span><span class="token function">post</span><span class="token punctuation">(</span><span class="token string">"/presentation"</span><span class="token punctuation">,</span> <span class="token keyword">async</span> <span class="token punctuation">(</span><span class="token parameter">request<span class="token punctuation">,</span> reply</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">{</span></span>
+<span class="highlight-line">        <span class="token keyword">const</span> <span class="token punctuation">{</span> keyword <span class="token punctuation">}</span> <span class="token operator">=</span> request<span class="token punctuation">.</span>body<span class="token punctuation">;</span></span>
+<span class="highlight-line"></span>
+<span class="highlight-line">        <span class="token keyword">const</span> response <span class="token operator">=</span> <span class="token keyword">await</span> openai<span class="token punctuation">.</span><span class="token function">createCompletion</span><span class="token punctuation">(</span><span class="token punctuation">{</span></span>
+<span class="highlight-line">            <span class="token literal-property property">model</span><span class="token operator">:</span> <span class="token string">"gpt-4"</span><span class="token punctuation">,</span></span>
+<span class="highlight-line">            <span class="token literal-property property">prompt</span><span class="token operator">:</span> <span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">Create a presentation with 5 slides about </span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>keyword<span class="token interpolation-punctuation punctuation">}</span></span><span class="token string">. Each slide should have a Markdown heading and short bullet points.</span><span class="token template-punctuation string">`</span></span><span class="token punctuation">,</span></span>
+<span class="highlight-line">            <span class="token literal-property property">max_tokens</span><span class="token operator">:</span> <span class="token number">500</span><span class="token punctuation">,</span></span>
+<span class="highlight-line">        <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span></span>
+<span class="highlight-line"></span>
+<span class="highlight-line">        reply<span class="token punctuation">.</span><span class="token function">send</span><span class="token punctuation">(</span><span class="token punctuation">{</span> <span class="token literal-property property">slides</span><span class="token operator">:</span> response<span class="token punctuation">.</span>data<span class="token punctuation">.</span>choices<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">.</span>text<span class="token punctuation">.</span><span class="token function">split</span><span class="token punctuation">(</span><span class="token string">"\n\n"</span><span class="token punctuation">)</span> <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span></span>
+<span class="highlight-line">    <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span></span>
+<span class="highlight-line"><span class="token punctuation">}</span><span class="token punctuation">;</span></span></code></pre>
+<p>Here’s where the magic happens! The presentation is generated in Markdown format by OpenAI and sent to the frontend.</p>
+<hr>
+<h2>Outlook</h2>
+<p>Speakaoke is already a fun tool, but there are many exciting possibilities for future improvements:</p>
+<ul>
+<li><strong>Automatically generated images for slides:</strong> OpenAI or another image AI could be used to generate relevant images for each slide.</li>
+<li><strong>Image-only presentations:</strong> Instead of text, entire presentations could be composed solely of AI-generated images—perfect for creative storytelling!</li>
+<li><strong>More Reveal.js customizations:</strong> Additional themes, animations, and interaction options could be added.</li>
+</ul>
+<p>I’m always grateful for feedback.
+Feel free to send it to jacob@derkuba.de.</p>
+<p>Best regards,</p>
+<p>Yours, Kuba</p>
+
+            <hr>
+              <ul class="post-navigation">
+                  <li>Vorheriger Artikel:
+                    <a href="/posts/0225/speakaoke/">Speakaoke – Spontane Vorträge mit Fastify, SolidJS und KI</a>
+                  </li>
+                
+              </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+        <!-- Current page: /posts/en/0225/speakaoke/ -->
+        <footer class="footer">
+    <hr/>
+    <div class="content has-text-centered">
+        <p>
+            der_kuba - 2021-2024 -
+            <a href="/content/impressum.html">Impressum</a>
+            -
+            <a href="/content/datenschutz.html">Datenschutzerklärung</a>
+        </p>
+    </div>
+</footer>
+    </body>
+</html>
