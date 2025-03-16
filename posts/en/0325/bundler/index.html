@@ -1,0 +1,222 @@
+<!doctype html>
+<html lang="de">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1"/>
+        <title>Parcel, Vite or Webpack – Which Bundler Fits Your Project?</title>
+        <meta name="description" content="Why we stick with Webpack despite its slow startup time, and how Parcel and Vite compare.">
+        <meta property="og:title" content="Speakaoke – Spontane Präsentationen mit KI"/>
+        <meta property="og:image" content="/android-chrome-384x384.png"/>
+        <meta property="og:url" content="https://derkuba.de/posts/0225/speakaoke/"/>
+        <meta property="og:type" content="website"/>
+        <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+        <link rel="alternate" href="/feed/feed.xml" type="application/atom+xml" title="der_kuba">
+        <link rel="alternate" href="/feed/feed.json" type="application/json" title="der_kuba">
+        <link rel="stylesheet" href="/assets/css/prism.css">
+        <link rel="stylesheet" href="/assets/css/bulma.css">
+        <link rel="stylesheet" href="/assets/css/custom.css">
+        <script>
+            document.addEventListener("DOMContentLoaded", () => {
+                const e = Array
+                    .prototype
+                    .slice
+                    .call(document.querySelectorAll(".navbar-burger"), 0);
+                e.length > 0 && e.forEach(e => {
+                    e.addEventListener("click", () => {
+                        const t = e.dataset.target,
+                            a = document.getElementById(t);
+                        e.classList.toggle("is-active"),
+                        a.classList.toggle("is-active")
+                    })
+                })
+                const disableDarkMode = () => {
+                    const bodyNode = document.querySelector("body");
+                    bodyNode
+                        .classList
+                        .remove("dark-mode")
+                        localStorage
+                        .setItem('darkMode', 'disabled');
+                }
+                const enableDarkMode = () => {
+                    const bodyNode = document.querySelector("body");
+                    bodyNode
+                        .classList
+                        .add("dark-mode")
+                        localStorage
+                        .setItem('darkMode', 'enabled');
+                }
+                const button = document.getElementById("darkmode");
+                button.addEventListener("click", () => {
+                    const bodyNode = document.querySelector("body");
+                    if (bodyNode.classList.contains("dark-mode")) {
+                        disableDarkMode();
+                    } else {
+                        enableDarkMode();
+                    }
+                })
+                if (localStorage.getItem('darkMode') === 'enabled') {
+                    enableDarkMode();
+                }
+            });
+        </script>
+    </head>
+    <body><header>
+    <div class="container">
+        <nav class="navbar">
+            <div class="navbar-brand">
+                <a class="navbar-item navbar-brand__title " href="/">
+                    der_kuba
+                </a>
+                <a class="navbar-item is-size-7-mobile" href="https://github.com/derKuba">
+                    @Github
+                </a>
+                <a class="navbar-item is-size-7-mobile" href="https://twitter.com/der_kuba">
+                    @Twitter
+                </a>
+                <a class="navbar-item is-size-7-mobile" href="https://www.linkedin.com/in/jacob-pawlik-08a40015b/">
+                    @LinkedIn
+                </a>
+                <div class="navbar-burger" data-target="navigation-items">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+            <div id="navigation-items" class="navbar-menu">
+                <div class="navbar-end">
+                    
+                        <a class="navbar-item " href="/">
+                            Home
+                        </a>
+                        <a class="navbar-item " href="/posts/">
+                            Archiv
+                        </a>
+                        <a class="navbar-item " href="/about/">
+                            About Me
+                        </a>
+                        <a class="navbar-item " href="/en/">
+                            English
+                        </a>
+                        <a class="navbar-item " href="/content/impressum.html">
+                            Impressum
+                        </a>
+                        <a class="navbar-item " href="/content/datenschutz.html">
+                            Datenschutzerklärung
+                        </a>
+                    <button id="darkmode" alt="dark mode">
+                        <svg width="30" height="30">
+                            <circle cx="15" cy="15" r="6" fill="currentColor"/>
+                            <line id="ray" stroke="currentColor" stroke-width="2" stroke-linecap="round" x1="15" y1="1" x2="15" y2="4"></line>
+                            <use href="#ray" transform="rotate(45 15 15)"/>
+                            <use href="#ray" transform="rotate(90 15 15)"/>
+                            <use href="#ray" transform="rotate(135 15 15)"/>
+                            <use href="#ray" transform="rotate(180 15 15)"/>
+                            <use href="#ray" transform="rotate(225 15 15)"/>
+                            <use href="#ray" transform="rotate(270 15 15)"/>
+                            <use href="#ray" transform="rotate(315 15 15)"/>
+                        </svg>
+                    </button>
+                    <!-- special thanks to https://www.freecodecamp.org/news/how-to-handle-dark-mode-with-css-and-javascript/ -->
+                </div>
+            </div>
+        </nav>
+    </div>
+</header>
+        
+<section class="section">
+  <div class="container">
+    <div class="columns is-centered">
+      <div class="column is-8">
+        <h1 class="title is-3">Parcel, Vite or Webpack – Which Bundler Fits Your Project?</h1>
+        <div class="post-detail__tags">
+          <h3 class="subtitle is-6">
+            <time datetime="2025-03-16">
+              16 Mar 2025
+            </time>
+          </h3>
+          <div class="tags"><a href="/tags/bundler/" class="post-tag">
+                <span class="tag is-black">
+                  Bundler
+                </span>
+              </a>
+          </div>
+        </div>
+        <div class="content post_detail__content">
+          <div class="language-hint">
+            
+              <a href="/posts/0325/bundler">Auf Deutsch lesen <img width="25" src="/assets/images/de.png"/></a>
+            
+          </div>
+          <p>Some time ago, we replaced our old AngularJS frontend at TopicPro with a more modern tech stack. We decided on Solid.js, a framework I particularly appreciate because, unlike Angular, it doesn't dictate which tools I have to use. Solid.js gives me the freedom to pick exactly the tools I need.</p>
+<p>About a year ago, I was very enthusiastic about Parcel. Every article praised its simplicity and quick setup without extensive configuration. I found it especially charming that Parcel essentially lets the index.html handle everything. Simply linking my script module and SCSS files was enough to get everything running right away. Initially, this seemed like the perfect fit for our project.</p>
+<p>Unfortunately, problems started to pile up over time: Solid.js occasionally stopped working, and dependency issues arose across different operating systems. Whenever we slightly deviated from Parcel's default behavior, we had to introduce strange configurations in the package.json, and Parcel kept installing unwanted new modules. The initial charm faded quickly.</p>
+<p>Frustrated, we decided to remove Parcel from the project and give Vite a chance instead. Vite promised speed and flexibility—exactly what we were looking for. We configured our proxy server (for our basic-auth-protected backend), SCSS, nested web components, and TypeScript—but we were pretty disappointed when Vite didn't work as expected.</p>
+<p>After extensive troubleshooting and discussions with ChatGPT about alternatives such as Esbuild (which unfortunately lacks a complete dev server), I eventually returned to the good old Webpack. Had I perhaps unfairly doubted Webpack? Were the prejudices justified, or just myths? Surprisingly, Webpack worked quite well initially—until the same problems reappeared that we already had with Vite. Ultimately, it turned out that neither Webpack nor Vite was at fault—the problem was actually caused by the latest version of Solid.js.</p>
+<p>With this clarified, it became apparent: Webpack and Vite are functionally comparable, but there's a critical difference already suggested by the name—the speed.</p>
+<table>
+<thead>
+<tr>
+<th>Bundler</th>
+<th>Startzeit</th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Parcel</td>
+<td>395 ms</td>
+<td><img src="/img/0325/parcel.png" alt="parcel build" title="parcel runtime"></td>
+</tr>
+<tr>
+<td>Vite</td>
+<td>170 ms</td>
+<td><img src="/img/0325/vite.png" alt="vite build" title="vite runtime"></td>
+</tr>
+<tr>
+<td>Webpack</td>
+<td>2548ms</td>
+<td><img src="/img/0325/webpack.png" alt="webpack build" title="webpack runtime"></td>
+</tr>
+</tbody>
+</table>
+<h4>Conclusion</h4>
+<p>Parcel is ideal if you want quick and simple startup with minimal special requirements.</p>
+<p>Vite is recommended if speed is important, and you still want decent control.</p>
+<p>Webpack is my personal favorite for complex projects where maximum control and stability outweigh startup speed.</p>
+<ul>
+<li><strong>Parcel</strong> is ideal if you want quick and simple startup with minimal special requirements..</li>
+<li><strong>Vite</strong> recommended if speed is important, and you still want decent control..</li>
+<li><strong>Webpack</strong> is my personal favorite for complex projects where maximum control and stability outweigh startup speed.</li>
+</ul>
+<p>Sometimes, only after a few detours do we realize what really matters—and for TopicPro, Webpack fits perfectly.</p>
+<p>I'm always grateful for feedback.</p>
+<p>Feel free to contact me at jacob@derkuba.de</p>
+
+            <hr>
+              <ul class="post-navigation">
+                  <li>Vorheriger Artikel:
+                    <a href="/posts/0325/bundling-hell/">Parcel, Vite oder Webpack – Welcher Bundler passt zu deinem Projekt?</a>
+                  </li>
+                
+              </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+        <!-- Current page: /posts/en/0325/bundler/ -->
+        <footer class="footer">
+    <hr/>
+    <div class="content has-text-centered">
+        <p>
+            der_kuba - 2021-2024 -
+            <a href="/content/impressum.html">Impressum</a>
+            -
+            <a href="/content/datenschutz.html">Datenschutzerklärung</a>
+        </p>
+    </div>
+</footer>
+    </body>
+</html>

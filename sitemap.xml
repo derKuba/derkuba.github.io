@@ -317,16 +317,6 @@
 		</url>
 		
 		<url>
-			<loc>https://derkuba.de/tags/recruiting/</loc>
-			<lastmod>2024-09-19</lastmod>
-		</url>
-		
-		<url>
-			<loc>https://derkuba.de/tags/agile/</loc>
-			<lastmod>2024-09-19</lastmod>
-		</url>
-		
-		<url>
 			<loc>https://derkuba.de/tags/nodejs/</loc>
 			<lastmod>2024-09-19</lastmod>
 		</url>
@@ -353,6 +343,16 @@
 		
 		<url>
 			<loc>https://derkuba.de/tags/halloweb/</loc>
+			<lastmod>2024-09-19</lastmod>
+		</url>
+		
+		<url>
+			<loc>https://derkuba.de/tags/recruiting/</loc>
+			<lastmod>2024-09-19</lastmod>
+		</url>
+		
+		<url>
+			<loc>https://derkuba.de/tags/agile/</loc>
 			<lastmod>2024-09-19</lastmod>
 		</url>
 		
@@ -408,6 +408,11 @@
 		
 		<url>
 			<loc>https://derkuba.de/tags/fullstack/</loc>
+			<lastmod>2024-09-19</lastmod>
+		</url>
+		
+		<url>
+			<loc>https://derkuba.de/tags/bundler/</loc>
 			<lastmod>2024-09-19</lastmod>
 		</url>
 		
@@ -564,5 +569,15 @@
 		<url>
 			<loc>https://derkuba.de/posts/en/0225/speakaoke/</loc>
 			<lastmod>2025-01-22</lastmod>
+		</url>
+		
+		<url>
+			<loc>https://derkuba.de/posts/0325/bundling-hell/</loc>
+			<lastmod>2025-03-16</lastmod>
+		</url>
+		
+		<url>
+			<loc>https://derkuba.de/posts/en/0325/bundling-hell/</loc>
+			<lastmod>2025-03-16</lastmod>
 		</url>
 </urlset>
