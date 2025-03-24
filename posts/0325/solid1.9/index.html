@@ -1,0 +1,263 @@
+<!doctype html>
+<html lang="de">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1"/>
+        <title>Solid 1.9 und Web Components: Event-Target-Drama</title>
+        <meta name="description" content="Wie man Issues bei github einstellt und warum das wichtig ist.">
+        <meta property="og:title" content="Speakaoke – Spontane Präsentationen mit KI"/>
+        <meta property="og:image" content="/android-chrome-384x384.png"/>
+        <meta property="og:url" content="https://derkuba.de/posts/0225/speakaoke/"/>
+        <meta property="og:type" content="website"/>
+        <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+        <link rel="alternate" href="/feed/feed.xml" type="application/atom+xml" title="der_kuba">
+        <link rel="alternate" href="/feed/feed.json" type="application/json" title="der_kuba">
+        <link rel="stylesheet" href="/assets/css/prism.css">
+        <link rel="stylesheet" href="/assets/css/bulma.css">
+        <link rel="stylesheet" href="/assets/css/custom.css">
+        <script>
+            document.addEventListener("DOMContentLoaded", () => {
+                const e = Array
+                    .prototype
+                    .slice
+                    .call(document.querySelectorAll(".navbar-burger"), 0);
+                e.length > 0 && e.forEach(e => {
+                    e.addEventListener("click", () => {
+                        const t = e.dataset.target,
+                            a = document.getElementById(t);
+                        e.classList.toggle("is-active"),
+                        a.classList.toggle("is-active")
+                    })
+                })
+                const disableDarkMode = () => {
+                    const bodyNode = document.querySelector("body");
+                    bodyNode
+                        .classList
+                        .remove("dark-mode")
+                        localStorage
+                        .setItem('darkMode', 'disabled');
+                }
+                const enableDarkMode = () => {
+                    const bodyNode = document.querySelector("body");
+                    bodyNode
+                        .classList
+                        .add("dark-mode")
+                        localStorage
+                        .setItem('darkMode', 'enabled');
+                }
+                const button = document.getElementById("darkmode");
+                button.addEventListener("click", () => {
+                    const bodyNode = document.querySelector("body");
+                    if (bodyNode.classList.contains("dark-mode")) {
+                        disableDarkMode();
+                    } else {
+                        enableDarkMode();
+                    }
+                })
+                if (localStorage.getItem('darkMode') === 'enabled') {
+                    enableDarkMode();
+                }
+            });
+        </script>
+    </head>
+    <body><header>
+    <div class="container">
+        <nav class="navbar">
+            <div class="navbar-brand">
+                <a class="navbar-item navbar-brand__title " href="/">
+                    der_kuba
+                </a>
+                <a class="navbar-item is-size-7-mobile" href="https://github.com/derKuba">
+                    @Github
+                </a>
+                <a class="navbar-item is-size-7-mobile" href="https://twitter.com/der_kuba">
+                    @Twitter
+                </a>
+                <a class="navbar-item is-size-7-mobile" href="https://www.linkedin.com/in/jacob-pawlik-08a40015b/">
+                    @LinkedIn
+                </a>
+                <div class="navbar-burger" data-target="navigation-items">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+            <div id="navigation-items" class="navbar-menu">
+                <div class="navbar-end">
+                    
+                        <a class="navbar-item " href="/">
+                            Home
+                        </a>
+                        <a class="navbar-item " href="/posts/">
+                            Archiv
+                        </a>
+                        <a class="navbar-item " href="/about/">
+                            About Me
+                        </a>
+                        <a class="navbar-item " href="/en/">
+                            English
+                        </a>
+                        <a class="navbar-item " href="/content/impressum.html">
+                            Impressum
+                        </a>
+                        <a class="navbar-item " href="/content/datenschutz.html">
+                            Datenschutzerklärung
+                        </a>
+                    <button id="darkmode" alt="dark mode">
+                        <svg width="30" height="30">
+                            <circle cx="15" cy="15" r="6" fill="currentColor"/>
+                            <line id="ray" stroke="currentColor" stroke-width="2" stroke-linecap="round" x1="15" y1="1" x2="15" y2="4"></line>
+                            <use href="#ray" transform="rotate(45 15 15)"/>
+                            <use href="#ray" transform="rotate(90 15 15)"/>
+                            <use href="#ray" transform="rotate(135 15 15)"/>
+                            <use href="#ray" transform="rotate(180 15 15)"/>
+                            <use href="#ray" transform="rotate(225 15 15)"/>
+                            <use href="#ray" transform="rotate(270 15 15)"/>
+                            <use href="#ray" transform="rotate(315 15 15)"/>
+                        </svg>
+                    </button>
+                    <!-- special thanks to https://www.freecodecamp.org/news/how-to-handle-dark-mode-with-css-and-javascript/ -->
+                </div>
+            </div>
+        </nav>
+    </div>
+</header>
+        
+<section class="section">
+  <div class="container">
+    <div class="columns is-centered">
+      <div class="column is-8">
+        <h1 class="title is-3">Solid 1.9 und Web Components: Event-Target-Drama</h1>
+        <div class="post-detail__tags">
+          <h3 class="subtitle is-6">
+            <time datetime="2025-03-23">
+              23 Mar 2025
+            </time>
+          </h3>
+          <div class="tags"><a href="/tags/solid/" class="post-tag">
+                <span class="tag is-black">
+                  Solid
+                </span>
+              </a><a href="/tags/github/" class="post-tag">
+                <span class="tag is-primary">
+                  Github
+                </span>
+              </a>
+          </div>
+        </div>
+        <div class="content post_detail__content">
+          <div class="language-hint">
+            
+              <a href="/posts/en/0325/solid1.9">Read in English <img width="25" src="/assets/images/gb.png"/></a>
+            
+          </div>
+          <p>Solid.js hat sich in den letzten Monaten zu meinem Lieblingsframework gemausert. Trotzdem gab es kürzlich ein kleines Drama bei meinem Update von Solid 1.8.x auf 1.9.x. Was ist passiert?<!-- endOfPreview --></p>
+<h2>Das Problem</h2>
+<p>Nachdem ich ein scheinbar harmloses Update von Solid auf Version 1.9 gemacht hatte, reagierten plötzlich einige meiner selbstgebauten Web Components nicht mehr richtig. Insbesondere das Auslesen von Werten aus Events funktionierte nicht mehr wie gewohnt:</p>
+<pre class="language-js"><code class="language-js"><span class="highlight-line">onInput<span class="token operator">=</span><span class="token punctuation">{</span><span class="token punctuation">(</span><span class="token parameter">e</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">{</span></span>
+<span class="highlight-line">  console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>e<span class="token punctuation">.</span>target<span class="token punctuation">.</span>value<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// => undefined</span></span>
+<span class="highlight-line"><span class="token punctuation">}</span><span class="token punctuation">}</span></span></code></pre>
+<p>Was vorher problemlos funktionierte, lieferte plötzlich <code>undefined</code>. Panik! Zuerst dachte ich natürlich sofort: &quot;Parcel, du bist schuld!&quot;</p>
+<p>Doch selbst nach ausgiebigen Experimenten mit Vite und Webpack blieb der Fehler bestehen. Parcel war ausnahmsweise unschuldig.</p>
+<h2>Ein Issue fürs Solid-Team</h2>
+<p>Ratlos und ein wenig verzweifelt wandte ich mich schließlich direkt ans Solid-Team. Ich isolierte das Problem, erstellte ein <a href="https://github.com/derKuba/solid-eventing-problem">Minimalbeispiel auf GitHub</a> und eröffnete ein <a href="https://github.com/solidjs/solid/issues/2451">Issue auf GitHub</a>.</p>
+<p>Was danach geschah, hätte ich nicht erwartet: Innerhalb von wenigen Stunden bekam ich ausführliche Antworten direkt vom Solid-Team – inklusive des Core-Autors Ryan höchstpersönlich! Mein Fanherz schlug definitiv höher.</p>
+<p><img src="/img/0325/ryan.png" alt="Image" title="Ryan antwortet bei github"></p>
+<p>Ryan erklärte mir geduldig, dass die Änderung in Solid 1.9 nicht etwa ein Bug sei, sondern sich vielmehr näher am offiziellen Verhalten des DOM orientiert. Der Grund: Wenn ein Event die Grenzen des Shadow DOMs verlässt, wird der Event-Target automatisch auf das Custom Element gesetzt – und eben nicht mehr auf das innere Element.</p>
+<h2>Der alte Code (vorher)</h2>
+<p>Mein bisheriger Code sah ungefähr so aus:</p>
+<pre class="language-js"><code class="language-js"><span class="highlight-line"><span class="token keyword">class</span> <span class="token class-name">KubaTextField</span> <span class="token keyword">extends</span> <span class="token class-name">HTMLElement</span> <span class="token punctuation">{</span></span>
+<span class="highlight-line">    <span class="token function">constructor</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span></span>
+<span class="highlight-line">        <span class="token keyword">super</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span></span>
+<span class="highlight-line">        <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">attachShadow</span><span class="token punctuation">(</span><span class="token punctuation">{</span> <span class="token literal-property property">mode</span><span class="token operator">:</span> <span class="token string">"open"</span><span class="token punctuation">,</span> <span class="token literal-property property">delegatesFocus</span><span class="token operator">:</span> <span class="token boolean">true</span> <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span></span>
+<span class="highlight-line">        <span class="token keyword">this</span><span class="token punctuation">.</span>shadowRoot<span class="token punctuation">.</span>innerHTML <span class="token operator">=</span> <span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">&lt;input /></span><span class="token template-punctuation string">`</span></span><span class="token punctuation">;</span></span>
+<span class="highlight-line">    <span class="token punctuation">}</span></span>
+<span class="highlight-line"><span class="token punctuation">}</span></span>
+<span class="highlight-line"></span>
+<span class="highlight-line">customElements<span class="token punctuation">.</span><span class="token function">define</span><span class="token punctuation">(</span><span class="token string">"kuba-textfield"</span><span class="token punctuation">,</span> KubaTextField<span class="token punctuation">)</span><span class="token punctuation">;</span></span></code></pre>
+<p>Damit hatte ich stets Zugriff auf den Wert über <code>e.target.value</code>. Genau das ging nun nicht mehr.</p>
+<h2>Die Lösung (Refactoring)</h2>
+<p>Um dem neuen Verhalten gerecht zu werden, musste ich meine Web Components leicht anpassen:</p>
+<ul>
+<li>Einen Getter und Setter für <code>value</code> hinzufügen, um das innere Element zu spiegeln.</li>
+<li>Events vom inneren Element (<code>input</code>, <code>change</code>) abfangen und neu dispatchen – mit <code>{ bubbles: true, composed: true }</code>.</li>
+</ul>
+<h3>Angepasster Code (Refactored)</h3>
+<pre class="language-js"><code class="language-js"><span class="highlight-line"><span class="token keyword">class</span> <span class="token class-name">KubaTextField</span> <span class="token keyword">extends</span> <span class="token class-name">HTMLElement</span> <span class="token punctuation">{</span></span>
+<span class="highlight-line">    <span class="token function">constructor</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span></span>
+<span class="highlight-line">        <span class="token keyword">super</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span></span>
+<span class="highlight-line">        <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">attachShadow</span><span class="token punctuation">(</span><span class="token punctuation">{</span> <span class="token literal-property property">mode</span><span class="token operator">:</span> <span class="token string">"open"</span><span class="token punctuation">,</span> <span class="token literal-property property">delegatesFocus</span><span class="token operator">:</span> <span class="token boolean">true</span> <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span></span>
+<span class="highlight-line">        <span class="token keyword">this</span><span class="token punctuation">.</span>shadowRoot<span class="token punctuation">.</span>innerHTML <span class="token operator">=</span> <span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">&lt;input /></span><span class="token template-punctuation string">`</span></span><span class="token punctuation">;</span></span>
+<span class="highlight-line"></span>
+<span class="highlight-line">        <span class="token keyword">this</span><span class="token punctuation">.</span>_handleInput <span class="token operator">=</span> <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">_handleInput</span><span class="token punctuation">.</span><span class="token function">bind</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">)</span><span class="token punctuation">;</span></span>
+<span class="highlight-line">    <span class="token punctuation">}</span></span>
+<span class="highlight-line"></span>
+<span class="highlight-line">    <span class="token function">connectedCallback</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span></span>
+<span class="highlight-line">        <span class="token keyword">this</span><span class="token punctuation">.</span>$input <span class="token operator">=</span> <span class="token keyword">this</span><span class="token punctuation">.</span>shadowRoot<span class="token punctuation">.</span><span class="token function">querySelector</span><span class="token punctuation">(</span><span class="token string">"input"</span><span class="token punctuation">)</span><span class="token punctuation">;</span></span>
+<span class="highlight-line">        <span class="token keyword">this</span><span class="token punctuation">.</span>$input<span class="token punctuation">.</span><span class="token function">addEventListener</span><span class="token punctuation">(</span><span class="token string">"input"</span><span class="token punctuation">,</span> <span class="token keyword">this</span><span class="token punctuation">.</span>_handleInput<span class="token punctuation">)</span><span class="token punctuation">;</span></span>
+<span class="highlight-line">    <span class="token punctuation">}</span></span>
+<span class="highlight-line"></span>
+<span class="highlight-line">    <span class="token function">disconnectedCallback</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span></span>
+<span class="highlight-line">        <span class="token keyword">this</span><span class="token punctuation">.</span>$input<span class="token punctuation">.</span><span class="token function">removeEventListener</span><span class="token punctuation">(</span><span class="token string">"input"</span><span class="token punctuation">,</span> <span class="token keyword">this</span><span class="token punctuation">.</span>_handleInput<span class="token punctuation">)</span><span class="token punctuation">;</span></span>
+<span class="highlight-line">    <span class="token punctuation">}</span></span>
+<span class="highlight-line"></span>
+<span class="highlight-line">    <span class="token keyword">get</span> <span class="token function">value</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span></span>
+<span class="highlight-line">        <span class="token keyword">return</span> <span class="token keyword">this</span><span class="token punctuation">.</span>$input<span class="token punctuation">.</span>value<span class="token punctuation">;</span></span>
+<span class="highlight-line">    <span class="token punctuation">}</span></span>
+<span class="highlight-line"></span>
+<span class="highlight-line">    <span class="token keyword">set</span> <span class="token function">value</span><span class="token punctuation">(</span><span class="token parameter">val</span><span class="token punctuation">)</span> <span class="token punctuation">{</span></span>
+<span class="highlight-line">        <span class="token keyword">this</span><span class="token punctuation">.</span>$input<span class="token punctuation">.</span>value <span class="token operator">=</span> val<span class="token punctuation">;</span></span>
+<span class="highlight-line">    <span class="token punctuation">}</span></span>
+<span class="highlight-line"></span>
+<span class="highlight-line">    <span class="token function">_handleInput</span><span class="token punctuation">(</span><span class="token parameter">event</span><span class="token punctuation">)</span> <span class="token punctuation">{</span></span>
+<span class="highlight-line">        <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">dispatchEvent</span><span class="token punctuation">(</span></span>
+<span class="highlight-line">            <span class="token keyword">new</span> <span class="token class-name">Event</span><span class="token punctuation">(</span><span class="token string">"input"</span><span class="token punctuation">,</span> <span class="token punctuation">{</span> <span class="token literal-property property">bubbles</span><span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span> <span class="token literal-property property">composed</span><span class="token operator">:</span> <span class="token boolean">true</span> <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">,</span></span>
+<span class="highlight-line">        <span class="token punctuation">)</span><span class="token punctuation">;</span></span>
+<span class="highlight-line">    <span class="token punctuation">}</span></span>
+<span class="highlight-line"><span class="token punctuation">}</span></span>
+<span class="highlight-line"></span>
+<span class="highlight-line">customElements<span class="token punctuation">.</span><span class="token function">define</span><span class="token punctuation">(</span><span class="token string">"kuba-textfield-working"</span><span class="token punctuation">,</span> KubaTextField<span class="token punctuation">)</span><span class="token punctuation">;</span></span></code></pre>
+<p>Mit diesem Refactoring konnte ich wieder problemlos auf den Wert über <code>e.target.value</code> zugreifen:</p>
+<pre class="language-js"><code class="language-js"><span class="highlight-line">onInput<span class="token operator">=</span><span class="token punctuation">{</span><span class="token punctuation">(</span><span class="token parameter">e</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">{</span></span>
+<span class="highlight-line">  console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>e<span class="token punctuation">.</span>target<span class="token punctuation">.</span>value<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// endlich wieder korrekt!</span></span>
+<span class="highlight-line"><span class="token punctuation">}</span><span class="token punctuation">}</span></span></code></pre>
+<h2>Mein Learning</h2>
+<p>Was zuerst wie ein Solid- oder Parcel-Problem aussah, entpuppte sich letztlich als das Standardverhalten des DOM im Zusammenspiel mit Shadow DOM und Web Components. Das schnelle Feedback des Solid-Teams hat mir nicht nur die Lösung gebracht, sondern auch gezeigt, wie wichtig und wertvoll direkter Support von Framework-Autoren ist.</p>
+<p>Wer die vollständige, funktionierende Implementierung sehen möchte, findet sie in meinem <a href="https://github.com/derKuba/solid-eventing-problem">Reproduktions-Repo</a> unter der Komponente <code>kuba-textfield-working</code>.</p>
+<p>Für Feedback bin ich immer dankbar.
+Gerne an jacob@derkuba.de</p>
+<p>Viele Grüße</p>
+<p>Euer Kuba</p>
+
+            <hr>
+              <ul class="post-navigation">
+                  <li>Nächster Artikel:
+                    <a href="/posts/en/0325/solid1.9/">Solid 1.9 und Web Components: Event-Target-Drama</a>
+                  </li>
+                
+                  <li>Vorheriger Artikel:
+                    <a href="/posts/en/0325/bundling-hell/">Parcel, Vite or Webpack – Which Bundler Fits Your Project?</a>
+                  </li>
+                
+              </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+        <!-- Current page: /posts/0325/solid1.9/ -->
+        <footer class="footer">
+    <hr/>
+    <div class="content has-text-centered">
+        <p>
+            der_kuba - 2021-2024 -
+            <a href="/content/impressum.html">Impressum</a>
+            -
+            <a href="/content/datenschutz.html">Datenschutzerklärung</a>
+        </p>
+    </div>
+</footer>
+    </body>
+</html>
