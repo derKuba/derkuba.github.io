@@ -1,0 +1,634 @@
+<!doctype html>
+<html lang="de">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1"/>
+        <title>SolidJS Hooks: How to Separate Presentation from Logic</title>
+        <meta name="description" content="A refactoring adventure with Custom Hooks in SolidJS for clean, maintainable code">
+        <meta property="og:title" content="Speakaoke – Spontane Präsentationen mit KI"/>
+        <meta property="og:image" content="/android-chrome-384x384.png"/>
+        <meta property="og:url" content="https://derkuba.de/posts/0225/speakaoke/"/>
+        <meta property="og:type" content="website"/>
+        <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+        <link rel="alternate" href="/feed/feed.xml" type="application/atom+xml" title="der_kuba">
+        <link rel="alternate" href="/feed/feed.json" type="application/json" title="der_kuba">
+        <link rel="stylesheet" href="/assets/css/prism.css">
+        <link rel="stylesheet" href="/assets/css/bulma.css">
+        <link rel="stylesheet" href="/assets/css/custom.css">
+        <script>
+            document.addEventListener("DOMContentLoaded", () => {
+                const e = Array
+                    .prototype
+                    .slice
+                    .call(document.querySelectorAll(".navbar-burger"), 0);
+                e.length > 0 && e.forEach(e => {
+                    e.addEventListener("click", () => {
+                        const t = e.dataset.target,
+                            a = document.getElementById(t);
+                        e.classList.toggle("is-active"),
+                        a.classList.toggle("is-active")
+                    })
+                })
+                const disableDarkMode = () => {
+                    const bodyNode = document.querySelector("body");
+                    bodyNode
+                        .classList
+                        .remove("dark-mode")
+                        localStorage
+                        .setItem('darkMode', 'disabled');
+                }
+                const enableDarkMode = () => {
+                    const bodyNode = document.querySelector("body");
+                    bodyNode
+                        .classList
+                        .add("dark-mode")
+                        localStorage
+                        .setItem('darkMode', 'enabled');
+                }
+                const button = document.getElementById("darkmode");
+                button.addEventListener("click", () => {
+                    const bodyNode = document.querySelector("body");
+                    if (bodyNode.classList.contains("dark-mode")) {
+                        disableDarkMode();
+                    } else {
+                        enableDarkMode();
+                    }
+                })
+                if (localStorage.getItem('darkMode') === 'enabled') {
+                    enableDarkMode();
+                }
+            });
+        </script>
+    </head>
+    <body><header>
+    <div class="container">
+        <nav class="navbar">
+            <div class="navbar-brand">
+                <a class="navbar-item navbar-brand__title " href="/">
+                    der_kuba
+                </a>
+                <a class="navbar-item is-size-7-mobile" href="https://github.com/derKuba">
+                    @Github
+                </a>
+                <a class="navbar-item is-size-7-mobile" href="https://twitter.com/der_kuba">
+                    @Twitter
+                </a>
+                <a class="navbar-item is-size-7-mobile" href="https://www.linkedin.com/in/jacob-pawlik-08a40015b/">
+                    @LinkedIn
+                </a>
+                <div class="navbar-burger" data-target="navigation-items">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+            <div id="navigation-items" class="navbar-menu">
+                <div class="navbar-end">
+                    
+                        <a class="navbar-item " href="/">
+                            Home
+                        </a>
+                        <a class="navbar-item " href="/posts/">
+                            Archiv
+                        </a>
+                        <a class="navbar-item " href="/about/">
+                            About Me
+                        </a>
+                        <a class="navbar-item " href="/en/">
+                            English
+                        </a>
+                        <a class="navbar-item " href="/content/impressum.html">
+                            Impressum
+                        </a>
+                        <a class="navbar-item " href="/content/datenschutz.html">
+                            Datenschutzerklärung
+                        </a>
+                    <button id="darkmode" alt="dark mode">
+                        <svg width="30" height="30">
+                            <circle cx="15" cy="15" r="6" fill="currentColor"/>
+                            <line id="ray" stroke="currentColor" stroke-width="2" stroke-linecap="round" x1="15" y1="1" x2="15" y2="4"></line>
+                            <use href="#ray" transform="rotate(45 15 15)"/>
+                            <use href="#ray" transform="rotate(90 15 15)"/>
+                            <use href="#ray" transform="rotate(135 15 15)"/>
+                            <use href="#ray" transform="rotate(180 15 15)"/>
+                            <use href="#ray" transform="rotate(225 15 15)"/>
+                            <use href="#ray" transform="rotate(270 15 15)"/>
+                            <use href="#ray" transform="rotate(315 15 15)"/>
+                        </svg>
+                    </button>
+                    <!-- special thanks to https://www.freecodecamp.org/news/how-to-handle-dark-mode-with-css-and-javascript/ -->
+                </div>
+            </div>
+        </nav>
+    </div>
+</header>
+        
+<section class="section">
+  <div class="container">
+    <div class="columns is-centered">
+      <div class="column is-8">
+        <h1 class="title is-3">SolidJS Hooks: How to Separate Presentation from Logic</h1>
+        <div class="post-detail__tags">
+          <h3 class="subtitle is-6">
+            <time datetime="2025-06-08">
+              08 Jun 2025
+            </time>
+          </h3>
+          <div class="tags"><a href="/tags/web/" class="post-tag">
+                <span class="tag is-black">
+                  Web
+                </span>
+              </a><a href="/tags/solidjs/" class="post-tag">
+                <span class="tag is-primary">
+                  Solidjs
+                </span>
+              </a><a href="/tags/hooks/" class="post-tag">
+                <span class="tag is-link">
+                  Hooks
+                </span>
+              </a><a href="/tags/refactoring/" class="post-tag">
+                <span class="tag is-success">
+                  Refactoring
+                </span>
+              </a>
+          </div>
+        </div>
+        <div class="content post_detail__content">
+          <div class="language-hint">
+            
+              <a href="/posts/0625/hooks-in-solid">Auf Deutsch lesen <img width="25" src="/assets/images/de.png"/></a>
+            
+          </div>
+          <p>A topic that's been on my mind for a while: How do you actually separate presentation from logic in SolidJS? <!-- endOfPreview -->In this article, I'll show you how Custom Hooks can help transform a 400-line monster into a clean, maintainable component.</p>
+<h4>The Problem: Everything in One Component</h4>
+<p>You know the feeling? You start with a simple component, and suddenly it does everything:</p>
+<ul>
+<li>State management</li>
+<li>API calls</li>
+<li>Event handling</li>
+<li>UI rendering</li>
+<li>Validation</li>
+<li>DOM manipulation</li>
+</ul>
+<p>I recently had such a component - a calendar dialog with over 400 lines of code. A real monster! 🐉</p>
+<pre class="language-javascript"><code class="language-javascript"><span class="highlight-line"><span class="token keyword">const</span> <span class="token function-variable function">CalendarDialog</span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">{</span></span>
+<span class="highlight-line">    <span class="token comment">// 15 different signals and stores</span></span>
+<span class="highlight-line">    <span class="token keyword">const</span> <span class="token punctuation">[</span>calendarEntry<span class="token punctuation">,</span> setCalendarEntry<span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token function">createStore</span><span class="token punctuation">(</span><span class="token comment">/* ... */</span><span class="token punctuation">)</span><span class="token punctuation">;</span></span>
+<span class="highlight-line">    <span class="token keyword">const</span> <span class="token punctuation">[</span>originalEntry<span class="token punctuation">,</span> setOriginalEntry<span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token function">createSignal</span><span class="token punctuation">(</span><span class="token keyword">null</span><span class="token punctuation">)</span><span class="token punctuation">;</span></span>
+<span class="highlight-line">    <span class="token keyword">const</span> <span class="token punctuation">[</span>isDeleting<span class="token punctuation">,</span> setIsDeleting<span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token function">createSignal</span><span class="token punctuation">(</span><span class="token boolean">false</span><span class="token punctuation">)</span><span class="token punctuation">;</span></span>
+<span class="highlight-line">    <span class="token comment">// ... and 12 more</span></span>
+<span class="highlight-line"></span>
+<span class="highlight-line">    <span class="token comment">// API calls directly in component</span></span>
+<span class="highlight-line">    <span class="token keyword">const</span> <span class="token function-variable function">handleSave</span> <span class="token operator">=</span> <span class="token keyword">async</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">{</span></span>
+<span class="highlight-line">        <span class="token keyword">const</span> response <span class="token operator">=</span> <span class="token keyword">await</span> <span class="token function">saveCalendarEntry</span><span class="token punctuation">(</span>calendarEntry<span class="token punctuation">)</span><span class="token punctuation">;</span></span>
+<span class="highlight-line">        <span class="token keyword">if</span> <span class="token punctuation">(</span>response<span class="token operator">?.</span>ok<span class="token punctuation">)</span> <span class="token punctuation">{</span></span>
+<span class="highlight-line">            <span class="token comment">// DOM manipulation</span></span>
+<span class="highlight-line">            document<span class="token punctuation">.</span><span class="token function">getElementById</span><span class="token punctuation">(</span><span class="token string">"snackbar"</span><span class="token punctuation">)</span><span class="token operator">?.</span><span class="token function">dispatchEvent</span><span class="token punctuation">(</span><span class="token comment">/* ... */</span><span class="token punctuation">)</span><span class="token punctuation">;</span></span>
+<span class="highlight-line">            <span class="token comment">// Event dispatching</span></span>
+<span class="highlight-line">            window<span class="token punctuation">.</span><span class="token function">dispatchEvent</span><span class="token punctuation">(</span><span class="token keyword">new</span> <span class="token class-name">Event</span><span class="token punctuation">(</span><span class="token string">"calendar:reload"</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span></span>
+<span class="highlight-line">        <span class="token punctuation">}</span></span>
+<span class="highlight-line">    <span class="token punctuation">}</span><span class="token punctuation">;</span></span>
+<span class="highlight-line"></span>
+<span class="highlight-line">    <span class="token comment">// 200 lines of JSX with repetitive code</span></span>
+<span class="highlight-line">    <span class="token keyword">return</span> <span class="token punctuation">(</span></span>
+<span class="highlight-line">        <span class="token operator">&lt;</span>div<span class="token operator">></span></span>
+<span class="highlight-line">            <span class="token operator">&lt;</span>input</span>
+<span class="highlight-line">                <span class="token literal-property property">attr</span><span class="token operator">:</span>outline<span class="token operator">-</span>color<span class="token operator">=</span><span class="token punctuation">{</span></span>
+<span class="highlight-line">                    <span class="token function">isFieldChanged</span><span class="token punctuation">(</span>calendarEntry<span class="token punctuation">,</span> <span class="token punctuation">[</span><span class="token string">"title"</span><span class="token punctuation">]</span><span class="token punctuation">)</span></span>
+<span class="highlight-line">                        <span class="token operator">?</span> <span class="token string">"#eb6914"</span></span>
+<span class="highlight-line">                        <span class="token operator">:</span> <span class="token keyword">undefined</span></span>
+<span class="highlight-line">                <span class="token punctuation">}</span></span>
+<span class="highlight-line">            <span class="token operator">/</span><span class="token operator">></span></span>
+<span class="highlight-line">            <span class="token operator">&lt;</span>input</span>
+<span class="highlight-line">                <span class="token literal-property property">attr</span><span class="token operator">:</span>outline<span class="token operator">-</span>color<span class="token operator">=</span><span class="token punctuation">{</span></span>
+<span class="highlight-line">                    <span class="token function">isFieldChanged</span><span class="token punctuation">(</span>calendarEntry<span class="token punctuation">,</span> <span class="token punctuation">[</span><span class="token string">"description"</span><span class="token punctuation">]</span><span class="token punctuation">)</span></span>
+<span class="highlight-line">                        <span class="token operator">?</span> <span class="token string">"#eb6914"</span></span>
+<span class="highlight-line">                        <span class="token operator">:</span> <span class="token keyword">undefined</span></span>
+<span class="highlight-line">                <span class="token punctuation">}</span></span>
+<span class="highlight-line">            <span class="token operator">/</span><span class="token operator">></span></span>
+<span class="highlight-line">            <span class="token punctuation">{</span><span class="token comment">/* ... 20 more inputs with the same logic */</span><span class="token punctuation">}</span></span>
+<span class="highlight-line">        <span class="token operator">&lt;</span><span class="token operator">/</span>div<span class="token operator">></span></span>
+<span class="highlight-line">    <span class="token punctuation">)</span><span class="token punctuation">;</span></span>
+<span class="highlight-line"><span class="token punctuation">}</span><span class="token punctuation">;</span></span></code></pre>
+<p><strong>The problem:</strong> Everything is coupled, nothing is testable, and changes become a nightmare.</p>
+<h4>The Solution: Custom Hooks</h4>
+<p>The idea is simple: We extract all business logic into a Custom Hook. The component only takes care of rendering.</p>
+<h5>Installation and Setup</h5>
+<p>For our refactoring, we actually only need SolidJS - but I'll also show you how to structure it:</p>
+<pre class="language-bash"><code class="language-bash"><span class="highlight-line"><span class="token function">mkdir</span> hooks</span>
+<span class="highlight-line"><span class="token function">touch</span> hooks/useCalendarEntry.js</span>
+<span class="highlight-line"><span class="token function">touch</span> hooks/useFieldValidation.js</span></code></pre>
+<h5>The Custom Hook: useCalendarEntry</h5>
+<p>Here's the core of our solution:</p>
+<pre class="language-javascript"><code class="language-javascript"><span class="highlight-line"><span class="token comment">// hooks/useCalendarEntry.js</span></span>
+<span class="highlight-line"><span class="token keyword">import</span> <span class="token punctuation">{</span> createSignal <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">"solid-js"</span><span class="token punctuation">;</span></span>
+<span class="highlight-line"><span class="token keyword">import</span> <span class="token punctuation">{</span> createStore <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">"solid-js/store"</span><span class="token punctuation">;</span></span>
+<span class="highlight-line"><span class="token keyword">import</span> <span class="token punctuation">{</span></span>
+<span class="highlight-line">    saveCalendarEntry<span class="token punctuation">,</span></span>
+<span class="highlight-line">    editCalendarEntry<span class="token punctuation">,</span></span>
+<span class="highlight-line">    deleteCalendarEntry<span class="token punctuation">,</span></span>
+<span class="highlight-line"><span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">"../api/calendar-api"</span><span class="token punctuation">;</span></span>
+<span class="highlight-line"></span>
+<span class="highlight-line"><span class="token keyword">const</span> initialEntry <span class="token operator">=</span> <span class="token punctuation">{</span></span>
+<span class="highlight-line">    <span class="token literal-property property">title</span><span class="token operator">:</span> <span class="token string">""</span><span class="token punctuation">,</span></span>
+<span class="highlight-line">    <span class="token literal-property property">description</span><span class="token operator">:</span> <span class="token string">""</span><span class="token punctuation">,</span></span>
+<span class="highlight-line">    <span class="token literal-property property">contactPerson</span><span class="token operator">:</span> <span class="token punctuation">{</span></span>
+<span class="highlight-line">        <span class="token literal-property property">name</span><span class="token operator">:</span> <span class="token string">""</span><span class="token punctuation">,</span></span>
+<span class="highlight-line">        <span class="token literal-property property">email</span><span class="token operator">:</span> <span class="token string">""</span><span class="token punctuation">,</span></span>
+<span class="highlight-line">        <span class="token literal-property property">phone</span><span class="token operator">:</span> <span class="token string">""</span><span class="token punctuation">,</span></span>
+<span class="highlight-line">    <span class="token punctuation">}</span><span class="token punctuation">,</span></span>
+<span class="highlight-line">    <span class="token literal-property property">publishDate</span><span class="token operator">:</span> <span class="token keyword">null</span><span class="token punctuation">,</span></span>
+<span class="highlight-line">    <span class="token literal-property property">deadlineDate</span><span class="token operator">:</span> <span class="token keyword">null</span><span class="token punctuation">,</span></span>
+<span class="highlight-line"><span class="token punctuation">}</span><span class="token punctuation">;</span></span>
+<span class="highlight-line"></span>
+<span class="highlight-line"><span class="token keyword">export</span> <span class="token keyword">const</span> <span class="token function-variable function">useCalendarEntry</span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">{</span></span>
+<span class="highlight-line">    <span class="token keyword">const</span> <span class="token punctuation">[</span>entry<span class="token punctuation">,</span> setEntry<span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token function">createStore</span><span class="token punctuation">(</span><span class="token function">structuredClone</span><span class="token punctuation">(</span>initialEntry<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span></span>
+<span class="highlight-line">    <span class="token keyword">const</span> <span class="token punctuation">[</span>originalEntry<span class="token punctuation">,</span> setOriginalEntry<span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token function">createSignal</span><span class="token punctuation">(</span><span class="token keyword">null</span><span class="token punctuation">)</span><span class="token punctuation">;</span></span>
+<span class="highlight-line">    <span class="token keyword">const</span> <span class="token punctuation">[</span>isLoading<span class="token punctuation">,</span> setIsLoading<span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token function">createSignal</span><span class="token punctuation">(</span><span class="token boolean">false</span><span class="token punctuation">)</span><span class="token punctuation">;</span></span>
+<span class="highlight-line">    <span class="token keyword">const</span> <span class="token punctuation">[</span>isEditing<span class="token punctuation">,</span> setIsEditing<span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token function">createSignal</span><span class="token punctuation">(</span><span class="token boolean">false</span><span class="token punctuation">)</span><span class="token punctuation">;</span></span>
+<span class="highlight-line">    <span class="token keyword">const</span> <span class="token punctuation">[</span>showDeleteButton<span class="token punctuation">,</span> setShowDeleteButton<span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token function">createSignal</span><span class="token punctuation">(</span><span class="token boolean">false</span><span class="token punctuation">)</span><span class="token punctuation">;</span></span>
+<span class="highlight-line"></span>
+<span class="highlight-line">    <span class="token comment">// Entry Management</span></span>
+<span class="highlight-line">    <span class="token keyword">const</span> <span class="token function-variable function">resetEntry</span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">{</span></span>
+<span class="highlight-line">        <span class="token function">setEntry</span><span class="token punctuation">(</span><span class="token function">structuredClone</span><span class="token punctuation">(</span>initialEntry<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span></span>
+<span class="highlight-line">        <span class="token function">setOriginalEntry</span><span class="token punctuation">(</span><span class="token keyword">null</span><span class="token punctuation">)</span><span class="token punctuation">;</span></span>
+<span class="highlight-line">        <span class="token function">setIsLoading</span><span class="token punctuation">(</span><span class="token boolean">false</span><span class="token punctuation">)</span><span class="token punctuation">;</span></span>
+<span class="highlight-line">        <span class="token function">setIsEditing</span><span class="token punctuation">(</span><span class="token boolean">false</span><span class="token punctuation">)</span><span class="token punctuation">;</span></span>
+<span class="highlight-line">        <span class="token function">setShowDeleteButton</span><span class="token punctuation">(</span><span class="token boolean">false</span><span class="token punctuation">)</span><span class="token punctuation">;</span></span>
+<span class="highlight-line">    <span class="token punctuation">}</span><span class="token punctuation">;</span></span>
+<span class="highlight-line"></span>
+<span class="highlight-line">    <span class="token keyword">const</span> <span class="token function-variable function">loadEntry</span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token parameter">data</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">{</span></span>
+<span class="highlight-line">        <span class="token function">resetEntry</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span></span>
+<span class="highlight-line"></span>
+<span class="highlight-line">        <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token operator">!</span>data<span class="token punctuation">)</span> <span class="token keyword">return</span><span class="token punctuation">;</span> <span class="token comment">// New entry</span></span>
+<span class="highlight-line"></span>
+<span class="highlight-line">        <span class="token keyword">if</span> <span class="token punctuation">(</span>data<span class="token punctuation">.</span>id<span class="token punctuation">)</span> <span class="token punctuation">{</span></span>
+<span class="highlight-line">            <span class="token comment">// Edit existing entry</span></span>
+<span class="highlight-line">            <span class="token function">setEntry</span><span class="token punctuation">(</span>data<span class="token punctuation">)</span><span class="token punctuation">;</span></span>
+<span class="highlight-line">            <span class="token function">setIsEditing</span><span class="token punctuation">(</span><span class="token boolean">true</span><span class="token punctuation">)</span><span class="token punctuation">;</span></span>
+<span class="highlight-line">            <span class="token function">setShowDeleteButton</span><span class="token punctuation">(</span><span class="token boolean">true</span><span class="token punctuation">)</span><span class="token punctuation">;</span></span>
+<span class="highlight-line">        <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span></span>
+<span class="highlight-line">            <span class="token comment">// New entry with template</span></span>
+<span class="highlight-line">            <span class="token function">setEntry</span><span class="token punctuation">(</span>data<span class="token punctuation">)</span><span class="token punctuation">;</span></span>
+<span class="highlight-line">            <span class="token comment">// IMPORTANT: Deep clone for comparison!</span></span>
+<span class="highlight-line">            <span class="token function">setOriginalEntry</span><span class="token punctuation">(</span><span class="token function">structuredClone</span><span class="token punctuation">(</span>data<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span></span>
+<span class="highlight-line">        <span class="token punctuation">}</span></span>
+<span class="highlight-line">    <span class="token punctuation">}</span><span class="token punctuation">;</span></span>
+<span class="highlight-line"></span>
+<span class="highlight-line">    <span class="token comment">// API Operations with structured returns</span></span>
+<span class="highlight-line">    <span class="token keyword">const</span> <span class="token function-variable function">saveEntry</span> <span class="token operator">=</span> <span class="token keyword">async</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">{</span></span>
+<span class="highlight-line">        <span class="token function">setIsLoading</span><span class="token punctuation">(</span><span class="token boolean">true</span><span class="token punctuation">)</span><span class="token punctuation">;</span></span>
+<span class="highlight-line"></span>
+<span class="highlight-line">        <span class="token keyword">try</span> <span class="token punctuation">{</span></span>
+<span class="highlight-line">            <span class="token keyword">const</span> response <span class="token operator">=</span> <span class="token function">isEditing</span><span class="token punctuation">(</span><span class="token punctuation">)</span></span>
+<span class="highlight-line">                <span class="token operator">?</span> <span class="token keyword">await</span> <span class="token function">editCalendarEntry</span><span class="token punctuation">(</span>entry<span class="token punctuation">)</span></span>
+<span class="highlight-line">                <span class="token operator">:</span> <span class="token keyword">await</span> <span class="token function">saveCalendarEntry</span><span class="token punctuation">(</span>entry<span class="token punctuation">)</span><span class="token punctuation">;</span></span>
+<span class="highlight-line"></span>
+<span class="highlight-line">            <span class="token keyword">if</span> <span class="token punctuation">(</span>response<span class="token operator">?.</span>ok<span class="token punctuation">)</span> <span class="token punctuation">{</span></span>
+<span class="highlight-line">                <span class="token keyword">return</span> <span class="token punctuation">{</span> <span class="token literal-property property">success</span><span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span> <span class="token literal-property property">message</span><span class="token operator">:</span> <span class="token string">"Entry saved"</span> <span class="token punctuation">}</span><span class="token punctuation">;</span></span>
+<span class="highlight-line">            <span class="token punctuation">}</span></span>
+<span class="highlight-line">            <span class="token keyword">return</span> <span class="token punctuation">{</span> <span class="token literal-property property">success</span><span class="token operator">:</span> <span class="token boolean">false</span><span class="token punctuation">,</span> <span class="token literal-property property">error</span><span class="token operator">:</span> <span class="token string">"Save failed"</span> <span class="token punctuation">}</span><span class="token punctuation">;</span></span>
+<span class="highlight-line">        <span class="token punctuation">}</span> <span class="token keyword">catch</span> <span class="token punctuation">(</span>error<span class="token punctuation">)</span> <span class="token punctuation">{</span></span>
+<span class="highlight-line">            <span class="token keyword">return</span> <span class="token punctuation">{</span> <span class="token literal-property property">success</span><span class="token operator">:</span> <span class="token boolean">false</span><span class="token punctuation">,</span> <span class="token literal-property property">error</span><span class="token operator">:</span> error<span class="token punctuation">.</span>message <span class="token punctuation">}</span><span class="token punctuation">;</span></span>
+<span class="highlight-line">        <span class="token punctuation">}</span> <span class="token keyword">finally</span> <span class="token punctuation">{</span></span>
+<span class="highlight-line">            <span class="token function">setIsLoading</span><span class="token punctuation">(</span><span class="token boolean">false</span><span class="token punctuation">)</span><span class="token punctuation">;</span></span>
+<span class="highlight-line">        <span class="token punctuation">}</span></span>
+<span class="highlight-line">    <span class="token punctuation">}</span><span class="token punctuation">;</span></span>
+<span class="highlight-line"></span>
+<span class="highlight-line">    <span class="token keyword">const</span> <span class="token function-variable function">deleteEntry</span> <span class="token operator">=</span> <span class="token keyword">async</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">{</span></span>
+<span class="highlight-line">        <span class="token function">setIsLoading</span><span class="token punctuation">(</span><span class="token boolean">true</span><span class="token punctuation">)</span><span class="token punctuation">;</span></span>
+<span class="highlight-line"></span>
+<span class="highlight-line">        <span class="token keyword">try</span> <span class="token punctuation">{</span></span>
+<span class="highlight-line">            <span class="token keyword">const</span> response <span class="token operator">=</span> <span class="token keyword">await</span> <span class="token function">deleteCalendarEntry</span><span class="token punctuation">(</span>entry<span class="token punctuation">.</span>id<span class="token punctuation">)</span><span class="token punctuation">;</span></span>
+<span class="highlight-line">            <span class="token keyword">return</span> response<span class="token operator">?.</span>ok</span>
+<span class="highlight-line">                <span class="token operator">?</span> <span class="token punctuation">{</span> <span class="token literal-property property">success</span><span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span> <span class="token literal-property property">message</span><span class="token operator">:</span> <span class="token string">"Entry deleted"</span> <span class="token punctuation">}</span></span>
+<span class="highlight-line">                <span class="token operator">:</span> <span class="token punctuation">{</span> <span class="token literal-property property">success</span><span class="token operator">:</span> <span class="token boolean">false</span><span class="token punctuation">,</span> <span class="token literal-property property">error</span><span class="token operator">:</span> <span class="token string">"Delete failed"</span> <span class="token punctuation">}</span><span class="token punctuation">;</span></span>
+<span class="highlight-line">        <span class="token punctuation">}</span> <span class="token keyword">catch</span> <span class="token punctuation">(</span>error<span class="token punctuation">)</span> <span class="token punctuation">{</span></span>
+<span class="highlight-line">            <span class="token keyword">return</span> <span class="token punctuation">{</span> <span class="token literal-property property">success</span><span class="token operator">:</span> <span class="token boolean">false</span><span class="token punctuation">,</span> <span class="token literal-property property">error</span><span class="token operator">:</span> error<span class="token punctuation">.</span>message <span class="token punctuation">}</span><span class="token punctuation">;</span></span>
+<span class="highlight-line">        <span class="token punctuation">}</span> <span class="token keyword">finally</span> <span class="token punctuation">{</span></span>
+<span class="highlight-line">            <span class="token function">setIsLoading</span><span class="token punctuation">(</span><span class="token boolean">false</span><span class="token punctuation">)</span><span class="token punctuation">;</span></span>
+<span class="highlight-line">        <span class="token punctuation">}</span></span>
+<span class="highlight-line">    <span class="token punctuation">}</span><span class="token punctuation">;</span></span>
+<span class="highlight-line"></span>
+<span class="highlight-line">    <span class="token comment">// Utility Functions</span></span>
+<span class="highlight-line">    <span class="token keyword">const</span> <span class="token function-variable function">updateContactPerson</span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token parameter">field<span class="token punctuation">,</span> value</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">{</span></span>
+<span class="highlight-line">        <span class="token function">setEntry</span><span class="token punctuation">(</span><span class="token string">"contactPerson"</span><span class="token punctuation">,</span> <span class="token punctuation">{</span></span>
+<span class="highlight-line">            <span class="token operator">...</span>entry<span class="token punctuation">.</span>contactPerson<span class="token punctuation">,</span></span>
+<span class="highlight-line">            <span class="token punctuation">[</span>field<span class="token punctuation">]</span><span class="token operator">:</span> value<span class="token punctuation">,</span></span>
+<span class="highlight-line">        <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span></span>
+<span class="highlight-line">    <span class="token punctuation">}</span><span class="token punctuation">;</span></span>
+<span class="highlight-line"></span>
+<span class="highlight-line">    <span class="token keyword">const</span> <span class="token function-variable function">safeString</span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token parameter">value</span><span class="token punctuation">)</span> <span class="token operator">=></span> value <span class="token operator">||</span> <span class="token string">""</span><span class="token punctuation">;</span></span>
+<span class="highlight-line"></span>
+<span class="highlight-line">    <span class="token keyword">return</span> <span class="token punctuation">{</span></span>
+<span class="highlight-line">        <span class="token comment">// State</span></span>
+<span class="highlight-line">        entry<span class="token punctuation">,</span></span>
+<span class="highlight-line">        originalEntry<span class="token punctuation">,</span></span>
+<span class="highlight-line">        isLoading<span class="token punctuation">,</span></span>
+<span class="highlight-line">        isEditing<span class="token punctuation">,</span></span>
+<span class="highlight-line">        showDeleteButton<span class="token punctuation">,</span></span>
+<span class="highlight-line"></span>
+<span class="highlight-line">        <span class="token comment">// Actions</span></span>
+<span class="highlight-line">        setEntry<span class="token punctuation">,</span></span>
+<span class="highlight-line">        loadEntry<span class="token punctuation">,</span></span>
+<span class="highlight-line">        resetEntry<span class="token punctuation">,</span></span>
+<span class="highlight-line">        saveEntry<span class="token punctuation">,</span></span>
+<span class="highlight-line">        deleteEntry<span class="token punctuation">,</span></span>
+<span class="highlight-line">        updateContactPerson<span class="token punctuation">,</span></span>
+<span class="highlight-line"></span>
+<span class="highlight-line">        <span class="token comment">// Utils</span></span>
+<span class="highlight-line">        safeString<span class="token punctuation">,</span></span>
+<span class="highlight-line">    <span class="token punctuation">}</span><span class="token punctuation">;</span></span>
+<span class="highlight-line"><span class="token punctuation">}</span><span class="token punctuation">;</span></span></code></pre>
+<h5>Extracting Helper Functions</h5>
+<p>For field validation and styling:</p>
+<pre class="language-javascript"><code class="language-javascript"><span class="highlight-line"><span class="token comment">// utils/fieldValidation.js</span></span>
+<span class="highlight-line"><span class="token keyword">export</span> <span class="token keyword">const</span> <span class="token function-variable function">getByPath</span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token parameter">obj<span class="token punctuation">,</span> path</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">{</span></span>
+<span class="highlight-line">    <span class="token keyword">return</span> path<span class="token punctuation">.</span><span class="token function">reduce</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token parameter">current<span class="token punctuation">,</span> key</span><span class="token punctuation">)</span> <span class="token operator">=></span> current<span class="token operator">?.</span><span class="token punctuation">[</span>key<span class="token punctuation">]</span><span class="token punctuation">,</span> obj<span class="token punctuation">)</span><span class="token punctuation">;</span></span>
+<span class="highlight-line"><span class="token punctuation">}</span><span class="token punctuation">;</span></span>
+<span class="highlight-line"></span>
+<span class="highlight-line"><span class="token keyword">export</span> <span class="token keyword">const</span> <span class="token function-variable function">hasFieldChanged</span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token parameter">current<span class="token punctuation">,</span> original<span class="token punctuation">,</span> fieldPath</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">{</span></span>
+<span class="highlight-line">    <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token operator">!</span>original<span class="token punctuation">)</span> <span class="token keyword">return</span> <span class="token boolean">false</span><span class="token punctuation">;</span></span>
+<span class="highlight-line"></span>
+<span class="highlight-line">    <span class="token keyword">const</span> currentValue <span class="token operator">=</span> <span class="token function">getByPath</span><span class="token punctuation">(</span>current<span class="token punctuation">,</span> fieldPath<span class="token punctuation">)</span><span class="token punctuation">;</span></span>
+<span class="highlight-line">    <span class="token keyword">const</span> originalValue <span class="token operator">=</span> <span class="token function">getByPath</span><span class="token punctuation">(</span>original<span class="token punctuation">,</span> fieldPath<span class="token punctuation">)</span><span class="token punctuation">;</span></span>
+<span class="highlight-line"></span>
+<span class="highlight-line">    <span class="token keyword">return</span> originalValue <span class="token operator">&amp;&amp;</span> currentValue <span class="token operator">!==</span> originalValue<span class="token punctuation">;</span></span>
+<span class="highlight-line"><span class="token punctuation">}</span><span class="token punctuation">;</span></span>
+<span class="highlight-line"></span>
+<span class="highlight-line"><span class="token keyword">export</span> <span class="token keyword">const</span> getFieldOutlineColor <span class="token operator">=</span> <span class="token punctuation">(</span></span>
+<span class="highlight-line">    currentEntry<span class="token punctuation">,</span></span>
+<span class="highlight-line">    originalEntry<span class="token punctuation">,</span></span>
+<span class="highlight-line">    fieldPath<span class="token punctuation">,</span></span>
+<span class="highlight-line">    changeColor <span class="token operator">=</span> <span class="token string">"#eb6914"</span><span class="token punctuation">,</span></span>
+<span class="highlight-line"><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">{</span></span>
+<span class="highlight-line">    <span class="token comment">// Case 1: Editing with original property</span></span>
+<span class="highlight-line">    <span class="token keyword">if</span> <span class="token punctuation">(</span>currentEntry<span class="token punctuation">.</span>id <span class="token operator">&amp;&amp;</span> currentEntry<span class="token punctuation">.</span>original<span class="token punctuation">)</span> <span class="token punctuation">{</span></span>
+<span class="highlight-line">        <span class="token keyword">const</span> currentValue <span class="token operator">=</span> <span class="token function">getByPath</span><span class="token punctuation">(</span>currentEntry<span class="token punctuation">,</span> fieldPath<span class="token punctuation">)</span><span class="token punctuation">;</span></span>
+<span class="highlight-line">        <span class="token keyword">const</span> originalValue <span class="token operator">=</span> <span class="token function">getByPath</span><span class="token punctuation">(</span>currentEntry<span class="token punctuation">.</span>original<span class="token punctuation">,</span> fieldPath<span class="token punctuation">)</span><span class="token punctuation">;</span></span>
+<span class="highlight-line">        <span class="token keyword">return</span> currentValue <span class="token operator">!==</span> originalValue <span class="token operator">?</span> changeColor <span class="token operator">:</span> <span class="token keyword">undefined</span><span class="token punctuation">;</span></span>
+<span class="highlight-line">    <span class="token punctuation">}</span></span>
+<span class="highlight-line"></span>
+<span class="highlight-line">    <span class="token comment">// Case 2: New entry with template</span></span>
+<span class="highlight-line">    <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token function">hasFieldChanged</span><span class="token punctuation">(</span>currentEntry<span class="token punctuation">,</span> originalEntry<span class="token punctuation">,</span> fieldPath<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span></span>
+<span class="highlight-line">        <span class="token keyword">return</span> changeColor<span class="token punctuation">;</span></span>
+<span class="highlight-line">    <span class="token punctuation">}</span></span>
+<span class="highlight-line"></span>
+<span class="highlight-line">    <span class="token keyword">return</span> <span class="token keyword">undefined</span><span class="token punctuation">;</span></span>
+<span class="highlight-line"><span class="token punctuation">}</span><span class="token punctuation">;</span></span></code></pre>
+<h5>The Refactored Component</h5>
+<p>Now the component becomes really beautiful:</p>
+<pre class="language-javascript"><code class="language-javascript"><span class="highlight-line"><span class="token comment">// CalendarDialog.jsx</span></span>
+<span class="highlight-line"><span class="token keyword">import</span> <span class="token punctuation">{</span> onMount<span class="token punctuation">,</span> onCleanup<span class="token punctuation">,</span> Show <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">"solid-js"</span><span class="token punctuation">;</span></span>
+<span class="highlight-line"><span class="token keyword">import</span> <span class="token punctuation">{</span> useCalendarEntry <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">"../hooks/useCalendarEntry"</span><span class="token punctuation">;</span></span>
+<span class="highlight-line"><span class="token keyword">import</span> <span class="token punctuation">{</span> getFieldOutlineColor <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">"../utils/fieldValidation"</span><span class="token punctuation">;</span></span>
+<span class="highlight-line"></span>
+<span class="highlight-line"><span class="token keyword">const</span> <span class="token function-variable function">CalendarDialog</span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">{</span></span>
+<span class="highlight-line">    <span class="token keyword">let</span> dialogRef<span class="token punctuation">;</span></span>
+<span class="highlight-line"></span>
+<span class="highlight-line">    <span class="token keyword">const</span> <span class="token punctuation">{</span></span>
+<span class="highlight-line">        entry<span class="token punctuation">,</span></span>
+<span class="highlight-line">        originalEntry<span class="token punctuation">,</span></span>
+<span class="highlight-line">        isLoading<span class="token punctuation">,</span></span>
+<span class="highlight-line">        isEditing<span class="token punctuation">,</span></span>
+<span class="highlight-line">        showDeleteButton<span class="token punctuation">,</span></span>
+<span class="highlight-line">        setEntry<span class="token punctuation">,</span></span>
+<span class="highlight-line">        loadEntry<span class="token punctuation">,</span></span>
+<span class="highlight-line">        resetEntry<span class="token punctuation">,</span></span>
+<span class="highlight-line">        saveEntry<span class="token punctuation">,</span></span>
+<span class="highlight-line">        deleteEntry<span class="token punctuation">,</span></span>
+<span class="highlight-line">        updateContactPerson<span class="token punctuation">,</span></span>
+<span class="highlight-line">        safeString<span class="token punctuation">,</span></span>
+<span class="highlight-line">    <span class="token punctuation">}</span> <span class="token operator">=</span> <span class="token function">useCalendarEntry</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span></span>
+<span class="highlight-line"></span>
+<span class="highlight-line">    <span class="token comment">// UI Helper - much cleaner now!</span></span>
+<span class="highlight-line">    <span class="token keyword">const</span> <span class="token function-variable function">getOutlineColor</span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token parameter">fieldPath</span><span class="token punctuation">)</span> <span class="token operator">=></span></span>
+<span class="highlight-line">        <span class="token function">getFieldOutlineColor</span><span class="token punctuation">(</span>entry<span class="token punctuation">,</span> <span class="token function">originalEntry</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span> fieldPath<span class="token punctuation">)</span><span class="token punctuation">;</span></span>
+<span class="highlight-line"></span>
+<span class="highlight-line">    <span class="token comment">// Event Handlers - only UI logic now</span></span>
+<span class="highlight-line">    <span class="token keyword">const</span> <span class="token function-variable function">handleDialogOpen</span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token parameter">event</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">{</span></span>
+<span class="highlight-line">        <span class="token function">loadEntry</span><span class="token punctuation">(</span>event<span class="token punctuation">.</span>detail<span class="token punctuation">)</span><span class="token punctuation">;</span></span>
+<span class="highlight-line">    <span class="token punctuation">}</span><span class="token punctuation">;</span></span>
+<span class="highlight-line"></span>
+<span class="highlight-line">    <span class="token keyword">const</span> <span class="token function-variable function">handleSave</span> <span class="token operator">=</span> <span class="token keyword">async</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">{</span></span>
+<span class="highlight-line">        <span class="token keyword">const</span> result <span class="token operator">=</span> <span class="token keyword">await</span> <span class="token function">saveEntry</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span></span>
+<span class="highlight-line"></span>
+<span class="highlight-line">        <span class="token keyword">if</span> <span class="token punctuation">(</span>result<span class="token punctuation">.</span>success<span class="token punctuation">)</span> <span class="token punctuation">{</span></span>
+<span class="highlight-line">            <span class="token function">closeDialog</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span></span>
+<span class="highlight-line">            <span class="token function">showNotification</span><span class="token punctuation">(</span>result<span class="token punctuation">.</span>message<span class="token punctuation">)</span><span class="token punctuation">;</span></span>
+<span class="highlight-line">            window<span class="token punctuation">.</span><span class="token function">dispatchEvent</span><span class="token punctuation">(</span><span class="token keyword">new</span> <span class="token class-name">Event</span><span class="token punctuation">(</span><span class="token string">"calendar:reload"</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span></span>
+<span class="highlight-line">        <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span></span>
+<span class="highlight-line">            <span class="token function">showNotification</span><span class="token punctuation">(</span>result<span class="token punctuation">.</span>error<span class="token punctuation">,</span> <span class="token string">"error"</span><span class="token punctuation">)</span><span class="token punctuation">;</span></span>
+<span class="highlight-line">        <span class="token punctuation">}</span></span>
+<span class="highlight-line">    <span class="token punctuation">}</span><span class="token punctuation">;</span></span>
+<span class="highlight-line"></span>
+<span class="highlight-line">    <span class="token keyword">const</span> <span class="token function-variable function">handleDelete</span> <span class="token operator">=</span> <span class="token keyword">async</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">{</span></span>
+<span class="highlight-line">        <span class="token keyword">const</span> result <span class="token operator">=</span> <span class="token keyword">await</span> <span class="token function">deleteEntry</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span></span>
+<span class="highlight-line"></span>
+<span class="highlight-line">        <span class="token keyword">if</span> <span class="token punctuation">(</span>result<span class="token punctuation">.</span>success<span class="token punctuation">)</span> <span class="token punctuation">{</span></span>
+<span class="highlight-line">            <span class="token function">closeDialog</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span></span>
+<span class="highlight-line">            <span class="token function">showNotification</span><span class="token punctuation">(</span>result<span class="token punctuation">.</span>message<span class="token punctuation">)</span><span class="token punctuation">;</span></span>
+<span class="highlight-line">            window<span class="token punctuation">.</span><span class="token function">dispatchEvent</span><span class="token punctuation">(</span><span class="token keyword">new</span> <span class="token class-name">Event</span><span class="token punctuation">(</span><span class="token string">"calendar:reload"</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span></span>
+<span class="highlight-line">        <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span></span>
+<span class="highlight-line">            <span class="token function">showNotification</span><span class="token punctuation">(</span>result<span class="token punctuation">.</span>error<span class="token punctuation">,</span> <span class="token string">"error"</span><span class="token punctuation">)</span><span class="token punctuation">;</span></span>
+<span class="highlight-line">        <span class="token punctuation">}</span></span>
+<span class="highlight-line">    <span class="token punctuation">}</span><span class="token punctuation">;</span></span>
+<span class="highlight-line"></span>
+<span class="highlight-line">    <span class="token keyword">const</span> <span class="token function-variable function">closeDialog</span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">{</span></span>
+<span class="highlight-line">        dialogRef<span class="token operator">?.</span><span class="token function">dispatchEvent</span><span class="token punctuation">(</span><span class="token keyword">new</span> <span class="token class-name">Event</span><span class="token punctuation">(</span><span class="token string">"dialog:close"</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span></span>
+<span class="highlight-line">        <span class="token function">resetEntry</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span></span>
+<span class="highlight-line">    <span class="token punctuation">}</span><span class="token punctuation">;</span></span>
+<span class="highlight-line"></span>
+<span class="highlight-line">    <span class="token keyword">const</span> showNotification <span class="token operator">=</span> <span class="token punctuation">(</span>message<span class="token punctuation">,</span> type <span class="token operator">=</span> <span class="token string">"success"</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">{</span></span>
+<span class="highlight-line">        <span class="token keyword">const</span> snackbar <span class="token operator">=</span> document<span class="token punctuation">.</span><span class="token function">getElementById</span><span class="token punctuation">(</span><span class="token string">"snackbar"</span><span class="token punctuation">)</span><span class="token punctuation">;</span></span>
+<span class="highlight-line">        snackbar<span class="token operator">?.</span><span class="token function">dispatchEvent</span><span class="token punctuation">(</span></span>
+<span class="highlight-line">            <span class="token keyword">new</span> <span class="token class-name">CustomEvent</span><span class="token punctuation">(</span><span class="token string">"snackbar:open"</span><span class="token punctuation">,</span> <span class="token punctuation">{</span></span>
+<span class="highlight-line">                <span class="token literal-property property">detail</span><span class="token operator">:</span> <span class="token punctuation">{</span> message<span class="token punctuation">,</span> type <span class="token punctuation">}</span><span class="token punctuation">,</span></span>
+<span class="highlight-line">            <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">,</span></span>
+<span class="highlight-line">        <span class="token punctuation">)</span><span class="token punctuation">;</span></span>
+<span class="highlight-line">    <span class="token punctuation">}</span><span class="token punctuation">;</span></span>
+<span class="highlight-line"></span>
+<span class="highlight-line">    <span class="token comment">// Lifecycle</span></span>
+<span class="highlight-line">    <span class="token function">onMount</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">{</span></span>
+<span class="highlight-line">        dialogRef<span class="token operator">?.</span><span class="token function">addEventListener</span><span class="token punctuation">(</span><span class="token string">"dialog:open"</span><span class="token punctuation">,</span> handleDialogOpen<span class="token punctuation">)</span><span class="token punctuation">;</span></span>
+<span class="highlight-line">    <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span></span>
+<span class="highlight-line"></span>
+<span class="highlight-line">    <span class="token function">onCleanup</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">{</span></span>
+<span class="highlight-line">        dialogRef<span class="token operator">?.</span><span class="token function">removeEventListener</span><span class="token punctuation">(</span><span class="token string">"dialog:open"</span><span class="token punctuation">,</span> handleDialogOpen<span class="token punctuation">)</span><span class="token punctuation">;</span></span>
+<span class="highlight-line">    <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span></span>
+<span class="highlight-line"></span>
+<span class="highlight-line">    <span class="token keyword">return</span> <span class="token punctuation">(</span></span>
+<span class="highlight-line">        <span class="token operator">&lt;</span>dialog ref<span class="token operator">=</span><span class="token punctuation">{</span>dialogRef<span class="token punctuation">}</span><span class="token operator">></span></span>
+<span class="highlight-line">            <span class="token operator">&lt;</span>h2<span class="token operator">></span>Calendar Entry<span class="token operator">&lt;</span><span class="token operator">/</span>h2<span class="token operator">></span></span>
+<span class="highlight-line"></span>
+<span class="highlight-line">            <span class="token operator">&lt;</span>div <span class="token keyword">class</span><span class="token operator">=</span><span class="token string">"form-row"</span><span class="token operator">></span></span>
+<span class="highlight-line">                <span class="token operator">&lt;</span>input</span>
+<span class="highlight-line">                    placeholder<span class="token operator">=</span><span class="token string">"Title"</span></span>
+<span class="highlight-line">                    value<span class="token operator">=</span><span class="token punctuation">{</span><span class="token function">safeString</span><span class="token punctuation">(</span>entry<span class="token punctuation">.</span>title<span class="token punctuation">)</span><span class="token punctuation">}</span></span>
+<span class="highlight-line">                    onInput<span class="token operator">=</span><span class="token punctuation">{</span><span class="token punctuation">(</span><span class="token parameter">e</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token function">setEntry</span><span class="token punctuation">(</span><span class="token string">"title"</span><span class="token punctuation">,</span> e<span class="token punctuation">.</span>target<span class="token punctuation">.</span>value<span class="token punctuation">)</span><span class="token punctuation">}</span></span>
+<span class="highlight-line">                    style<span class="token operator">=</span><span class="token punctuation">{</span><span class="token punctuation">{</span> <span class="token string-property property">"outline-color"</span><span class="token operator">:</span> <span class="token function">getOutlineColor</span><span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token string">"title"</span><span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token punctuation">}</span><span class="token punctuation">}</span></span>
+<span class="highlight-line">                    disabled<span class="token operator">=</span><span class="token punctuation">{</span><span class="token function">isLoading</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">}</span></span>
+<span class="highlight-line">                <span class="token operator">/</span><span class="token operator">></span></span>
+<span class="highlight-line"></span>
+<span class="highlight-line">                <span class="token operator">&lt;</span>input</span>
+<span class="highlight-line">                    placeholder<span class="token operator">=</span><span class="token string">"Contact Person"</span></span>
+<span class="highlight-line">                    value<span class="token operator">=</span><span class="token punctuation">{</span><span class="token function">safeString</span><span class="token punctuation">(</span>entry<span class="token punctuation">.</span>contactPerson<span class="token operator">?.</span>name<span class="token punctuation">)</span><span class="token punctuation">}</span></span>
+<span class="highlight-line">                    onInput<span class="token operator">=</span><span class="token punctuation">{</span><span class="token punctuation">(</span><span class="token parameter">e</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token function">updateContactPerson</span><span class="token punctuation">(</span><span class="token string">"name"</span><span class="token punctuation">,</span> e<span class="token punctuation">.</span>target<span class="token punctuation">.</span>value<span class="token punctuation">)</span><span class="token punctuation">}</span></span>
+<span class="highlight-line">                    style<span class="token operator">=</span><span class="token punctuation">{</span><span class="token punctuation">{</span></span>
+<span class="highlight-line">                        <span class="token string-property property">"outline-color"</span><span class="token operator">:</span> <span class="token function">getOutlineColor</span><span class="token punctuation">(</span><span class="token punctuation">[</span></span>
+<span class="highlight-line">                            <span class="token string">"contactPerson"</span><span class="token punctuation">,</span></span>
+<span class="highlight-line">                            <span class="token string">"name"</span><span class="token punctuation">,</span></span>
+<span class="highlight-line">                        <span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">,</span></span>
+<span class="highlight-line">                    <span class="token punctuation">}</span><span class="token punctuation">}</span></span>
+<span class="highlight-line">                    disabled<span class="token operator">=</span><span class="token punctuation">{</span><span class="token function">isLoading</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">}</span></span>
+<span class="highlight-line">                <span class="token operator">/</span><span class="token operator">></span></span>
+<span class="highlight-line">            <span class="token operator">&lt;</span><span class="token operator">/</span>div<span class="token operator">></span></span>
+<span class="highlight-line"></span>
+<span class="highlight-line">            <span class="token operator">&lt;</span>div <span class="token keyword">class</span><span class="token operator">=</span><span class="token string">"form-row"</span><span class="token operator">></span></span>
+<span class="highlight-line">                <span class="token operator">&lt;</span>input</span>
+<span class="highlight-line">                    placeholder<span class="token operator">=</span><span class="token string">"Description"</span></span>
+<span class="highlight-line">                    value<span class="token operator">=</span><span class="token punctuation">{</span><span class="token function">safeString</span><span class="token punctuation">(</span>entry<span class="token punctuation">.</span>description<span class="token punctuation">)</span><span class="token punctuation">}</span></span>
+<span class="highlight-line">                    onInput<span class="token operator">=</span><span class="token punctuation">{</span><span class="token punctuation">(</span><span class="token parameter">e</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token function">setEntry</span><span class="token punctuation">(</span><span class="token string">"description"</span><span class="token punctuation">,</span> e<span class="token punctuation">.</span>target<span class="token punctuation">.</span>value<span class="token punctuation">)</span><span class="token punctuation">}</span></span>
+<span class="highlight-line">                    style<span class="token operator">=</span><span class="token punctuation">{</span><span class="token punctuation">{</span></span>
+<span class="highlight-line">                        <span class="token string-property property">"outline-color"</span><span class="token operator">:</span> <span class="token function">getOutlineColor</span><span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token string">"description"</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">,</span></span>
+<span class="highlight-line">                    <span class="token punctuation">}</span><span class="token punctuation">}</span></span>
+<span class="highlight-line">                    disabled<span class="token operator">=</span><span class="token punctuation">{</span><span class="token function">isLoading</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">}</span></span>
+<span class="highlight-line">                <span class="token operator">/</span><span class="token operator">></span></span>
+<span class="highlight-line"></span>
+<span class="highlight-line">                <span class="token operator">&lt;</span>input</span>
+<span class="highlight-line">                    placeholder<span class="token operator">=</span><span class="token string">"Email"</span></span>
+<span class="highlight-line">                    value<span class="token operator">=</span><span class="token punctuation">{</span><span class="token function">safeString</span><span class="token punctuation">(</span>entry<span class="token punctuation">.</span>contactPerson<span class="token operator">?.</span>email<span class="token punctuation">)</span><span class="token punctuation">}</span></span>
+<span class="highlight-line">                    onInput<span class="token operator">=</span><span class="token punctuation">{</span><span class="token punctuation">(</span><span class="token parameter">e</span><span class="token punctuation">)</span> <span class="token operator">=></span></span>
+<span class="highlight-line">                        <span class="token function">updateContactPerson</span><span class="token punctuation">(</span><span class="token string">"email"</span><span class="token punctuation">,</span> e<span class="token punctuation">.</span>target<span class="token punctuation">.</span>value<span class="token punctuation">)</span></span>
+<span class="highlight-line">                    <span class="token punctuation">}</span></span>
+<span class="highlight-line">                    style<span class="token operator">=</span><span class="token punctuation">{</span><span class="token punctuation">{</span></span>
+<span class="highlight-line">                        <span class="token string-property property">"outline-color"</span><span class="token operator">:</span> <span class="token function">getOutlineColor</span><span class="token punctuation">(</span><span class="token punctuation">[</span></span>
+<span class="highlight-line">                            <span class="token string">"contactPerson"</span><span class="token punctuation">,</span></span>
+<span class="highlight-line">                            <span class="token string">"email"</span><span class="token punctuation">,</span></span>
+<span class="highlight-line">                        <span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">,</span></span>
+<span class="highlight-line">                    <span class="token punctuation">}</span><span class="token punctuation">}</span></span>
+<span class="highlight-line">                    disabled<span class="token operator">=</span><span class="token punctuation">{</span><span class="token function">isLoading</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">}</span></span>
+<span class="highlight-line">                <span class="token operator">/</span><span class="token operator">></span></span>
+<span class="highlight-line">            <span class="token operator">&lt;</span><span class="token operator">/</span>div<span class="token operator">></span></span>
+<span class="highlight-line"></span>
+<span class="highlight-line">            <span class="token operator">&lt;</span>div <span class="token keyword">class</span><span class="token operator">=</span><span class="token string">"actions"</span><span class="token operator">></span></span>
+<span class="highlight-line">                <span class="token operator">&lt;</span>Show when<span class="token operator">=</span><span class="token punctuation">{</span><span class="token function">showDeleteButton</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">}</span><span class="token operator">></span></span>
+<span class="highlight-line">                    <span class="token operator">&lt;</span>button</span>
+<span class="highlight-line">                        onClick<span class="token operator">=</span><span class="token punctuation">{</span>handleDelete<span class="token punctuation">}</span></span>
+<span class="highlight-line">                        disabled<span class="token operator">=</span><span class="token punctuation">{</span><span class="token function">isLoading</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">}</span></span>
+<span class="highlight-line">                        <span class="token keyword">class</span><span class="token operator">=</span><span class="token string">"btn-danger"</span></span>
+<span class="highlight-line">                    <span class="token operator">></span></span>
+<span class="highlight-line">                        <span class="token punctuation">{</span><span class="token function">isLoading</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">?</span> <span class="token string">"Deleting..."</span> <span class="token operator">:</span> <span class="token string">"Delete"</span><span class="token punctuation">}</span></span>
+<span class="highlight-line">                    <span class="token operator">&lt;</span><span class="token operator">/</span>button<span class="token operator">></span></span>
+<span class="highlight-line">                <span class="token operator">&lt;</span><span class="token operator">/</span>Show<span class="token operator">></span></span>
+<span class="highlight-line"></span>
+<span class="highlight-line">                <span class="token operator">&lt;</span>button</span>
+<span class="highlight-line">                    onClick<span class="token operator">=</span><span class="token punctuation">{</span>closeDialog<span class="token punctuation">}</span></span>
+<span class="highlight-line">                    disabled<span class="token operator">=</span><span class="token punctuation">{</span><span class="token function">isLoading</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">}</span></span>
+<span class="highlight-line">                    <span class="token keyword">class</span><span class="token operator">=</span><span class="token string">"btn-secondary"</span></span>
+<span class="highlight-line">                <span class="token operator">></span></span>
+<span class="highlight-line">                    Cancel</span>
+<span class="highlight-line">                <span class="token operator">&lt;</span><span class="token operator">/</span>button<span class="token operator">></span></span>
+<span class="highlight-line"></span>
+<span class="highlight-line">                <span class="token operator">&lt;</span>button</span>
+<span class="highlight-line">                    onClick<span class="token operator">=</span><span class="token punctuation">{</span>handleSave<span class="token punctuation">}</span></span>
+<span class="highlight-line">                    disabled<span class="token operator">=</span><span class="token punctuation">{</span><span class="token function">isLoading</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">}</span></span>
+<span class="highlight-line">                    <span class="token keyword">class</span><span class="token operator">=</span><span class="token string">"btn-primary"</span></span>
+<span class="highlight-line">                <span class="token operator">></span></span>
+<span class="highlight-line">                    <span class="token punctuation">{</span><span class="token function">isLoading</span><span class="token punctuation">(</span><span class="token punctuation">)</span></span>
+<span class="highlight-line">                        <span class="token operator">?</span> <span class="token string">"Saving..."</span></span>
+<span class="highlight-line">                        <span class="token operator">:</span> <span class="token function">isEditing</span><span class="token punctuation">(</span><span class="token punctuation">)</span></span>
+<span class="highlight-line">                          <span class="token operator">?</span> <span class="token string">"Save"</span></span>
+<span class="highlight-line">                          <span class="token operator">:</span> <span class="token string">"Create"</span><span class="token punctuation">}</span></span>
+<span class="highlight-line">                <span class="token operator">&lt;</span><span class="token operator">/</span>button<span class="token operator">></span></span>
+<span class="highlight-line">            <span class="token operator">&lt;</span><span class="token operator">/</span>div<span class="token operator">></span></span>
+<span class="highlight-line">        <span class="token operator">&lt;</span><span class="token operator">/</span>dialog<span class="token operator">></span></span>
+<span class="highlight-line">    <span class="token punctuation">)</span><span class="token punctuation">;</span></span>
+<span class="highlight-line"><span class="token punctuation">}</span><span class="token punctuation">;</span></span>
+<span class="highlight-line"></span>
+<span class="highlight-line"><span class="token keyword">export</span> <span class="token keyword">default</span> CalendarDialog<span class="token punctuation">;</span></span></code></pre>
+<h4>What Have We Achieved?</h4>
+<h5>Before vs. After</h5>
+<p><strong>Before:</strong></p>
+<ul>
+<li>400+ line monster component</li>
+<li>Everything coupled</li>
+<li>12x the same <code>getOutlineColor</code> call</li>
+<li>Not testable</li>
+<li>Hard to understand</li>
+</ul>
+<p><strong>After:</strong></p>
+<ul>
+<li>Hook: 120 lines of pure logic</li>
+<li>Component: 80 lines of pure UI</li>
+<li>Utilities: 30 lines of reusable helpers</li>
+<li>Everything testable</li>
+<li>Clear separation of concerns</li>
+</ul>
+<h5>The Benefits in Detail</h5>
+<p><strong>1. Separation of Concerns</strong></p>
+<pre class="language-javascript"><code class="language-javascript"><span class="highlight-line"><span class="token comment">// Business logic in hook</span></span>
+<span class="highlight-line"><span class="token keyword">const</span> <span class="token punctuation">{</span> saveEntry<span class="token punctuation">,</span> deleteEntry <span class="token punctuation">}</span> <span class="token operator">=</span> <span class="token function">useCalendarEntry</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span></span>
+<span class="highlight-line"></span>
+<span class="highlight-line"><span class="token comment">// UI logic in component</span></span>
+<span class="highlight-line"><span class="token keyword">const</span> <span class="token function-variable function">handleSave</span> <span class="token operator">=</span> <span class="token keyword">async</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">{</span></span>
+<span class="highlight-line">    <span class="token keyword">const</span> result <span class="token operator">=</span> <span class="token keyword">await</span> <span class="token function">saveEntry</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span></span>
+<span class="highlight-line">    <span class="token comment">// Only UI feedback</span></span>
+<span class="highlight-line"><span class="token punctuation">}</span><span class="token punctuation">;</span></span></code></pre>
+<p><strong>2. Reusability</strong></p>
+<pre class="language-javascript"><code class="language-javascript"><span class="highlight-line"><span class="token comment">// Hook can be used anywhere</span></span>
+<span class="highlight-line"><span class="token keyword">const</span> <span class="token function-variable function">AnotherComponent</span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">{</span></span>
+<span class="highlight-line">    <span class="token keyword">const</span> <span class="token punctuation">{</span> entry<span class="token punctuation">,</span> setEntry <span class="token punctuation">}</span> <span class="token operator">=</span> <span class="token function">useCalendarEntry</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span></span>
+<span class="highlight-line">    <span class="token comment">// Completely different UI, same logic</span></span>
+<span class="highlight-line"><span class="token punctuation">}</span><span class="token punctuation">;</span></span></code></pre>
+<p><strong>3. Testability</strong></p>
+<pre class="language-javascript"><code class="language-javascript"><span class="highlight-line"><span class="token comment">// Test hook in isolation</span></span>
+<span class="highlight-line"><span class="token keyword">const</span> <span class="token punctuation">{</span> result <span class="token punctuation">}</span> <span class="token operator">=</span> <span class="token function">renderHook</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token function">useCalendarEntry</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span></span>
+<span class="highlight-line"><span class="token function">act</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=></span> result<span class="token punctuation">.</span>current<span class="token punctuation">.</span><span class="token function">setEntry</span><span class="token punctuation">(</span><span class="token string">"title"</span><span class="token punctuation">,</span> <span class="token string">"Test"</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span></span>
+<span class="highlight-line"><span class="token function">expect</span><span class="token punctuation">(</span>result<span class="token punctuation">.</span>current<span class="token punctuation">.</span>entry<span class="token punctuation">.</span>title<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">toBe</span><span class="token punctuation">(</span><span class="token string">"Test"</span><span class="token punctuation">)</span><span class="token punctuation">;</span></span></code></pre>
+<p><strong>4. DRY Principle</strong></p>
+<pre class="language-javascript"><code class="language-javascript"><span class="highlight-line"><span class="token comment">// Instead of 12x the same thing</span></span>
+<span class="highlight-line"><span class="token keyword">const</span> <span class="token function-variable function">getOutlineColor</span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token parameter">fieldPath</span><span class="token punctuation">)</span> <span class="token operator">=></span></span>
+<span class="highlight-line">    <span class="token function">getFieldOutlineColor</span><span class="token punctuation">(</span>entry<span class="token punctuation">,</span> <span class="token function">originalEntry</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span> fieldPath<span class="token punctuation">)</span><span class="token punctuation">;</span></span></code></pre>
+<h4>Conclusion</h4>
+<p>Custom Hooks in SolidJS are a game-changer for code organization. They help with:</p>
+<ul>
+<li><strong>Separating logic from UI</strong></li>
+<li><strong>Making code reusable</strong></li>
+<li><strong>Writing tests</strong></li>
+<li><strong>Keeping components readable</strong></li>
+</ul>
+<p>The refactoring from 400 lines to 3 small, focused modules was one of the most satisfying coding sessions I've had.</p>
+<p>The trick is to ask yourself: <em>&quot;What is business logic and what is UI?&quot;</em> Everything that's not directly related to rendering belongs in the hook.</p>
+<p><strong>Bonus tip:</strong> Start small! Take a component that annoys you and just extract the state. The rest will follow naturally.</p>
+<p>Thanks a ton for reading!</p>
+<p>Kuba</p>
+
+            <hr>
+              <ul class="post-navigation">
+                  <li>Vorheriger Artikel:
+                    <a href="/posts/0625/hooks-in-solidjs/">SolidJS-Hooks: Wie man Darstellung von Logik trennt</a>
+                  </li>
+                
+              </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+        <!-- Current page: /posts/en/0625/hooks-in-solid/ -->
+        <footer class="footer">
+    <hr/>
+    <div class="content has-text-centered">
+        <p>
+            der_kuba - 2021-2024 -
+            <a href="/content/impressum.html">Impressum</a>
+            -
+            <a href="/content/datenschutz.html">Datenschutzerklärung</a>
+        </p>
+    </div>
+</footer>
+    </body>
+</html>
