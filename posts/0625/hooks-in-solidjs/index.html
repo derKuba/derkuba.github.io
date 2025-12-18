@@ -1,179 +1,4 @@
-<!doctype html>
-<html lang="de">
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1"/>
-        <title>SolidJS-Hooks: Wie man Darstellung von Logik trennt</title>
-        <meta name="description" content="Ein Refactoring-Abenteuer mit Custom Hooks in SolidJS für sauberen, wartbaren Code">
-        <meta property="og:title" content="Speakaoke – Spontane Präsentationen mit KI"/>
-        <meta property="og:image" content="/android-chrome-384x384.png"/>
-        <meta property="og:url" content="https://derkuba.de/posts/0225/speakaoke/"/>
-        <meta property="og:type" content="website"/>
-        <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
-        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
-        <link rel="alternate" href="/feed/feed.xml" type="application/atom+xml" title="der_kuba">
-        <link rel="alternate" href="/feed/feed.json" type="application/json" title="der_kuba">
-        <link rel="stylesheet" href="/assets/css/prism.css">
-        <link rel="stylesheet" href="/assets/css/bulma.css">
-        <link rel="stylesheet" href="/assets/css/custom.css">
-        <script>
-            document.addEventListener("DOMContentLoaded", () => {
-                const e = Array
-                    .prototype
-                    .slice
-                    .call(document.querySelectorAll(".navbar-burger"), 0);
-                e.length > 0 && e.forEach(e => {
-                    e.addEventListener("click", () => {
-                        const t = e.dataset.target,
-                            a = document.getElementById(t);
-                        e.classList.toggle("is-active"),
-                        a.classList.toggle("is-active")
-                    })
-                })
-                const disableDarkMode = () => {
-                    const bodyNode = document.querySelector("body");
-                    bodyNode
-                        .classList
-                        .remove("dark-mode")
-                        localStorage
-                        .setItem('darkMode', 'disabled');
-                }
-                const enableDarkMode = () => {
-                    const bodyNode = document.querySelector("body");
-                    bodyNode
-                        .classList
-                        .add("dark-mode")
-                        localStorage
-                        .setItem('darkMode', 'enabled');
-                }
-                const button = document.getElementById("darkmode");
-                button.addEventListener("click", () => {
-                    const bodyNode = document.querySelector("body");
-                    if (bodyNode.classList.contains("dark-mode")) {
-                        disableDarkMode();
-                    } else {
-                        enableDarkMode();
-                    }
-                })
-                if (localStorage.getItem('darkMode') === 'enabled') {
-                    enableDarkMode();
-                }
-            });
-        </script>
-    </head>
-    <body><header>
-    <div class="container">
-        <nav class="navbar">
-            <div class="navbar-brand">
-                <a class="navbar-item navbar-brand__title " href="/">
-                    der_kuba
-                </a>
-                <a class="navbar-item is-size-7-mobile" href="https://github.com/derKuba">
-                    @Github
-                </a>
-                <a class="navbar-item is-size-7-mobile" href="https://twitter.com/der_kuba">
-                    @Twitter
-                </a>
-                <a class="navbar-item is-size-7-mobile" href="https://www.linkedin.com/in/jacob-pawlik-08a40015b/">
-                    @LinkedIn
-                </a>
-                <div class="navbar-burger" data-target="navigation-items">
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                </div>
-            </div>
-            <div id="navigation-items" class="navbar-menu">
-                <div class="navbar-end">
-                    
-                        <a class="navbar-item " href="/">
-                            Home
-                        </a>
-                        <a class="navbar-item " href="/posts/">
-                            Archiv
-                        </a>
-                        <a class="navbar-item " href="/about/">
-                            About Me
-                        </a>
-                        <a class="navbar-item " href="/en/">
-                            English
-                        </a>
-                        <a class="navbar-item " href="/content/impressum.html">
-                            Impressum
-                        </a>
-                        <a class="navbar-item " href="/content/datenschutz.html">
-                            Datenschutzerklärung
-                        </a>
-                    <button id="darkmode" alt="dark mode">
-                        <svg width="30" height="30">
-                            <circle cx="15" cy="15" r="6" fill="currentColor"/>
-                            <line id="ray" stroke="currentColor" stroke-width="2" stroke-linecap="round" x1="15" y1="1" x2="15" y2="4"></line>
-                            <use href="#ray" transform="rotate(45 15 15)"/>
-                            <use href="#ray" transform="rotate(90 15 15)"/>
-                            <use href="#ray" transform="rotate(135 15 15)"/>
-                            <use href="#ray" transform="rotate(180 15 15)"/>
-                            <use href="#ray" transform="rotate(225 15 15)"/>
-                            <use href="#ray" transform="rotate(270 15 15)"/>
-                            <use href="#ray" transform="rotate(315 15 15)"/>
-                        </svg>
-                    </button>
-                    <!-- special thanks to https://www.freecodecamp.org/news/how-to-handle-dark-mode-with-css-and-javascript/ -->
-                </div>
-            </div>
-        </nav>
-    </div>
-</header>
-        
-<section class="section">
-  <div class="container">
-    <div class="columns is-centered">
-      <div class="column is-8">
-        <h1 class="title is-3">SolidJS-Hooks: Wie man Darstellung von Logik trennt</h1>
-        <div class="post-detail__tags">
-          <h3 class="subtitle is-6">
-            <time datetime="2025-06-08">
-              08 Jun 2025
-            </time>
-          </h3>
-          <div class="tags"><a href="/tags/web/" class="post-tag">
-                <span class="tag is-black">
-                  Web
-                </span>
-              </a><a href="/tags/solidjs/" class="post-tag">
-                <span class="tag is-primary">
-                  Solidjs
-                </span>
-              </a><a href="/tags/hooks/" class="post-tag">
-                <span class="tag is-link">
-                  Hooks
-                </span>
-              </a><a href="/tags/refactoring/" class="post-tag">
-                <span class="tag is-success">
-                  Refactoring
-                </span>
-              </a>
-          </div>
-        </div>
-        <div class="content post_detail__content">
-          <div class="language-hint">
-            
-              <a href="/posts/en/0625/hooks-in-solidjs">Read in English <img width="25" src="/assets/images/gb.png"/></a>
-            
-          </div>
-          <p>Ein Thema, das mir schon länger auf den Nägeln brennt: Wie trennt man eigentlich Darstellung von Logik in SolidJS? <!-- endOfPreview -->In diesem Artikel zeige ich dir, wie Custom Hooks dabei helfen können, aus einem 400-Zeilen-Monster eine saubere, wartbare Komponente zu machen.</p>
-<h4>Das Problem: Alles in einer Komponente</h4>
-<p>Kennst du das? Du fängst mit einer einfachen Komponente an, und plötzlich macht sie alles:</p>
-<ul>
-<li>State-Management</li>
-<li>API-Calls</li>
-<li>Event-Handling</li>
-<li>UI-Rendering</li>
-<li>Validierung</li>
-<li>DOM-Manipulation</li>
-</ul>
-<p>Ich hatte kürzlich so eine Komponente - einen Kalender-Dialog mit über 400 Zeilen Code. Ein echtes Monster!</p>
-<pre class="language-javascript"><code class="language-javascript"><span class="highlight-line"><span class="token keyword">const</span> <span class="token function-variable function">CalendarDialog</span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">{</span></span>
+<!doctype html><html lang="de"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>SolidJS-Hooks: Wie man Darstellung von Logik trennt</title><meta name="description" content="Ein Refactoring-Abenteuer mit Custom Hooks in SolidJS für sauberen, wartbaren Code"><meta property="og:title" content="SolidJS-Hooks: Wie man Darstellung von Logik trennt"><meta property="og:description" content="Ein Refactoring-Abenteuer mit Custom Hooks in SolidJS für sauberen, wartbaren Code"><meta property="og:image" content="https://derkuba.de/android-chrome-384x384.png"><meta property="og:url" content="https://derkuba.de/posts/0625/hooks-in-solidjs/"><meta property="og:type" content="website"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png"><link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="alternate" href="/feed/feed.xml" type="application/atom+xml" title="der_kuba"><link rel="alternate" href="/feed/feed.json" type="application/json" title="der_kuba"><style>:root{--primary-color:#00d1b2;--background-color:#fff;--text-primary-color:#363636;--text-secondary-color:#fff}.dark-mode{--primary-color:#ffdd57;--background-color:#232323;--text-primary-color:#e0e0e0;--text-secondary-color:#363636}body{background-color:var(--background-color);color:var(--text-primary-color)!important;margin:0;font-family:BlinkMacSystemFont,-apple-system,"Segoe UI",Roboto,Oxygen,Ubuntu,Cantarell,"Fira Sans","Droid Sans","Helvetica Neue",Helvetica,Arial,sans-serif}.navbar{background-color:var(--background-color);margin-bottom:50px}.title{color:var(--text-primary-color)}.title a{color:var(--text-primary-color)}</style><link rel="stylesheet" href="/assets/css/prism.css"><link rel="stylesheet" href="/assets/css/bulma.css"><link rel="stylesheet" href="/assets/css/custom.css"><script>document.addEventListener("DOMContentLoaded",()=>{const e=Array.prototype.slice.call(document.querySelectorAll(".navbar-burger"),0);e.length>0&&e.forEach(e=>{e.addEventListener("click",()=>{const t=e.dataset.target,d=document.getElementById(t);e.classList.toggle("is-active"),d.classList.toggle("is-active")})});const t=()=>{document.querySelector("body").classList.add("dark-mode"),localStorage.setItem("darkMode","enabled")};document.getElementById("darkmode").addEventListener("click",()=>{document.querySelector("body").classList.contains("dark-mode")?(document.querySelector("body").classList.remove("dark-mode"),localStorage.setItem("darkMode","disabled")):t()}),"enabled"===localStorage.getItem("darkMode")&&t()})</script></head><body><header><div class="container"><nav class="navbar"><div class="navbar-brand"><a class="navbar-item navbar-brand__title" href="/">der_kuba </a><a class="navbar-item is-size-7-mobile" href="https://github.com/derKuba">@Github </a><a class="navbar-item is-size-7-mobile" href="https://twitter.com/der_kuba">@Twitter </a><a class="navbar-item is-size-7-mobile" href="https://www.linkedin.com/in/jacob-pawlik-08a40015b/">@LinkedIn</a><div class="navbar-burger" data-target="navigation-items"><span></span> <span></span> <span></span></div></div><div id="navigation-items" class="navbar-menu"><div class="navbar-end"><a class="navbar-item" href="/">Home </a><a class="navbar-item" href="/posts/">Archiv </a><a class="navbar-item" href="/about/">About Me </a><a class="navbar-item" href="/en/">English </a><a class="navbar-item" href="/content/impressum.html">Impressum </a><a class="navbar-item" href="/content/datenschutz.html">Datenschutzerklärung </a><button id="darkmode" alt="dark mode"><svg width="30" height="30"><circle cx="15" cy="15" r="6" fill="currentColor"/><line id="ray" stroke="currentColor" stroke-width="2" stroke-linecap="round" x1="15" y1="1" x2="15" y2="4"></line><use href="#ray" transform="rotate(45 15 15)"/><use href="#ray" transform="rotate(90 15 15)"/><use href="#ray" transform="rotate(135 15 15)"/><use href="#ray" transform="rotate(180 15 15)"/><use href="#ray" transform="rotate(225 15 15)"/><use href="#ray" transform="rotate(270 15 15)"/><use href="#ray" transform="rotate(315 15 15)"/></svg></button></div></div></nav></div></header><section class="section"><div class="container"><div class="columns is-centered"><div class="column is-10"><article class="post-detail-article"><h1 class="post-detail-title">SolidJS-Hooks: Wie man Darstellung von Logik trennt</h1><div class="post-detail-meta"><time class="post-date" datetime="2025-06-08">08 Jun 2025</time> <span class="post-meta-separator">•</span> <span class="post-reading-time">6 Minuten</span> <span class="post-meta-separator">•</span> <span class="post-word-count">1215 Wörter</span></div><div class="post-detail-tags"><a href="/tags/web/" class="post-tag"><span class="tag is-black">Web </span></a><a href="/tags/solidjs/" class="post-tag"><span class="tag is-primary">Solidjs </span></a><a href="/tags/hooks/" class="post-tag"><span class="tag is-link">Hooks </span></a><a href="/tags/refactoring/" class="post-tag"><span class="tag is-success">Refactoring</span></a></div><div class="content post_detail__content"><div class="language-hint"><a href="/posts/en/0625/hooks-in-solidjs">Read in English <img width="25" src="/assets/images/gb.svg" alt="English flag"></a></div><p>Ein Thema, das mir schon länger auf den Nägeln brennt: Wie trennt man eigentlich Darstellung von Logik in SolidJS? In diesem Artikel zeige ich dir, wie Custom Hooks dabei helfen können, aus einem 400-Zeilen-Monster eine saubere, wartbare Komponente zu machen.</p><h4>Das Problem: Alles in einer Komponente</h4><p>Kennst du das? Du fängst mit einer einfachen Komponente an, und plötzlich macht sie alles:</p><ul><li>State-Management</li><li>API-Calls</li><li>Event-Handling</li><li>UI-Rendering</li><li>Validierung</li><li>DOM-Manipulation</li></ul><p>Ich hatte kürzlich so eine Komponente - einen Kalender-Dialog mit über 400 Zeilen Code. Ein echtes Monster!</p><pre class="language-javascript"><code class="language-javascript"><span class="highlight-line"><span class="token keyword">const</span> <span class="token function-variable function">CalendarDialog</span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">{</span></span>
 <span class="highlight-line">    <span class="token comment">// 15 verschiedene Signals und Stores</span></span>
 <span class="highlight-line">    <span class="token keyword">const</span> <span class="token punctuation">[</span>calendarEntry<span class="token punctuation">,</span> setCalendarEntry<span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token function">createStore</span><span class="token punctuation">(</span><span class="token comment">/* ... */</span><span class="token punctuation">)</span><span class="token punctuation">;</span></span>
 <span class="highlight-line">    <span class="token keyword">const</span> <span class="token punctuation">[</span>originalEntry<span class="token punctuation">,</span> setOriginalEntry<span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token function">createSignal</span><span class="token punctuation">(</span><span class="token keyword">null</span><span class="token punctuation">)</span><span class="token punctuation">;</span></span>
@@ -211,18 +36,9 @@
 <span class="highlight-line">            <span class="token punctuation">{</span><span class="token comment">/* ... 20 weitere Inputs mit der gleichen Logik */</span><span class="token punctuation">}</span></span>
 <span class="highlight-line">        <span class="token operator">&lt;</span><span class="token operator">/</span>div<span class="token operator">></span></span>
 <span class="highlight-line">    <span class="token punctuation">)</span><span class="token punctuation">;</span></span>
-<span class="highlight-line"><span class="token punctuation">}</span><span class="token punctuation">;</span></span></code></pre>
-<p><strong>Das Problem:</strong> Alles ist gekoppelt, nichts ist testbar, und Änderungen werden zum Alptraum.</p>
-<h4>Die Lösung: Custom Hooks</h4>
-<p>Die Idee ist simpel: Wir lagern die gesamte Business-Logik in einen Custom Hook aus. Die Komponente kümmert sich nur noch um die Darstellung.</p>
-<h5>Installation und Setup</h5>
-<p>Für unser Refactoring brauchen wir eigentlich nur SolidJS - aber ich zeige dir auch, wie du es strukturierst:</p>
-<pre class="language-bash"><code class="language-bash"><span class="highlight-line"><span class="token function">mkdir</span> hooks</span>
+<span class="highlight-line"><span class="token punctuation">}</span><span class="token punctuation">;</span></span></code></pre><p><strong>Das Problem:</strong> Alles ist gekoppelt, nichts ist testbar, und Änderungen werden zum Alptraum.</p><h4>Die Lösung: Custom Hooks</h4><p>Die Idee ist simpel: Wir lagern die gesamte Business-Logik in einen Custom Hook aus. Die Komponente kümmert sich nur noch um die Darstellung.</p><h5>Installation und Setup</h5><p>Für unser Refactoring brauchen wir eigentlich nur SolidJS - aber ich zeige dir auch, wie du es strukturierst:</p><pre class="language-bash"><code class="language-bash"><span class="highlight-line"><span class="token function">mkdir</span> hooks</span>
 <span class="highlight-line"><span class="token function">touch</span> hooks/useCalendarEntry.js</span>
-<span class="highlight-line"><span class="token function">touch</span> hooks/useFieldValidation.js</span></code></pre>
-<h5>Der Custom Hook: useCalendarEntry</h5>
-<p>Hier kommt der Kern unserer Lösung:</p>
-<pre class="language-javascript"><code class="language-javascript"><span class="highlight-line"><span class="token comment">// hooks/useCalendarEntry.js</span></span>
+<span class="highlight-line"><span class="token function">touch</span> hooks/useFieldValidation.js</span></code></pre><h5>Der Custom Hook: useCalendarEntry</h5><p>Hier kommt der Kern unserer Lösung:</p><pre class="language-javascript"><code class="language-javascript"><span class="highlight-line"><span class="token comment">// hooks/useCalendarEntry.js</span></span>
 <span class="highlight-line"><span class="token keyword">import</span> <span class="token punctuation">{</span> createSignal <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">"solid-js"</span><span class="token punctuation">;</span></span>
 <span class="highlight-line"><span class="token keyword">import</span> <span class="token punctuation">{</span> createStore <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">"solid-js/store"</span><span class="token punctuation">;</span></span>
 <span class="highlight-line"><span class="token keyword">import</span> <span class="token punctuation">{</span></span>
@@ -341,10 +157,7 @@
 <span class="highlight-line">        <span class="token comment">// Utils</span></span>
 <span class="highlight-line">        safeString<span class="token punctuation">,</span></span>
 <span class="highlight-line">    <span class="token punctuation">}</span><span class="token punctuation">;</span></span>
-<span class="highlight-line"><span class="token punctuation">}</span><span class="token punctuation">;</span></span></code></pre>
-<h5>Helper-Funktionen auslagern</h5>
-<p>Für die Feld-Validierung und Styling:</p>
-<pre class="language-javascript"><code class="language-javascript"><span class="highlight-line"><span class="token comment">// utils/fieldValidation.js</span></span>
+<span class="highlight-line"><span class="token punctuation">}</span><span class="token punctuation">;</span></span></code></pre><h5>Helper-Funktionen auslagern</h5><p>Für die Feld-Validierung und Styling:</p><pre class="language-javascript"><code class="language-javascript"><span class="highlight-line"><span class="token comment">// utils/fieldValidation.js</span></span>
 <span class="highlight-line"><span class="token keyword">export</span> <span class="token keyword">const</span> <span class="token function-variable function">getByPath</span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token parameter">obj<span class="token punctuation">,</span> path</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">{</span></span>
 <span class="highlight-line">    <span class="token keyword">return</span> path<span class="token punctuation">.</span><span class="token function">reduce</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token parameter">current<span class="token punctuation">,</span> key</span><span class="token punctuation">)</span> <span class="token operator">=></span> current<span class="token operator">?.</span><span class="token punctuation">[</span>key<span class="token punctuation">]</span><span class="token punctuation">,</span> obj<span class="token punctuation">)</span><span class="token punctuation">;</span></span>
 <span class="highlight-line"><span class="token punctuation">}</span><span class="token punctuation">;</span></span>
@@ -377,10 +190,7 @@
 <span class="highlight-line">    <span class="token punctuation">}</span></span>
 <span class="highlight-line"></span>
 <span class="highlight-line">    <span class="token keyword">return</span> <span class="token keyword">undefined</span><span class="token punctuation">;</span></span>
-<span class="highlight-line"><span class="token punctuation">}</span><span class="token punctuation">;</span></span></code></pre>
-<h5>Die refactored Komponente</h5>
-<p>Jetzt wird die Komponente richtig schön:</p>
-<pre class="language-javascript"><code class="language-javascript"><span class="highlight-line"><span class="token comment">// CalendarDialog.jsx</span></span>
+<span class="highlight-line"><span class="token punctuation">}</span><span class="token punctuation">;</span></span></code></pre><h5>Die refactored Komponente</h5><p>Jetzt wird die Komponente richtig schön:</p><pre class="language-javascript"><code class="language-javascript"><span class="highlight-line"><span class="token comment">// CalendarDialog.jsx</span></span>
 <span class="highlight-line"><span class="token keyword">import</span> <span class="token punctuation">{</span> onMount<span class="token punctuation">,</span> onCleanup<span class="token punctuation">,</span> Show <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">"solid-js"</span><span class="token punctuation">;</span></span>
 <span class="highlight-line"><span class="token keyword">import</span> <span class="token punctuation">{</span> useCalendarEntry <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">"../hooks/useCalendarEntry"</span><span class="token punctuation">;</span></span>
 <span class="highlight-line"><span class="token keyword">import</span> <span class="token punctuation">{</span> getFieldOutlineColor <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">"../utils/fieldValidation"</span><span class="token punctuation">;</span></span>
@@ -550,94 +360,20 @@
 <span class="highlight-line">    <span class="token punctuation">)</span><span class="token punctuation">;</span></span>
 <span class="highlight-line"><span class="token punctuation">}</span><span class="token punctuation">;</span></span>
 <span class="highlight-line"></span>
-<span class="highlight-line"><span class="token keyword">export</span> <span class="token keyword">default</span> CalendarDialog<span class="token punctuation">;</span></span></code></pre>
-<h4>Was haben wir erreicht?</h4>
-<h5>Vorher vs. Nachher</h5>
-<p><strong>Vorher:</strong></p>
-<ul>
-<li>400+ Zeilen Monster-Komponente</li>
-<li>Alles gekoppelt</li>
-<li>12x derselbe <code>getOutlineColor</code> Aufruf</li>
-<li>Nicht testbar</li>
-<li>Schwer zu verstehen</li>
-</ul>
-<p><strong>Nachher:</strong></p>
-<ul>
-<li>Hook: 120 Zeilen pure Logik</li>
-<li>Komponente: 80 Zeilen pure UI</li>
-<li>Utilities: 30 Zeilen wiederverwendbare Helfer</li>
-<li>Alles testbar</li>
-<li>Klar getrennte Verantwortlichkeiten</li>
-</ul>
-<h5>Die Vorteile im Detail</h5>
-<p><strong>1. Separation of Concerns</strong></p>
-<pre class="language-javascript"><code class="language-javascript"><span class="highlight-line"><span class="token comment">// Business Logic im Hook</span></span>
+<span class="highlight-line"><span class="token keyword">export</span> <span class="token keyword">default</span> CalendarDialog<span class="token punctuation">;</span></span></code></pre><h4>Was haben wir erreicht?</h4><h5>Vorher vs. Nachher</h5><p><strong>Vorher:</strong></p><ul><li>400+ Zeilen Monster-Komponente</li><li>Alles gekoppelt</li><li>12x derselbe <code>getOutlineColor</code> Aufruf</li><li>Nicht testbar</li><li>Schwer zu verstehen</li></ul><p><strong>Nachher:</strong></p><ul><li>Hook: 120 Zeilen pure Logik</li><li>Komponente: 80 Zeilen pure UI</li><li>Utilities: 30 Zeilen wiederverwendbare Helfer</li><li>Alles testbar</li><li>Klar getrennte Verantwortlichkeiten</li></ul><h5>Die Vorteile im Detail</h5><p><strong>1. Separation of Concerns</strong></p><pre class="language-javascript"><code class="language-javascript"><span class="highlight-line"><span class="token comment">// Business Logic im Hook</span></span>
 <span class="highlight-line"><span class="token keyword">const</span> <span class="token punctuation">{</span> saveEntry<span class="token punctuation">,</span> deleteEntry <span class="token punctuation">}</span> <span class="token operator">=</span> <span class="token function">useCalendarEntry</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span></span>
 <span class="highlight-line"></span>
 <span class="highlight-line"><span class="token comment">// UI Logic in der Komponente</span></span>
 <span class="highlight-line"><span class="token keyword">const</span> <span class="token function-variable function">handleSave</span> <span class="token operator">=</span> <span class="token keyword">async</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">{</span></span>
 <span class="highlight-line">    <span class="token keyword">const</span> result <span class="token operator">=</span> <span class="token keyword">await</span> <span class="token function">saveEntry</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span></span>
 <span class="highlight-line">    <span class="token comment">// Nur UI-Feedback</span></span>
-<span class="highlight-line"><span class="token punctuation">}</span><span class="token punctuation">;</span></span></code></pre>
-<p><strong>2. Wiederverwendbarkeit</strong></p>
-<pre class="language-javascript"><code class="language-javascript"><span class="highlight-line"><span class="token comment">// Der Hook kann überall verwendet werden</span></span>
+<span class="highlight-line"><span class="token punctuation">}</span><span class="token punctuation">;</span></span></code></pre><p><strong>2. Wiederverwendbarkeit</strong></p><pre class="language-javascript"><code class="language-javascript"><span class="highlight-line"><span class="token comment">// Der Hook kann überall verwendet werden</span></span>
 <span class="highlight-line"><span class="token keyword">const</span> <span class="token function-variable function">AnotherComponent</span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">{</span></span>
 <span class="highlight-line">    <span class="token keyword">const</span> <span class="token punctuation">{</span> entry<span class="token punctuation">,</span> setEntry <span class="token punctuation">}</span> <span class="token operator">=</span> <span class="token function">useCalendarEntry</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span></span>
 <span class="highlight-line">    <span class="token comment">// Komplett andere UI, gleiche Logik</span></span>
-<span class="highlight-line"><span class="token punctuation">}</span><span class="token punctuation">;</span></span></code></pre>
-<p><strong>3. Testbarkeit</strong></p>
-<pre class="language-javascript"><code class="language-javascript"><span class="highlight-line"><span class="token comment">// Hook isoliert testen</span></span>
+<span class="highlight-line"><span class="token punctuation">}</span><span class="token punctuation">;</span></span></code></pre><p><strong>3. Testbarkeit</strong></p><pre class="language-javascript"><code class="language-javascript"><span class="highlight-line"><span class="token comment">// Hook isoliert testen</span></span>
 <span class="highlight-line"><span class="token keyword">const</span> <span class="token punctuation">{</span> result <span class="token punctuation">}</span> <span class="token operator">=</span> <span class="token function">renderHook</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token function">useCalendarEntry</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span></span>
 <span class="highlight-line"><span class="token function">act</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=></span> result<span class="token punctuation">.</span>current<span class="token punctuation">.</span><span class="token function">setEntry</span><span class="token punctuation">(</span><span class="token string">"title"</span><span class="token punctuation">,</span> <span class="token string">"Test"</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span></span>
-<span class="highlight-line"><span class="token function">expect</span><span class="token punctuation">(</span>result<span class="token punctuation">.</span>current<span class="token punctuation">.</span>entry<span class="token punctuation">.</span>title<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">toBe</span><span class="token punctuation">(</span><span class="token string">"Test"</span><span class="token punctuation">)</span><span class="token punctuation">;</span></span></code></pre>
-<p><strong>4. DRY-Prinzip</strong></p>
-<pre class="language-javascript"><code class="language-javascript"><span class="highlight-line"><span class="token comment">// Statt 12x das Gleiche</span></span>
+<span class="highlight-line"><span class="token function">expect</span><span class="token punctuation">(</span>result<span class="token punctuation">.</span>current<span class="token punctuation">.</span>entry<span class="token punctuation">.</span>title<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">toBe</span><span class="token punctuation">(</span><span class="token string">"Test"</span><span class="token punctuation">)</span><span class="token punctuation">;</span></span></code></pre><p><strong>4. DRY-Prinzip</strong></p><pre class="language-javascript"><code class="language-javascript"><span class="highlight-line"><span class="token comment">// Statt 12x das Gleiche</span></span>
 <span class="highlight-line"><span class="token keyword">const</span> <span class="token function-variable function">getOutlineColor</span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token parameter">fieldPath</span><span class="token punctuation">)</span> <span class="token operator">=></span></span>
-<span class="highlight-line">    <span class="token function">getFieldOutlineColor</span><span class="token punctuation">(</span>entry<span class="token punctuation">,</span> <span class="token function">originalEntry</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span> fieldPath<span class="token punctuation">)</span><span class="token punctuation">;</span></span></code></pre>
-<h4>Fazit</h4>
-<p>Custom Hooks in SolidJS sind ein Game-Changer für die Code-Organisation. Sie helfen dabei:</p>
-<ul>
-<li><strong>Logik von UI zu trennen</strong></li>
-<li><strong>Code wiederverwendbar zu machen</strong></li>
-<li><strong>Tests zu schreiben</strong></li>
-<li><strong>Komponenten lesbar zu halten</strong></li>
-</ul>
-<p>Das Refactoring von 400 Zeilen auf 3 kleine, fokussierte Module war eine der befriedigendsten Code-Sessions, die ich hatte.</p>
-<p>Der Trick liegt darin, sich zu fragen: <em>&quot;Was ist Business Logic und was ist UI?&quot;</em> Alles was nicht direkt mit Rendering zu tun hat, gehört in den Hook.</p>
-<p><strong>Bonustipp:</strong> Fangt klein an! Nehmt eine Komponente, die euch ärgert, und lagert nur den State aus. Der Rest folgt von selbst.</p>
-<p>Für Feedback bin ich immer dankbar.
-Gerne an jacob@derkuba.de</p>
-<p>Viele Grüße</p>
-<p>Euer Kuba</p>
-<p>PS: Dieser Artikel wurde mit Hilfe KI sprachlich aufgehübscht.</p>
-
-            <hr>
-              <ul class="post-navigation">
-                  <li>Nächster Artikel:
-                    <a href="/posts/0625/tesseract-on-raspberry/">OCR Performance Optimierung: Von 56s auf 4s auf dem Raspberry Pi</a>
-                  </li>
-                
-                  <li>Vorheriger Artikel:
-                    <a href="/posts/en/0325/solid1.9/">Solid 1.9 und Web Components: Event-Target-Drama</a>
-                  </li>
-                
-              </ul>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-        <!-- Current page: /posts/0625/hooks-in-solidjs/ -->
-        <footer class="footer">
-    <hr/>
-    <div class="content has-text-centered">
-        <p>
-            der_kuba - 2021-2024 -
-            <a href="/content/impressum.html">Impressum</a>
-            -
-            <a href="/content/datenschutz.html">Datenschutzerklärung</a>
-        </p>
-    </div>
-</footer>
-    </body>
-</html>
+<span class="highlight-line">    <span class="token function">getFieldOutlineColor</span><span class="token punctuation">(</span>entry<span class="token punctuation">,</span> <span class="token function">originalEntry</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span> fieldPath<span class="token punctuation">)</span><span class="token punctuation">;</span></span></code></pre><h4>Fazit</h4><p>Custom Hooks in SolidJS sind ein Game-Changer für die Code-Organisation. Sie helfen dabei:</p><ul><li><strong>Logik von UI zu trennen</strong></li><li><strong>Code wiederverwendbar zu machen</strong></li><li><strong>Tests zu schreiben</strong></li><li><strong>Komponenten lesbar zu halten</strong></li></ul><p>Das Refactoring von 400 Zeilen auf 3 kleine, fokussierte Module war eine der befriedigendsten Code-Sessions, die ich hatte.</p><p>Der Trick liegt darin, sich zu fragen: <em>&quot;Was ist Business Logic und was ist UI?&quot;</em> Alles was nicht direkt mit Rendering zu tun hat, gehört in den Hook.</p><p><strong>Bonustipp:</strong> Fangt klein an! Nehmt eine Komponente, die euch ärgert, und lagert nur den State aus. Der Rest folgt von selbst.</p><p>Für Feedback bin ich immer dankbar. Gerne an jacob@derkuba.de</p><p>Viele Grüße</p><p>Euer Kuba</p><p>PS: Dieser Artikel wurde mit Hilfe KI sprachlich aufgehübscht.</p></div><nav class="post-navigation"><a href="/posts/en/0325/solid1.9/" class="post-nav-card post-nav-prev"><span class="post-nav-label">← Vorheriger Artikel</span> <span class="post-nav-title">Solid 1.9 und Web Components: Event-Target-Drama</span> </a><a href="/posts/0625/tesseract-on-raspberry/" class="post-nav-card post-nav-next"><span class="post-nav-label">Nächster Artikel →</span> <span class="post-nav-title">OCR Performance Optimierung: Von 56s auf 4s auf dem Raspberry Pi</span></a></nav></article></div></div></div></section><footer class="footer"><hr><div class="content has-text-centered"><p>der_kuba - 2021-2024 - <a href="/content/impressum.html">Impressum</a> - <a href="/content/datenschutz.html">Datenschutzerklärung</a></p></div></footer></body></html>
